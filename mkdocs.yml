@@ -1,0 +1,20 @@
+site_name: Delta X Robot
+copyright: Copyright &copy; 2021 <a href="https://deltaxrobot.com">IMWI Technology</a>
+markdown_extensions:
+    - smarty
+    - toc:
+        permalink: True
+    - sane_lists
+nav:
+    - Home: index.md
+    - About: index.md
+    - Gcode:
+        - Robot: gcodes\robot_gcode.md
+        - Conveyor: gcodes\conveyor_gcode.md
+
+theme:
+    name: readthedocs
+    highlightjs: true
+    hljs_languages:
+        - yaml
+        - rust
