@@ -24,7 +24,7 @@ G01 [F<rate>] [X<pos>] [Y<pos>] [Z<pos>] [W<angle>]
 
 ### Example
 
-```gcode
+```
 G01 X12                         ;move to 12mm on the X-axis
 G01 F200                        ;set the feedrate to 200 mm/s
 G01 X90.6 Y13.8                 ;move to 90.6mm on the X-axis and 13.8mm on the Y-axis     
@@ -104,10 +104,11 @@ G01 X100
 ### Usage
 
 ```
-G5 [E<pos>] [F<rate>] I<pos> J<pos> P<pos> Q<pos> X<pos> Y<pos>
+G5 [F<rate>] I<pos> J<pos> P<pos> Q<pos> X<pos> Y<pos>
 ```
 
 ### Parameters
+
 * `F[rate]`:(mm/s) The maximum feedrate of the move between the start and end point. This value applies to all subsequent moves.
 * `I[offset]`:(mm) Offset from the X start point to first control point.
 * `J[offset]`:(mm) Offset from the Y start point to first control point.
@@ -116,7 +117,7 @@ G5 [E<pos>] [F<rate>] I<pos> J<pos> P<pos> Q<pos> X<pos> Y<pos>
 * `X[pos]`:(mm) A destination coordinate on the X axis.
 * `Y[pos]`:(mm) A destination coordinate on the Y axis.
 
-###### Example
+### Example
 
 ```
 ;program a curvy “N” shape
@@ -146,7 +147,7 @@ G06 [X<angle>] [Y<angle>] [Z<angle>] [P<pos>]
 * `Z[angle]`:(degree) The value of the Theta 3 angle.
 * `P[pos]`:(mm) Distance traveled.
 
-###### Example
+### Example
 
 ```
 G6 X0 Y0 Z0      ;set theta 1, theta 2, theta 3 angle at 0 deg
@@ -175,6 +176,7 @@ G28
 In absolute mode, all coordinates given in G-code are interpreted as positions in the logical coordinate space.
 
 ### Usage
+
 ```
 G90
 ```
@@ -186,30 +188,43 @@ G90
 
 ## G91 - Relative Movement Mode
 
-###### Descriptions
+### Descriptions
 
 Set relative position mode. In this mode, all coordinates are interpreted as relative to the last position.
 
-###### Usage
+### Usage
 
-    **G91**
+```
+G91
+```
+
+### Example
+
+```
+G91              ; Set all axes to relative
+```
 ---
 
 ## M03, M04 - Ouput On / Laser On / Vacuum On / Gripper Close
 
-###### Descriptions
+### Descriptions
 
 M03 is used to turn on the vacuum pump, laser, and close the gripper.
 
-###### Usage
+### Usage
 
-    **M03 S[**value**]**
-    ###### Parameters
-    **S[value]**: Vacuum pump (empty), Spindle speed (0 - 255), laser power (0 - 255), angle of gripper (0-100), if value is emtpy then gripper close.
-!!! warning "Note:"
+```
+M03 [S<value>]
+```
+
+### Parameters
+
+* `S[value]`: Vacuum pump (empty), Spindle speed (0 - 255), laser power (0 - 255), angle of gripper (0-100), if value is emtpy then gripper close.
+
+!!! note "Note:"
     M03 will be equivalent to M03 S255.
 
-###### Example
+### Example
 
 ```
 G01 X0 Y0 Z-350
@@ -221,39 +236,47 @@ G01 Z-300
 
 ## M05 - Ouput Off / Laser Off / Vacuum Off / Gripper Open
 
-###### Descriptions
+### Descriptions
 
-M05 is used to turn off the vacuum pump, laser, and close the gripper.
+M05 is used to turn off the vacuum pump, laser, or close the gripper.
 
-###### Usage
+### Usage
 
-    **M05**
+```
+M05
+```
+
 ---
 
 ## M84 - Disable Steppers
 
-###### Descriptions
+### Descriptions
 
 This command can be used to disable steppers.
 
-###### Usage
+### Usage
 
-    **M84**
+```
+M84
+```
 ---
 
 ## M104 - Set Hotend Temperature
 
-###### Descriptions
+### Descriptions
 
 Set a new target hot end temperature and continue without waiting. The firmware will continue to try to reach and hold the temperature in the background.
 
-###### Usage
+### Usage
 
-    **M104 S[**temp**]**
-    ###### Parameters
-    **S[temp]**: (degree Celsius) Target temperature.
+```
+M104 [S<temp>]
+```
 
-###### Example
+### Parameters
+* `S[temp]`: (degree Celsius) Target temperature.
+
+### Example
 
 ```
 M104 S295           ;set hotend at 295 degC
@@ -263,117 +286,230 @@ M104 S295           ;set hotend at 295 degC
 
 ## M109 - Wait For Hotend Temperature
 
-###### Descriptions
+### Descriptions
 
 This command optionally sets a new target hot end temperature and waits for the target temperature to be reached before proceeding.
 
-###### Usage
+### Usage
 
-    **M109 S[**temp**]**
-    ###### Parameters
-    **S[temp]**: (degree Celsius) Target temperature.
+```
+M109 [S<temp>]
+```
+### Parameters
+
+* `S[temp]`: (degree Celsius) Target temperature.
+
+### Example
+
+```
+M109 S180  ;Set target temperature and wait (if heating up)
+```
 ---
 
 ## M203 - Set Max Feedrate
 
-###### Descriptions
+### Descriptions
 
 Set movement max feedrate.
 
-###### Usage
+### Usage
 
-    **M203 S[**value**]**
-    ###### Parameters
-    **S[value]**: (mm/s) max feedrate.
+```
+M203 S<value>
+```
+
+### Parameters
+* `S[value]`: (mm/s) max feedrate.
+
+### Example
+
+```
+M203 S500  ;Set max feedrate
+```
+
 ---
 
 ## M204 - Set Max Feedrate
 
-###### Descriptions
+### Descriptions
 
 Set movement acceleration.
 
-###### Usage
+### Usage
 
-    **M204 A[**value**]**
-    ###### Parameters
-    **A[value]**: (mm/s2) end effector acceleration.
+```
+M204 A<value>
+```
+
+### Parameters
+
+* `A[value]`: (mm/s2) end effector acceleration.
+
+### Example
+
+```
+M204 A5000  ;Set max feedrate
+```
+
+---
+
+## M206 - Set Z Offset
+
+### Descriptions
+
+Set z home offset. 
+
+### Usage
+
+```
+M206 Z<value>
+```
+
+### Parameters
+
+* `Z[value]`: (mm) offset value.
+
+### Example
+
+```
+M206 Z30  ;Set z home offset
+```
+
 ---
 
 ## M360 - Select End Effector
 
-###### Descriptions
+### Descriptions
 
-Select the end effector for the delta robot.
+Select the end effector for the robot. You can change the end effector to one of these : Vacuum, gripper, pen, laser, printer or use your custom end effector.
 
-###### Usage
+### Usage
 
-    **M360 E[**value**]**
-    ###### Parameters
-    **E[value]**:<br>
-    0-Vacuum (default)<br>
-    1-Gripper<br>
-    2-Pen<br>
-    3-Laser<br>
-    4-Printer<br>
-    5-Custom<br>
+```
+M360 E<value>
+```
+
+### Parameters
+
+* `E[value]`
+    * 0-Vacuum (default).
+    * 1-Gripper
+    * 2-Pen
+    * 3-Laser
+    * 4-Printer
+    * 5-Custom
+
+### Example
+
+```
+M360 E2  ;select the end effector is Pen
+```
 ---
 
 ## M361 - Set Interpolated line length
 
-###### Descriptions
+### Descriptions
 
 Set the length of each segment in line interpolation.
 
-###### Usage
+### Usage
 
-    **M361 P[**unit**]**
-    ###### Parameters
-    **P[unit]**: (mm) Length in mm.
+```
+M361 P<len>
+```
+
+### Parameters
+
+* `P[len]`: (mm) Length in mm.
+
+### Example
+
+```
+M361 P0.3    ;set segment length = 0.3mm 
+```
+
 ---
 
 ## M362 - Set Arc segment length
 
-###### Descriptions
+### Descriptions
 
 Set segment length in arc interpolation.
 
-###### Usage
+### Usage
 
-    **M362 P[**unit**]**
-    ###### Parameters
-    **P[unit]**: (mm) Length in mm.
+```
+M362 P<len>
+```
+
+### Parameters
+
+* `P[len]`: (mm) Length in mm.
+
+### Example
+
+```
+M362 P0.4    ;set segment length = 0.4mm 
+```
+
 ---
 
 ## M500 - Save Settings
 
-###### Descriptions
+### Descriptions
 
 Save all configurable settings to EEPROM.
 
-###### Usage
+### Usage
 
-    **M500**
+```
+M500
+```
+
+### Example
+
+```
+M500    ;Save settings
+```
+
 ---
 
-## M501 - Load Settings
+## M501 - Restore Settings
 
-###### Descriptions
+### Descriptions
 
 Load all saved settings from EEPROM.
 
-###### Usage
+### Usage
 
-    **M501**
+```
+M501
+```
+
+### Example
+
+```
+M501    ;Restore all settings.
+```
+
 ---
 
 ## M502 - Reset Settings
 
-###### Descriptions
+### Descriptions
 
 Reset all configurable settings to their factory defaults.
 
-###### Usage
+### Usage
 
-    **M502**
+```
+M502
+```
+
+### Example
+
+```
+M502    ;reset
+```
+
 ---

@@ -34,11 +34,11 @@ nav:
 # theme:
 #     name: null
 #     custom_dir: 'cinder'
-    # highlightjs: true
-    # hljs_languages:
-    #     - yaml
-    #     - rust
+#     highlightjs: true
+#     hljs_languages:
+#         - yaml
+#         - rust
 # theme:
-#   name: gitbook
+#   name: ponylang
 theme: 
     name: readthedocs
