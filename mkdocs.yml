@@ -5,16 +5,40 @@ markdown_extensions:
     - toc:
         permalink: True
     - sane_lists
+    - admonition
 nav:
     - Home: index.md
     - About: index.md
-    - Gcode:
-        - Robot: gcodes\robot_gcode.md
-        - Conveyor: gcodes\conveyor_gcode.md
-
-theme:
+    - Reference:
+        - Gcode:
+            - Robot:
+                - Delta X1: reference\gcodes\gc_x1.md
+                - Delta X2: reference\gcodes\gc_x2.md
+                - Delta XS V4: reference\gcodes\gc_xs_v4.md
+                - Delta XS V5: reference\gcodes\gc_xs_v5.md
+            - Conveyor: reference\gcodes\gc_conveyor.md
+            - Slider: reference\gcodes\gc_slider.md
+            - Xecoder: reference\gcodes\gc_encoder.md
+        - Macro Programing: reference\macro_programming\macro_programming.md
+        - Specifications: 
+            - Delta X1: reference\specifications\sp_x1.md
+            - Delta X2: reference\specifications\sp_x2.md
+            - Delta XS V4: 
+                - D400: reference\specifications\delta_xs_v4\sp_v4_d400.md
+                - D600: reference\specifications\delta_xs_v4\sp_v4_d600.md
+                - D800: reference\specifications\delta_xs_v4\sp_v4_d800.md
+            - Delta XS V5: 
+                - D400: reference\specifications\delta_xs_v5\sp_v5_d400.md
+                - D600: reference\specifications\delta_xs_v5\sp_v5_d600.md
+                - D800: reference\specifications\delta_xs_v5\sp_v5_d800.md
+# theme:
+#     name: null
+#     custom_dir: 'cinder'
+    # highlightjs: true
+    # hljs_languages:
+    #     - yaml
+    #     - rust
+# theme:
+#   name: gitbook
+theme: 
     name: readthedocs
-    highlightjs: true
-    hljs_languages:
-        - yaml
-        - rust
