@@ -170,6 +170,36 @@ G91
 
 ---
 
+## G93 - Get Current Position
+
+#### Descriptions
+
+Get current position of end effector.
+
+#### Usage
+
+```
+G93
+```
+
+#### Feedback
+
+* `<xpos>,<ypos>,<zpos>`
+    * `<xpos>` : Current X position.
+    * `<ypos>` : Current Y position.
+    * `<zpos>` : Current Z position.
+
+#### Example
+
+```
+G93              ; get current pos
+
+return:
+31,43,-270
+```
+
+---
+
 ## M03, M04 - Turn Ouput On / Set PWM
 #### Descriptions
 
@@ -410,6 +440,30 @@ M42 A1 B115200             ;Open TTL port and set baudrate at 115200
 
 ---
 
+## M49 - Get Ports Config
+
+#### Descriptions
+
+Feedback all ports config informations, this command will show you that these ports is enabled or not, and the baudrate of each port.
+
+#### Usage
+
+```
+M49
+```
+
+#### Example
+
+```
+M49
+
+>>>USB:1 BAUD:115200      ;USB port is enabled(default), baudrate is 115200
+>>>RS232:0 BAUD:115200    ;RS232 port is disabled, last set baudrate is 115200
+>>>RS485:1 BAUD:115200
+>>>TTL:1 BAUD:115200
+>>>RJ45:1 Port:1921682553
+```
+
 ## M50 - Enable RJ45
 
 #### Descriptions
@@ -422,7 +476,7 @@ This command can be used to enable or disable RJ45 port.
 M50 A<x>
 ```
 
-### Parameter
+#### Parameter
 
 * `A[x]`
     * `x = 1` : enable RJ45
@@ -448,7 +502,7 @@ Set ethernet port number
 M51 B<x>
 ```
 
-### Parameter
+#### Parameter
 
 * `B[x]` : port number
 
@@ -474,7 +528,7 @@ Address form: A:B:C:D:E:F
 M52 A<x> B<y> C<z> D<t> E<u> F<v>
 ```
 
-### Parameter
+#### Parameter
 
 * `A[x]` : number
 * `B[y]` : number
@@ -505,7 +559,7 @@ Set ethernet IP of robot
 M53 A<x> B<y> C<z> D<t>
 ```
 
-### Parameter
+#### Parameter
 
 * `A[x]` : number
 * `B[y]` : number
@@ -534,7 +588,7 @@ Set ethernet DNS address
 M54 A<x> B<y> C<z> D<t>
 ```
 
-### Parameter
+#### Parameter
 
 * `A[x]` : number
 * `B[y]` : number
@@ -551,50 +605,206 @@ M53 A192 B168 C1 D3
 
 ---
 
-## M55 - Set Ethernet Port
+## M55 - Set Ethernet Gateway
 
 #### Descriptions
 
-Set ethernet port number
+Set ethernet gateway address
 
 #### Usage
 
 ```
-M51 B<x>
+M55 A<x> B<y> C<z> D<t>
 ```
 
-### Parameter
+#### Parameter
 
-* `B[x]` : port number
+* `A[x]` : number
+* `B[y]` : number
+* `C[z]` : number
+* `D[t]` : number
 
 #### Example
 
 ```
-M51 B8080         ; set ethernet port
+; set ethernet gateway address 192.168.3.1
+M55 A192 B168 C3 D1
 ```
 
 ---
 
-## M6 - Set Ethernet Port
+## M56 - Set Ethernet Subnet
 
 #### Descriptions
 
-Set ethernet port number
+Set ethernet gateway address
 
 #### Usage
 
 ```
-M51 B<x>
+M56 A<x> B<y> C<z> D<t>
 ```
 
-### Parameter
+#### Parameter
 
-* `B[x]` : port number
+* `A[x]` : number
+* `B[y]` : number
+* `C[z]` : number
+* `D[t]` : number
 
 #### Example
 
 ```
-M51 B8080         ; set ethernet port
+; set ethernet subnet address 192.168.3.1
+M56 A192 B168 C3 D1
+```
+
+---
+
+## M57 - Get Robot IP
+
+#### Descriptions
+
+Get the IP of Delta Robot
+
+#### Usage
+
+```
+M57
+```
+
+#### Example
+
+```
+M57
+
+>>> 192.168.2.2
+```
+
+---
+
+## M60 - Set Axis 4 Parameters
+
+#### Descriptions
+
+Config axis 4 parameters.
+
+#### Usage
+
+```
+M60 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>] 
+    [P<val>] [Q<val>] [H<val>] A[<val>] [J<val>] [F<val>]
+```
+
+#### Parameter
+
+* `D[val]` : enable axis 4
+    * `val = 1` : enable axis 4
+    * `val = 0` : disable axis 4
+* `E[val]` : enable endstop
+    * `val = 1` : enable axis 4 endstop
+    * `val = 0` : disable axis 4 endstop
+* `I[val]` : set invert endstop logic level
+    * `val = 1` : axis 4 endstop invert
+    * `val = 0` : axis 4 endstop non-invert
+* `S[val]` : (unit/s) homing speed
+* `R[val]` : (unit/s) homing revert speed
+* `U[val]` : (step/unit) set step/unit parameter
+* `P[val]` : (unit) set max position
+* `Q[val]` : (unit) set min position
+* `H[val]` : (unit) set home position
+* `A[val]` : (unit) set max acceleration
+* `J[val]` : (unit) set max jerk
+* `F[val]` : (unit) set max velocity
+
+#### Example
+
+```
+M60 D1 E1 I0 S15 R5 U8.333 P178 Q0 H45 A4000 J900000 F2000
+```
+
+---
+
+## M61 - Set Axis 5 Parameters
+
+#### Descriptions
+
+Config axis 5 parameters.
+
+#### Usage
+
+```
+M61 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>] 
+    [P<val>] [Q<val>] [H<val>] A[<val>] [J<val>] [F<val>]
+```
+
+#### Parameter
+
+* `D[val]` : enable axis 5
+    * `val = 1` : enable
+    * `val = 0` : disable
+* `E[val]` : enable endstop
+    * `val = 1` : enable axis 5 endstop
+    * `val = 0` : disable axis 5 endstop
+* `I[val]` : set invert endstop logic level
+    * `val = 1` : axis 5 endstop invert
+    * `val = 0` : axis 5 endstop non-invert
+* `S[val]` : (unit/s) homing speed
+* `R[val]` : (unit/s) homing revert speed
+* `U[val]` : (step/unit) set step/unit parameter
+* `P[val]` : (unit) set max position
+* `Q[val]` : (unit) set min position
+* `H[val]` : (unit) set home position
+* `A[val]` : (unit) set max acceleration
+* `J[val]` : (unit) set max jerk
+* `F[val]` : (unit) set max velocity
+
+#### Example
+
+```
+M61 D1 E1 I0 S15 R5 U8.333 P178 Q0 H45 A4000 J900000 F2000
+```
+
+---
+
+## M62 - Set Axis 6 Parameters
+
+#### Descriptions
+
+Config axis 6 parameters.
+
+#### Usage
+
+```
+M62 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>] 
+    [P<val>] [Q<val>] [H<val>] A[<val>] [J<val>] [F<val>]
+```
+
+#### Parameter
+
+* `D[val]` : enable axis 6
+    * `val = 1` : enable
+    * `val = 0` : disable
+* `E[val]` : enable endstop
+    * `val = 1` : enable axis 6 endstop
+    * `val = 0` : disable axis 6 endstop
+* `I[val]` : set invert endstop logic level
+    * `val = 1` : axis 6 endstop invert
+    * `val = 0` : axis 6 endstop non-invert
+* `S[val]` : (unit/s) homing speed
+* `R[val]` : (unit/s) homing revert speed
+* `U[val]` : (step/unit) set step/unit parameter
+* `P[val]` : (unit) set max position
+* `Q[val]` : (unit) set min position
+* `H[val]` : (unit) set home position
+* `A[val]` : (unit) set max acceleration
+* `J[val]` : (unit) set max jerk
+* `F[val]` : (unit) set max velocity
+
+#### Example
+
+```
+M62 D1 E1 I0 S15 R5 U8.333 P178 Q0 H45 A4000 J900000 F2000
 ```
 
 ---
@@ -613,25 +823,78 @@ M84
 
 ---
 
-## M203 - Set Max Feedrate
+## M100 - Set Auto Feedback Position
 
 #### Descriptions
 
-Set movement max feedrate.
+Auto feedback positon in a period of time by the specified port.
 
 #### Usage
 
 ```
-M203 [S<value>]
+M100 A<ena> B<time> C<port>
+```
+
+#### Parameter
+
+* `A[ena]` Enable/Disable auto feedback position
+    * `ena = 1` : enable
+    * `ena = 0` : disable
+* `B[time]` : (miliseconds) period to send feedback
+* `C[port]` : set feedback port
+    * `port = 0` : USB
+    * `port = 1` : RS232
+    * `port = 2` : RS485
+    * `port = 3` : TTL
+    * `port = 4` : RJ45
+
+#### Example
+
+```
+M100 A0 B200 C1   ;set USB port feedback position at cycle 200 ms
+```
+
+---
+
+<!-- ## M200 - Set Early Feedback Time
+
+#### Descriptions
+
+Always have a delay time during send "Ok" feedback after execute gcode until the controller response. If you need the robot run as fast as possible and smoother, you may need the robot response "Ok" before it finish segment. It's call early time feedback.
+
+#### Usage
+
+```
+M200 
+```
+
+--- -->
+
+## M203 - Set Jerk
+
+#### Descriptions
+
+Set movement jerk of end effector.
+
+#### Usage
+
+```
+M203 [J<value>]
 ```
 
 #### Parameters
 
-* `S[value]`: (mm/s) max feedrate.
+* `J[value]`: (mm/s^3) jerk.
+
+#### Example
+
+```
+M203 J1200000     ;set jerk = 1.200.000 mm/s^3
+```
 
 ---
 
-## M204 - Set Max Feedrate
+## M204 - Set Max Acceleration
 
 #### Descriptions
 
@@ -646,6 +909,36 @@ M204 [A<value>]
 #### Parameters
 
 * `A[value]`: (mm/s2) end effector acceleration.
+
+#### Example
+
+```
+M204 A15000    ;set accel = 15000 mm/s^2
+```
+
+---
+
+## M205 - Set Max Feedrate
+
+#### Descriptions
+
+Set max movement feedrate. 
+
+#### Usage
+
+```
+M205 [S<value>]
+```
+
+#### Parameters
+
+* `S[value]`: (mm/s2) end effector acceleration.
+
+#### Example
+
+```
+M205 S2500    ;set end effector speed = 2500 mm/s
+```
 
 ---
 
@@ -674,6 +967,148 @@ M206 [X<value>] [Y<value>] [Z<value>] [W<value>] [U<value>] [V<value>]
 
 ```
 M206 X20 Y-10 Z30  ;Set home offsets
+```
+
+---
+
+## M210 - Set Theta Movement Parameter
+
+#### Descriptions
+
+Config theta movement para like speed, accel, jerk, start velocity and end velocity.
+
+#### Usage
+
+```
+M210 [F<value>] [A<value>] [J<value>] [S<value>] [E<value>]
+```
+
+#### Parameters
+
+* `F[value]`: (unit/s) speed.
+* `A[value]`: (unit/s^2) accel.
+* `J[value]`: (unit/s^3) jerk.
+* `S[value]`: (unit/s) start velocity.
+* `E[value]`: (unit/s) end velocity.
+
+#### Example
+
+```
+M210 F2000 A4000 J800000 S30 E30  ;set all theta movement para
+```
+
+---
+
+## M211 - Set Axis 4 Movement Parameter
+
+#### Descriptions
+
+Config axis 4 movement para like speed, accel, jerk, start velocity and end velocity.
+
+#### Usage
+
+```
+M211 [F<value>] [A<value>] [J<value>] [S<value>] [E<value>]
+```
+
+#### Parameters
+
+* `F[value]`: (unit/s) axis 4 speed.
+* `A[value]`: (unit/s^2) axis 4 accel.
+* `J[value]`: (unit/s^3) axis 4 jerk.
+* `S[value]`: (unit/s) start velocity.
+* `E[value]`: (unit/s) end velocity.
+
+#### Example
+
+```
+M211 F2000 A4000 J800000 S30 E30  ;config axis 4 move para
+```
+
+---
+
+## M212 - Set Axis 5 Movement Parameter
+
+#### Descriptions
+
+Config axis 5 movement para like speed, accel, jerk, start velocity and end velocity.
+
+#### Usage
+
+```
+M212 [F<value>] [A<value>] [J<value>] [S<value>] [E<value>]
+```
+
+#### Parameters
+
+* `F[value]`: (unit/s) axis 5 speed.
+* `A[value]`: (unit/s^2) axis 5 accel.
+* `J[value]`: (unit/s^3) axis 5 jerk.
+* `S[value]`: (unit/s) start velocity.
+* `E[value]`: (unit/s) end velocity.
+
+#### Example
+
+```
+M212 F2000 A4000 J800000 S30 E30  ;config axis 5 move para
+```
+
+---
+
+## M213 - Set Axis 6 Movement Parameter
+
+#### Descriptions
+
+Config axis 6 movement para like speed, accel, jerk, start velocity and end velocity.
+
+#### Usage
+
+```
+M213 [F<value>] [A<value>] [J<value>] [S<value>] [E<value>]
+```
+
+#### Parameters
+
+* `F[value]`: (unit/s) axis 6 speed.
+* `A[value]`: (unit/s^2) axis 6 accel.
+* `J[value]`: (unit/s^3) axis 6 jerk.
+* `S[value]`: (unit/s) start velocity.
+* `E[value]`: (unit/s) end velocity.
+
+#### Example
+
+```
+M213 F2000 A4000 J800000 S30 E30  ;config axis 6 move para
+```
+
+---
+
+## M220 - Get Current Axis Parameter
+
+#### Descriptions
+
+This command can be used to check current movement parameter of all axis.
+
+#### Usage
+
+```
+M220 I<val>
+```
+
+#### Parameter
+
+* `I[val]` : axis index
+    * `val = 0` : get theta parameter
+    * `val = 1` : get axis 4 parameter
+    * `val = 2` : get axis 5 parameter
+    * `val = 3` : get axis 6 parameter
+
+#### Example
+
+```
+M220 I1   ;get axis 4 movement para
+
+>>>F:2000 A:4000 J:800000 S:30 E:30
 ```
 
 ---
@@ -737,3 +1172,39 @@ M502    ;reset
 ```
 
 ---
+
+## M600 - Enable Emergency Stop Button
+
+#### Descriptions
+
+This command is used to enable EMERGENCY STOP BUTTON.
+
+#### Usage
+
+```
+M600 A8 B9
+```
+
+#### Example
+
+```
+M600 A8 B9    ;enable E_STOP button
+```
+
+## M601 - Disable Emergency Stop Button
+
+#### Descriptions
+
+Disable E_STOP button.
+
+#### Usage
+
+```
+M601
+```
+
+#### Example
+
+```
+M601       ;disable E_STOP button
+```

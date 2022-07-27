@@ -31,14 +31,14 @@ nav:
                 - D400: reference\specifications\delta_xs_v5\sp_v5_d400.md
                 - D600: reference\specifications\delta_xs_v5\sp_v5_d600.md
                 - D800: reference\specifications\delta_xs_v5\sp_v5_d800.md
-# theme:
-#     name: null
-#     custom_dir: 'cinder'
+theme:
+    name: null
+    custom_dir: 'cinder'
 #     highlightjs: true
 #     hljs_languages:
 #         - yaml
 #         - rust
 # theme:
 #   name: ponylang
-theme: 
-    name: readthedocs
+# theme: 
+#     name: cluster
