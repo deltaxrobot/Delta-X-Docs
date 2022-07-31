@@ -97,5 +97,3 @@ M313 [<value>]
 ```
 M313 300    ;move to position 123
 ```
-
----

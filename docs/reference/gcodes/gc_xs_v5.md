@@ -1,4 +1,4 @@
-# G-CODES FOR DELTA XS V4 
+# G-CODES FOR DELTA XS V5
 
 ## G0, G1 - Linear Movement
 
@@ -49,7 +49,7 @@ G01 X100 Y50 Z-400 W90 U45 F200 ;X=100 mm, Y=50 mm, Z=-400 mm, W=90°, U=45°, F
 
 ```
 G02 [I<offset>] [J<offset>] [X<pos>] [Y<pos>] [W<angle>] [U<angle>] [V<angle>]
-    [F<val>] [A<val>] [J<val>] [S<val>] [E<val>]
+    [F<val>] [A<val>] [S<val>] [E<val>]
 ```
 
 #### Parameters
@@ -60,7 +60,6 @@ G02 [I<offset>] [J<offset>] [X<pos>] [Y<pos>] [W<angle>] [U<angle>] [V<angle>]
 * `Y[pos]`:(mm) A coordinate on the Y-axis.
 * `F[val]`:(mm/s) The maximum movement rate of the move between the start and endpoint. The feedrate set here applies to subsequent moves that omit this parameter.
 * `A[val]`:(mm/s2) Acceleration of the motion.
-* `J[val]`:(mm/s3) Jerk of the motion.
 * `S[val]`:(mm/s) Begin velocity.
 * `E[val]`:(mm/s) Finish velocity.
 

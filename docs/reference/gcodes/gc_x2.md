@@ -1,4 +1,4 @@
-# Gcodes for Delta X 1
+# Gcodes for Delta X 2
 
 ## G00, G01 - Linear Move
 
@@ -642,4 +642,3 @@ M502
 M502    ;reset
 ```
 
----

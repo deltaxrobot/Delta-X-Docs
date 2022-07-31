@@ -6,6 +6,10 @@ markdown_extensions:
         permalink: True
     - sane_lists
     - admonition
+    - smarty
+
+repo_name: Github
+repo_url: https://github.com/VanThanBK/deltax-mkdocs
 nav:
     - Home: index.md
     - About: index.md
@@ -31,14 +35,20 @@ nav:
                 - D400: reference\specifications\delta_xs_v5\sp_v5_d400.md
                 - D600: reference\specifications\delta_xs_v5\sp_v5_d600.md
                 - D800: reference\specifications\delta_xs_v5\sp_v5_d800.md
+# theme_dir: 'readthedocshm'
 theme:
     name: null
-    custom_dir: 'cinder'
+    custom_dir: 'readthedocshm'
+    analytics: null
+    navigation_depth: 4
 #     highlightjs: true
 #     hljs_languages:
 #         - yaml
 #         - rust
 # theme:
-#   name: ponylang
-# theme: 
-#     name: cluster
+#   name: ponylan
+        # - cinder\css\extra.css
+        # - cinder\css\base.css
+        # - cinder\css\base.min.css
+        # - cinder\css\bootstrap-custom.css
+        # - cinder\css\bootstrap-custom.min.css
