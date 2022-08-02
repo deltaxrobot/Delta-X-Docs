@@ -1,4 +1,4 @@
-# Delta X1 Specifications
+# Delta X 1 Specifications
 
 ![deltax1](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/deltax1.png)
 
@@ -17,7 +17,7 @@
 
 ## Electrical Parameters
 
-|Parameters                   | Specifications      |
+|Components                   | Specifications      |
 |-----------------------------|---------------------|
 |Controller Board             |Arduino Mega 2560, RAMPS 1.4|
 |Communication                |USB, UART, Bluetooth, Wifi  |
@@ -40,6 +40,6 @@
 ### Reach
 ![x1_working_space_reach](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/x1_workingspace.png)
 
-### Diameter
+### Safe Working Area
 
 ![x1_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/x1_workingspace_dia.png)

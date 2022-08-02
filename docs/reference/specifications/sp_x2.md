@@ -1,4 +1,4 @@
-# Delta X V2 Specifications
+# Delta X 2 Specifications
 
 ![deltax2](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/deltax2.png)
 
@@ -20,9 +20,9 @@
 
 ## Electrical Parameters
 
-|Parameters                   | Specifications      |
+|Components                   | Specifications      |
 |-----------------------------|---------------------|
-|Controller Board             |Delta X2 Board (ARM Cortex-M3|
+|Controller Board             |Delta X 2 Board (ARM Cortex-M3|
 |Communication                |USB, UART, Bluetooth, Wifi   |
 |Input                        |1 analog input(temp sensor)  |
 |Output                       |Stepper/Laser/Vacuum/Axis-4/Gripper)|
@@ -54,6 +54,6 @@
 
 ---
 
-## Moving Base Dimension
+## Moving Base Dimensions
 
 ![x2_moving_base](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/x2_moving_base.png)

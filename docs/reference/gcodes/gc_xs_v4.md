@@ -1,4 +1,4 @@
-# G-CODES FOR DELTA XS V4 
+# G-CODES FOR DELTA X S V4 
 
 ## G0, G1 - Linear Movement
 
