@@ -9,7 +9,7 @@ markdown_extensions:
     - smarty
 
 repo_name: Github
-repo_url: https://github.com/VanThanBK/deltax-mkdocs
+repo_url: https://github.com/deltaxrobot/Delta-X-Docs
 nav:
     - Home: index.md
     - About: index.md

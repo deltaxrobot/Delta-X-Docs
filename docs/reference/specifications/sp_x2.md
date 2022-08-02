@@ -1,6 +1,6 @@
 # Delta X V2 Specifications
 
-![deltax2](https://raw.githubusercontent.com/VanThanBK/deltax-mkdocs/master/docs/images/deltax2.png)
+![deltax2](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/deltax2.png)
 
 ## Basic Parameters
 
@@ -46,14 +46,14 @@
 
 ### Working Space
 
-![x2_working_space_reach](https://raw.githubusercontent.com/VanThanBK/deltax-mkdocs/master/docs/images/x2_workingspace.png)
+![x2_working_space_reach](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/x2_workingspace.png)
 
 ### Safe Working Area
 
-![x2_working_space_dia](https://raw.githubusercontent.com/VanThanBK/deltax-mkdocs/master/docs/images/x2_workingspace_dia.png)
+![x2_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/x2_workingspace_dia.png)
 
 ---
 
 ## Moving Base Dimension
 
-![x2_moving_base](https://raw.githubusercontent.com/VanThanBK/deltax-mkdocs/master/docs/images/x2_moving_base.png)
+![x2_moving_base](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/x2_moving_base.png)
