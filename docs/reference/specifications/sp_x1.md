@@ -1,6 +1,6 @@
 # Delta X1 Specifications
 
-![deltax1](\images\deltax1.png)
+![deltax1](https://raw.githubusercontent.com/VanThanBK/deltax-mkdocs/master/docs/images/deltax1.png)
 
 ## Basic Parameters
 
@@ -38,8 +38,8 @@
 
 <!-- [![Foo](http://www.google.com.au/images/nav_logo7.png)](http://google.com.au/) -->
 ### Reach
-![x1_working_space_reach](\images\x1_workingspace.png)
+![x1_working_space_reach](https://raw.githubusercontent.com/VanThanBK/deltax-mkdocs/master/docs/images/x1_workingspace.png)
 
 ### Diameter
 
-![x1_working_space_dia](\images\x1_workingspace_dia.png)
+![x1_working_space_dia](https://raw.githubusercontent.com/VanThanBK/deltax-mkdocs/master/docs/images/x1_workingspace_dia.png)
