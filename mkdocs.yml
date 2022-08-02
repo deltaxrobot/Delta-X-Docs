@@ -35,7 +35,7 @@ nav:
                 - D400: reference\specifications\delta_xs_v5\sp_v5_d400.md
                 - D600: reference\specifications\delta_xs_v5\sp_v5_d600.md
                 - D800: reference\specifications\delta_xs_v5\sp_v5_d800.md
-# theme_dir: 'readthedocshm'
+    - Tutorials: tutorials\tutorials_list.md
 theme:
     name: null
     custom_dir: 'readthedocshm'
