@@ -42,17 +42,15 @@
 
 ---
 
-## Working Space
+## Robot Dimensions
 
-<!-- [![Foo](http://www.google.com.au/images/nav_logo7.png)](http://google.com.au/) -->
+### Working Space
 
-!!! note "Reach"
+![x2_working_space_reach](\images\x2_workingspace.png)
 
-    ![x2_working_space_reach](\images\x2_workingspace.png)
+### Safe Working Area
 
-!!! note "Diameter"
-
-    ![x2_working_space_dia](\images\x2_workingspace_dia.png)
+![x2_working_space_dia](\images\x2_workingspace_dia.png)
 
 ---
 
