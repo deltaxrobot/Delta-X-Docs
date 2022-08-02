@@ -1,0 +1,1171 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../../../img/favicon.ico" />
+    <title>Delta X2 - Delta X Robot</title>
+    <link rel="stylesheet" href="../../../css/theme.css" />
+    <link rel="stylesheet" href="../../../css/theme_extra.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Delta X2";
+        var mkdocs_page_input_path = "reference\\gcodes\\gc_x2.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <script src="../../../js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]--> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="../../.." class="icon icon-home"> Delta X Robot
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../../..">About</a>
+                </li>
+              </ul>
+              <p class="caption"><span class="caption-text">Reference</span></p>
+              <ul class="current">
+                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Gcode</a>
+    <ul class="current">
+                <li class="toctree-l2 current"><a class="reference internal current" href="#">Robot</a>
+    <ul class="current">
+                <li class="toctree-l3"><a class="reference internal" href="../gc_x1/">Delta X1</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#g00-g01-linear-move">G00, G01 - Linear Move</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#g02-g03-arc-or-circle-move">G02, G03 - Arc or Circle Move</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#g04-dwelldelay">G04 - Dwell/Delay</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#g05-bezier-cubic-spline">G05 - Bézier cubic spline</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#g06-theta-angle-control">G06 - Theta angle control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#g28-homing">G28 - Homing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#g90-absolute-movement-mode">G90 - Absolute Movement Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#g91-relative-movement-mode">G91 - Relative Movement Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m03-m04-ouput-on-laser-on-vacuum-on-gripper-close">M03, M04 - Ouput On / Laser On / Vacuum On / Gripper Close</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m05-ouput-off-laser-off-vacuum-off-gripper-open">M05 - Ouput Off / Laser Off / Vacuum Off / Gripper Open</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m84-disable-steppers">M84 - Disable Steppers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m104-set-hotend-temperature">M104 - Set Hotend Temperature</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m109-wait-for-hotend-temperature">M109 - Wait For Hotend Temperature</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m203-set-max-feedrate">M203 - Set Max Feedrate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m204-set-max-feedrate">M204 - Set Max Feedrate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m206-set-z-offset">M206 - Set Z Offset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m360-select-end-effector">M360 - Select End Effector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m361-set-interpolated-line-length">M361 - Set Interpolated line length</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m362-set-arc-segment-length">M362 - Set Arc segment length</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m500-save-settings">M500 - Save Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m501-restore-settings">M501 - Restore Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m502-reset-settings">M502 - Reset Settings</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3 current"><a class="reference internal current" href="./">Delta X2</a>
+    <ul class="current">
+    <li class="toctree-l4"><a class="reference internal" href="#g00-g01-linear-move">G00, G01 - Linear Move</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#g02-g03-arc-or-circle-move">G02, G03 - Arc or Circle Move</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#g04-dwelldelay">G04 - Dwell/Delay</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#g05-bezier-cubic-spline">G05 - Bézier cubic spline</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#g06-theta-angle-control">G06 - Theta angle control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#g28-homing">G28 - Homing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#g90-absolute-movement-mode">G90 - Absolute Movement Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#g91-relative-movement-mode">G91 - Relative Movement Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#g93-get-current-position">G93 - Get Current Position</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m03-m04-ouput-on-laser-on-vacuum-on-gripper-close">M03, M04 - Ouput On / Laser On / Vacuum On / Gripper Close</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m05-ouput-off-laser-off-vacuum-off-gripper-open">M05 - Ouput Off / Laser Off / Vacuum Off / Gripper Open</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m84-disable-steppers">M84 - Disable Steppers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m104-set-hotend-temperature">M104 - Set Hotend Temperature</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m105-report-temperature">M105 - Report Temperature</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m109-wait-for-hotend-temperature">M109 - Wait For Hotend Temperature</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m203-set-max-feedrate">M203 - Set Max Feedrate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m204-set-max-feedrate">M204 - Set Max Feedrate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m205-set-beginend-velocity">M205 - Set Begin/End Velocity</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m206-set-axis-offset">M206 - Set Axis Offset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m331-select-end-effector">M331 - Select End Effector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m360-select-end-effector">M360 - Select End Effector</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m361-set-interpolated-line-length">M361 - Set Interpolated line length</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m362-set-arc-segment-length">M362 - Set Arc segment length</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m402-set-z-max-position">M402 - Set Z Max Position</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m500-save-settings">M500 - Save Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m501-restore-settings">M501 - Restore Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#m502-reset-settings">M502 - Reset Settings</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../gc_xs_v4/">Delta XS V4</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#g0-g1-linear-movement">G0, G1 - Linear Movement</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#g2-g3-controlled-arc-movement">G2, G3 - Controlled Arc Movement</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#g4-dwelldelay">G4 - Dwell/Delay</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#g6-theta-angle-control">G6 - Theta angle control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#g28-homing">G28 - Homing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#g90-absolute-movement-mode">G90 - Absolute Movement Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#g91-relative-movement-mode">G91 - Relative Movement Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#g93-get-current-position">G93 - Get Current Position</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m03-m04-turn-ouput-on-set-pwm">M03, M04 - Turn Ouput On / Set PWM</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m05-ouput-off-turn-off-pwm">M05 - Ouput Off / Turn Off PWM</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m07-read-input-signals">M07 - Read Input Signals.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m08-read-input-signals-automatically">M08 - Read Input Signals Automatically.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m40-open-rs232-port">M40 - Open RS232 port.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m41-open-rs485-port">M41 - Open RS485 port</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m42-open-ttl-port">M42 - Open TTL port.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m49-get-ports-config">M49 - Get Ports Config</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m50-enable-rj45">M50 - Enable RJ45</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m51-set-ethernet-port">M51 - Set Ethernet Port</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m52-set-mac-device">M52 - Set MAC Device</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m53-set-ethernet-ip">M53 - Set Ethernet IP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m54-set-ethernet-dns">M54 - Set Ethernet DNS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m55-set-ethernet-gateway">M55 - Set Ethernet Gateway</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m56-set-ethernet-subnet">M56 - Set Ethernet Subnet</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m57-get-robot-ip">M57 - Get Robot IP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m60-set-axis-4-parameters">M60 - Set Axis 4 Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m61-set-axis-5-parameters">M61 - Set Axis 5 Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m62-set-axis-6-parameters">M62 - Set Axis 6 Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m84-disable-steppers">M84 - Disable Steppers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m100-set-auto-feedback-position">M100 - Set Auto Feedback Position</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m203-set-jerk">M203 - Set Jerk</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m204-set-max-acceleration">M204 - Set Max Acceleration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m205-set-max-feedrate">M205 - Set Max Feedrate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m206-set-axis-offset">M206 - Set Axis Offset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m210-set-theta-movement-parameter">M210 - Set Theta Movement Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m211-set-axis-4-movement-parameter">M211 - Set Axis 4 Movement Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m212-set-axis-5-movement-parameter">M212 - Set Axis 5 Movement Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m213-set-axis-6-movement-parameter">M213 - Set Axis 6 Movement Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m220-get-current-axis-parameter">M220 - Get Current Axis Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m500-save-settings">M500 - Save Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m501-restore-settings">M501 - Restore Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m502-reset-settings">M502 - Reset Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m600-enable-emergency-stop-button">M600 - Enable Emergency Stop Button</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v4/#m601-disable-emergency-stop-button">M601 - Disable Emergency Stop Button</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../gc_xs_v5/">Delta XS V5</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#g0-g1-linear-movement">G0, G1 - Linear Movement</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#g2-g3-controlled-arc-movement">G2, G3 - Controlled Arc Movement</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#g4-dwelldelay">G4 - Dwell/Delay</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#g6-theta-angle-control">G6 - Theta angle control</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#g28-homing">G28 - Homing</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#g90-absolute-movement-mode">G90 - Absolute Movement Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#g91-relative-movement-mode">G91 - Relative Movement Mode</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#g93-get-current-position">G93 - Get Current Position</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m03-m04-turn-ouput-on-set-pwm">M03, M04 - Turn Ouput On / Set PWM</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m05-ouput-off-turn-off-pwm">M05 - Ouput Off / Turn Off PWM</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m07-read-input-signals">M07 - Read Input Signals.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m08-read-input-signals-automatically">M08 - Read Input Signals Automatically.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m40-open-rs232-port">M40 - Open RS232 port.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m41-open-rs485-port">M41 - Open RS485 port</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m42-open-usb1-port">M42 - Open USB1 port.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m49-get-ports-config">M49 - Get Ports Config</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m50-enable-rj45">M50 - Enable RJ45</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m51-set-ethernet-port">M51 - Set Ethernet Port</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m52-set-mac-device">M52 - Set MAC Device</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m53-set-ethernet-ip">M53 - Set Ethernet IP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m54-set-ethernet-dns">M54 - Set Ethernet DNS</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m55-set-ethernet-gateway">M55 - Set Ethernet Gateway</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m56-set-ethernet-subnet">M56 - Set Ethernet Subnet</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m57-get-robot-ip">M57 - Get Robot IP</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m60-set-axis-4-parameters">M60 - Set Axis 4 Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m61-set-axis-5-parameters">M61 - Set Axis 5 Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m62-set-axis-6-parameters">M62 - Set Axis 6 Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m84-disable-steppers">M84 - Disable Steppers</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m100-set-auto-feedback-position">M100 - Set Auto Feedback Position</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m203-set-jerk">M203 - Set Jerk</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m204-set-max-acceleration">M204 - Set Max Acceleration</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m205-set-max-feedrate">M205 - Set Max Feedrate</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m206-set-axis-offset">M206 - Set Axis Offset</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m210-set-theta-movement-parameter">M210 - Set Theta Movement Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m211-set-axis-4-movement-parameter">M211 - Set Axis 4 Movement Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m212-set-axis-5-movement-parameter">M212 - Set Axis 5 Movement Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m213-set-axis-6-movement-parameter">M213 - Set Axis 6 Movement Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m220-get-current-axis-parameter">M220 - Get Current Axis Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m500-save-settings">M500 - Save Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m501-restore-settings">M501 - Restore Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m502-reset-settings">M502 - Reset Settings</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m600-enable-emergency-stop-button">M600 - Enable Emergency Stop Button</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m601-disable-emergency-stop-button">M601 - Disable Emergency Stop Button</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gc_conveyor/">Conveyor</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_conveyor/#m310-set-motion-mode">M310 - Set Motion Mode</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#decription">Decription</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#usage">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#parameter">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_conveyor/#m311-set-speed-in-serial-mode">M311 - Set Speed In Serial Mode</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#decription_1">Decription</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#usage_1">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#parameter_1">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_1">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_conveyor/#m312-set-position">M312 - Set Position</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#decription_2">Decription</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#usage_2">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#parameter_2">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_2">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_conveyor/#m313-set-speed-in-position-move">M313 - Set Speed In Position Move</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#decription_3">Decription</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#usage_3">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#parameter_3">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_3">Example</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gc_slider/">Slider</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_slider/#m320-homing">M320 - Homing</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#description">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#usage">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#example">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_slider/#m321-set-moving-speed">M321 - Set Moving Speed</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#description_1">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#usage_1">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#parameter">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#example_1">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_slider/#m322-set-desired-position">M322 - Set Desired Position</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#description_2">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#usage_2">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#parameter_1">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#example_2">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_slider/#m323-disable-stepper-motor">M323 - Disable Stepper Motor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#description_3">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#usage_3">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#example_3">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_slider/#m324-set-acceleration">M324 - Set Acceleration</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#description_4">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#usage_4">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#parameters">Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_slider/#example_4">Example</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../gc_encoder/">Xecoder</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_encoder/#m316-select-response-mode">M316 - Select Response Mode</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#description">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#usage">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#parameter">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#example">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_encoder/#m317-get-current-position">M317 - Get Current Position</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#description_1">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#usage_1">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#parameter_1">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#example_1">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_encoder/#m318-set-pulsemm-value">M318 - Set Pulse/MM value</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#description_2">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#usage_2">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#parameter_2">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#example_2">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_encoder/#m319-read-proximity-sensor">M319 - Read Proximity Sensor</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#description_3">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#usage_3">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#parameter_3">Parameter</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="../../macro_programming/macro_programming/">Macro Programing</a>
+    <ul>
+    <li class="toctree-l2"><a class="reference internal" href="../../macro_programming/macro_programming/#goto-jumping-ahead-in-g-code">GOTO - Jumping Ahead in G-CODE</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#description">Description</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../macro_programming/macro_programming/#example">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../macro_programming/macro_programming/#conditional-expresssions">Conditional Expresssions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#example_1">Example:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../macro_programming/macro_programming/#math-methods">Math Methods</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../macro_programming/macro_programming/#if-conditional-branching">If conditional Branching</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#usage">Usage</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../macro_programming/macro_programming/#example_2">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../macro_programming/macro_programming/#variables">Variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#description_1">Description</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#usage_1">Usage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../macro_programming/macro_programming/#subprograms">Subprograms</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#define-a-subprogram">Define a Subprogram</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#call-the-subprogram">Call the subprogram</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../macro_programming/macro_programming/#example_3">Example</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../macro_programming/macro_programming/#execute-another-g-code-file">Execute another G-code file</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="../../macro_programming/macro_programming/#function">Function</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#object-detecting-functions">Object Detecting Functions</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/macro_programming/#communicate">Communicate</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                  </li>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Specifications</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="../../specifications/sp_x1/">Delta X1</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x1/#basic-parameters">Basic Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x1/#electrical-parameters">Electrical Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x1/#mechanical-materials">Mechanical materials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x1/#working-space">Working Space</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/sp_x1/#reach">Reach</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/sp_x1/#diameter">Diameter</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="../../specifications/sp_x2/">Delta X2</a>
+    <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x2/#basic-parameters">Basic Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x2/#electrical-parameters">Electrical Parameters</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x2/#mechanical-materials">Mechanical materials</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x2/#robot-dimensions">Robot Dimensions</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/sp_x2/#working-space">Working Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/sp_x2/#safe-working-area">Safe Working Area</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="../../specifications/sp_x2/#moving-base-dimension">Moving Base Dimension</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Delta XS V4</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d400/">D400</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d400/#basic-parameters">Basic Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d400/#electrical-parameters">Electrical Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d400/#mechanical-materials">Mechanical materials</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d400/#working-space">Working Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d400/#moving-base-dimension">Moving Base Dimension</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d600/">D600</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d600/#basic-parameters">Basic Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d600/#electrical-parameters">Electrical Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d600/#mechanical-materials">Mechanical materials</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d600/#working-space">Working Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d600/#moving-base-dimension">Moving Base Dimension</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d800/">D800</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d800/#basic-parameters">Basic Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d800/#electrical-parameters">Electrical Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d800/#mechanical-materials">Mechanical materials</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d800/#working-space">Working Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v4/sp_v4_d800/#moving-base-dimension">Moving Base Dimension</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+                <li class="toctree-l2"><a class="reference internal" href="#">Delta XS V5</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d400/">D400</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d400/#basic-parameters">Basic Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d400/#electrical-parameters">Electrical Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d400/#mechanical-materials">Mechanical materials</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d400/#working-space">Working Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d400/#moving-base-dimension">Moving Base Dimension</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d600/">D600</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d600/#basic-parameters">Basic Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d600/#electrical-parameters">Electrical Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d600/#mechanical-materials">Mechanical materials</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d600/#working-space">Working Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d600/#moving-base-dimension">Moving Base Dimension</a>
+    </li>
+    </ul>
+                </li>
+                <li class="toctree-l3"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d800/">D800</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d800/#basic-parameters">Basic Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d800/#electrical-parameters">Electrical Parameters</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d800/#mechanical-materials">Mechanical materials</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d800/#working-space">Working Space</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="../../specifications/delta_xs_v5/sp_v5_d800/#moving-base-dimension">Moving Base Dimension</a>
+    </li>
+    </ul>
+                </li>
+    </ul>
+                </li>
+    </ul>
+                  </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../..">Delta X Robot</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+          <li>Reference &raquo;</li>
+          <li>Gcode &raquo;</li>
+          <li>Robot &raquo;</li>
+      <li>Delta X2</li>
+    <li class="wy-breadcrumbs-aside">
+        <a href="https://github.com/VanThanBK/deltax-mkdocs/edit/master/docs/reference/gcodes/gc_x2.md"
+          class="icon icon-github"> Edit on Github</a>
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="gcodes-for-delta-x-2">Gcodes for Delta X 2<a class="headerlink" href="#gcodes-for-delta-x-2" title="Permanent link">&para;</a></h1>
+<h2 id="g00-g01-linear-move">G00, G01 - Linear Move<a class="headerlink" href="#g00-g01-linear-move" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions">Descriptions<a class="headerlink" href="#descriptions" title="Permanent link">&para;</a></h3>
+<p>The <strong>G0</strong> and <strong>G1</strong> commands add a <strong>LINEAR MOVE</strong> to the queue to be performed after all previous moves are completed. A command like <strong>G1 F1000</strong> sets the feed rate for all subsequent moves.</p>
+<h3 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h3>
+<pre><code>G00 [F&lt;rate&gt;] [X&lt;pos&gt;] [Y&lt;pos&gt;] [Z&lt;pos&gt;] [W&lt;angle&gt;]
+G01 [F&lt;rate&gt;] [X&lt;pos&gt;] [Y&lt;pos&gt;] [Z&lt;pos&gt;] [W&lt;angle&gt;]
+</code></pre>
+<h3 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>F[rate]</code>: (mm/s) The maximum movement rate of the move between the start and endpoint. The feedrate set here applies to subsequent moves that omit this parameter.</li>
+<li><code>X[pos]</code>: (mm) A coordinate on the X-axis.</li>
+<li><code>Y[pos]</code>: (mm) A coordinate on the Y-axis.</li>
+<li><code>Z[pos]</code>: (mm) A coordinate on the Z-axis.</li>
+<li><code>W[angle]</code>: (mm) A coordinate on the 4-axis.</li>
+</ul>
+<h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h3>
+<pre><code>G01 X12                         ;move to 12mm on the X-axis
+G01 F200                        ;set the feedrate to 200 mm/s
+G01 X90.6 Y13.8                 ;move to 90.6mm on the X-axis and 13.8mm on the Y-axis     
+G01 X0 Y0 Z-350                 
+G01 W90                         ;rotate to 90 degree on the 4-axis
+G01 X100 Y50 Z-400 W90 U45 F200 ;X=100 mm, Y=50 mm, Z=-400 mm, W=90°, U=45°, F=200 mm/s
+</code></pre>
+<hr />
+<h2 id="g02-g03-arc-or-circle-move">G02, G03 - Arc or Circle Move<a class="headerlink" href="#g02-g03-arc-or-circle-move" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_1">Descriptions<a class="headerlink" href="#descriptions_1" title="Permanent link">&para;</a></h3>
+<p><strong>G2</strong> adds a <strong>clockwise</strong> arc move to the planner; <strong>G3</strong> adds a <strong>counter-clockwise</strong> arc. An arc move starts at the current position and ends at the given XYZ, pivoting around a center-point offset given by I and J.</p>
+<h3 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h3>
+<pre><code>G2 [F&lt;rate&gt;] [I&lt;offset&gt;] [J&lt;offset&gt;] [X&lt;pos&gt;] [Y&lt;pos&gt;] [W&lt;angle&gt;]
+G3 [F&lt;rate&gt;] [I&lt;offset&gt;] [J&lt;offset&gt;] [X&lt;pos&gt;] [Y&lt;pos&gt;] [W&lt;angle&gt;]
+</code></pre>
+<h3 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>F[rate]</code>: (mm/s) The maximum movement rate of the move between the start and endpoint. The feedrate set here applies to subsequent moves that omit this parameter.</li>
+<li><code>I[offset]</code>:(mm) An offset from the current X position to use as the arc center.</li>
+<li><code>J[offset]</code>:(mm) An offset from the current Y position to use as the arc center.</li>
+<li><code>X[pos]</code>:(mm) A coordinate on the X-axis.</li>
+<li><code>Y[pos]</code>:(mm) A coordinate on the Y-axis.</li>
+<li><code>W[angle]</code>: (mm) A coordinate on the 4-axis.</li>
+</ul>
+<h3 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h3>
+<pre><code>G28
+G01 Z-350
+G01 X50
+G02 X-50 Y0 I-50 J0
+G03 X50 Y0 I50 J0
+</code></pre>
+<hr />
+<h2 id="g04-dwelldelay">G04 - Dwell/Delay<a class="headerlink" href="#g04-dwelldelay" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_2">Descriptions<a class="headerlink" href="#descriptions_2" title="Permanent link">&para;</a></h3>
+<p>Dwell <strong>pauses the command queue</strong> and waits for a period of time.</p>
+<h3 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h3>
+<pre><code>G04 [P&lt;time&gt;]
+</code></pre>
+<h3 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>P[time]: delay time in miliseconds.</li>
+</ul>
+<h3 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h3>
+<pre><code>G01 X0 Y0 Z-350
+G4 P500          ;delay 500ms
+G01 X100
+</code></pre>
+<hr />
+<h2 id="g05-bezier-cubic-spline">G05 - Bézier cubic spline<a class="headerlink" href="#g05-bezier-cubic-spline" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_3">Descriptions<a class="headerlink" href="#descriptions_3" title="Permanent link">&para;</a></h3>
+<p><strong>G5</strong> creates a cubic B-spline in the XY plane with the X and Y axes only. <strong>P</strong> and <strong>Q</strong> parameters are <strong>required</strong>. <strong>I</strong> and <strong>J</strong> are <strong>required</strong> for the <strong>first G5 command in a series</strong>. For subsequent G5 commands, either both <strong>I and J must be specified</strong>, or neither. If I and J are unspecified, the starting direction of the cubic will automatically match the ending direction of the previous cubic (as if I and J are the negation of the previous P and Q).</p>
+<h3 id="usage_3">Usage<a class="headerlink" href="#usage_3" title="Permanent link">&para;</a></h3>
+<pre><code>G5 [F&lt;rate&gt;] I&lt;pos&gt; J&lt;pos&gt; P&lt;pos&gt; Q&lt;pos&gt; X&lt;pos&gt; Y&lt;pos&gt;
+</code></pre>
+<h3 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>F[rate]</code>:(mm/s) The maximum feedrate of the move between the start and end point. This value applies to all subsequent moves.</li>
+<li><code>I[offset]</code>:(mm) Offset from the X start point to first control point.</li>
+<li><code>J[offset]</code>:(mm) Offset from the Y start point to first control point.</li>
+<li><code>P[offset]</code>:(mm) Offset from the X end point to second control point.</li>
+<li><code>Q[offset]</code>:(mm) Offset from the Y end point to the second control point.</li>
+<li><code>X[pos]</code>:(mm) A destination coordinate on the X axis.</li>
+<li><code>Y[pos]</code>:(mm) A destination coordinate on the Y axis.</li>
+</ul>
+<h3 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h3>
+<pre><code>;program a curvy “N” shape
+G0 X0 Y0
+G5 I0 J3 P0 Q-3 X1 Y1
+</code></pre>
+<hr />
+<h2 id="g06-theta-angle-control">G06 - Theta angle control<a class="headerlink" href="#g06-theta-angle-control" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_4">Descriptions<a class="headerlink" href="#descriptions_4" title="Permanent link">&para;</a></h3>
+<p>Directly control movement angle without endpoint coordinates.</p>
+<h3 id="usage_4">Usage<a class="headerlink" href="#usage_4" title="Permanent link">&para;</a></h3>
+<pre><code>G06 [X&lt;angle&gt;] [Y&lt;angle&gt;] [Z&lt;angle&gt;] [P&lt;pos&gt;]
+</code></pre>
+<h3 id="parameters_4">Parameters<a class="headerlink" href="#parameters_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>F[rate]</code>:(mm/s) The maximum movement rate of the move between the start and endpoint. The feedrate set here applies to subsequent moves that omit this parameter.</li>
+<li><code>X[angle]</code>:(degree) The value of the Theta 1 angle.</li>
+<li><code>Y[angle]</code>:(degree) The value of the Theta 2 angle.</li>
+<li><code>Z[angle]</code>:(degree) The value of the Theta 3 angle.</li>
+<li><code>P[pos]</code>:(mm) Distance traveled.</li>
+</ul>
+<h3 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h3>
+<pre><code>G6 X0 Y0 Z0      ;set theta 1, theta 2, theta 3 angle at 0 deg
+</code></pre>
+<hr />
+<h2 id="g28-homing">G28 - Homing<a class="headerlink" href="#g28-homing" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_5">Descriptions<a class="headerlink" href="#descriptions_5" title="Permanent link">&para;</a></h3>
+<p>Auto-home all axes, moving them towards their endstops until triggered.</p>
+<h3 id="usage_5">Usage<a class="headerlink" href="#usage_5" title="Permanent link">&para;</a></h3>
+<pre><code>G28
+</code></pre>
+<hr />
+<h2 id="g90-absolute-movement-mode">G90 - Absolute Movement Mode<a class="headerlink" href="#g90-absolute-movement-mode" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_6">Descriptions<a class="headerlink" href="#descriptions_6" title="Permanent link">&para;</a></h3>
+<p>In absolute mode, all coordinates given in G-code are interpreted as positions in the logical coordinate space.</p>
+<h3 id="usage_6">Usage<a class="headerlink" href="#usage_6" title="Permanent link">&para;</a></h3>
+<pre><code>G90
+</code></pre>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Absolute positioning is the default.</p>
+</div>
+<hr />
+<h2 id="g91-relative-movement-mode">G91 - Relative Movement Mode<a class="headerlink" href="#g91-relative-movement-mode" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_7">Descriptions<a class="headerlink" href="#descriptions_7" title="Permanent link">&para;</a></h3>
+<p>Set relative position mode. In this mode, all coordinates are interpreted as relative to the last position.</p>
+<h3 id="usage_7">Usage<a class="headerlink" href="#usage_7" title="Permanent link">&para;</a></h3>
+<pre><code>G91
+</code></pre>
+<h3 id="example_5">Example<a class="headerlink" href="#example_5" title="Permanent link">&para;</a></h3>
+<pre><code>G91              ; Set all axes to relative
+</code></pre>
+<hr />
+<h2 id="g93-get-current-position">G93 - Get Current Position<a class="headerlink" href="#g93-get-current-position" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_8">Descriptions<a class="headerlink" href="#descriptions_8" title="Permanent link">&para;</a></h3>
+<p>Get current posiition of end effector.</p>
+<h3 id="usage_8">Usage<a class="headerlink" href="#usage_8" title="Permanent link">&para;</a></h3>
+<pre><code>G93
+</code></pre>
+<h3 id="feedback">Feedback<a class="headerlink" href="#feedback" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>&lt;xpos&gt;,&lt;ypos&gt;,&lt;zpos&gt;</code><ul>
+<li><code>&lt;xpos&gt;</code> : Current X position.</li>
+<li><code>&lt;ypos&gt;</code> : Current Y position.</li>
+<li><code>&lt;zpos&gt;</code> : Current Z position.</li>
+</ul>
+</li>
+</ul>
+<h3 id="example_6">Example<a class="headerlink" href="#example_6" title="Permanent link">&para;</a></h3>
+<pre><code>G93              ; get current pos
+
+return:
+31, 43, -270
+</code></pre>
+<hr />
+<h2 id="m03-m04-ouput-on-laser-on-vacuum-on-gripper-close">M03, M04 - Ouput On / Laser On / Vacuum On / Gripper Close<a class="headerlink" href="#m03-m04-ouput-on-laser-on-vacuum-on-gripper-close" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_9">Descriptions<a class="headerlink" href="#descriptions_9" title="Permanent link">&para;</a></h3>
+<p>M03 is used to turn on the vacuum pump, laser, and close the gripper.</p>
+<h3 id="usage_9">Usage<a class="headerlink" href="#usage_9" title="Permanent link">&para;</a></h3>
+<pre><code>M03 [S&lt;value&gt;]
+</code></pre>
+<h3 id="parameters_5">Parameters<a class="headerlink" href="#parameters_5" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>S[value]</code>: Vacuum pump (empty), Spindle speed (0 - 255), laser power (0 - 255), angle of gripper (0-100), if value is emtpy then gripper close.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note:</p>
+<p>M03 will be equivalent to M03 S255.</p>
+</div>
+<h3 id="example_7">Example<a class="headerlink" href="#example_7" title="Permanent link">&para;</a></h3>
+<pre><code>G01 X0 Y0 Z-350
+M03                   ;turn on Vacuum pump
+G01 Z-300
+</code></pre>
+<hr />
+<h2 id="m05-ouput-off-laser-off-vacuum-off-gripper-open">M05 - Ouput Off / Laser Off / Vacuum Off / Gripper Open<a class="headerlink" href="#m05-ouput-off-laser-off-vacuum-off-gripper-open" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_10">Descriptions<a class="headerlink" href="#descriptions_10" title="Permanent link">&para;</a></h3>
+<p>M05 is used to turn off the vacuum pump, laser, or close the gripper.</p>
+<h3 id="usage_10">Usage<a class="headerlink" href="#usage_10" title="Permanent link">&para;</a></h3>
+<pre><code>M05
+</code></pre>
+<hr />
+<h2 id="m84-disable-steppers">M84 - Disable Steppers<a class="headerlink" href="#m84-disable-steppers" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_11">Descriptions<a class="headerlink" href="#descriptions_11" title="Permanent link">&para;</a></h3>
+<p>This command can be used to disable steppers.</p>
+<h3 id="usage_11">Usage<a class="headerlink" href="#usage_11" title="Permanent link">&para;</a></h3>
+<pre><code>M84
+</code></pre>
+<hr />
+<h2 id="m104-set-hotend-temperature">M104 - Set Hotend Temperature<a class="headerlink" href="#m104-set-hotend-temperature" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_12">Descriptions<a class="headerlink" href="#descriptions_12" title="Permanent link">&para;</a></h3>
+<p>Set a new target hot end temperature and continue without waiting. The firmware will continue to try to reach and hold the temperature in the background.</p>
+<h3 id="usage_12">Usage<a class="headerlink" href="#usage_12" title="Permanent link">&para;</a></h3>
+<pre><code>M104 [S&lt;temp&gt;]
+</code></pre>
+<h3 id="parameters_6">Parameters<a class="headerlink" href="#parameters_6" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>S[temp]</code>: (degree Celsius) Target temperature.</li>
+</ul>
+<h3 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h3>
+<pre><code>M104 S195           ;set hotend at 195 degC
+</code></pre>
+<hr />
+<h2 id="m105-report-temperature">M105 - Report Temperature<a class="headerlink" href="#m105-report-temperature" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_13">Descriptions<a class="headerlink" href="#descriptions_13" title="Permanent link">&para;</a></h3>
+<p>Request a temperature report to be sent to the host as soon as possible.</p>
+<h3 id="usage_13">Usage<a class="headerlink" href="#usage_13" title="Permanent link">&para;</a></h3>
+<pre><code>M105
+</code></pre>
+<h3 id="example_9">Example<a class="headerlink" href="#example_9" title="Permanent link">&para;</a></h3>
+<pre><code>M105           ;set hotend at 95 degC
+
+return
+T:195
+</code></pre>
+<hr />
+<h2 id="m109-wait-for-hotend-temperature">M109 - Wait For Hotend Temperature<a class="headerlink" href="#m109-wait-for-hotend-temperature" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_14">Descriptions<a class="headerlink" href="#descriptions_14" title="Permanent link">&para;</a></h3>
+<p>This command optionally sets a new target hot end temperature and waits for the target temperature to be reached before proceeding.</p>
+<h3 id="usage_14">Usage<a class="headerlink" href="#usage_14" title="Permanent link">&para;</a></h3>
+<pre><code>M109 [S&lt;temp&gt;]
+</code></pre>
+<h3 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>S[temp]</code>: (degree Celsius) Target temperature.</li>
+</ul>
+<h3 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h3>
+<pre><code>M109 S180  ;Set target temperature and wait (if heating up)
+</code></pre>
+<hr />
+<h2 id="m203-set-max-feedrate">M203 - Set Max Feedrate<a class="headerlink" href="#m203-set-max-feedrate" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_15">Descriptions<a class="headerlink" href="#descriptions_15" title="Permanent link">&para;</a></h3>
+<p>Set movement max feedrate.</p>
+<h3 id="usage_15">Usage<a class="headerlink" href="#usage_15" title="Permanent link">&para;</a></h3>
+<pre><code>M203 S&lt;value&gt;
+</code></pre>
+<h3 id="parameters_8">Parameters<a class="headerlink" href="#parameters_8" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>S[value]</code>: (mm/s) max feedrate.</li>
+</ul>
+<h3 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h3>
+<pre><code>M203 S500  ;Set max feedrate
+</code></pre>
+<hr />
+<h2 id="m204-set-max-feedrate">M204 - Set Max Feedrate<a class="headerlink" href="#m204-set-max-feedrate" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_16">Descriptions<a class="headerlink" href="#descriptions_16" title="Permanent link">&para;</a></h3>
+<p>Set movement acceleration.</p>
+<h3 id="usage_16">Usage<a class="headerlink" href="#usage_16" title="Permanent link">&para;</a></h3>
+<pre><code>M204 A&lt;value&gt;
+</code></pre>
+<h3 id="parameters_9">Parameters<a class="headerlink" href="#parameters_9" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>A[value]</code>: (mm/s2) end effector acceleration.</li>
+</ul>
+<h3 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h3>
+<pre><code>M204 A5000  ;Set max feedrate
+</code></pre>
+<hr />
+<h2 id="m205-set-beginend-velocity">M205 - Set Begin/End Velocity<a class="headerlink" href="#m205-set-beginend-velocity" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_17">Descriptions<a class="headerlink" href="#descriptions_17" title="Permanent link">&para;</a></h3>
+<p>Set segment begin/end velocity.</p>
+<h3 id="usage_17">Usage<a class="headerlink" href="#usage_17" title="Permanent link">&para;</a></h3>
+<pre><code>M205 S&lt;value&gt;
+</code></pre>
+<h3 id="parameters_10">Parameters<a class="headerlink" href="#parameters_10" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>S[value]</code>: (mm/s2) end effector begin/end velocity.</li>
+</ul>
+<h3 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h3>
+<pre><code>M205 S40  ;Set begin speed at 40 mm/s
+</code></pre>
+<hr />
+<h2 id="m206-set-axis-offset">M206 - Set Axis Offset<a class="headerlink" href="#m206-set-axis-offset" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_18">Descriptions<a class="headerlink" href="#descriptions_18" title="Permanent link">&para;</a></h3>
+<p>Set home offset for one or all axis.</p>
+<h3 id="usage_18">Usage<a class="headerlink" href="#usage_18" title="Permanent link">&para;</a></h3>
+<pre><code>M206 [X&lt;value&gt;] [Y&lt;value&gt;] [Z&lt;value&gt;]
+</code></pre>
+<h3 id="parameters_11">Parameters<a class="headerlink" href="#parameters_11" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>X[value]</code>: (mm) X offset value.</li>
+<li><code>Y[value]</code>: (mm) Y offset value.</li>
+<li><code>Z[value]</code>: (mm) Z offset value.</li>
+</ul>
+<h3 id="example_14">Example<a class="headerlink" href="#example_14" title="Permanent link">&para;</a></h3>
+<pre><code>M206 X20 Y-10 Z30  ;Set home offsets
+</code></pre>
+<hr />
+<h2 id="m331-select-end-effector">M331 - Select End Effector<a class="headerlink" href="#m331-select-end-effector" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_19">Descriptions<a class="headerlink" href="#descriptions_19" title="Permanent link">&para;</a></h3>
+<p>Config device is linked to external UART port.</p>
+<h3 id="usage_19">Usage<a class="headerlink" href="#usage_19" title="Permanent link">&para;</a></h3>
+<pre><code>M331 R&lt;value&gt;
+</code></pre>
+<h3 id="parameters_12">Parameters<a class="headerlink" href="#parameters_12" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>R[value]</code><ul>
+<li>0-None (Disable port).</li>
+<li>1-Conveyor</li>
+<li>2-Sliding Rail</li>
+</ul>
+</li>
+</ul>
+<h3 id="example_15">Example<a class="headerlink" href="#example_15" title="Permanent link">&para;</a></h3>
+<pre><code>M331 R1  ;select the device which connected with external port is Conveyor,
+          now you can control Conveyor via Delta Robot
+</code></pre>
+<hr />
+<h2 id="m360-select-end-effector">M360 - Select End Effector<a class="headerlink" href="#m360-select-end-effector" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_20">Descriptions<a class="headerlink" href="#descriptions_20" title="Permanent link">&para;</a></h3>
+<p>Select the end effector for the robot. You can change the end effector to one of these : Vacuum, gripper, pen, laser, printer or use your custom end effector.</p>
+<h3 id="usage_20">Usage<a class="headerlink" href="#usage_20" title="Permanent link">&para;</a></h3>
+<pre><code>M360 E&lt;value&gt;
+</code></pre>
+<h3 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>E[value]</code><ul>
+<li>0-Vacuum (default).</li>
+<li>1-Gripper</li>
+<li>2-Pen</li>
+<li>3-Laser</li>
+<li>4-Printer</li>
+<li>5-Custom</li>
+</ul>
+</li>
+</ul>
+<h3 id="example_16">Example<a class="headerlink" href="#example_16" title="Permanent link">&para;</a></h3>
+<pre><code>M360 E2  ;select the end effector is Pen
+</code></pre>
+<hr />
+<h2 id="m361-set-interpolated-line-length">M361 - Set Interpolated line length<a class="headerlink" href="#m361-set-interpolated-line-length" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_21">Descriptions<a class="headerlink" href="#descriptions_21" title="Permanent link">&para;</a></h3>
+<p>Set the length of each segment in line interpolation.</p>
+<h3 id="usage_21">Usage<a class="headerlink" href="#usage_21" title="Permanent link">&para;</a></h3>
+<pre><code>M361 P&lt;len&gt;
+</code></pre>
+<h3 id="parameters_14">Parameters<a class="headerlink" href="#parameters_14" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>P[len]</code>: (mm) Length in mm.</li>
+</ul>
+<h3 id="example_17">Example<a class="headerlink" href="#example_17" title="Permanent link">&para;</a></h3>
+<pre><code>M361 P0.3    ;set segment length = 0.3mm 
+</code></pre>
+<hr />
+<h2 id="m362-set-arc-segment-length">M362 - Set Arc segment length<a class="headerlink" href="#m362-set-arc-segment-length" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_22">Descriptions<a class="headerlink" href="#descriptions_22" title="Permanent link">&para;</a></h3>
+<p>Set segment length in arc interpolation.</p>
+<h3 id="usage_22">Usage<a class="headerlink" href="#usage_22" title="Permanent link">&para;</a></h3>
+<pre><code>M362 P&lt;len&gt;
+</code></pre>
+<h3 id="parameters_15">Parameters<a class="headerlink" href="#parameters_15" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>P[len]</code>: (mm) Length in mm.</li>
+</ul>
+<h3 id="example_18">Example<a class="headerlink" href="#example_18" title="Permanent link">&para;</a></h3>
+<pre><code>M362 P0.4    ;set segment length = 0.4mm 
+</code></pre>
+<hr />
+<h2 id="m402-set-z-max-position">M402 - Set Z Max Position<a class="headerlink" href="#m402-set-z-max-position" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_23">Descriptions<a class="headerlink" href="#descriptions_23" title="Permanent link">&para;</a></h3>
+<p>Set the maximum position of Z axis, the end effector can&rsquo;t move upper than this value.</p>
+<h3 id="usage_23">Usage<a class="headerlink" href="#usage_23" title="Permanent link">&para;</a></h3>
+<pre><code>M402 Z&lt;pos&gt;
+</code></pre>
+<h3 id="parameters_16">Parameters<a class="headerlink" href="#parameters_16" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Z[pos]</code>: (mm) max z position in mm.</li>
+</ul>
+<h3 id="example_19">Example<a class="headerlink" href="#example_19" title="Permanent link">&para;</a></h3>
+<pre><code>M402 Z-245   ;After this command, end effector cant get higher than -245 mm.
+</code></pre>
+<hr />
+<h2 id="m500-save-settings">M500 - Save Settings<a class="headerlink" href="#m500-save-settings" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_24">Descriptions<a class="headerlink" href="#descriptions_24" title="Permanent link">&para;</a></h3>
+<p>Save all configurable settings to EEPROM.</p>
+<h3 id="usage_24">Usage<a class="headerlink" href="#usage_24" title="Permanent link">&para;</a></h3>
+<pre><code>M500
+</code></pre>
+<h3 id="example_20">Example<a class="headerlink" href="#example_20" title="Permanent link">&para;</a></h3>
+<pre><code>M500    ;Save settings
+</code></pre>
+<hr />
+<h2 id="m501-restore-settings">M501 - Restore Settings<a class="headerlink" href="#m501-restore-settings" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_25">Descriptions<a class="headerlink" href="#descriptions_25" title="Permanent link">&para;</a></h3>
+<p>Load all saved settings from EEPROM.</p>
+<h3 id="usage_25">Usage<a class="headerlink" href="#usage_25" title="Permanent link">&para;</a></h3>
+<pre><code>M501
+</code></pre>
+<h3 id="example_21">Example<a class="headerlink" href="#example_21" title="Permanent link">&para;</a></h3>
+<pre><code>M501    ;Restore all settings.
+</code></pre>
+<hr />
+<h2 id="m502-reset-settings">M502 - Reset Settings<a class="headerlink" href="#m502-reset-settings" title="Permanent link">&para;</a></h2>
+<h3 id="descriptions_26">Descriptions<a class="headerlink" href="#descriptions_26" title="Permanent link">&para;</a></h3>
+<p>Reset all configurable settings to their factory defaults.</p>
+<h3 id="usage_26">Usage<a class="headerlink" href="#usage_26" title="Permanent link">&para;</a></h3>
+<pre><code>M502
+</code></pre>
+<h3 id="example_22">Example<a class="headerlink" href="#example_22" title="Permanent link">&para;</a></h3>
+<pre><code>M502    ;reset
+</code></pre>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+      <p>Copyright &copy; 2021 <a href="https://deltaxrobot.com">IMWI Technology</a></p>
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../gc_x1/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../gc_xs_v4/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '../../..';</script>
+    <script src="../../../js/theme_extra.js" defer></script>
+    <script src="../../../js/theme.js" defer></script>
+      <script src="../../../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(false);
+        };
+    </script>
+
+</body>
+</html>
