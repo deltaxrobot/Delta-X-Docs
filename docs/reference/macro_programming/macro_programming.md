@@ -8,7 +8,7 @@
 
 #### Example
 
-![Goto](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/GOTO.png)
+![Goto](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/GOTO.png)
 
 This program snippet uses a GOTO which address is *15* to jump over *N10* and go directly to *N15*
 
@@ -97,7 +97,7 @@ For example, we can write “#100 = 0” to assign the value “0” to the vari
 
 ### Usage
 
-![VARIABLES](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/VARIABLES.png)
+![VARIABLES](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/VARIABLES.png)
 
 * **Global Variables**: When a variabel is prefixed with `#GLOBAL_` like `#GLOBAL_IsRunning`, the program of other robots in the project will be able to use that variable.
 * **System Variables**:
@@ -133,7 +133,7 @@ M7 I2
 
 ### Define a Subprogram
 
-![SUBPROGRAM](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/subprogram.png)
+![SUBPROGRAM](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/subprogram.png)
 
 The syntax to start a subprogram with the letter `O` followed by a `number`. This `number` is the **name** of the subprogram.
 
@@ -147,7 +147,7 @@ M98 P<name of the subprogram>
 ```
 #### Example
 
-![CALL SUBPROGRAM](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/subprogram2.png)
+![CALL SUBPROGRAM](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/subprogram2.png)
 
 ---
 

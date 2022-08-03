@@ -1,6 +1,6 @@
 # Delta X 1 Specifications
 
-![deltax1](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/deltax1.png)
+![deltax1](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/deltax1.png)
 
 ## Basic Parameters
 
@@ -36,10 +36,10 @@
 
 ## Working Space
 
-<!-- [![Foo](http://www.google.com.au/images/nav_logo7.png)](http://google.com.au/) -->
+<!-- [![Foo](http://www.google.com.auhttps://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/nav_logo7.png)](http://google.com.au/) -->
 ### Reach
-![x1_working_space_reach](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/x1_workingspace.png)
+![x1_working_space_reach](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace.png)
 
 ### Safe Working Area
 
-![x1_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/gh-pages/images/x1_workingspace_dia.png)
+![x1_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace_dia.png)
