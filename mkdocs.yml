@@ -23,7 +23,9 @@ nav:
             - Conveyor: reference\gcodes\gc_conveyor.md
             - Slider: reference\gcodes\gc_slider.md
             - Xecoder: reference\gcodes\gc_encoder.md
-        - Macro Programing: reference\macro_programming\macro_programming.md
+        - Macro Programing: 
+            - Macro Programming: reference\macro_programming\macro_programming.md
+            - Useful Commands: reference\macro_programming\useful_commands.md
         - Specifications: 
             - Delta X 1: reference\specifications\sp_x1.md
             - Delta X 2: reference\specifications\sp_x2.md

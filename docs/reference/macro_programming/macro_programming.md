@@ -79,7 +79,7 @@ IF [Conditional Expression] THEN <do somethings>
 
 #### Example
 
-```c++
+```
 IF [#100 GE 200] THEN GOTO 15   ;//if #100 >= 200 then GOTO N15
 ```
 
