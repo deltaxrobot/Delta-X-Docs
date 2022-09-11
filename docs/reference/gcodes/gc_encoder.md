@@ -1,5 +1,17 @@
 # GCODES FOR X ENCODER
 
+## Identity X Encoder
+
+Send `IsXEncoder` to the COM port to identity `X Encoder`. If it is `X Encoder`, it will response `YesXEncoder`.
+
+For Eg:
+
+```
+IsXEncoder
+
+>>> YesXEncoder
+```
+
 ## M316 - Select Response Mode
 
 #### Description
@@ -16,10 +28,10 @@ M316 [<mode>]
 
 `[mode]`: mode index
 
-* 0: Absolute Mode(default)
+* 0: Absolute Mode (default)
 * 1: Relative Mode
 
-#### Example 
+#### Example
 
 ```
 M316 1   ;relative mode

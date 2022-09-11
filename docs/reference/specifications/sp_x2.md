@@ -10,7 +10,7 @@
 |Max payload                  |700g                 |
 |Max speed                    |800 mm/s             |
 |Max accel                    |20000 mm/s2          |
-|Pose repeatability           |±0.15 mm              |
+|Pose repeatability           |±0.15 mm             |
 |Position accuracy            |±0.15 mm             |
 |Number of axes               |3/4                  |
 |Power supply                 |12VDC - 5A           |

@@ -1,5 +1,17 @@
 # GCODES FOR X CONVEYOR
 
+## Detect X Conveyor COM Port
+
+If you wanna know that the COM port which connected was `X Conveyor` or not, you can send command `IsXConveyor`. If the COM port is connected to conveyor, it will response `YesXConveyor`.
+
+#### Example
+
+```
+IsXConveyor
+
+>>> YesXConveyor
+```
+
 ## M310 - Set Motion Mode
 
 #### Decription

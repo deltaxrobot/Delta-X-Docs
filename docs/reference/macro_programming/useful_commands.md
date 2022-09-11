@@ -97,7 +97,7 @@ Infor
 
 - Model: `Delta X 1`, `Delta X 2`, `Delta X S`.
 
-## Get Robot Actiive Status
+## Get Robot Active Status
 
 > Return current robot active status. The status are `Free, Running,  Wait, Almostdone, Done`.
 
@@ -143,13 +143,21 @@ Where `<state>` can be:
 
 > Return current temperature(in degree celsius).
 
+- Model: `Delta X 2`
+
 ```
 TempState
 
->>> 27.3
+>>> T:27.3
 ```
 
-- Model: `Delta X 2`.
+- Model: `Delta X 1`
+
+```
+Temp
+
+>>> T:28.2
+```
 
 ## Set up WIFI connection
 
@@ -158,6 +166,7 @@ TempState
 ```
 SSID:<wifi_name>
 PSWD:<wifi_password>
+IP
 ```
 
 For Eg:
@@ -168,7 +177,13 @@ SSID:IMWI wifi
 PSWD:onlyuknow
 >>> Ok
 
->>> IP:192.168.233
+>>> IP:192.168.233.1
+```
+If you forgot your IP:
+```
+IP
+
+>>> IP:192.168.233.1
 ```
 
 - Model: `Delta X 1`, `Delta X 2`.
