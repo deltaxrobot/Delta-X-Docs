@@ -355,6 +355,12 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../gc_conveyor/">Conveyor</a>
     <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_conveyor/#detect-x-conveyor-com-port">Detect X Conveyor COM Port</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example">Example</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="../gc_conveyor/#m310-set-motion-mode">M310 - Set Motion Mode</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#decription">Decription</a>
@@ -363,7 +369,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#parameter">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_1">Example</a>
     </li>
         </ul>
     </li>
@@ -375,7 +381,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#parameter_1">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_1">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_2">Example</a>
     </li>
         </ul>
     </li>
@@ -387,7 +393,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#parameter_2">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_2">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_3">Example</a>
     </li>
         </ul>
     </li>
@@ -399,7 +405,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#parameter_3">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_3">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_conveyor/#example_4">Example</a>
     </li>
         </ul>
     </li>
@@ -467,6 +473,8 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Xecoder</a>
     <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#identity-x-encoder">Identity X Encoder</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#m316-select-response-mode">M316 - Select Response Mode</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description">Description</a>
@@ -587,7 +595,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/useful_commands/#get-robot-infor">Get Robot Infor</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/useful_commands/#get-robot-actiive-status">Get Robot Actiive Status</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/useful_commands/#get-robot-active-status">Get Robot Active Status</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/useful_commands/#set-feedback-string">Set Feedback String</a>
     </li>
@@ -778,6 +786,13 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="gcodes-for-x-encoder">GCODES FOR X ENCODER<a class="headerlink" href="#gcodes-for-x-encoder" title="Permanent link">&para;</a></h1>
+<h2 id="identity-x-encoder">Identity X Encoder<a class="headerlink" href="#identity-x-encoder" title="Permanent link">&para;</a></h2>
+<p>Send <code>IsXEncoder</code> to the COM port to identity <code>X Encoder</code>. If it is <code>X Encoder</code>, it will response <code>YesXEncoder</code>.</p>
+<p>For Eg:</p>
+<pre><code>IsXEncoder
+
+&gt;&gt;&gt; YesXEncoder
+</code></pre>
 <h2 id="m316-select-response-mode">M316 - Select Response Mode<a class="headerlink" href="#m316-select-response-mode" title="Permanent link">&para;</a></h2>
 <h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h4>
 <p>There are 2 types of response modes: Absolute Mode and Relative Mode. In ABSOLUTE MODE, all responsed positions relative to the origin location. With RELATIVE MODE, reponsed positions relative to the previous position.</p>
@@ -787,7 +802,7 @@
 <h4 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">&para;</a></h4>
 <p><code>[mode]</code>: mode index</p>
 <ul>
-<li>0: Absolute Mode(default)</li>
+<li>0: Absolute Mode (default)</li>
 <li>1: Relative Mode</li>
 </ul>
 <h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>

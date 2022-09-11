@@ -355,6 +355,12 @@
                 </li>
                 <li class="toctree-l2 current"><a class="reference internal current" href="./">Conveyor</a>
     <ul class="current">
+    <li class="toctree-l3"><a class="reference internal" href="#detect-x-conveyor-com-port">Detect X Conveyor COM Port</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#example">Example</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="#m310-set-motion-mode">M310 - Set Motion Mode</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#decription">Decription</a>
@@ -363,7 +369,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#parameter">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="#example_1">Example</a>
     </li>
         </ul>
     </li>
@@ -375,7 +381,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#parameter_1">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example_1">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="#example_2">Example</a>
     </li>
         </ul>
     </li>
@@ -387,7 +393,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#parameter_2">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example_2">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="#example_3">Example</a>
     </li>
         </ul>
     </li>
@@ -399,7 +405,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#parameter_3">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#example_3">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="#example_4">Example</a>
     </li>
         </ul>
     </li>
@@ -467,6 +473,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../gc_encoder/">Xecoder</a>
     <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../gc_encoder/#identity-x-encoder">Identity X Encoder</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="../gc_encoder/#m316-select-response-mode">M316 - Select Response Mode</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="../gc_encoder/#description">Description</a>
@@ -587,7 +595,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/useful_commands/#get-robot-infor">Get Robot Infor</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/useful_commands/#get-robot-actiive-status">Get Robot Actiive Status</a>
+    <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/useful_commands/#get-robot-active-status">Get Robot Active Status</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="../../macro_programming/useful_commands/#set-feedback-string">Set Feedback String</a>
     </li>
@@ -778,6 +786,13 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="gcodes-for-x-conveyor">GCODES FOR X CONVEYOR<a class="headerlink" href="#gcodes-for-x-conveyor" title="Permanent link">&para;</a></h1>
+<h2 id="detect-x-conveyor-com-port">Detect X Conveyor COM Port<a class="headerlink" href="#detect-x-conveyor-com-port" title="Permanent link">&para;</a></h2>
+<p>If you wanna know that the COM port which connected was <code>X Conveyor</code> or not, you can send command <code>IsXConveyor</code>. If the COM port is connected to conveyor, it will response <code>YesXConveyor</code>.</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code>IsXConveyor
+
+&gt;&gt;&gt; YesXConveyor
+</code></pre>
 <h2 id="m310-set-motion-mode">M310 - Set Motion Mode<a class="headerlink" href="#m310-set-motion-mode" title="Permanent link">&para;</a></h2>
 <h4 id="decription">Decription<a class="headerlink" href="#decription" title="Permanent link">&para;</a></h4>
 <p>Set the motion mode of the conveyor belt.</p>
@@ -787,7 +802,7 @@
 <h4 id="parameter">Parameter<a class="headerlink" href="#parameter" title="Permanent link">&para;</a></h4>
 <p><code>[value] = 0</code>: Auto Mode (Conveyor will run continously and its speed is adjusted by the potentiometer).
 <code>[value] = 1</code>: Serial Mode (Conveyor will be controlled by the signal send to the serial port).</p>
-<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
 <pre><code>M310 1    ;change control mode to Serial Mode
 </code></pre>
 <hr />
@@ -799,7 +814,7 @@
 </code></pre>
 <h4 id="parameter_1">Parameter<a class="headerlink" href="#parameter_1" title="Permanent link">&para;</a></h4>
 <p><code>[value]</code>: Conveyor speed in mm/s.</p>
-<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
 <pre><code>M311 200    ;set speed is 200 mm/s.
 
 M311 -200    ;set speed is 200 mm/s but in opposite dir.
@@ -813,7 +828,7 @@ M311 -200    ;set speed is 200 mm/s but in opposite dir.
 </code></pre>
 <h4 id="parameter_2">Parameter<a class="headerlink" href="#parameter_2" title="Permanent link">&para;</a></h4>
 <p><code>[value]</code>: Position in mm.</p>
-<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
 <pre><code>M312 123    ;move to position 123
 </code></pre>
 <hr />
@@ -825,7 +840,7 @@ M311 -200    ;set speed is 200 mm/s but in opposite dir.
 </code></pre>
 <h4 id="parameter_3">Parameter<a class="headerlink" href="#parameter_3" title="Permanent link">&para;</a></h4>
 <p><code>[value]</code>: Speed in mm/s.</p>
-<h4 id="example_3">Example<a class="headerlink" href="#example_3" title="Permanent link">&para;</a></h4>
+<h4 id="example_4">Example<a class="headerlink" href="#example_4" title="Permanent link">&para;</a></h4>
 <pre><code>M313 300    ;move to position 123
 </code></pre>
               

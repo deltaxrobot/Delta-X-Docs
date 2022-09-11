@@ -355,6 +355,12 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../gcodes/gc_conveyor/">Conveyor</a>
     <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../gcodes/gc_conveyor/#detect-x-conveyor-com-port">Detect X Conveyor COM Port</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example">Example</a>
+    </li>
+        </ul>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="../../gcodes/gc_conveyor/#m310-set-motion-mode">M310 - Set Motion Mode</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#decription">Decription</a>
@@ -363,7 +369,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#parameter">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example_1">Example</a>
     </li>
         </ul>
     </li>
@@ -375,7 +381,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#parameter_1">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example_1">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example_2">Example</a>
     </li>
         </ul>
     </li>
@@ -387,7 +393,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#parameter_2">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example_2">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example_3">Example</a>
     </li>
         </ul>
     </li>
@@ -399,7 +405,7 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#parameter_3">Parameter</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example_3">Example</a>
+    <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_conveyor/#example_4">Example</a>
     </li>
         </ul>
     </li>
@@ -467,6 +473,8 @@
                 </li>
                 <li class="toctree-l2"><a class="reference internal" href="../../gcodes/gc_encoder/">Xecoder</a>
     <ul>
+    <li class="toctree-l3"><a class="reference internal" href="../../gcodes/gc_encoder/#identity-x-encoder">Identity X Encoder</a>
+    </li>
     <li class="toctree-l3"><a class="reference internal" href="../../gcodes/gc_encoder/#m316-select-response-mode">M316 - Select Response Mode</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="../../gcodes/gc_encoder/#description">Description</a>
@@ -587,7 +595,7 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#get-robot-infor">Get Robot Infor</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#get-robot-actiive-status">Get Robot Actiive Status</a>
+    <li class="toctree-l3"><a class="reference internal" href="#get-robot-active-status">Get Robot Active Status</a>
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#set-feedback-string">Set Feedback String</a>
     </li>
@@ -867,7 +875,7 @@
 <ul>
 <li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
 </ul>
-<h2 id="get-robot-actiive-status">Get Robot Actiive Status<a class="headerlink" href="#get-robot-actiive-status" title="Permanent link">&para;</a></h2>
+<h2 id="get-robot-active-status">Get Robot Active Status<a class="headerlink" href="#get-robot-active-status" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>Return current robot active status. The status are <code>Free, Running,  Wait, Almostdone, Done</code>.</p>
 </blockquote>
@@ -910,19 +918,27 @@
 <blockquote>
 <p>Return current temperature(in degree celsius).</p>
 </blockquote>
+<ul>
+<li>Model: <code>Delta X 2</code></li>
+</ul>
 <pre><code>TempState
 
-&gt;&gt;&gt; 27.3
+&gt;&gt;&gt; T:27.3
 </code></pre>
 <ul>
-<li>Model: <code>Delta X 2</code>.</li>
+<li>Model: <code>Delta X 1</code></li>
 </ul>
+<pre><code>Temp
+
+&gt;&gt;&gt; T:28.2
+</code></pre>
 <h2 id="set-up-wifi-connection">Set up WIFI connection<a class="headerlink" href="#set-up-wifi-connection" title="Permanent link">&para;</a></h2>
 <blockquote>
 <p>To use WIFI connection on <code>Delta X 1</code> or <code>Delta X 2</code> model, just use these commands. Once connection successful, the robot will auto return IP address. Take note to <strong>switch to WiFi mode</strong>.</p>
 </blockquote>
 <pre><code>SSID:&lt;wifi_name&gt;
 PSWD:&lt;wifi_password&gt;
+IP
 </code></pre>
 <p>For Eg:</p>
 <pre><code>SSID:IMWI wifi
@@ -930,7 +946,12 @@ PSWD:&lt;wifi_password&gt;
 PSWD:onlyuknow
 &gt;&gt;&gt; Ok
 
-&gt;&gt;&gt; IP:192.168.233
+&gt;&gt;&gt; IP:192.168.233.1
+</code></pre>
+<p>If you forgot your IP:</p>
+<pre><code>IP
+
+&gt;&gt;&gt; IP:192.168.233.1
 </code></pre>
 <ul>
 <li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>.</li>
