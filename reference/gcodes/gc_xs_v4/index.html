@@ -1023,8 +1023,8 @@ M07 A2                 ;read analog pin A2
 <h4 id="descriptions_11">Descriptions<a class="headerlink" href="#descriptions_11" title="Permanent link">&para;</a></h4>
 <p>Read Digital and Analog input signals automatically. For the digital signals, the robot will automatic read the value of signal when there is a change from 0 to 1 or from 1 to 0. About the analog signals, the robot will automatic read the value after a certain amount of time.</p>
 <h4 id="usage_11">Usage<a class="headerlink" href="#usage_11" title="Permanent link">&para;</a></h4>
-<pre><code>M08 I&lt;x&gt; B&lt;y&gt;
-M08 A&lt;x&gt; C&lt;y&gt;
+<pre><code>M08 I&lt;x&gt; B&lt;y&gt; P&lt;i&gt;
+M08 A&lt;x&gt; C&lt;y&gt; P&lt;i&gt;
 </code></pre>
 <h4 id="parameters_7">Parameters<a class="headerlink" href="#parameters_7" title="Permanent link">&para;</a></h4>
 <ul>
@@ -1038,6 +1038,14 @@ M08 A&lt;x&gt; C&lt;y&gt;
 <li><code>y = 0</code>: Stop the auto-reading digital input signal process.</li>
 </ul>
 </li>
+<li><code>P[i]</code> : set feedback port<ul>
+<li><code>i = 0</code>: USB</li>
+<li><code>i = 1</code>: RS232</li>
+<li><code>i = 2</code>: RS485</li>
+<li><code>i = 3</code>: TTL</li>
+<li><code>i = 4</code>: RJ45 (Ethernet)</li>
+</ul>
+</li>
 </ul>
 </li>
 <li><code>M08 A[x] C[y]</code><ul>
@@ -1048,6 +1056,14 @@ M08 A&lt;x&gt; C&lt;y&gt;
 <li><code>C[y]</code>: Cycle (microseconds) to update values. <ul>
 <li><code>y &gt;= 100</code>: Start the auto-reading analog input signal process.</li>
 <li><code>y &lt;= 100</code>: Stop the auto-reading analog input signal process.</li>
+</ul>
+</li>
+<li><code>P[i]</code> : set feedback port<ul>
+<li><code>i = 0</code>: USB</li>
+<li><code>i = 1</code>: RS232</li>
+<li><code>i = 2</code>: RS485</li>
+<li><code>i = 3</code>: TTL</li>
+<li><code>i = 4</code>: RJ45 (Ethernet)</li>
 </ul>
 </li>
 </ul>
@@ -1067,8 +1083,8 @@ M08 A&lt;x&gt; C&lt;y&gt;
 </li>
 </ul>
 <h4 id="example_8">Example<a class="headerlink" href="#example_8" title="Permanent link">&para;</a></h4>
-<pre><code>M08 I3 B1              ;start auto read digital pin I3
-M07 A2 C200            ;auto update A2 analog value with cycle=200us
+<pre><code>M08 I3 B1 P2           ;start auto read digital pin I3, feedback via RS485 port
+M08 A2 C200            ;auto update A2 analog value with cycle=200us
 
 &gt;&gt;&gt; I3 V0
 &gt;&gt;&gt; A2 V2478
