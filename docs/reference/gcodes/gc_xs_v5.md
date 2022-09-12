@@ -316,8 +316,8 @@ Read Digital and Analog input signals automatically. For the digital signals, th
 #### Usage
 
 ```
-M08 I<x> B<y>
-M08 A<x> C<y>
+M08 I<x> B<y> P<i>
+M08 A<x> C<y> P<i>
 ```
 
 #### Parameters
@@ -328,12 +328,22 @@ M08 A<x> C<y>
     * `B[y]` :
         * `y = 1`: Start the auto-reading digital input signal process.
         * `y = 0`: Stop the auto-reading digital input signal process.
+    * `P[i]` : set feedback port
+        * `i = 0`: USB0
+        * `i = 1`: RS232
+        * `i = 2`: RS485
+        * `i = 3`: USB1
 * `M08 A[x] C[y]`
     * `A[x]`: Analog Input Pin
         * `x` = 0, 1, 2, 3.
     * `C[y]`: Cycle (microseconds) to update values. 
         * `y >= 100`: Start the auto-reading analog input signal process.
         * `y <= 100`: Stop the auto-reading analog input signal process.
+    * `P[i]` : set feedback port
+        * `i = 0`: USB0
+        * `i = 1`: RS232
+        * `i = 2`: RS485
+        * `i = 3`: USB1
 
 #### Feedback
 
@@ -347,8 +357,8 @@ M08 A<x> C<y>
 #### Example
 
 ```
-M08 I3 B1              ;start auto read digital pin I3
-M07 A2 C200            ;auto update A2 analog value with cycle=200us
+M08 I3 B1 P0           ;start auto read digital pin I3, feedback via USB0 port
+M08 A2 C200 P1         ;auto update A2 analog value with cycle=200us via RS232 port
 
 >>> I3 V0
 >>> A2 V2478
