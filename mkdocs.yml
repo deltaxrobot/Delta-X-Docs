@@ -38,6 +38,20 @@ nav:
                 - D600: reference\specifications\delta_xs_v5\sp_v5_d600.md
                 - D800: reference\specifications\delta_xs_v5\sp_v5_d800.md
     - Tutorials: tutorials\tutorials_list.md
+    - Products:
+        - Delta X 1 Series:
+            - Delta X 1 Basic Kit: products\deltax1\x1_basic_kit.md
+            - Delta X 1 Luxury Kit: products\deltax1\x1_luxury_kit.md
+            - Delta X 1 Develop Kit: products\deltax1\x1_dev_kit.md
+        - Delta X 2 Series:
+            - Delta X 2 Basic Kit: products\deltax2\deltax2_basic_kit.md
+            - Delta X 2 Pick & Place Kit: products\deltax2\deltax2_pick_and_place_kit.md
+            - Delta X 2 Develop Kit: products\deltax2\deltax2_dev_kit.md
+        - Delta X S Series:
+            - Delta X S D400: products\deltaxs\deltaxs_d400.md
+            - Delta X S D600: products\deltaxs\deltaxs_d600.md
+            - Delta X S D800: products\deltaxs\deltaxs_d800.md
+
 theme:
     name: null
     custom_dir: 'readthedocshm'

@@ -2,7 +2,7 @@
 
 ## `Cost`: $1249
 
-![deltax2_dev_kit](./deltax2_dev_kit.png)
+![deltax2_dev_kit](/docs/images/deltax2_dev_kit.png)
 
 `Delta X 2 Develop Kit` provide you all the things you'll need to build an automative station. It's suitable for teaching, research, testing or even a small manufactory line.
 
@@ -15,12 +15,11 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 - **Delta X 2 Robot**.
 - Axis 4.
 - All kind of End Effector:
-    - Pen holder & Touch Pen.
-    - Single/double Sucction cup & Air Pump.
-    - Laser Module.
-    - Hard Gripper.
-    - Soft Gripper.
-    - 3D Printing Kit(Extruder Stepper, Hot End kit, teflon tub).
+  - Pen holder & Touch Pen.
+  - Single/double Sucction cup & Air Pump.
+  - Hard Gripper.
+  - Soft Gripper.
+  - 3D Printing Kit (Extruder Stepper, Hot End kit, teflon tub).
 - Aluminium profile frame (620x480x620mm).
 - Slider X.
 - Short conveyor.
@@ -73,6 +72,8 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 
 ## Conveyor X Parameters
 
+![conveyor_x](/docs/images/short_conveyor.png)
+
 |Parameters                   | Infors              |
 |-----------------------------|---------------------|
 |Length                       |500/1000mm (Short/Long)|
@@ -88,6 +89,8 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 ---
 
 ## Slider X Parameters
+
+![slider_x](/docs/images/slider.png)
 
 |Parameters                   | Infors              |
 |-----------------------------|---------------------|
