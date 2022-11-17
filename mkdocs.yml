@@ -22,7 +22,7 @@ nav:
                 - Delta X S V5: reference\gcodes\gc_xs_v5.md
             - Conveyor: reference\gcodes\gc_conveyor.md
             - Slider: reference\gcodes\gc_slider.md
-            - Xecoder: reference\gcodes\gc_encoder.md
+            - XEncoder: reference\gcodes\gc_encoder.md
         - Macro Programing: 
             - Macro Programming: reference\macro_programming\macro_programming.md
             - Useful Commands: reference\macro_programming\useful_commands.md
