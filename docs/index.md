@@ -11,9 +11,9 @@ Affordable & Efficient Delta Robot Series.
 
 ## Reference
 
-- [G-codes](reference\gcodes\gc_x1.md) - All kind of delta robot is being control via G-code commands. It's easy to learn.
-- [Marco Programming](reference\macro_programming\macro_programming.md) - Using G-codes with variables, if else conditions, arithmetic operators...
-- [Robot Specifications & Dimensions](reference\specifications\sp_x1.md) - Get all kind of Delta X robot specifications and dimensions. You'll need these docs to create your custom end effectors.
+- [G-codes](reference/gcodes/gc_x1.md) - All kind of delta robot is being control via G-code commands. It's easy to learn.
+- [Marco Programming](reference/macro_programming/macro_programming.md) - Using G-codes with variables, if else conditions, arithmetic operators...
+- [Robot Specifications & Dimensions](reference/specifications/sp_x1.md) - Get all kind of Delta X robot specifications and dimensions. You'll need these docs to create your custom end effectors.
 
 ## Download
 

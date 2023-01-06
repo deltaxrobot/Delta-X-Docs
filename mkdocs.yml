@@ -16,41 +16,41 @@ nav:
     - Reference:
         - Gcode:
             - Robot:
-                - Delta X 1: reference\gcodes\gc_x1.md
-                - Delta X 2: reference\gcodes\gc_x2.md
-                - Delta X S V4: reference\gcodes\gc_xs_v4.md
-                - Delta X S V5: reference\gcodes\gc_xs_v5.md
-            - Conveyor: reference\gcodes\gc_conveyor.md
-            - Slider: reference\gcodes\gc_slider.md
-            - XEncoder: reference\gcodes\gc_encoder.md
+                - Delta X 1: reference/gcodes/gc_x1.md
+                - Delta X 2: reference/gcodes/gc_x2.md
+                - Delta X S V4: reference/gcodes/gc_xs_v4.md
+                - Delta X S V5: reference/gcodes/gc_xs_v5.md
+            - Conveyor: reference/gcodes/gc_conveyor.md
+            - Slider: reference/gcodes/gc_slider.md
+            - XEncoder: reference/gcodes/gc_encoder.md
         - Macro Programing: 
-            - Macro Programming: reference\macro_programming\macro_programming.md
-            - Useful Commands: reference\macro_programming\useful_commands.md
+            - Macro Programming: reference/macro_programming/macro_programming.md
+            - Useful Commands: reference/macro_programming/useful_commands.md
         - Specifications: 
-            - Delta X 1: reference\specifications\sp_x1.md
-            - Delta X 2: reference\specifications\sp_x2.md
+            - Delta X 1: reference/specifications/sp_x1.md
+            - Delta X 2: reference/specifications/sp_x2.md
             - Delta X S V4: 
-                - D400: reference\specifications\delta_xs_v4\sp_v4_d400.md
-                - D600: reference\specifications\delta_xs_v4\sp_v4_d600.md
-                - D800: reference\specifications\delta_xs_v4\sp_v4_d800.md
+                - D400: reference/specifications/delta_xs_v4/sp_v4_d400.md
+                - D600: reference/specifications/delta_xs_v4/sp_v4_d600.md
+                - D800: reference/specifications/delta_xs_v4/sp_v4_d800.md
             - Delta X S V5: 
-                - D400: reference\specifications\delta_xs_v5\sp_v5_d400.md
-                - D600: reference\specifications\delta_xs_v5\sp_v5_d600.md
-                - D800: reference\specifications\delta_xs_v5\sp_v5_d800.md
-    - Tutorials: tutorials\tutorials_list.md
+                - D400: reference/specifications/delta_xs_v5/sp_v5_d400.md
+                - D600: reference/specifications/delta_xs_v5/sp_v5_d600.md
+                - D800: reference/specifications/delta_xs_v5/sp_v5_d800.md
+    - Tutorials: tutorials/tutorials_list.md
     - Products:
         - Delta X 1 Series:
-            - Delta X 1 Basic Kit: products\deltax1\x1_basic_kit.md
-            - Delta X 1 Luxury Kit: products\deltax1\x1_luxury_kit.md
-            - Delta X 1 Develop Kit: products\deltax1\x1_dev_kit.md
+            - Delta X 1 Basic Kit: products/deltax1/x1_basic_kit.md
+            - Delta X 1 Luxury Kit: products/deltax1/x1_luxury_kit.md
+            - Delta X 1 Develop Kit: products/deltax1/x1_dev_kit.md
         - Delta X 2 Series:
-            - Delta X 2 Basic Kit: products\deltax2\deltax2_basic_kit.md
-            - Delta X 2 Pick & Place Kit: products\deltax2\deltax2_pick_and_place_kit.md
-            - Delta X 2 Develop Kit: products\deltax2\deltax2_dev_kit.md
+            - Delta X 2 Basic Kit: products/deltax2/deltax2_basic_kit.md
+            - Delta X 2 Pick & Place Kit: products/deltax2/deltax2_pick_and_place_kit.md
+            - Delta X 2 Develop Kit: products/deltax2/deltax2_dev_kit.md
         - Delta X S Series:
-            - Delta X S D400: products\deltaxs\deltaxs_d400.md
-            - Delta X S D600: products\deltaxs\deltaxs_d600.md
-            - Delta X S D800: products\deltaxs\deltaxs_d800.md
+            - Delta X S D400: products/deltaxs/deltaxs_d400.md
+            - Delta X S D600: products/deltaxs/deltaxs_d600.md
+            - Delta X S D800: products/deltaxs/deltaxs_d800.md
 
 theme:
     name: null
@@ -63,8 +63,8 @@ theme:
 #         - rust
 # theme:
 #   name: ponylan
-        # - cinder\css\extra.css
-        # - cinder\css\base.css
-        # - cinder\css\base.min.css
-        # - cinder\css\bootstrap-custom.css
-        # - cinder\css\bootstrap-custom.min.css
+        # - cinder/css/extra.css
+        # - cinder/css/base.css
+        # - cinder/css/base.min.css
+        # - cinder/css/bootstrap-custom.css
+        # - cinder/css/bootstrap-custom.min.css
