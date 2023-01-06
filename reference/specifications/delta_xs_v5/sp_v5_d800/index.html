@@ -996,57 +996,47 @@
 <h2 id="wiring-communicate-ports">Wiring &amp; Communicate Ports<a class="headerlink" href="#wiring-communicate-ports" title="Permanent link">&para;</a></h2>
 <h3 id="mainboard-interface">Mainboard Interface<a class="headerlink" href="#mainboard-interface" title="Permanent link">&para;</a></h3>
 <p><img alt="xs_v5_mb_interface" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Interface.png" /></p>
-<h4 id="usb0">USB0<a class="headerlink" href="#usb0" title="Permanent link">&para;</a></h4>
 <blockquote>
-<p>USB protocol standard, this port can be use to update firmware.</p>
-</blockquote>
-<h4 id="usb1">USB1<a class="headerlink" href="#usb1" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>Another USB standard port, which isolated with all other power supply.</p>
-</blockquote>
-<h4 id="rs232">RS232<a class="headerlink" href="#rs232" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>RS232 protocol port
+<p><code>USB0</code>: USB protocol standard, this port can be use to update firmware.</p>
+<p><code>USB1</code>: Another USB standard port, which isolated with all other power supply.</p>
+<p><code>RS232</code> : RS232 protocol port
 * <code>Pin 2</code>: T1OUT.
 * <code>Pin 3</code>: R1IN.
 * <code>Pin 5</code>: GND.</p>
-</blockquote>
-<h4 id="rs485">RS485<a class="headerlink" href="#rs485" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>RS485 protocol port
-    &gt; * <code>Pin 1</code>: RX+.
-    &gt; * <code>Pin 2</code>: RX-.
-    &gt; * <code>Pin 3</code>: TX-.
-    &gt; * <code>Pin 4</code>: TX+.
-    &gt; * <code>Pin 5</code>: GND.</p>
+<p><code>RS485</code> : RS485 protocol port
+* <code>Pin 1</code>: RX+.
+* <code>Pin 2</code>: RX-.
+* <code>Pin 3</code>: TX-.
+* <code>Pin 4</code>: TX+.
+* <code>Pin 5</code>: GND.</p>
 </blockquote>
 <h4 id="input-pins">Input Pins<a class="headerlink" href="#input-pins" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>Digital input pin (24VDC/3mA):
-    &gt; * <code>Pin 1~4</code>: digital input pins (0~3).
-    &gt; * <code>Pin 5</code>: GND.</p>
+* <code>Pin 1~4</code>: digital input pins (0~3).
+* <code>Pin 5</code>: GND.</p>
 <p>Analog input pins(0-10VDC/0-4096)
-    &gt; * <code>Pin 6-7</code>: analog input pins (0~1).
-    &gt; * <code>Pin 8</code>: 24VDC.
-    &gt; * <code>Pin 9</code>: GND.</p>
+* <code>Pin 6-7</code>: analog input pins (0~1).
+* <code>Pin 8</code>: 24VDC.
+* <code>Pin 9</code>: GND.</p>
 <p>Input Wiring:
     <img alt="xs_v5_input" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Input.png" /></p>
 </blockquote>
 <h4 id="output-pins">Output Pins<a class="headerlink" href="#output-pins" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>Digital output pin (24VDC/500mA)
-    &gt; * <code>Pin 1~8</code>: digital output pins (0~7).
-    &gt; * <code>Pin 9~15</code>: GND.</p>
+* <code>Pin 1~8</code>: digital output pins (0~7).
+* <code>Pin 9~15</code>: GND.</p>
 <p>Output Wiring:
     <img alt="xs_v5_output" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Output.png" /></p>
 </blockquote>
 <h4 id="e-stop-button">E-Stop Button<a class="headerlink" href="#e-stop-button" title="Permanent link">&para;</a></h4>
 <blockquote>
 <p>E-Stop button
-    &gt; * <code>Pin 1</code>: GND.
-    &gt; * <code>Pin 2</code>: IN4.
-    &gt; * <code>Pin 3</code>: IN5.
-    &gt; * <code>Pin 4</code>: 24VDC.</p>
+* <code>Pin 1</code>: GND.
+* <code>Pin 2</code>: IN4.
+* <code>Pin 3</code>: IN5.
+* <code>Pin 4</code>: 24VDC.</p>
 </blockquote>
 <p>If emergency button is not enabled, IN4 and IN5 can be use as input pin.</p>
 <blockquote>
