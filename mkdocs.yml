@@ -16,6 +16,7 @@ nav:
     - Reference:
         - Gcode:
             - Robot:
+                - Useful Commands: reference/gcodes/useful_commands.md
                 - Delta X 1: reference/gcodes/gc_x1.md
                 - Delta X 2: reference/gcodes/gc_x2.md
                 - Delta X S V4: reference/gcodes/gc_xs_v4.md
@@ -25,7 +26,7 @@ nav:
             - XEncoder: reference/gcodes/gc_encoder.md
         - Macro Programing: 
             - Macro Programming: reference/macro_programming/macro_programming.md
-            - Useful Commands: reference/macro_programming/useful_commands.md
+            
         - Specifications: 
             - Delta X 1: reference/specifications/sp_x1.md
             - Delta X 2: reference/specifications/sp_x2.md
