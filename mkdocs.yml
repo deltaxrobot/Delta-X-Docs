@@ -38,7 +38,10 @@ nav:
                 - D400: reference/specifications/delta_xs_v5/sp_v5_d400.md
                 - D600: reference/specifications/delta_xs_v5/sp_v5_d600.md
                 - D800: reference/specifications/delta_xs_v5/sp_v5_d800.md
-    - Tutorials: tutorials/tutorials_list.md
+    - Tutorials:
+        - Tutorial List:  tutorials/tutorials_list.md
+        - Assembly Guides: 
+            - Delta X S Frame: tutorials/assembly_guides/xs_frame_assembly_guide.md
     - Products:
         - Delta X 1 Series:
             - Delta X 1 Basic Kit: products/deltax1/x1_basic_kit.md
