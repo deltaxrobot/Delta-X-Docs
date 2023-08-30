@@ -2,7 +2,7 @@
 
 ## `Cost`: $1249
 
-![deltax2_dev_kit](/docs/images/deltax2_dev_kit.png)
+![deltax2_dev_kit](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/deltax2_dev_kit.png)
 
 `Delta X 2 Develop Kit` provide you all the things you'll need to build an automative station. It's suitable for teaching, research, testing or even a small manufactory line.
 
@@ -72,7 +72,7 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 
 ## Conveyor X Parameters
 
-![conveyor_x](/docs/images/short_conveyor.png)
+![conveyor_x](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/short_conveyor.png)
 
 |Parameters                   | Infors              |
 |-----------------------------|---------------------|
@@ -90,7 +90,7 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 
 ## Slider X Parameters
 
-![slider_x](/docs/images/slider.png)
+![slider_x](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/slider.png)
 
 |Parameters                   | Infors              |
 |-----------------------------|---------------------|
