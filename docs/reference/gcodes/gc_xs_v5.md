@@ -980,6 +980,30 @@ M206 X20 Y-10 Z30  ;Set home offsets
 
 ---
 
+## M207 - Set Z Safe 
+
+#### Descriptions
+
+Set the lowest Z level that the robot cannot exceed.
+
+#### Usage
+
+```
+M207 [Z<value>]
+```
+
+#### Parameters
+
+* `Z[value]`: (mm) Z safe value.
+
+#### Example
+
+```
+M207 Z-870  ;Set Z safe value
+```
+
+---
+
 ## M210 - Set Theta Movement Parameter
 
 #### Descriptions

@@ -1,19 +1,22 @@
-# Conveyor Belt D120/200/300/400 L1200 Specification
+# Industrial Conveyor Belts (D120/200/300/400 L1200) Specification
 
 ## Introduction
-These Conveyors are meticulously engineered to cater to the diverse material handling requirements across industrial applications. This document outlines the comprehensive specifications of the conveyor belt system, encompassing dimensional schematics, integral components, and pivotal conveyor parameters.
+Industrial Conveyor Belts are commonly employed in real-world projects within the industrial sector. Characterized by robust aluminum profile frames, precisely engineered rollers and belts, as well as anti-interference designed control systems, these conveyor belts stand as a favored product line for factory environments.
 
 ## System Components
 The Conveyor integrates the following cardinal components:
 
-- **Robust Aluminum Frame:** Crafted from aluminum profiles, ensuring resilience, stability, and enduring performance.
-- **Precision Rollers:** High-caliber rollers tailored to accommodate varying loads, ensuring seamless operation.
-- **Advanced Conveyor Belt:** Engineered to endure, the conveyor belt facilitates efficient material transportation.
-- **1:6 Gear Box:** Precision-engineered gear box with a 1:6 gear ratio for optimized performance.
-- **Hybrid Servo Motor:** Powerful 2.2Nm servo motor for dynamic control.
-- **Versatile Controller Circuit:** Custom STM32-based controller circuit for enhanced control capabilities.
-- **Steady Power Supply:** 24VDC/15A power supply to sustain optimal performance.
-- **USB cable**: 3m USB-B cable.
+| Component                  | Description                                                                               |
+| -------------------------- | ----------------------------------------------------------------------------------------- |
+| Robust Aluminum Frame      | Crafted from aluminum profiles, ensuring resilience, stability, and enduring performance. |
+| Precision Rollers          | High-caliber rollers tailored to accommodate varying loads, ensuring seamless operation.   |
+| Advanced Conveyor Belt     | Engineered to endure, the conveyor belt facilitates efficient material transportation.    
+| 1:6 Gear Box               | Precision-engineered gear box with a 1:6 gear ratio for optimized performance.            |
+| Hybrid Servo Motor         | Powerful 2.2Nm servo motor for dynamic control.                                           |
+| Versatile Controller Circuit | Custom STM32-based controller circuit for enhanced control capabilities.                |
+| Steady Power Supply        | 24VDC/15A power supply to sustain optimal performance.                                    |
+| USB Cable                  | 3m USB-B cable.                                                                           |
+
 
 ## Dimensional Schematic
 ![Conveyor Belt D300 L1200 Schematic](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/Conveyor_Belt_D300_L1200.png)

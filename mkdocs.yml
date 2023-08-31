@@ -39,9 +39,8 @@ nav:
                 - D600: reference/specifications/delta_xs_v5/sp_v5_d600.md
                 - D800: reference/specifications/delta_xs_v5/sp_v5_d800.md
             - Conveyors:
-                - Conveyor Belt 120: reference/specifications/conveyors/older versions/conveyor_belt_120.md
-                - Conveyor Belt 300: reference/specifications/conveyors/older versions/conveyor_belt_300.md
-                - Conveyor Belt D120/200/300/400 L1200: reference/specifications/conveyors/conveyor_belt_d300_l1200.md
+                - Conveyor Belt 120: reference/specifications/conveyors/conveyor_belt_120.md
+                - Conveyor Belt D120/200/300/400 L1200: reference/specifications/conveyors/industial_conveyor_belts.md
     - Tutorials:
         - Tutorial List:  tutorials/tutorials_list.md
         - Assembly Guides: 
