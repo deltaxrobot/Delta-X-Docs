@@ -22,6 +22,7 @@ nav:
                 - Delta X S V4: reference/gcodes/gc_xs_v4.md
                 - Delta X S V5: reference/gcodes/gc_xs_v5.md
             - Conveyor: reference/gcodes/gc_conveyor.md
+            - Industial Conveyor: reference/gcodes/gc_insdustrial_conveyor.md
             - Slider: reference/gcodes/gc_slider.md
             - XEncoder: reference/gcodes/gc_encoder.md
         - Macro Programing: 
