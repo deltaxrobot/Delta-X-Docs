@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../../../img/favicon.ico" />
-    <title>Useful Commands - Delta X Robot</title>
+    <title>Gc industrial encoder - Delta X Robot</title>
     <link rel="stylesheet" href="../../../css/theme.css" />
     <link rel="stylesheet" href="../../../css/theme_extra.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "Useful Commands";
-        var mkdocs_page_input_path = "reference/gcodes/useful_commands.md";
+        var mkdocs_page_name = "Gc industrial encoder";
+        var mkdocs_page_input_path = "reference/gcodes/gc_industrial_encoder.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -60,38 +60,38 @@
                 </li>
               </ul>
               <p class="caption"><span class="caption-text">Reference</span></p>
-              <ul class="current">
-                  <li class="toctree-l1 current"><a class="reference internal current" href="#">Gcode</a>
-    <ul class="current">
-                <li class="toctree-l2 current"><a class="reference internal current" href="#">Robot</a>
-    <ul class="current">
-                <li class="toctree-l3 current"><a class="reference internal current" href="./">Useful Commands</a>
-    <ul class="current">
-    <li class="toctree-l4"><a class="reference internal" href="#identify-delta-robot-command">Identify Delta Robot Command</a>
+              <ul>
+                  <li class="toctree-l1"><a class="reference internal" href="#">Gcode</a>
+    <ul>
+                <li class="toctree-l2"><a class="reference internal" href="#">Robot</a>
+    <ul>
+                <li class="toctree-l3"><a class="reference internal" href="../useful_commands/">Useful Commands</a>
+    <ul>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#identify-delta-robot-command">Identify Delta Robot Command</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#disconnect-com-port-command">Disconnect COM Port Command</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#disconnect-com-port-command">Disconnect COM Port Command</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#get-current-position-command">Get Current Position Command</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#get-current-position-command">Get Current Position Command</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#get-position-offset-command">Get Position Offset Command</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#get-position-offset-command">Get Position Offset Command</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#get-current-theta-angles">Get Current Theta Angles</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#get-current-theta-angles">Get Current Theta Angles</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#get-current-endstop-sensor-states">Get Current Endstop Sensor States</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#get-current-endstop-sensor-states">Get Current Endstop Sensor States</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#get-robot-imei">Get Robot IMEI</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#get-robot-imei">Get Robot IMEI</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#get-robot-infor">Get Robot Infor</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#get-robot-infor">Get Robot Infor</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#get-robot-active-status">Get Robot Active Status</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#get-robot-active-status">Get Robot Active Status</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#set-feedback-string">Set Feedback String</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#set-feedback-string">Set Feedback String</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#emergency-stop-command">Emergency Stop Command</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#emergency-stop-command">Emergency Stop Command</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#get-current-temperature">Get Current Temperature</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#get-current-temperature">Get Current Temperature</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#set-up-wifi-connection">Set up WIFI connection</a>
+    <li class="toctree-l4"><a class="reference internal" href="../useful_commands/#set-up-wifi-connection">Set up WIFI connection</a>
     </li>
     </ul>
                 </li>
@@ -2498,12 +2498,9 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href="../../.." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-          <li>Reference &raquo;</li>
-          <li>Gcode &raquo;</li>
-          <li>Robot &raquo;</li>
-      <li>Useful Commands</li>
+      <li>Gc industrial encoder</li>
     <li class="wy-breadcrumbs-aside">
-        <a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/reference/gcodes/useful_commands.md"
+        <a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/reference/gcodes/gc_industrial_encoder.md"
           class="icon icon-github"> Edit on Github</a>
     </li>
   </ul>
@@ -2512,177 +2509,7 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="useful-commands">USEFUL COMMANDS<a class="headerlink" href="#useful-commands" title="Permanent link">&para;</a></h1>
-<h2 id="identify-delta-robot-command">Identify Delta Robot Command<a class="headerlink" href="#identify-delta-robot-command" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>When you need to identity a COM port was connected to Delta Robot or not, you can send a command like <code>IsDelta</code> to that port, if it is <em>Delta Robot</em>, it will feedback <code>YesDelta</code>. Note that the baudrate must be 115200.</p>
-</blockquote>
-<pre><code>IsDelta
-
-&gt;&gt;&gt; YesDelta
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
-</ul>
-<h2 id="disconnect-com-port-command">Disconnect COM Port Command<a class="headerlink" href="#disconnect-com-port-command" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>This command will disconnect <em>Delta Robot</em> with the COM port which was connected before.</p>
-</blockquote>
-<pre><code>Disconnect
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
-</ul>
-<h2 id="get-current-position-command">Get Current Position Command<a class="headerlink" href="#get-current-position-command" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>This commnad will return current end effector position. If robot have any axis, the robot will return all current axis position.</p>
-</blockquote>
-<pre><code>Position
-
-&gt;&gt;&gt; X30.4 Y90 Z-800 W50 U90
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
-</ul>
-<h2 id="get-position-offset-command">Get Position Offset Command<a class="headerlink" href="#get-position-offset-command" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>This command return positon offset of all axis.</p>
-</blockquote>
-<pre><code>PositionOffset
-
-&gt;&gt;&gt; X0.5 Y1.2 Z-2.2
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
-</ul>
-<h2 id="get-current-theta-angles">Get Current Theta Angles<a class="headerlink" href="#get-current-theta-angles" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>This command return current theta angles of 3 upper arm (degree).</p>
-</blockquote>
-<pre><code>Angle
-
-&gt;&gt;&gt; X2.46 Y2.46 Z2.46
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
-</ul>
-<h2 id="get-current-endstop-sensor-states">Get Current Endstop Sensor States<a class="headerlink" href="#get-current-endstop-sensor-states" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>This command will return current states of endstops(on Delta X 1, Delta X 2) or proximity sensors(on Delta X S).</p>
-</blockquote>
-<pre><code>HTs
-
-&gt;&gt;&gt; 111
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
-</ul>
-<h2 id="get-robot-imei">Get Robot IMEI<a class="headerlink" href="#get-robot-imei" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>This command will return robot IMEI.</p>
-</blockquote>
-<pre><code>IMEI
-
-&gt;&gt;&gt; 0004-0000-0000-0012
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
-</ul>
-<h2 id="get-robot-infor">Get Robot Infor<a class="headerlink" href="#get-robot-infor" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>This command will return robot informations, such as model, version of mainboard,..</p>
-</blockquote>
-<pre><code>Infor
-
-&gt;&gt;&gt; @IMWI Technology
-&gt;&gt;&gt; Main_board_version: V1.0
-&gt;&gt;&gt; Firmware_version: V1.0
-&gt;&gt;&gt; Model: DELTA_XS_V4_D800
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>, <code>Delta X S</code>.</li>
-</ul>
-<h2 id="get-robot-active-status">Get Robot Active Status<a class="headerlink" href="#get-robot-active-status" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Return current robot active status. The status are <code>Free, Running,  Wait, Almostdone, Done</code>.</p>
-</blockquote>
-<pre><code>DeltaState
-
-&gt;&gt;&gt; Free
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 2</code>.</li>
-</ul>
-<h2 id="set-feedback-string">Set Feedback String<a class="headerlink" href="#set-feedback-string" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>When the robot executed a gcode, it will feedback <code>Ok</code>. You can change <code>Ok</code> to another string like <code>ok</code>, <code>done</code> or whatever you want.</p>
-</blockquote>
-<pre><code>Feedback: done
-
-&gt;&gt;&gt; set feedback string to 'done'
-</code></pre>
-<ul>
-<li>Model: <code>Delta X S</code>.</li>
-<li>With <code>Delta X 2</code> model, this command will be <code>FEEDBACK:&lt;custom_string&gt;</code>.</li>
-</ul>
-<h2 id="emergency-stop-command">Emergency Stop Command<a class="headerlink" href="#emergency-stop-command" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>You can send a emergency signal by command </p>
-</blockquote>
-<pre><code>Emergency: &lt;state&gt;
-</code></pre>
-<p>Where <code>&lt;state&gt;</code> can be:</p>
-<ul>
-<li><code>Reset</code> - reset robot</li>
-<li><code>Stop</code> - stop robot</li>
-<li><code>Pause</code> - pause robot</li>
-<li><code>Resume</code> - resume robot</li>
-</ul>
-<blockquote>
-<p>Model: <code>Delta X S</code>.</p>
-</blockquote>
-<h2 id="get-current-temperature">Get Current Temperature<a class="headerlink" href="#get-current-temperature" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>Return current temperature(in degree celsius).</p>
-</blockquote>
-<ul>
-<li>Model: <code>Delta X 2</code></li>
-</ul>
-<pre><code>TempState
-
-&gt;&gt;&gt; T:27.3
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code></li>
-</ul>
-<pre><code>Temp
-
-&gt;&gt;&gt; T:28.2
-</code></pre>
-<h2 id="set-up-wifi-connection">Set up WIFI connection<a class="headerlink" href="#set-up-wifi-connection" title="Permanent link">&para;</a></h2>
-<blockquote>
-<p>To use WIFI connection on <code>Delta X 1</code> or <code>Delta X 2</code> model, just use these commands. Once connection successful, the robot will auto return IP address. Take note to <strong>switch to WiFi mode</strong>.</p>
-</blockquote>
-<pre><code>SSID:&lt;wifi_name&gt;
-PSWD:&lt;wifi_password&gt;
-IP
-</code></pre>
-<p>For Eg:</p>
-<pre><code>SSID:IMWI wifi
-&gt;&gt;&gt; Ok
-PSWD:onlyuknow
-&gt;&gt;&gt; Ok
-
-&gt;&gt;&gt; IP:192.168.233.1
-</code></pre>
-<p>If you forgot your IP:</p>
-<pre><code>IP
-
-&gt;&gt;&gt; IP:192.168.233.1
-</code></pre>
-<ul>
-<li>Model: <code>Delta X 1</code>, <code>Delta X 2</code>.</li>
-</ul>
+                
               
             </div>
           </div><footer>
@@ -2708,10 +2535,6 @@ PSWD:onlyuknow
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../../.." style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="../gc_x1/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
