@@ -2,6 +2,8 @@
 
 ## `Cost`: $1249
 
+## [Purchase Now](https://deltaxstore.com/products/delta-x-2-develop-kit)
+
 ![deltax2_dev_kit](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/deltax2_dev_kit.png)
 
 `Delta X 2 Develop Kit` provide you all the things you'll need to build an automative station. It's suitable for teaching, research, testing or even a small manufactory line.
@@ -117,7 +119,7 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 
 ---
 
-## Moving Base Dimensions
+### Moving Base Dimensions
 
 ![x2_moving_base](x2_moving_base_small.png)
 
@@ -127,3 +129,4 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 
 > Watch the video below to know how to assemble `Delta X 2 Develop Kit`.
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/xCEwD7ZQfnY?si=_G9Gy6rmuXtB0Vz1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>

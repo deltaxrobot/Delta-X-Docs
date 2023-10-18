@@ -38,6 +38,7 @@
 
 <!-- [![Foo](http://www.google.com.auhttps://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/nav_logo7.png)](http://google.com.au/) -->
 ### Reach
+
 ![x1_working_space_reach](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace.png)
 
 ### Safe Working Area
