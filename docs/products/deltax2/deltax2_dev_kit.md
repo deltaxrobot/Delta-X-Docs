@@ -72,6 +72,28 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 
 ---
 
+## Wiring and Pinout
+
+### Pinout
+
+![x2_pinout](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_pinout_2.png)
+
+`Delta X 2 Robot` has multiple port for different end effectors. The port is located on a side of robot body. Includes:
+
+* 1 Laser/Vacuum/Heating Port
+* 1 Gripper Port
+* Axis 4 Port
+* 1 Stepper Motor Port for 3D Printing
+* 1 Thermistor Port
+* 12VDC Power Supply Port
+* 1 Custom Port
+
+### Communication Ports and Power Supply
+
+![x2_ports](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_pinout_1.png)
+
+The robot has a USB-B port and a UART port for communication. The USB-B port is used for programming and debugging. The UART port is used for communication with other devices. The robot can be powered by a 12VDC power supply with minimum 5A current.
+
 ## Conveyor X Parameters
 
 ![conveyor_x](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/short_conveyor.png)
