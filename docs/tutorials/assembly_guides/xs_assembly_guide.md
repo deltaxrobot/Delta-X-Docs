@@ -60,7 +60,7 @@ And the basic assembly of the robot is now complete.
 #### First movement:
 
 * Connect the Robot with a Computer: using USB-B cable to the USB0 or USB1 port on the backside of the robot body.
-* Control robot with Delta X Software: Download the software at https://www.deltaxrobot.com/p/download.html
+* Control robot with Delta X Software: Download the software at [ our download page address](https://www.deltaxrobot.com/p/download.html)
 * Press Connect button and wait for connection. If the connection is successful, try the Home button, the robot will go home and the first move is done.
 
 ## Input & Output Connection
