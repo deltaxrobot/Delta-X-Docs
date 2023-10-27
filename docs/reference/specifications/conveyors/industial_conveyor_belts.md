@@ -28,7 +28,7 @@ The Conveyor integrates the following cardinal components:
 | -------------------------- | ----------------- |
 | Length                     | 1200 mm           |
 | Width                      | 120/200/300/400 mm|
-| Maximum Speed              | 2000 mm/s         |
+| Maximum Speed              | 400 mm/s         |
 | Positioning Accuracy       | ±0.2 mm           |
 | Power Supply               | 24VDC/15A         |
 

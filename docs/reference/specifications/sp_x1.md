@@ -44,3 +44,6 @@
 ### Safe Working Area
 
 ![x1_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace_dia.png)
+
+## Electrical Connections
+

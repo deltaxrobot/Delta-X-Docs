@@ -1,6 +1,5 @@
 # Delta X Robot
 
-Affordable & Efficient Delta Robot Series.
 ![delta_x_models](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/home_cover.png)
 
 ## Products and Customer Segments

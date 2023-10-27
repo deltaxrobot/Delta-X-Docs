@@ -7,6 +7,7 @@
 The 120 conveyor is mainly used in small-scale projects and experimental setups involving Delta X 1 and Delta X 2 robots. Characterized by a compact design, these conveyors facilitate easy deployment. and integration into various systems.
 
 ## System Components
+
 The Conveyor Belt 120 integrates a range of essential components tailored to its specific design:
 
 | Component                  | Material               |
@@ -19,10 +20,9 @@ The Conveyor Belt 120 integrates a range of essential components tailored to its
 | Control Board              | ATmega328P MCU         |
 | Power Supply               | 12VDC/3A               |
 
+## Dimensions
 
-## Dimensional Schematic
 ![Conveyor Belt 120 Schematic](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/conveyor_120_dims.png)
-
 
 ## Conveyor Specifications
 
@@ -34,21 +34,32 @@ The Conveyor Belt 120 integrates a range of essential components tailored to its
 | Speed Adjustment           | G-code / Potentiometer |
 | Frame Material             | 2020 Aluminum          |
 
+## Conveyor Features
+
+| Feature                    | Description            |
+| -------------------------- | -----------------      |
+| Max Speed                  | 200 mm/s               |
+| Positioning Accuracy       | ±0.2 mm                |
+| Power Supply               | 12VDC/3A               |
 
 ## Control Options
+
 The Conveyor Belt 120 offers flexible control methods:
 
 - **G-Code Control:** Use G-Code commands for precise speed adjustments.
 - **Variable Speed Control:** Adjust conveyor speed manually using a potentiometer.
 
 !!! note "Note"
-    Get more information about g-code [here](https://docs.deltaxrobot.com/reference/gcodes/gc_conveyor/).
+    Get more information about g-code [**HERE**](https://docs.deltaxrobot.com/reference/gcodes/gc_conveyor/).
 
 ## Applications
+
 The Conveyor Belt 120 is exceptionally well-suited for diverse applications, including:
 
 - Experimental projects
 - Small-scale lab endeavors
 - Integration with robotic arms such as delta robots
 
+## Contact Us
 
+For further information and inquiries, don't hesitate to reach out to us at [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)

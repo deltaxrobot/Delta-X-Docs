@@ -4,7 +4,7 @@
 
 #### Description
 
-Slider will move back to original position as default speed.
+The Slider X will move back to its original position at the default speed.
 
 #### Usage
 
@@ -24,7 +24,7 @@ M320    ;slider homing
 
 #### Description
 
-Set the moving speed of Slider X.
+This command allows you to set the moving speed of Slider X.
 
 #### Usage
 
@@ -48,7 +48,7 @@ M321 60    ;set slider speed is 60 mm/s.
 
 #### Description
 
-Slider will move to a specified point relative to the home point.
+Slider X will move to a specified point relative to the home point.
 
 #### Usage
 
@@ -72,7 +72,7 @@ M322 150    ;set slider position is 150mm.
 
 #### Description
 
-Normally, the motor will hold the position of the slider. After receiving this command, the motor will release and the slider can be free.
+Normally, the stepper motor will hold the position of the slider. After receiving this command, the motor will release, allowing the slider to move freely.
 
 #### Usage
 
@@ -92,7 +92,7 @@ M323    ;disable stepper
 
 #### Description
 
-Set the slider's acceleration when it moves.
+This command is used to set the slider's acceleration when it moves.
 
 #### Usage
 
@@ -102,7 +102,7 @@ M324 [<value>]
 
 #### Parameters
 
-`[value]`: accel in mm/m^2.
+`[value]`: acceleration in mm/m^2.
 
 #### Example
 
