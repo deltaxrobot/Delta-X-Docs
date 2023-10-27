@@ -92,10 +92,30 @@ E-STOP pins:
 |Pin 1 - GND|Pin 2 - I4 |
 |Pin 3 - I5 |Pin 4 - 24V|
 
-#### Input Terminal Adapter (DB9 Male) and Wiring Example:
+### Input Terminal Adapter (DB9 Male) and Wiring Example
 
 ![title](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/InputWiring.png)
 
-#### Output Terminal Adapter (DB15 Male) and Wiring Example:
+### Output Terminal Adapter (DB15 Male) and Wiring Example
 
 ![title](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/CustomOutput.png)
+
+### Caution
+
+* Connect any output as shown above, do not load more than 500mA for each output pin.
+* Do not connect any output pin to 24V.
+
+## Maintenance
+
+Proper maintenance is crucial to ensure the longevity and optimal performance of your Delta Robot. Here are some key maintenance considerations:
+
+* **DO NOT** expose the robot body, its components, or electronics to direct water or moisture. Water damage can affect the functionality and safety of the robot. Always work in a dry environment.
+* Keep the robot and its components clean by wiping down surfaces with a soft, dry cloth.
+* Power off the robot when not in use for an extended period.
+* Periodically inspect and tighten all bolts, nuts, and connectors to prevent loosening due to vibrations or movements.
+
+By following these maintenance practices, you can maximize the lifespan and efficiency of your Delta Robot while minimizing downtime and potential issues. Always refer to the user manual for specific maintenance guidelines provided by the manufacturer.
+
+## Contact Support <a name="contact-support"></a>
+
+If you have any questions or concerns, please contact us at [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)

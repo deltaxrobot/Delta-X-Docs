@@ -1,13 +1,13 @@
 # Delta X Robot
 
 Affordable & Efficient Delta Robot Series.
-![delta_x_models](https://i.imgur.com/BomC5jI.jpeg)
+![delta_x_models](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/home_cover.png)
 
 ## Products and Customer Segments
 
 - [Delta X 1](https://deltaxstore.com/collections/delta-x-kits) - Open Source, Education, Research and Development
 - [Delta X 2](https://deltaxstore.com/products/delta-x-2-pick-place-kit) - Education, R&D, Small production lines
-- [Delta X S](https://deltaxstore.com/pages/delta-xs) - Light Industry
+- [Delta X S](https://deltaxstore.com/pages/pre-order) - Light Industry
 
 ## Reference
 
@@ -44,7 +44,7 @@ Affordable & Efficient Delta Robot Series.
 
 - Contact:
     - Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
-    - Email: deltaxrobot@gmail.com
+    - Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
     - Phone: +84 38 875 2005
-    - Address: 24 Ngo Duc Ke Street, Thanh Khe Tay Ward, Thanh Khe District, Da Nang City, Viet Nam
+    - Address: Man Quang 9 Street, Tho Quang Ward, Son Tra District, Da Nang City, Viet Nam
     - Facebook: [Delta X Robot](https://www.facebook.com/DeltaXRobot)

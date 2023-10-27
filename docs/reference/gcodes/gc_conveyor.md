@@ -2,7 +2,7 @@
 
 ## Detect X Conveyor COM Port
 
-If you wanna know that the COM port which connected was `X Conveyor` or not, you can send command `IsXConveyor`. If the COM port is connected to conveyor, it will response `YesXConveyor`.
+To determine if the COM port is connected to the `X Conveyor`, you can send the command `IsXConveyor`. If the COM port is linked to the conveyor, it will respond with `YesXConveyor`.
 
 #### Example
 

@@ -2,7 +2,7 @@
 
 ## Identity X Encoder
 
-Send `IsXEncoder` to the COM port to identity `X Encoder`. If it is `X Encoder`, it will response `YesXEncoder`.
+To identify whether the COM port is associated with the `X Encoder`, send the command IsXEncoder. If it is indeed linked to the `X Encoder`, it will respond with YesXEncoder.
 
 For Eg:
 
