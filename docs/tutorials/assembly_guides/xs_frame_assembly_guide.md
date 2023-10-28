@@ -81,3 +81,10 @@ Place the frame on a suitable work surface. Use assembly tools to connect the fr
 
 - Inspect the entire frame assembly to ensure all components are securely attached and aligned.
 - Test the stability and structural integrity of the frame by applying gentle pressure or shaking. Make any necessary adjustments if there are signs of instability.
+
+## Contact Us
+
+- Store: [https://deltaxstore.com](https://deltaxstore.com)
+- Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+- Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+- Phone: +84 38 875 2005

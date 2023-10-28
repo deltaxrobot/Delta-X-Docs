@@ -53,4 +53,9 @@ These Conveyors finds its prowess in diverse industrial sectors, including but n
 ## Conclusion
 The Conveyor Belt D120/200/300/400 L1200 stands as a steadfast solution for industrial material handling requisites. Boasting an aluminum framework, adaptable features, and user-intuitive controls, it serves as an instrumental asset in elevating material transportation processes.
 
-For further information and inquiries, don't hesitate to reach out to us at [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com).
+## Contact Us
+
+- Store: [https://deltaxstore.com](https://deltaxstore.com)
+- Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+- Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+- Phone: +84 38 875 2005

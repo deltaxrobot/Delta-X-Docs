@@ -98,3 +98,10 @@
 ![x2_ports](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_pinout_1.png)
 
 The robot has a USB-B port and a UART port for communication. The USB-B port is used for programming and debugging. The UART port is used for communication with other devices. The robot can be powered by a 12VDC power supply with minimum 5A current.
+
+## Contact Us
+
+* Store: [https://deltaxstore.com](https://deltaxstore.com)
+* Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+* Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+* Phone: +84 38 875 2005

@@ -152,3 +152,10 @@ The robot has a USB-B port and a UART port for communication. The USB-B port is 
 > Watch the video below to know how to assemble `Delta X 2 Develop Kit`.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/xCEwD7ZQfnY?si=_G9Gy6rmuXtB0Vz1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+## Contact Us
+
+* Store: [https://deltaxstore.com](https://deltaxstore.com)
+* Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+* Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+* Phone: +84 38 875 2005

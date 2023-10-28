@@ -52,7 +52,7 @@
 |Part                         | Materials           |
 |-----------------------------|---------------------|
 |Upper Arm                    |3D printed (PLA)     |
-|Lower Arm                    |Carbon fibre tube    |
+|Lower Arm                    |Carbon *-fibre tube    |
 |Base frame                   |Aluminum profile     |
 |Moving base                  |3D printed (PLA)     |
 |Body cover                   |3D printed (PLA)     |
@@ -66,3 +66,10 @@
 ### Safe Working Area
 
 ![x1_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace_dia.png)
+
+## Contact Us
+
+* Store: [https://deltaxstore.com](https://deltaxstore.com)
+* Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+* Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+* Phone: +84 38 875 2005

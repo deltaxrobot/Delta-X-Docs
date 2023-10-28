@@ -109,3 +109,10 @@ M313 [<value>]
 ```
 M313 300    ;move to position 123
 ```
+
+## Contact Us
+
+* Store: [https://deltaxstore.com](https://deltaxstore.com)
+* Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+* Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+* Phone: +84 38 875 2005

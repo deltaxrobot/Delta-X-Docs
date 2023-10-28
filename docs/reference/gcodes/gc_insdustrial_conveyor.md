@@ -258,4 +258,9 @@ M319 T0 ;set pin 0 auto feedback
 M319 S0 ;stop pin 0 auto feedback
 ```
 
+## Contact Us
 
+* Store: [https://deltaxstore.com](https://deltaxstore.com)
+* Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+* Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+* Phone: +84 38 875 2005

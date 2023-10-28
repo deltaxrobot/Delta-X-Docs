@@ -107,4 +107,7 @@ Proper maintenance is crucial for keeping your Delta Robot in optimal working co
 
 ## Contact Support <a name="contact-support"></a>
 
-If you have any questions or concerns, please contact us at [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+- Store: [https://deltaxstore.com](https://deltaxstore.com)
+- Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+- Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+- Phone: +84 38 875 2005

@@ -45,5 +45,9 @@
 
 ![x1_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace_dia.png)
 
-## Electrical Connections
+## Contact Us
 
+- Store: [https://deltaxstore.com](https://deltaxstore.com)
+- Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+- Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+- Phone: +84 38 875 2005

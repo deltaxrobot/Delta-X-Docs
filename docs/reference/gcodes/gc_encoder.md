@@ -114,3 +114,10 @@ M319 T
 
 * `M319 V` : get current sensor value
 * `M319 T` : set auto feedback when the sensor value changed
+
+## Contact Us
+
+* Store: [https://deltaxstore.com](https://deltaxstore.com)
+* Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+* Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+* Phone: +84 38 875 2005

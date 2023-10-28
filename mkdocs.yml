@@ -21,10 +21,10 @@ nav:
                 - Delta X 2: reference/gcodes/gc_x2.md
                 - Delta X S V4: reference/gcodes/gc_xs_v4.md
                 - Delta X S V5: reference/gcodes/gc_xs_v5.md
-            - Conveyor: reference/gcodes/gc_conveyor.md
+            - X Conveyor: reference/gcodes/gc_conveyor.md
             - Industial Conveyor: reference/gcodes/gc_insdustrial_conveyor.md
-            - Slider: reference/gcodes/gc_slider.md
-            - XEncoder: reference/gcodes/gc_encoder.md
+            - Slider X: reference/gcodes/gc_slider.md
+            - X Encoder: reference/gcodes/gc_encoder.md
         - Macro Programing: 
             - Macro Programming: reference/macro_programming/macro_programming.md
             
@@ -42,6 +42,7 @@ nav:
             - Conveyors:
                 - Conveyor Belt 120: reference/specifications/conveyors/conveyor_belt_120.md
                 - Conveyor Belt D120/200/300/400 L1200: reference/specifications/conveyors/industial_conveyor_belts.md
+            - Slider X: reference/specifications/slider_x.md
     - Tutorials:
         - Tutorial List:  tutorials/tutorials_list.md
         - Assembly Guides: 

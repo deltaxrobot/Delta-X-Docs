@@ -179,3 +179,10 @@ For example: `M98 Fpick_char`
 
 * `M98 PsendExternalMCU` - Send a string to the external microcontroller that is connecting to the software.
     * Eg: `M98 PsendExternalMCU("Hello World")`
+
+## Contact Us
+
+* Store: [https://deltaxstore.com](https://deltaxstore.com)
+* Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+* Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+* Phone: +84 38 875 2005

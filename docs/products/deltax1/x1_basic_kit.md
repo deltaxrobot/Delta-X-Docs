@@ -10,11 +10,11 @@
 
 `Delta X 1 Basic Kit` is a perfect choice for those who starting to learn about Delta Robot. It is a complete kit with all the necessary parts to build a Delta Robot. The kit includes:
 
-* Delta X 1 Robot
-* Pen holder & Touch pen
-* Power supply (12VDC 5A)
-* USB cable
-* Hyper Cube frame (optional)
+- Delta X 1 Robot
+- Pen holder & Touch pen
+- Power supply (12VDC 5A)
+- USB cable
+- Hyper Cube frame (optional)
 
 ---
 
@@ -59,3 +59,10 @@
 ### Safe Working Area
 
 ![x1_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace_dia.png)
+
+## Contact Us
+
+- Store: [https://deltaxstore.com](https://deltaxstore.com)
+- Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+- Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+- Phone: +84 38 875 2005

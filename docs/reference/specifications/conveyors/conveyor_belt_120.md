@@ -62,4 +62,7 @@ The Conveyor Belt 120 is exceptionally well-suited for diverse applications, inc
 
 ## Contact Us
 
-For further information and inquiries, don't hesitate to reach out to us at [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+- Store: [https://deltaxstore.com](https://deltaxstore.com)
+- Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
+- Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
+- Phone: +84 38 875 2005
