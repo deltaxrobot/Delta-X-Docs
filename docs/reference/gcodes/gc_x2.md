@@ -456,7 +456,7 @@ M206 X20 Y-10 Z30  ;Set home offsets
 
 ---
 
-## M331 - Select End Effector
+## M331 - Select Linked Device
 
 ### Descriptions
 
