@@ -26,7 +26,7 @@ M310 [<value>]
 
 #### Parameter
 
-<!-- `[value] = 0`: Output Mode (Stepper output pins will be use as a normal digital output). -->
+* `[value] = 0`: Output Mode (Stepper output pins will be use as a normal digital output).
 * `[value] = 1`: Position Mode (Position of the conveyor will be controlled by the command send to the serial port).
 * `[value] = 2`: Velocity Mode (Velocity of the conveyor will be controlled by the command send to the serial port).
 * `[value] = 3`: Manual mode (Velocity of the conveyor will be controlled by the buttons).

@@ -111,3 +111,4 @@ Proper maintenance is crucial for keeping your Delta Robot in optimal working co
 - Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
 - Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
 - Phone: +84 38 875 2005
+

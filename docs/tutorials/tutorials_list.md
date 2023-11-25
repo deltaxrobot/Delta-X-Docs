@@ -10,9 +10,9 @@
 ## Assemble Guides
 
 - [Delta X 1](https://www.deltaxrobot.com/p/how-to-assemble-delta-x-kit.html)
-- [Delta X 2](https://www.deltaxrobot.com/p/assembling-delta-x-2-robot.html)
-- [Delta X S](https://www.deltaxrobot.com/p/quick-guide-delta-x-s-version-5.html)
-- [Assemble the **End Effector**](https://www.deltaxrobot.com/p/how-to-assemble-end-effectors-of-delta.html)
+- [Delta X 2](https://docs.deltaxrobot.com/tutorials/assembly_guides/x2_assembly_guide/)
+- [Delta X S](https://docs.deltaxrobot.com/tutorials/assembly_guides/xs_assembly_guide/)
+- [Assemble the on-table aluminum frame](https://docs.deltaxrobot.com/tutorials/assembly_guides/xs_frame_assembly_guide/)
 
 ## Control Robot Guides
 
