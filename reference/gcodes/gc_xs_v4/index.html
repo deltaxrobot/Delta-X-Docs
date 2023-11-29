@@ -249,7 +249,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m204-set-max-feedrate">M204 - Set Max Feedrate</a>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x1/#m204-set-acceleration">M204 - Set Acceleration</a>
         <ul>
     <li class="toctree-l5"><a class="reference internal" href="../gc_x1/#descriptions_14">Descriptions</a>
     </li>
@@ -505,7 +505,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../gc_x2/#m203-set-max-feedrate">M203 - Set Max Feedrate</a>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x2/#m203-set-feedrate">M203 - Set Feedrate</a>
         <ul>
     <li class="toctree-l5"><a class="reference internal" href="../gc_x2/#descriptions_15">Descriptions</a>
     </li>
@@ -517,7 +517,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../gc_x2/#m204-set-max-feedrate">M204 - Set Max Feedrate</a>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_x2/#m204-set-acceleration">M204 - Set Acceleration</a>
         <ul>
     <li class="toctree-l5"><a class="reference internal" href="../gc_x2/#descriptions_16">Descriptions</a>
     </li>
@@ -1005,7 +1005,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#m205-set-max-feedrate">M205 - Set Max Feedrate</a>
+    <li class="toctree-l4"><a class="reference internal" href="#m205-set-beginend-velocity">M205 - Set Begin/End Velocity</a>
         <ul>
     <li class="toctree-l5"><a class="reference internal" href="#descriptions_31">Descriptions</a>
     </li>
@@ -1513,7 +1513,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m205-set-max-feedrate">M205 - Set Max Feedrate</a>
+    <li class="toctree-l4"><a class="reference internal" href="../gc_xs_v5/#m205-set-beginend-velocity">M205 - Set Begin/End Velocity</a>
         <ul>
     <li class="toctree-l5"><a class="reference internal" href="../gc_xs_v5/#descriptions_31">Descriptions</a>
     </li>
@@ -3548,18 +3548,18 @@ Always have a delay time during send "Ok" feedback after execute gcode until the
 <pre><code>M204 A15000    ;set accel = 15000 mm/s^2
 </code></pre>
 <hr />
-<h2 id="m205-set-max-feedrate">M205 - Set Max Feedrate<a class="headerlink" href="#m205-set-max-feedrate" title="Permanent link">&para;</a></h2>
+<h2 id="m205-set-beginend-velocity">M205 - Set Begin/End Velocity<a class="headerlink" href="#m205-set-beginend-velocity" title="Permanent link">&para;</a></h2>
 <h4 id="descriptions_31">Descriptions<a class="headerlink" href="#descriptions_31" title="Permanent link">&para;</a></h4>
-<p>Set max movement feedrate. </p>
+<p>Set segment begin/end velocity.</p>
 <h4 id="usage_31">Usage<a class="headerlink" href="#usage_31" title="Permanent link">&para;</a></h4>
 <pre><code>M205 [S&lt;value&gt;]
 </code></pre>
 <h4 id="parameters_13">Parameters<a class="headerlink" href="#parameters_13" title="Permanent link">&para;</a></h4>
 <ul>
-<li><code>S[value]</code>: (mm/s2) end effector acceleration.</li>
+<li><code>S[value]</code>: (mm/s2) end effector begin/end velocity.</li>
 </ul>
 <h4 id="example_27">Example<a class="headerlink" href="#example_27" title="Permanent link">&para;</a></h4>
-<pre><code>M205 S2500    ;set end effector speed = 2500 mm/s
+<pre><code>M205 S40    ;Set begin speed at 40 mm/s
 </code></pre>
 <hr />
 <h2 id="m206-set-axis-offset">M206 - Set Axis Offset<a class="headerlink" href="#m206-set-axis-offset" title="Permanent link">&para;</a></h2>
