@@ -927,11 +927,11 @@ M204 A15000    ;set accel = 15000 mm/s^2
 
 ---
 
-## M205 - Set Max Feedrate
+## M205 - Set Begin/End Velocity
 
 #### Descriptions
 
-Set max movement feedrate. 
+Set segment begin/end velocity.
 
 #### Usage
 
@@ -941,12 +941,12 @@ M205 [S<value>]
 
 #### Parameters
 
-* `S[value]`: (mm/s2) end effector acceleration.
+* `S[value]`: (mm/s2) end effector begin/end velocity.
 
 #### Example
 
 ```
-M205 S2500    ;set end effector speed = 2500 mm/s
+M205 S40    ;Set begin speed at 40 mm/s
 ```
 
 ---

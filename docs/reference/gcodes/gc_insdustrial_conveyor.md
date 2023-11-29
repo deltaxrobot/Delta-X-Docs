@@ -39,7 +39,6 @@ M310 1    ;change control mode to Position Mode
 
 ---
 
-
 ## M311 - Set Speed In Velocity Mode
 
 #### Decription
@@ -70,7 +69,7 @@ M311 -200    ;set speed is 200 mm/s but in opposite dir.
 
 #### Decription
 
-Conveyor will move to a specified position relative to the current position.
+Conveyor will move to a specified position.
 
 #### Usage
 

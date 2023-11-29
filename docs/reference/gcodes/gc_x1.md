@@ -329,7 +329,7 @@ M203 S500  ;Set max feedrate
 
 ---
 
-## M204 - Set Max Feedrate
+## M204 - Set Acceleration
 
 #### Descriptions
 

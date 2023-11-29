@@ -359,11 +359,11 @@ M109 S180  ;Set target temperature and wait (if heating up)
 ```
 ---
 
-## M203 - Set Max Feedrate
+## M203 - Set Feedrate
 
 ### Descriptions
 
-Set movement max feedrate.
+Set movement feedrate.
 
 ### Usage
 
@@ -382,7 +382,7 @@ M203 S500  ;Set max feedrate
 
 ---
 
-## M204 - Set Max Feedrate
+## M204 - Set Acceleration
 
 ### Descriptions
 
@@ -401,12 +401,12 @@ M204 A<value>
 ### Example
 
 ```
-M204 A5000  ;Set max feedrate
+M204 A5000  ;Set movement acceleration.
 ```
 
 ---
 
-## M205 - Set Begin/End Velocity 
+## M205 - Set Begin/End Velocity
 
 ### Descriptions
 
