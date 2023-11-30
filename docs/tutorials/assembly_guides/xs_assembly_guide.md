@@ -20,13 +20,28 @@ Before you begin, make sure you have received all the components listed in the p
 
 Before mounting the Delta robot, ensure that the frame or surface you are attaching it to is stable and level. Use a measuring tape and a level to verify the frame's position. 
 
-### Mounting the robot onto the frame
+### Step 1: Mounting the robot onto the frame
 
 On the base of the robot body, there are four Ø8 holes used for attaching the Delta robot body to the frame. Please use M8 bolts to tighten and secure the robot.
 
 ![mount_robot_body](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/BodyToFrame2.png)
 
-### Attaching the arms to the robot body
+### Step 2: Power on and Home the robot
+
+#### Power on the robot
+
+* Plug in the Robot Power Cable: Connect the power cable from the power supply unit to the robot's power input port. Ensure a secure connection.
+* Turn on the Power Supply: Switch the power button  on the power supply unit. You should see the power LED  confirming that power is flowing.
+
+![power_supply](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/DayNguon220V.png)
+
+#### Home the robot
+
+* Connect the Robot with a Computer: using USB-B cable to the `USB0` port on the backside of the robot body.
+* Control robot with `Delta X Software`: Download the software at [ our download page address](https://www.deltaxrobot.com/p/download.html)
+* Press `Connect` button and wait for connection. If the connection is successful, try the `Home` button, the robot will go home and the first move is done.
+
+### Step 3: Attaching the arms to the robot body
 
 Mounting the **Upper Arms** to the flanges: **DO NOT** attempt to rotate the flange if the upper arm is not installed. Use 6x M6x16mm bolts to assemble the upper arm onto the flange, ensuring that the marked surfaces align with each other.
 
@@ -40,28 +55,13 @@ Do the same with moving base:
 
 ![MountMovingBase](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/MountMovingBase_slice.png)
 
-### Install Axis 4 (5,6)
+### Step 4(Optional): Install Axis 4 (5,6)
 
 If the robot has axis 4, assemble the universal joint of axis 4 onto the rotating flange underneath the robot body, ensuring a snug fit. Then, tighten the *M3 bolt* securely first and then fasten the *hex socket set screw M3*.
 
 ![InstallAxis4](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/InstallAxis4_2.png)
 
 And the basic assembly of the robot is now complete.
-
-## Power on and First test
-
-#### Power on the robot:
-
-* Plug in the Robot Power Cable: Connect the power cable from the power supply unit to the robot's power input port. Ensure a secure connection.
-* Turn on the Power Supply: Switch the power button  on the power supply unit. You should see the power LED  confirming that power is flowing.
-
-![power_supply](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/DayNguon220V.png)
-
-#### First movement:
-
-* Connect the Robot with a Computer: using USB-B cable to the USB0 or USB1 port on the backside of the robot body.
-* Control robot with Delta X Software: Download the software at [ our download page address](https://www.deltaxrobot.com/p/download.html)
-* Press Connect button and wait for connection. If the connection is successful, try the Home button, the robot will go home and the first move is done.
 
 ## Input & Output Connection
 
