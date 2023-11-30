@@ -2470,19 +2470,19 @@
     </li>
     <li class="toctree-l3"><a class="reference internal" href="#assembly-instructions">Assembly Instructions</a>
         <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#mounting-the-robot-onto-the-frame">Mounting the robot onto the frame</a>
+    <li class="toctree-l4"><a class="reference internal" href="#step-1-mounting-the-robot-onto-the-frame">Step 1: Mounting the robot onto the frame</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#attaching-the-arms-to-the-robot-body">Attaching the arms to the robot body</a>
+    <li class="toctree-l4"><a class="reference internal" href="#step-2-power-on-and-home-the-robot">Step 2: Power on and Home the robot</a>
+        <ul>
+    <li class="toctree-l5"><a class="reference internal" href="#power-on-the-robot">Power on the robot</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#install-axis-4-56">Install Axis 4 (5,6)</a>
+    <li class="toctree-l5"><a class="reference internal" href="#home-the-robot">Home the robot</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#power-on-and-first-test">Power on and First test</a>
-        <ul>
-    <li class="toctree-l4"><a class="reference internal" href="#power-on-the-robot">Power on the robot:</a>
+    <li class="toctree-l4"><a class="reference internal" href="#step-3-attaching-the-arms-to-the-robot-body">Step 3: Attaching the arms to the robot body</a>
     </li>
-    <li class="toctree-l4"><a class="reference internal" href="#first-movement">First movement:</a>
+    <li class="toctree-l4"><a class="reference internal" href="#step-4optional-install-axis-4-56">Step 4(Optional): Install Axis 4 (5,6)</a>
     </li>
         </ul>
     </li>
@@ -2841,33 +2841,33 @@
 <p><img alt="package_list" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/part_list.png" /></p>
 <h2 id="assembly-instructions">Assembly Instructions<a class="headerlink" href="#assembly-instructions" title="Permanent link">&para;</a></h2>
 <p>Before mounting the Delta robot, ensure that the frame or surface you are attaching it to is stable and level. Use a measuring tape and a level to verify the frame&rsquo;s position. </p>
-<h3 id="mounting-the-robot-onto-the-frame">Mounting the robot onto the frame<a class="headerlink" href="#mounting-the-robot-onto-the-frame" title="Permanent link">&para;</a></h3>
+<h3 id="step-1-mounting-the-robot-onto-the-frame">Step 1: Mounting the robot onto the frame<a class="headerlink" href="#step-1-mounting-the-robot-onto-the-frame" title="Permanent link">&para;</a></h3>
 <p>On the base of the robot body, there are four Ø8 holes used for attaching the Delta robot body to the frame. Please use M8 bolts to tighten and secure the robot.</p>
 <p><img alt="mount_robot_body" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/BodyToFrame2.png" /></p>
-<h3 id="attaching-the-arms-to-the-robot-body">Attaching the arms to the robot body<a class="headerlink" href="#attaching-the-arms-to-the-robot-body" title="Permanent link">&para;</a></h3>
+<h3 id="step-2-power-on-and-home-the-robot">Step 2: Power on and Home the robot<a class="headerlink" href="#step-2-power-on-and-home-the-robot" title="Permanent link">&para;</a></h3>
+<h4 id="power-on-the-robot">Power on the robot<a class="headerlink" href="#power-on-the-robot" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Plug in the Robot Power Cable: Connect the power cable from the power supply unit to the robot&rsquo;s power input port. Ensure a secure connection.</li>
+<li>Turn on the Power Supply: Switch the power button  on the power supply unit. You should see the power LED  confirming that power is flowing.</li>
+</ul>
+<p><img alt="power_supply" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/DayNguon220V.png" /></p>
+<h4 id="home-the-robot">Home the robot<a class="headerlink" href="#home-the-robot" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Connect the Robot with a Computer: using USB-B cable to the <code>USB0</code> port on the backside of the robot body.</li>
+<li>Control robot with <code>Delta X Software</code>: Download the software at <a href="https://www.deltaxrobot.com/p/download.html"> our download page address</a></li>
+<li>Press <code>Connect</code> button and wait for connection. If the connection is successful, try the <code>Home</code> button, the robot will go home and the first move is done.</li>
+</ul>
+<h3 id="step-3-attaching-the-arms-to-the-robot-body">Step 3: Attaching the arms to the robot body<a class="headerlink" href="#step-3-attaching-the-arms-to-the-robot-body" title="Permanent link">&para;</a></h3>
 <p>Mounting the <strong>Upper Arms</strong> to the flanges: <strong>DO NOT</strong> attempt to rotate the flange if the upper arm is not installed. Use 6x M6x16mm bolts to assemble the upper arm onto the flange, ensuring that the marked surfaces align with each other.</p>
 <p><img alt="MountUpperArm" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/MountUpperArm_sliced.png" /></p>
 <p>Install the <strong>Lower Arms</strong> and the <strong>Moving Base</strong>: Pull the lower arm out and position it on the outside of the ball end of the upper arm. Repeat this process with the other two arms.</p>
 <p><img alt="MountLowerArm" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/MountLowerArm_sliced.png" /></p>
 <p>Do the same with moving base:</p>
 <p><img alt="MountMovingBase" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/MountMovingBase_slice.png" /></p>
-<h3 id="install-axis-4-56">Install Axis 4 (5,6)<a class="headerlink" href="#install-axis-4-56" title="Permanent link">&para;</a></h3>
+<h3 id="step-4optional-install-axis-4-56">Step 4(Optional): Install Axis 4 (5,6)<a class="headerlink" href="#step-4optional-install-axis-4-56" title="Permanent link">&para;</a></h3>
 <p>If the robot has axis 4, assemble the universal joint of axis 4 onto the rotating flange underneath the robot body, ensuring a snug fit. Then, tighten the <em>M3 bolt</em> securely first and then fasten the <em>hex socket set screw M3</em>.</p>
 <p><img alt="InstallAxis4" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/InstallAxis4_2.png" /></p>
 <p>And the basic assembly of the robot is now complete.</p>
-<h2 id="power-on-and-first-test">Power on and First test<a class="headerlink" href="#power-on-and-first-test" title="Permanent link">&para;</a></h2>
-<h4 id="power-on-the-robot">Power on the robot:<a class="headerlink" href="#power-on-the-robot" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Plug in the Robot Power Cable: Connect the power cable from the power supply unit to the robot&rsquo;s power input port. Ensure a secure connection.</li>
-<li>Turn on the Power Supply: Switch the power button  on the power supply unit. You should see the power LED  confirming that power is flowing.</li>
-</ul>
-<p><img alt="power_supply" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/DayNguon220V.png" /></p>
-<h4 id="first-movement">First movement:<a class="headerlink" href="#first-movement" title="Permanent link">&para;</a></h4>
-<ul>
-<li>Connect the Robot with a Computer: using USB-B cable to the USB0 or USB1 port on the backside of the robot body.</li>
-<li>Control robot with Delta X Software: Download the software at <a href="https://www.deltaxrobot.com/p/download.html"> our download page address</a></li>
-<li>Press Connect button and wait for connection. If the connection is successful, try the Home button, the robot will go home and the first move is done.</li>
-</ul>
 <h2 id="input-output-connection">Input &amp; Output Connection<a class="headerlink" href="#input-output-connection" title="Permanent link">&para;</a></h2>
 <p><img alt="title" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Interface.png" /></p>
 <p>Digital <strong>INPUT</strong> pins (24VDC/3mA) &amp; Analog input pins(0-10VDC/0-4096):</p>
