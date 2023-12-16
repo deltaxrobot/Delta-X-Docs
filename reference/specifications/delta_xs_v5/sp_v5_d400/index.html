@@ -2267,15 +2267,9 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#wiring-communicate-ports">Wiring &amp; Communicate Ports</a>
         <ul>
-    <li class="toctree-l5"><a class="reference internal" href="#mainboard-interface">Mainboard Interface</a>
-        <ul>
-    <li class="toctree-l6"><a class="reference internal" href="#input-pins">Input Pins</a>
+    <li class="toctree-l5"><a class="reference internal" href="#input-terminal-adapter-db9-male-and-wiring-example">Input Terminal Adapter (DB9 Male) and Wiring Example</a>
     </li>
-    <li class="toctree-l6"><a class="reference internal" href="#output-pins">Output Pins</a>
-    </li>
-    <li class="toctree-l6"><a class="reference internal" href="#e-stop-button">E-Stop Button</a>
-    </li>
-        </ul>
+    <li class="toctree-l5"><a class="reference internal" href="#output-terminal-adapter-db15-male-and-wiring-example">Output Terminal Adapter (DB15 Male) and Wiring Example</a>
     </li>
         </ul>
     </li>
@@ -2359,15 +2353,9 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="../sp_v5_d800/#wiring-communication-ports">Wiring &amp; Communication Ports</a>
         <ul>
-    <li class="toctree-l5"><a class="reference internal" href="../sp_v5_d800/#mainboard-interface">Mainboard Interface</a>
-        <ul>
-    <li class="toctree-l6"><a class="reference internal" href="../sp_v5_d800/#input-pins">Input Pins</a>
+    <li class="toctree-l5"><a class="reference internal" href="../sp_v5_d800/#input-terminal-adapter-db9-male-and-wiring-example">Input Terminal Adapter (DB9 Male) and Wiring Example</a>
     </li>
-    <li class="toctree-l6"><a class="reference internal" href="../sp_v5_d800/#output-pins">Output Pins</a>
-    </li>
-    <li class="toctree-l6"><a class="reference internal" href="../sp_v5_d800/#e-stop-button">E-Stop Button</a>
-    </li>
-        </ul>
+    <li class="toctree-l5"><a class="reference internal" href="../sp_v5_d800/#output-terminal-adapter-db15-male-and-wiring-example">Output Terminal Adapter (DB15 Male) and Wiring Example</a>
     </li>
         </ul>
     </li>
@@ -2959,65 +2947,92 @@
 <p><img alt="xs_6axis_moving_base" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/xs_v5_6axis_moving_base.png" /></p>
 <hr />
 <h2 id="wiring-communicate-ports">Wiring &amp; Communicate Ports<a class="headerlink" href="#wiring-communicate-ports" title="Permanent link">&para;</a></h2>
-<h3 id="mainboard-interface">Mainboard Interface<a class="headerlink" href="#mainboard-interface" title="Permanent link">&para;</a></h3>
-<p><img alt="xs_v5_mb_interface" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Interface.png" /></p>
-<ul>
-<li>
-<p><code>USB0</code>: USB protocol standard, this port can be use to update firmware.</p>
-</li>
-<li>
-<p><code>USB1</code>: Another USB standard port, which isolated with all other power supply.</p>
-</li>
-<li>
-<p><code>RS232</code> : RS232 protocol port:</p>
-</li>
-<li><code>Pin 2</code>: T1OUT.</li>
-<li><code>Pin 3</code>: R1IN.</li>
-<li>
-<p><code>Pin 5</code>: GND.</p>
-</li>
-<li>
-<p><code>RS485</code> : RS485 protocol port:</p>
-</li>
-<li><code>Pin 1</code>: RX+.</li>
-<li><code>Pin 2</code>: RX-.</li>
-<li><code>Pin 3</code>: TX-.</li>
-<li><code>Pin 4</code>: TX+.</li>
-<li><code>Pin 5</code>: GND.</li>
-</ul>
-<h4 id="input-pins">Input Pins<a class="headerlink" href="#input-pins" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>Digital input pin (24VDC/3mA):</p>
-</blockquote>
-<ul>
-<li><code>Pin 1~4</code>: digital input pins (0~3).</li>
-<li><code>Pin 5</code>: GND.</li>
-</ul>
-<blockquote>
-<p>Analog input pins(0-10VDC/0-4096):</p>
-</blockquote>
-<ul>
-<li><code>Pin 6-7</code>: analog input pins (0~1).</li>
-<li><code>Pin 8</code>: 24VDC.</li>
-<li><code>Pin 9</code>: GND.</li>
-</ul>
-<p><img alt="xs_v5_input" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Input.png" /></p>
-<h4 id="output-pins">Output Pins<a class="headerlink" href="#output-pins" title="Permanent link">&para;</a></h4>
-<blockquote>
-<p>Digital output pin (24VDC/500mA)</p>
-</blockquote>
-<ul>
-<li><code>Pin 1~8</code>: digital output pins (0~7).</li>
-<li><code>Pin 9~15</code>: GND.</li>
-</ul>
-<p><img alt="xs_v5_output" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Output.png" /></p>
-<h4 id="e-stop-button">E-Stop Button<a class="headerlink" href="#e-stop-button" title="Permanent link">&para;</a></h4>
-<ul>
-<li><code>Pin 1</code>: GND.</li>
-<li><code>Pin 2</code>: IN4.</li>
-<li><code>Pin 3</code>: IN5.</li>
-<li><code>Pin 4</code>: 24VDC.</li>
-</ul>
+<p><img alt="title" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Interface.png" /></p>
+<p>Digital <strong>INPUT</strong> pins (24VDC/3mA) &amp; Analog input pins(0-10VDC/0-4096):</p>
+<table>
+<thead>
+<tr>
+<th>INPUT PIN</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pin 1 - I0</td>
+<td>Pin 6 - A0</td>
+</tr>
+<tr>
+<td>Pin 2 - I1</td>
+<td>Pin 7 - A1</td>
+</tr>
+<tr>
+<td>Pin 3 - I2</td>
+<td>Pin 8 - 24V</td>
+</tr>
+<tr>
+<td>Pin 4 - I3</td>
+<td>Pin 9 - GND</td>
+</tr>
+<tr>
+<td>Pin 5 - GND</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Digital OUPUT pins (24VDC/500mA):</p>
+<table>
+<thead>
+<tr>
+<th>OUTPUT PIN</th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pin 1 - D0</td>
+<td>Pin 2 - D1</td>
+<td>Pin 3 - D2</td>
+<td>Pin 4 - D3</td>
+</tr>
+<tr>
+<td>Pin 5 - D4</td>
+<td>Pin 6 - D5</td>
+<td>Pin 7 - D6</td>
+<td>Pin 8 - D7</td>
+</tr>
+<tr>
+<td>Pin 9~12 - 24VDC</td>
+<td></td>
+<td>Pin 12~15 - GND</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>E-STOP pins:</p>
+<table>
+<thead>
+<tr>
+<th>E-STOP PIN</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pin 1 - GND</td>
+<td>Pin 2 - I4</td>
+</tr>
+<tr>
+<td>Pin 3 - I5</td>
+<td>Pin 4 - 24V</td>
+</tr>
+</tbody>
+</table>
+<h3 id="input-terminal-adapter-db9-male-and-wiring-example">Input Terminal Adapter (DB9 Male) and Wiring Example<a class="headerlink" href="#input-terminal-adapter-db9-male-and-wiring-example" title="Permanent link">&para;</a></h3>
+<p><img alt="title" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/InputWiring.png" /></p>
+<h3 id="output-terminal-adapter-db15-male-and-wiring-example">Output Terminal Adapter (DB15 Male) and Wiring Example<a class="headerlink" href="#output-terminal-adapter-db15-male-and-wiring-example" title="Permanent link">&para;</a></h3>
+<p><img alt="title" src="https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/CustomOutput.png" /></p>
 <blockquote>
 <p>If emergency button is not enabled, IN4 and IN5 can be use as input pin.</p>
 <p><strong><em>NOTE:</em></strong> Connect any output as shown above, do not load more than 500mA for each output pin.</p>
