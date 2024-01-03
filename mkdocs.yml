@@ -45,10 +45,15 @@ nav:
             - Slider X: reference/specifications/slider_x.md
     - Tutorials:
         - Tutorial List:  tutorials/tutorials_list.md
-        - Assembly Guides: 
+        - Assembly Guides:
             - Delta X 2: tutorials/assembly_guides/x2_assembly_guide.md
             - Delta X S Robot: tutorials/assembly_guides/xs_assembly_guide.md
             - Delta X S Frame: tutorials/assembly_guides/xs_frame_assembly_guide.md
+            - Delta X S IO Wiring: tutorials/assembly_guides/xs_v5_wiring_tutorial.md
+        - Control Guides:
+            - Use Arduino to Control Delta X 2: tutorials/control_guides/control_delta_x2_by_arduino.md
+        - Applications:
+            - Delta X Drawing: tutorials/appication_guides/deltax_art.md
     - Products:
         - Delta X 1 Series:
             - Delta X 1 Basic Kit: products/deltax1/x1_basic_kit.md
