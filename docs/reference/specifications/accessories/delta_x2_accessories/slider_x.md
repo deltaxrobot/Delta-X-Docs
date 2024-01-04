@@ -40,3 +40,4 @@ Slider X is exceptionally well-suited for diverse applications, including: exper
 - Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
 - Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
 - Phone: +84 38 875 2005
+

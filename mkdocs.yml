@@ -14,7 +14,7 @@ nav:
     - Home: index.md
     - About: index.md
     - Reference:
-        - Gcode:
+        - G-code Commands:
             - Robot:
                 - Useful Commands: reference/gcodes/useful_commands.md
                 - Delta X 1: reference/gcodes/gc_x1.md
@@ -22,10 +22,10 @@ nav:
                 - Delta X S V4: reference/gcodes/gc_xs_v4.md
                 - Delta X S V5: reference/gcodes/gc_xs_v5.md
             - X Conveyor: reference/gcodes/gc_conveyor.md
-            - Industial Conveyor: reference/gcodes/gc_insdustrial_conveyor.md
+            - Industrial Conveyor: reference/gcodes/gc_industrial_conveyor.md
             - Slider X: reference/gcodes/gc_slider.md
             - X Encoder: reference/gcodes/gc_encoder.md
-        - Macro Programing: 
+        - Macro Programming: 
             - Macro Programming: reference/macro_programming/macro_programming.md
             
         - Specifications: 
@@ -39,10 +39,20 @@ nav:
                 - D400: reference/specifications/delta_xs_v5/sp_v5_d400.md
                 - D600: reference/specifications/delta_xs_v5/sp_v5_d600.md
                 - D800: reference/specifications/delta_xs_v5/sp_v5_d800.md
-            - Conveyors:
-                - Conveyor Belt 120: reference/specifications/conveyors/conveyor_belt_120.md
-                - Conveyor Belt D120/200/300/400 L1200: reference/specifications/conveyors/industial_conveyor_belts.md
-            - Slider X: reference/specifications/slider_x.md
+            - Accessories:
+                - Delta X 2 Accessories: 
+                    - Conveyor X: reference/specifications/accessories/delta_x2_accessories/conveyor_x.md
+                    - Slider X: reference/specifications/accessories/delta_x2_accessories/slider_x.md
+                    - Vision Kit V1: reference/specifications/accessories/delta_x2_accessories/vision_kit_v1.md
+                    - 2020 Aluminum Profile Frames:
+                        - Hyper Cube Frame 2020 Basic Kit: reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_basic.md
+                        - Hyper Cube Frame 2020 Develop Kit: reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_dev.md
+                - Delta X S Accessories:
+                    - Industrial Conveyor Belt D120/200/300/400 L1200: reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts.md
+                    - Industrial Vision System Kit (for Delta X S): reference/specifications/accessories/delta_xs_accessories/industrial_vision_system_kit.md
+                    - 4040 Aluminum Profile Frames:
+                        - On-Table Frames: reference/specifications/accessories/delta_xs_accessories/frames/on_table_frames.md
+                        - Stand Frames: reference/specifications/accessories/delta_xs_accessories/frames/stand_frames.md
     - Tutorials:
         - Tutorial List:  tutorials/tutorials_list.md
         - Assembly Guides:
@@ -53,7 +63,7 @@ nav:
         - Control Guides:
             - Use Arduino to Control Delta X 2: tutorials/control_guides/control_delta_x2_by_arduino.md
         - Applications:
-            - Delta X Drawing: tutorials/appication_guides/deltax_art.md
+            - Delta X Drawing: tutorials/application_guides/deltax_art.md
     - Products:
         - Delta X 1 Series:
             - Delta X 1 Basic Kit: products/deltax1/x1_basic_kit.md

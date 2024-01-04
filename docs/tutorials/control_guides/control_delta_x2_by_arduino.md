@@ -25,7 +25,7 @@ Prerequisites:
 ### Programming
 
 First, we create queues to store G-codes.  
-``` Arduino
+``` C++
 #include <Arduino.h>
 #include "Vector/Vector.h"
 
@@ -37,7 +37,7 @@ Vector<String> GcodeQueue;
 ```
 
 Create init G-code queue, this queue code includes initialization commands, homing, setting feedrate and acceleration, and more.
-``` Arduino
+``` C++
 void create_init_gcode_queue()
 {
   InitGcodeQueue.push_back("G28");
@@ -50,7 +50,7 @@ void create_init_gcode_queue()
 ```
 
 Calculate and create a spiral queue:
-``` Arduino
+``` C++
 void create_gcode_queue(int start_radius, int stop_radius, int step)
 {
   GcodeQueue.push_back("M03");
@@ -83,7 +83,7 @@ void create_gcode_queue(int start_radius, int stop_radius, int step)
 ```
 
 Then check the button pressing event in loop function:
-``` Arduino
+``` C++
 void loop()
 {
   if (millis() - lastMillis >= 200)
