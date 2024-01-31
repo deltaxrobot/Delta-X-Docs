@@ -158,7 +158,7 @@ M315 [S<value>] [R<value>] [E<value>] [P<value>] [A<value>] [B<value>]
 #### Example
 
 ```
-M314 P1 V1    ;set output pin 1 at HIGH level.
+M315 S31.83 R0 E0 A5000 ;set up conveyor parameters (31.8 pulse/mm, not reverse dir, disable encoder, accel=5000mm/s^2)
 ```
 
 !!! note "Note"
@@ -255,6 +255,169 @@ M319 T0 ;set pin 0 auto feedback
 >> I0 V0
 >> I0 V1
 M319 S0 ;stop pin 0 auto feedback
+```
+
+## M390 - Set Ethernet Port
+
+#### Description
+
+Set the port number of ethernet communication
+
+#### Usage
+```
+M390 [port]
+```
+#### Parameter
+
+* `[port]`: ethernet port
+#### Example
+```
+M390 3456; set ethernet port 
+```
+
+## M391 - Set Ethernet IP Address
+
+#### Description
+
+You can define Ethernet IP address by yourself.
+
+#### Usage
+```
+M390 [number] [number] [number] [number]
+```
+#### Parameter
+
+* `[number]`: number of IP address
+
+#### Example
+```
+M391 192 168 0 2; set IP as 192.168.0.2
+```
+
+## M392 - Set Ethernet DNS Address
+
+#### Description
+
+You can define Ethernet DNS address by yourself.
+
+#### Usage
+```
+M392 [number] [number] [number] [number]
+```
+#### Parameter
+
+* `[number]`: number of DNS address
+
+#### Example
+```
+M392 192 168 0 127; set DNS as 192.168.0.127
+```
+
+## M393 - Set Ethernet Gateway Address
+
+#### Description
+
+You can define Ethernet Gateway address by yourself.
+
+#### Usage
+```
+M393 [number] [number] [number] [number]
+```
+#### Parameter
+
+* `[number]`: number of gateway address
+
+#### Example
+```
+M393 192 168 237 81; set gateway as 192.168.237.81
+```
+
+## M394 - Set Ethernet Subnet Address
+
+#### Description
+
+You can define Ethernet Subnet address by yourself.
+
+#### Usage
+```
+M394 [number] [number] [number] [number]
+```
+#### Parameter
+
+* `[number]`: number of subnet address
+
+#### Example
+```
+M394 192 168 237 81; set subnet as 192.168.237.89
+```
+
+## M395 - Set Ethernet MAC Address
+
+#### Description
+
+You can define Ethernet MAC address by yourself. You need to covert HEX number in address to DEC number before sending to robot.
+
+#### Usage
+```
+M395 [number] [number] [number] [number]  [number] [number]
+```
+#### Parameter
+
+* `[number]`: number of MAC address (integer)
+
+#### Example
+```
+M395 18 52 86 120 171 5; set MAC as 12:34:56:78:AB:05
+```
+
+## M396 - Save and Init Ethernet Port
+
+#### Description
+
+After all Ethernet addresses and port are set, use this command to save and initializing the ethernet port.
+
+#### Usage
+
+```
+M396
+```
+#### Example
+
+```
+M396 ;init Ethernet port
+```
+## M397 - Get Ethernet Port Parameters
+
+#### Description
+Use this command to check all Ethernet address and port number.
+
+#### Example
+```
+>>> M397 ;get all Ethernet setting parameters
+<<< E_port:3456
+<<< E_ip:192.168.0.2
+<<< E_dns:192.168.0.127
+<<< E_gateway:192.168.237.81
+<<< E_subnet:192.168.237.89
+<<< E_mac:12-34-56-78-AB-05
+<<< Ok
+```
+
+## M398 - Get Ethernet Local Port Parameters
+
+#### Description
+Use this command to check all Ethernet local address and port number.
+
+#### Example
+```
+>>> M398 ;get all Ethernet setting parameters
+<<< E_port:3456
+<<< E_ip:192.168.0.2
+<<< E_dns:192.168.0.127
+<<< E_gateway:192.168.237.81
+<<< E_subnet:192.168.237.89
+<<< E_mac:12-34-56-78-AB-05
+<<< Ok
 ```
 
 ## Contact Us
