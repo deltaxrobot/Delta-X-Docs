@@ -1,8 +1,8 @@
-# GCODES FOR INDUSTRIAL CONVEYOR/ENCODER BOARD
+# GCODES FOR X CONVEYOR BOARD
 
 ## Detect Conveyor COM Port
 
-If you wanna know that the COM port which connected was `Industrial Conveyor` or not, you can send command `IsXConveyor`. If the COM port is connected to conveyor, it will response `YesXConveyor`.
+If you wanna know that the COM port which connected was `X Conveyor` or not, you can send command `IsXConveyor`. If the COM port is connected to conveyor, it will response `YesXConveyor`.
 
 #### Example
 
@@ -191,11 +191,11 @@ M316 [mode]
 M316 1   ;set relative mode for encoder port
 ```
 
-## M317 - Get Position
+## M317 - Get Position from Encoder
 
 #### Description
 
-Get current position of the conveyor 
+Get current position of the conveyor from Encoder
 
 #### Parameter
 

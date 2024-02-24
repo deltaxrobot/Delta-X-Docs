@@ -1,8 +1,8 @@
-# GCODES FOR X CONVEYOR
+# GCODES FOR DESKTOP CONVEYOR
 
-## Detect X Conveyor COM Port
+## Detect Desktop Conveyor COM Port
 
-To determine if the COM port is connected to the `X Conveyor`, you can send the command `IsXConveyor`. If the COM port is linked to the conveyor, it will respond with `YesXConveyor`.
+To determine if the COM port is connected to the `Desktop Conveyor`, you can send the command `IsXConveyor`. If the COM port is linked to the conveyor, it will respond with `YesXConveyor`.
 
 #### Example
 
