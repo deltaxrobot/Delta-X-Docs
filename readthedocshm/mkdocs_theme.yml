@@ -17,8 +17,8 @@ analytics:
 
 include_homepage_in_sidebar: true
 prev_next_buttons_location: bottom
-navigation_depth: 4
+navigation_depth: 7
 titles_only: false
-sticky_navigation: true
-collapse_navigation: true
+sticky_navigation: false
+collapse_navigation: false
 logo: null

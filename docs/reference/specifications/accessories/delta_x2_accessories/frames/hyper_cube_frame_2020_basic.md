@@ -1,6 +1,6 @@
 # HyperCube 2020 Aluminum Profile Cube Frame
 
-![hyper_cube_basic_frame](/docs/images/specifications/hyper_cube_frame_2020_basic_kit.png)
+![hyper_cube_basic_frame](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/specifications/hyper_cube_frame_2020_basic_kit.png)
 
 ## Introduction
 

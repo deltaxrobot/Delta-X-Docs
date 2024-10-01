@@ -12,20 +12,18 @@ repo_name: Github
 repo_url: https://github.com/deltaxrobot/Delta-X-Docs
 nav:
     - Home: index.md
-    - About: index.md
-    - Reference:
+    - References:
         - G-code Commands:
-            - Robot:
-                - Useful Commands: reference/gcodes/useful_commands.md
-                - Delta X 1: reference/gcodes/gc_x1.md
-                - Delta X 2: reference/gcodes/gc_x2.md
-                - Delta X S V4: reference/gcodes/gc_xs_v4.md
-                - Delta X S V5: reference/gcodes/gc_xs_v5.md
+            - Useful Commands: reference/gcodes/useful_commands.md
+            - Delta X 1: reference/gcodes/gc_x1.md
+            - Delta X 2: reference/gcodes/gc_x2.md
+            - Delta X S V4: reference/gcodes/gc_xs_v4.md
+            - Delta X S V5: reference/gcodes/gc_xs_v5.md
             - Desktop Conveyor: reference/gcodes/gc_conveyor.md
             - X Conveyor: reference/gcodes/gc_industrial_conveyor.md
             - Slider X: reference/gcodes/gc_slider.md
             - X Encoder: reference/gcodes/gc_encoder.md
-        - Macro Programming: 
+        - Macro Programming:
             - Macro Programming: reference/macro_programming/macro_programming.md
         - Specifications: 
             - Delta X 1: reference/specifications/sp_x1.md
@@ -63,34 +61,24 @@ nav:
             - Use Arduino to Control Delta X 2: tutorials/control_guides/control_delta_x2_by_arduino.md
         - Applications:
             - Delta X Drawing: tutorials/application_guides/deltax_art.md
-    - Products:
-        - Delta X 1 Series:
-            - Delta X 1 Basic Kit: products/deltax1/x1_basic_kit.md
-            - Delta X 1 Luxury Kit: products/deltax1/x1_luxury_kit.md
-            - Delta X 1 Develop Kit: products/deltax1/x1_dev_kit.md
-        - Delta X 2 Series:
-            - Delta X 2 Basic Kit: products/deltax2/deltax2_basic_kit.md
-            - Delta X 2 Pick & Place Kit: products/deltax2/deltax2_pick_and_place_kit.md
-            - Delta X 2 Develop Kit: products/deltax2/deltax2_dev_kit.md
-        - Delta X S Series:
-            - Delta X S D400: products/deltaxs/deltaxs_d400.md
-            - Delta X S D600: products/deltaxs/deltaxs_d600.md
-            - Delta X S D800: products/deltaxs/deltaxs_d800.md
-
+    # - Products:
+    #     - Delta X 1 Series:
+    #         - Delta X 1 Basic Kit: products/deltax1/x1_basic_kit.md
+    #         - Delta X 1 Luxury Kit: products/deltax1/x1_luxury_kit.md
+    #         - Delta X 1 Develop Kit: products/deltax1/x1_dev_kit.md
+    #     - Delta X 2 Series:
+    #         - Delta X 2 Basic Kit: products/deltax2/deltax2_basic_kit.md
+    #         - Delta X 2 Pick & Place Kit: products/deltax2/deltax2_pick_and_place_kit.md
+    #         - Delta X 2 Develop Kit: products/deltax2/deltax2_dev_kit.md
+    #     - Delta X S Series:
+    #         - Delta X S D400: products/deltaxs/deltaxs_d400.md
+    #         - Delta X S D600: products/deltaxs/deltaxs_d600.md
+    #         - Delta X S D800: products/deltaxs/deltaxs_d800.md
 theme:
-    name: null
-    custom_dir: 'readthedocshm'
+    name: readthedocs
+    # custom_dir: 'readthedocshm'
     analytics: null
-    navigation_depth: 8
+    navigation_depth: 5
+    sticky_navigation: false
+    collapse_navigation: false
     
-#     highlightjs: true
-#     hljs_languages:
-#         - yaml
-#         - rust
-# theme:
-#   name: ponylan
-        # - cinder/css/extra.css
-        # - cinder/css/base.css
-        # - cinder/css/base.min.css
-        # - cinder/css/bootstrap-custom.css
-        # - cinder/css/bootstrap-custom.min.css

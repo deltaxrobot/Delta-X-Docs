@@ -3,6 +3,7 @@
 This tutorial will guide you on using an Arduino board to control the Delta X 2 robot draw a spiral through the Serial Port beside the main USB port on the robot body.
 
 Prerequisites:
+
 - Delta X 2 Robot Kit
 - Arduino Board (e.g., Arduino Pro Mini, Arduino Uno)
 - USB Cable
@@ -25,7 +26,7 @@ Prerequisites:
 ### Programming
 
 First, we create queues to store G-codes.  
-``` C++
+```C++
 #include <Arduino.h>
 #include "Vector/Vector.h"
 
@@ -37,7 +38,7 @@ Vector<String> GcodeQueue;
 ```
 
 Create init G-code queue, this queue code includes initialization commands, homing, setting feedrate and acceleration, and more.
-``` C++
+```C
 void create_init_gcode_queue()
 {
   InitGcodeQueue.push_back("G28");
@@ -50,7 +51,7 @@ void create_init_gcode_queue()
 ```
 
 Calculate and create a spiral queue:
-``` C++
+```C
 void create_gcode_queue(int start_radius, int stop_radius, int step)
 {
   GcodeQueue.push_back("M03");
@@ -83,7 +84,7 @@ void create_gcode_queue(int start_radius, int stop_radius, int step)
 ```
 
 Then check the button pressing event in loop function:
-``` C++
+```C
 void loop()
 {
   if (millis() - lastMillis >= 200)
