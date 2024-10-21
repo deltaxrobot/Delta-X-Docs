@@ -2,11 +2,10 @@
 
 ## Identify Delta Robot Command
 
-> When you need to identity a COM port was connected to Delta Robot or not, you can send a command like `IsDelta` to that port, if it is *Delta Robot*, it will feedback `YesDelta`. Note that the baudrate must be 115200.
+> To check if a COM port is connected to a Delta Robot, send the command `IsDelta`. If connected, it replies with `YesDelta`. The baudrate should be 115200.
 
-```
+```python
 IsDelta
-
 >>> YesDelta
 ```
 
@@ -14,7 +13,7 @@ IsDelta
 
 ## Disconnect COM Port Command
 
-> This command will disconnect *Delta Robot* with the COM port which was connected before.
+> To disconnect the robot from the current COM port, use this command.
 
 ```
 Disconnect
@@ -24,9 +23,9 @@ Disconnect
 
 ## Get Current Position Command
 
-> This commnad will return current end effector position. If robot have any axis, the robot will return all current axis position.
+> To retrieve the robot's current end-effector position, use the `Position` command. This returns the positions of all axes.
 
-```
+```python
 Position
 
 >>> X30.4 Y90 Z-800 W50 U90
@@ -36,9 +35,9 @@ Position
 
 ## Get Position Offset Command
 
-> This command return positon offset of all axis.
+>  To get the position offset for each axis, use the `PositionOffset` command.
 
-```
+```python
 PositionOffset
 
 >>> X0.5 Y1.2 Z-2.2
@@ -48,7 +47,7 @@ PositionOffset
 
 ## Get Current Theta Angles
 
-> This command return current theta angles of 3 upper arm (degree).
+> For the current angles of the three upper arms, use `Angle` (angles in deg).
 
 ```
 Angle
@@ -62,7 +61,7 @@ Angle
 
 > This command will return current states of endstops(on Delta X 1, Delta X 2) or proximity sensors(on Delta X S).
 
-```
+```python
 HTs
 
 >>> 111
@@ -72,9 +71,9 @@ HTs
 
 ## Get Robot IMEI
 
-> This command will return robot IMEI.
+> To find the robot's unique IMEI, use the `IMEI` command.
 
-```
+```python
 IMEI
 
 >>> 0004-0000-0000-0012
@@ -82,11 +81,11 @@ IMEI
 
 - Model: `Delta X 1`, `Delta X 2`, `Delta X S`.
 
-## Get Robot Infor
+## Get Robot Information
 
-> This command will return robot informations, such as model, version of mainboard,..
+> The `Infor` command provides details like the model, mainboard version, and firmware version.
 
-```
+```python
 Infor
 
 >>> @IMWI Technology
@@ -99,7 +98,7 @@ Infor
 
 ## Get Robot Active Status
 
-> Return current robot active status. The status are `Free, Running,  Wait, Almostdone, Done`.
+> To check the robot's current status, use `DeltaState`. The status are `Free, Running,  Wait, Almostdone, Done`.
 
 ```
 DeltaState
@@ -111,8 +110,7 @@ DeltaState
 
 ## Set Feedback String
 
-> When the robot executed a gcode, it will feedback `Ok`. You can change `Ok` to another string like `ok`, `done` or whatever you want.
-
+> You can customize the feedback message after a command execution by setting a feedback string.
 ```
 Feedback: done
 
@@ -124,7 +122,7 @@ Feedback: done
 
 ## Emergency Stop Command
 
-> You can send a emergency signal by command 
+> Send an emergency signal with Emergency: <state>. States include Reset, Stop, Pause, or Resume.
 
 ```
 Emergency: <state>
@@ -137,11 +135,11 @@ Where `<state>` can be:
 - `Pause` - pause robot
 - `Resume` - resume robot
 
-> Model: `Delta X S`.
+> Model: `Delta X 2, Delta X S`.
 
 ## Get Current Temperature
 
-> Return current temperature(in degree celsius).
+> To get the hot end's current temperature, use the `TempState` command.
 
 - Model: `Delta X 2`
 
@@ -159,9 +157,11 @@ Temp
 >>> T:28.2
 ```
 
+- Model: `Delta X 2`
+
 ## Set up WIFI connection
 
-> To use WIFI connection on `Delta X 1` or `Delta X 2` model, just use these commands. Once connection successful, the robot will auto return IP address. Take note to **switch to WiFi mode**.
+> For models `Delta X 1` and `Delta X 2`, use the `SSID` and `PSWD` commands to connect to Wi-Fi. The robot will return its IP address upon successful connection. Make sure to **switch to WiFi mode**.
 
 ```
 SSID:<wifi_name>
