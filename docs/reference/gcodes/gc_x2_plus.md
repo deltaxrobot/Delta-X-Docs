@@ -212,7 +212,7 @@ G91              ; Set all axes to relative
 
 ### Descriptions
 
-Get current posiition of end effector.
+Get current position of end effector.
 
 ### Usage
 
@@ -222,7 +222,7 @@ G93
 
 ### Feedback
 
-* `<xpos>,<ypos>,<zpos>`
+* `<xpos>, <ypos>, <zpos>`
     * `<xpos>` : Current X position.
     * `<ypos>` : Current Y position.
     * `<zpos>` : Current Z position.
@@ -264,7 +264,7 @@ G01 Z-300
 
 ### Descriptions
 
-M04 is used to turn on digital output pin (D0 - D3).
+M04 is used to turn on and set PWM value for digital output pin (D0 - D3).
 
 ### Usage
 
@@ -299,6 +299,348 @@ M05  ;turn off vacuum
 
 ---
 
+## M06 - Turn off digital output pins
+
+### Descriptions
+
+M06 is used to turn off digital output pin (D0 - D3).
+
+### Usage
+
+```
+M06 [D<pin>]
+```
+
+### Parameters
+
+* `D[pin]`:(0 ~ 3) The index of output pin
+
+### Example
+
+```
+M06 D1 ;turn off pin D1
+```
+
+---
+
+## M07 - Read Input Signals
+
+### Descriptions
+
+M07 is used to read the input signal from the input pins.
+
+### Usage
+
+```
+M07 [I<pin>] [A<pin>]
+```
+
+### Parameters
+
+* `I[pin]`:(0 ~ 3) The index of digital input pin
+* `A[pin]`:(0 ~ 1) The index of analog input pin
+
+### Feedback
+
+* `I[pin] V[value]`:
+    * `I[pin]` : The index of digital input pin
+    * `V[value]` : {0,1} The value of the digital input signal
+
+* `A[pin] V[value]`:
+    * `A[pin]` : The index of analog input pin
+    * `V[value]` : [0 ~ 4095] The value of the analog input signal
+
+### Example
+
+```
+M07 I0 I3              ;read digital pin I0 and I3
+>>> I0 V1
+>>> I3 V0
+M07 A1                 ;read analog pin A1
+>>> A1 V3946
+```
+
+---
+
+## M08 - Read Input Signals Automatically
+
+### Descriptions
+
+M08 is used to read the input signal from the input pins automatically.
+
+### Usage
+
+```
+M08 [I<pin>]
+M08 [A<pin>] [P<time>]
+```
+
+### Parameters
+
+* `I[pin]`:(0 ~ 3) The index of digital input pin
+* `A[pin]`:(0 ~ 1) The index of analog input pin
+* `P[time]`:(ms) The time to read the analog input signal
+
+### Feedback
+
+* `I[pin] V[value]`:
+    * `I[pin]` : The index of digital input pin
+    * `V[value]` : {0,1} The value of the digital input signal
+
+* `A[pin] V[value]`:
+    * `A[pin]` : The index of analog input pin
+    * `V[value]` : [0 ~ 4095] The value of the analog input signal
+
+### Example
+    
+```
+M08 I0   ;read digital pin I0 automatically
+M08 A1 P1000  ;read analog pin A1 every 1000ms
+```
+
+---
+
+## M09 - Disable Automatic Reading Analog Input Signal
+
+### Descriptions
+
+M09 is used to disable automatic reading the analog input signal.
+
+### Usage
+
+```
+M09 [A<pin>]
+```
+
+### Parameters
+
+* `A[pin]`:(0 ~ 1) The index of analog input pin
+
+### Example
+
+```
+M09 A1  ;disable automatic reading analog pin A1
+```
+
+## M50 - Enable RJ45
+
+#### Descriptions
+
+This command can be used to enable or disable RJ45 port.
+
+#### Usage
+
+```
+M50 A<x>
+```
+
+#### Parameter
+
+* `A[x]`
+    * `x = 1` : enable RJ45
+    * `x = 0` : disable RJ45
+
+#### Example
+
+```
+M50 A1           ; enable RJ45
+```
+
+---
+
+## M51 - Set Ethernet Port
+
+#### Descriptions
+
+Set ethernet port number
+
+#### Usage
+
+```
+M51 B<x>
+```
+
+#### Parameter
+
+* `B[x]` : port number
+
+#### Example
+
+```
+M51 B8080         ; set ethernet port
+```
+
+---
+
+## M52 - Set MAC Device
+
+#### Descriptions
+
+Set MAC address of the robot
+
+#### Usage
+
+Address form: A:B:C:D:E:F
+
+```
+M52 A<x> B<y> C<z> D<t> E<u> F<v>
+```
+
+#### Parameter
+
+* `A[x]` : number
+* `B[y]` : number
+* `C[z]` : number
+* `D[t]` : number
+* `E[u]` : number
+* `F[v]` : number
+
+#### Example
+
+```
+M52 A12 B23 C34 D45 E56 F67
+
+>>> MAC add: 12-23-34-45-56-67 
+```
+
+---
+
+## M53 - Set Ethernet IP
+
+#### Descriptions
+
+Set ethernet IP of robot
+
+#### Usage
+
+```
+M53 A<x> B<y> C<z> D<t>
+```
+
+#### Parameter
+
+* `A[x]` : number
+* `B[y]` : number
+* `C[z]` : number
+* `D[t]` : number
+
+#### Example
+
+```
+M53 A192 B168 C1 D1
+
+>>> IP: 192.168.1.1
+```
+
+---
+
+## M54 - Set Ethernet DNS
+
+#### Descriptions
+
+Set ethernet DNS address
+
+#### Usage
+
+```
+M54 A<x> B<y> C<z> D<t>
+```
+
+#### Parameter
+
+* `A[x]` : number
+* `B[y]` : number
+* `C[z]` : number
+* `D[t]` : number
+
+#### Example
+
+```
+M53 A192 B168 C1 D3
+
+>>> DNS IP: 192.168.1.3
+```
+
+---
+
+## M55 - Set Ethernet Gateway
+
+#### Descriptions
+
+Set ethernet gateway address
+
+#### Usage
+
+```
+M55 A<x> B<y> C<z> D<t>
+```
+
+#### Parameter
+
+* `A[x]` : number
+* `B[y]` : number
+* `C[z]` : number
+* `D[t]` : number
+
+#### Example
+
+```
+; set ethernet gateway address 192.168.3.1
+M55 A192 B168 C3 D1
+```
+
+---
+
+## M56 - Set Ethernet Subnet
+
+#### Descriptions
+
+Set ethernet gateway address
+
+#### Usage
+
+```
+M56 A<x> B<y> C<z> D<t>
+```
+
+#### Parameter
+
+* `A[x]` : number
+* `B[y]` : number
+* `C[z]` : number
+* `D[t]` : number
+
+#### Example
+
+```
+; set ethernet subnet address 192.168.3.1
+M56 A192 B168 C3 D1
+```
+
+---
+
+## M57 - Get Robot IP
+
+#### Descriptions
+
+Get the IP of Delta X 2 Plus Robot
+
+#### Usage
+
+```
+M57
+```
+
+#### Example
+
+```
+M57
+
+>>> 192.168.2.2
+```
+
+---
+
 ## M84 - Disable Steppers
 
 ### Descriptions
@@ -312,73 +654,6 @@ M84
 ```
 ---
 
-## M104 - Set Hotend Temperature
-
-### Descriptions
-
-Set a new target hot end temperature and continue without waiting. The firmware will continue to try to reach and hold the temperature in the background.
-
-### Usage
-
-```
-M104 [S<temp>]
-```
-
-### Parameters
-* `S[temp]`: (degree Celsius) Target temperature.
-
-### Example
-
-```
-M104 S195           ;set hotend at 195 degC
-```
-
----
-
-## M105 - Report Temperature
-
-### Descriptions
-
-Request a temperature report to be sent to the host as soon as possible.
-
-### Usage
-
-```
-M105
-```
-
-### Example
-
-```
-M105           ;set hotend at 95 degC
-
-return
-T:195
-```
-
----
-
-## M109 - Wait For Hotend Temperature
-
-### Descriptions
-
-This command optionally sets a new target hot end temperature and waits for the target temperature to be reached before proceeding.
-
-### Usage
-
-```
-M109 [S<temp>]
-```
-### Parameters
-
-* `S[temp]`: (degree Celsius) Target temperature.
-
-### Example
-
-```
-M109 S180  ;Set target temperature and wait (if heating up)
-```
----
 
 ## M203 - Set Feedrate
 
@@ -477,32 +752,58 @@ M206 X20 Y-10 Z30  ;Set home offsets
 
 ---
 
-## M331 - Select Linked Device
+## M207 - Set Z Safe 
 
-### Descriptions
+#### Descriptions
 
-Config device is linked to external UART port.
+Set the lowest Z level that the robot cannot exceed.
 
-### Usage
-
-```
-M331 R<value>
-```
-
-### Parameters
-
-* `R[value]`
-    * 0-None (Disable port).
-    * 1-Conveyor
-    * 2-Sliding Rail
-
-### Example
+#### Usage
 
 ```
-M331 R1  ;select the device which connected with external port is Conveyor,
-          now you can control Conveyor via Delta Robot
+M207 [Z<value>]
 ```
+
+#### Parameters
+
+* `Z[value]`: (mm) Z safe value.
+
+#### Example
+
+```
+M207 Z-870  ;Set Z safe value
+```
+
 ---
+
+## M210 - Set Theta Movement Parameter
+
+#### Descriptions
+
+Config theta movement para like speed, accel, jerk, start velocity and end velocity.
+
+#### Usage
+
+```
+M210 [F<value>] [A<value>] [J<value>] [S<value>] [E<value>]
+```
+
+#### Parameters
+
+* `F[value]`: (unit/s) speed.
+* `A[value]`: (unit/s^2) accel.
+* `J[value]`: (unit/s^3) jerk.
+* `S[value]`: (unit/s) start velocity.
+* `E[value]`: (unit/s) end velocity.
+
+#### Example
+
+```
+M210 F2000 A4000 J800000 S30 E30  ;set all theta movement para
+```
+
+---
+
 
 ## M360 - Select End Effector
 
@@ -533,11 +834,11 @@ M360 E2  ;select the end effector is Pen
 ```
 ---
 
-## M361 - Set Interpolated line length
+## M361 - Set minimum moving distance
 
 ### Descriptions
 
-Set the length of each segment in line interpolation.
+Set the length of minimum moving distance.
 
 ### Usage
 
@@ -552,55 +853,7 @@ M361 P<len>
 ### Example
 
 ```
-M361 P0.3    ;set segment length = 0.3mm 
-```
-
----
-
-## M362 - Set Arc segment length
-
-### Descriptions
-
-Set segment length in arc interpolation.
-
-### Usage
-
-```
-M362 P<len>
-```
-
-### Parameters
-
-* `P[len]`: (mm) Length in mm.
-
-### Example
-
-```
-M362 P0.4    ;set segment length = 0.4mm 
-```
-
----
-
-## M402 - Set Z Max Position
-
-### Descriptions
-
-Set the maximum position of Z axis, the end effector can't move upper than this value.
-
-### Usage
-
-```
-M402 Z<pos>
-```
-
-### Parameters
-
-* `Z[pos]`: (mm) max z position in mm.
-
-### Example
-
-```
-M402 Z-245   ;After this command, end effector cant get higher than -245 mm.
+M361 P0.1    ;set minium moving distance = 0.1mm
 ```
 
 ---

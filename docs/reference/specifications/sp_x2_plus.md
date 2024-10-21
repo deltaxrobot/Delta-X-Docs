@@ -7,13 +7,13 @@
 |Parameters                   | Specifications      |
 |-----------------------------|---------------------|
 |Working space                |D = 320 mm, H = 200mm|
-|Max payload                  |700g                 |
-|Max speed                    |800 mm/s             |
+|Max payload                  |1kg                |
+|Max speed                    |2000 mm/s             |
 |Max accel                    |20000 mm/s2          |
 |Pose repeatability           |±0.15 mm             |
 |Position accuracy            |±0.15 mm             |
-|Number of axes               |3/4                  |
-|Power supply                 |12VDC - 5A           |
+|Number of axes               |3/4/5               |
+|Power supply                 |12~24VDC - 5A           |
 |Weight                       |4kg                  |
 
 ---
@@ -22,10 +22,10 @@
 
 |Components                   | Specifications      |
 |-----------------------------|---------------------|
-|Controller Board             |Delta X 2 Board (ARM Cortex-M3|
-|Communication                |USB, UART, Bluetooth, Wifi   |
-|Input                        |1 analog input(temp sensor)  |
-|Output                       |Stepper/Laser/Vacuum/Axis-4/Gripper)|
+|Controller Board             |Delta X 2 Board (ARM Cortex-M7)|
+|Communication                |USB, UART, Ethernet   |
+|Input                        |2 analog input/4 digital input  |
+|Output                       |4 digital output (NPN) |
 
 ---
 
@@ -68,19 +68,20 @@
 
 `Delta X 2 Robot` has multiple port for different end effectors. The port is located on a side of robot body. Includes:
 
-* 1 Laser/Vacuum/Heating Port
+* 1 Vacuum Port
 * 1 Gripper Port
-* Axis 4 Port
-* 1 Stepper Motor Port for 3D Printing
-* 1 Thermistor Port
+* 1 Axis 4 Port
+* 1 Axis 5 Port
+* 2 Analog Input Port
+* 4 Digital Input Port
+* 4 Digital Output Port
 * 12VDC Power Supply Port
-* 1 Custom Port
 
 ### Communication Ports and Power Supply
 
 ![x2_ports](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_pinout_1.png)
 
-The robot has a USB-B port and a UART port for communication. The USB-B port is used for programming and debugging. The UART port is used for communication with other devices. The robot can be powered by a 12VDC power supply with minimum 5A current.
+The robot has a USB-B port and a UART port for communication. The USB-B port is used for programming and debugging. The robot can be powered by a 12 ~ 24 VDC power supply with minimum 5A current.
 
 ## Contact Us
 
