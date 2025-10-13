@@ -284,7 +284,31 @@ M319 S0 ;stop auto feedback for pin 0
 ```
 
 ---
+## M389 - Enable Ethernet
 
+#### Description
+
+This command can be used to enable or disable Ethernet port.
+
+#### Usage
+
+```
+M398 [number]
+```
+
+#### Parameter
+
+* `[number]`
+    * `number = 1` : enable Ethernet port
+    * `number = 0` : disable Ethernet port
+
+#### Example
+
+```
+M389 1 ; enable Ethernet port
+```
+
+---
 ## M390 - Set Ethernet Port
 
 #### Description
@@ -400,7 +424,7 @@ M394 [number] [number] [number] [number]
 #### Example
 
 ```
-M394 192 168 237 89 ;set Subnet address to 192.168.237.89
+M394 255 255 255 0 ;set Subnet address to 255.255.255.0
 ```
 
 ---
