@@ -294,7 +294,7 @@ This command can be used to enable or disable Ethernet port.
 #### Usage
 
 ```
-M398 [number]
+M389 [number]
 ```
 
 #### Parameter
