@@ -284,6 +284,7 @@ M319 S0 ;stop auto feedback for pin 0
 ```
 
 ---
+
 ## M389 - Enable Ethernet
 
 #### Description
@@ -309,6 +310,7 @@ M389 1 ; enable Ethernet port
 ```
 
 ---
+
 ## M390 - Set Ethernet Port
 
 #### Description
