@@ -1215,13 +1215,13 @@ This command is used to enable EMERGENCY STOP BUTTON.
 #### Usage
 
 ```
-M600 A8 B9
+M600 A4 B5
 ```
 
 #### Example
 
 ```
-M600 A8 B9    ;enable E_STOP button
+M600 A4 B5    ;enable E_STOP button
 ```
 
 ## M601 - Disable Emergency Stop Button
