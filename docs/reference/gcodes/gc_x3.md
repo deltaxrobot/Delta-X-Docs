@@ -88,7 +88,7 @@ G4 P<value>
 
 #### Parameters
 
-* `P[value]`: time in milisecons.
+* `P[value]`: time in milliseconds.
 
 #### Example
 
@@ -197,7 +197,7 @@ return:
 
 ---
 
-## M03, M04 - Ouput On / Set PWM / Vacuum On
+## M03, M04 - Output On / Set PWM / Vacuum On
 #### Descriptions
 
 This is the command used to turn on the Delta X S robot's output pin.
@@ -232,7 +232,7 @@ G01 Z-350
 
 ---
 
-## M05 - Ouput Off / Turn Off PWM / Vacuum Off
+## M05 - Output Off / Turn Off PWM / Vacuum Off
 
 #### Descriptions
 
@@ -352,6 +352,87 @@ M08 A1 C200         ;auto update A1 analog value with cycle=200us
 
 >>> I3 V0
 >>> A1 V762
+```
+
+---
+
+## M9 - Stop Analog Input Auto Feedback
+
+#### Descriptions
+
+Turn off auto feedback for an analog input pin.
+
+#### Usage
+
+```
+M9 A<n>
+```
+
+#### Parameters
+
+* `A[n]`: Analog Input Pin
+    * `n` = 0, 1.
+
+#### Example
+
+```
+M9 A1           ;turn off auto feedback for analog pin A1
+```
+
+---
+
+## M43 - Set UART2 / Serial2
+
+#### Descriptions
+
+Configure UART2 / Serial2. Use `A1` to enable, `A0` to disable, and `B` to set the baudrate.
+
+#### Usage
+
+```
+M43 A<x> B<y>
+```
+
+#### Parameters
+
+* `A[x]`
+    * `x = 1`: enable UART2 / Serial2.
+    * `x = 0`: disable UART2 / Serial2.
+* `B[y]`: baudrate.
+
+#### Example
+
+```
+M43 A1 B115200    ;enable UART2 / Serial2 with baudrate 115200
+M43 A0            ;disable UART2 / Serial2
+```
+
+---
+
+## M44 - Set UART3 / Serial3
+
+#### Descriptions
+
+Configure UART3 / Serial3. Use `A1` to enable, `A0` to disable, and `B` to set the baudrate.
+
+#### Usage
+
+```
+M44 A<x> B<y>
+```
+
+#### Parameters
+
+* `A[x]`
+    * `x = 1`: enable UART3 / Serial3.
+    * `x = 0`: disable UART3 / Serial3.
+* `B[y]`: baudrate.
+
+#### Example
+
+```
+M44 A1 B115200    ;enable UART3 / Serial3 with baudrate 115200
+M44 A0            ;disable UART3 / Serial3
 ```
 
 ---
@@ -598,6 +679,62 @@ M58
 
 ---
 
+## M60 - Set Axis W
+
+#### Descriptions
+
+Configure axis W parameters: max, min, home, min pulse, and max pulse.
+
+#### Usage
+
+```
+M60 P<x> Q<y> H<z> A<t> B<u>
+```
+
+#### Parameters
+
+* `P[x]`: max value.
+* `Q[y]`: min value.
+* `H[z]`: home value.
+* `A[t]`: min pulse.
+* `B[u]`: max pulse.
+
+#### Example
+
+```
+M60 P180 Q0 H90 A500 B2500    ;set axis W parameters
+```
+
+---
+
+## M61 - Set Axis U
+
+#### Descriptions
+
+Configure axis U parameters: max, min, home, min pulse, and max pulse.
+
+#### Usage
+
+```
+M61 P<x> Q<y> H<z> A<t> B<u>
+```
+
+#### Parameters
+
+* `P[x]`: max value.
+* `Q[y]`: min value.
+* `H[z]`: home value.
+* `A[t]`: min pulse.
+* `B[u]`: max pulse.
+
+#### Example
+
+```
+M61 P180 Q0 H90 A500 B2500    ;set axis U parameters
+```
+
+---
+
 ## M84 - Disable Steppers
 
 #### Descriptions
@@ -608,6 +745,20 @@ This command can be used to disable steppers.
 
 ```
 M84
+```
+
+---
+
+## M85 - Enable Steppers
+
+#### Descriptions
+
+This command can be used to enable steppers.
+
+#### Usage
+
+```
+M85
 ```
 
 ---
@@ -817,6 +968,35 @@ M210 F2000 A15000 J900000 S50 E50  ;set all theta movement para
 ```
 ---
 
+## M220 - Read Parameters
+
+#### Descriptions
+
+Read robot parameters.
+
+#### Usage
+
+```
+M220 I<n>
+```
+
+#### Parameters
+
+* `I[n]`
+    * `n = 0`: read move parameters.
+    * `n = 1`: read axis W parameters.
+    * `n = 2`: read axis U parameters.
+
+#### Example
+
+```
+M220 I0    ;read move parameters
+M220 I1    ;read axis W parameters
+M220 I2    ;read axis U parameters
+```
+
+---
+
 ## M360 - Select End Effector
 
 ### Descriptions
@@ -835,7 +1015,6 @@ M360 E<value>
     * 0-Vacuum (default).
     * 1-Gripper
     * 2-Pen
-    * 3-Laser
 ### Example
 
 ```
