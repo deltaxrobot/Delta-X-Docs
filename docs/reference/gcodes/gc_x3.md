@@ -735,6 +735,32 @@ M61 P180 Q0 H90 A500 B2500    ;set axis U parameters
 
 ---
 
+## M62 - Set Gripper
+
+#### Descriptions
+
+Configure gripper parameters: max position, min position, and home position. Any omitted parameter keeps its current stored value.
+
+#### Usage
+
+```
+M62 P<x> Q<y> H<z>
+```
+
+#### Parameters
+
+* `P[x]`: max position.
+* `Q[y]`: min position.
+* `H[z]`: home position.
+
+#### Example
+
+```
+M62 P100 Q0 H50    ;set gripper parameters
+```
+
+---
+
 ## M84 - Disable Steppers
 
 #### Descriptions
