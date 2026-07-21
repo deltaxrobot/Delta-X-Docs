@@ -112,11 +112,11 @@ M313 300    ;set speed to 300 mm/s for position move
 
 ---
 
-## M314 - Set Output Pins Level
+## M314 - Set Motor Pins Level
 
 #### Description
 
-Set the output pins level in Output Mode.
+Set the Motor pins level in Output Mode.
 
 #### Usage
 
@@ -254,11 +254,11 @@ M318 S10.24 C2 R1 ;set X2 scale factor, pulses per mm will be doubled, and rever
 
 ---
 
-## M319 - Read Input Pin
+## M319 - Read Encoder Pin
 
 #### Description
 
-Get the status of an input pin in several modes.
+Get the status of an encoder pin in several modes.
 
 #### Usage
 
@@ -268,19 +268,146 @@ M319 [V<value>] [T<value>] [S<value>]
 
 #### Parameter
 
-* `V[pin index]`: Get current status of the pin at the specified index (0, 1).
-* `T[pin index]`: Set auto feedback when pin status changes.
-* `S[pin index]`: Stop auto feedback at the specified pin index.
+* `V[pin index]`: Get current status of the encoder pin at the specified index (0, 1).
+* `T[pin index]`: Set auto feedback when encoder pin status changes.
+* `S[pin index]`: Stop auto feedback at the specified encoder pin index.
 
 #### Example
 
 ```
-M319 V1 ;get status of pin 1
+M319 V1 ;get status of encoder pin 1
 >> I1 V1
-M319 T0 ;set auto feedback for pin 0
+M319 T0 ;set auto feedback for encoder pin 0
 >> I0 V0
 >> I0 V1
-M319 S0 ;stop auto feedback for pin 0
+M319 S0 ;stop auto feedback for encoder pin 0
+```
+
+---
+
+## M320 - Set Output Pin
+
+#### Description
+
+Set the output pin state. When activated, the output pin is pulled down to GND. When deactivated, the output pin is floating.
+
+#### Usage
+
+```
+M320 P<pin> V<value>
+```
+
+#### Parameter
+
+* `P<pin>`: Index of the output pin.
+* `V<value>`: Value to set (0 for deactivated/floating, 1 for activated/pulled down to GND).
+
+#### Example
+
+```
+M320 P1 V1    ;activate output pin 1 and pull it down to GND
+```
+
+---
+
+## M321 - Read Input Pin
+
+#### Description
+
+Read the value of an input pin.
+
+#### Usage
+
+```
+M321 V<pin>
+```
+
+#### Parameter
+
+* `V<pin>`: Index of the input pin.
+
+#### Example
+
+```
+M321 V1 ;get status of input 1
+>> I1 V1
+```
+
+---
+
+## M322 - Configure Input Pin
+
+#### Description
+
+View or set the function configuration of input pins.
+
+#### Usage
+
+```
+M322
+M322 I<pin>
+M322 I<pin> F<function> V<value>
+```
+
+#### Parameter
+
+* `I<pin>`: Index of the input pin.
+* `F<function>`: Function assigned to the input pin.
+* `V<value>`: Value used by the assigned function.
+
+#### Function
+
+* `F0`: No function assigned. The pin operates as a normal input.
+* `F1`: Increase speed by `V` each time the input is triggered.
+* `F2`: Decrease speed by `V` each time the input is triggered.
+* `F3`: Move to relative position `V` when the input is triggered.
+* `F4`: Stop the motor when the input is triggered.
+
+#### Example
+
+```
+M322              ;get current configuration of all input pins
+M322 I1           ;get current configuration of input pin 1
+M322 I1 F1 V50    ;increase speed by 50 each time input pin 1 is triggered
+M322 I2 F3 V100   ;move to relative position 100 when input pin 2 is triggered
+```
+
+---
+
+## M323 - Configure Output Pin
+
+#### Description
+
+View or set the function configuration of output pins.
+
+#### Usage
+
+```
+M323
+M323 P<pin>
+M323 P<pin> F<function> V<value>
+```
+
+#### Parameter
+
+* `P<pin>`: Index of the output pin.
+* `F<function>`: Function assigned to the output pin.
+* `V<value>`: Value used by the assigned function.
+
+#### Function
+
+* `F0`: The pin operates as a normal output and is controlled by `M320`.
+* `F1`: Activate when the position command is complete.
+* `F2 V0`: Activate when the target velocity is reached.
+* `F2 V>0`: Activate when the velocity is greater than or equal to `V`.
+
+#### Example
+
+```
+M323              ;get current configuration of all output pins
+M323 P1           ;get current configuration of output pin 1
+M323 P1 F1 V0     ;activate output pin 1 when the position command is complete
+M323 P2 F2 V50    ;activate output pin 2 when the velocity is greater than or equal to 50
 ```
 
 ---
