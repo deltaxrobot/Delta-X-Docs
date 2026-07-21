@@ -2249,7 +2249,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m314-set-output-pins-level">M314 - Set Output Pins Level</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m314-set-motor-pins-level">M314 - Set Motor Pins Level</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_4">Description</a>
     </li>
@@ -2309,7 +2309,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m319-read-input-pin">M319 - Read Input Pin</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m319-read-encoder-pin">M319 - Read Encoder Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_9">Description</a>
     </li>
@@ -2321,7 +2321,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m389-enable-ethernet">M389 - Enable Ethernet</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m320-set-output-pin">M320 - Set Output Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_10">Description</a>
     </li>
@@ -2333,7 +2333,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m390-set-ethernet-port">M390 - Set Ethernet Port</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m321-read-input-pin">M321 - Read Input Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_11">Description</a>
     </li>
@@ -2345,7 +2345,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m391-set-ethernet-ip-address">M391 - Set Ethernet IP Address</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m322-configure-input-pin">M322 - Configure Input Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_12">Description</a>
     </li>
@@ -2353,11 +2353,13 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#parameter_12">Parameter</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function">Function</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#example_13">Example</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m392-set-ethernet-dns-address">M392 - Set Ethernet DNS Address</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m323-configure-output-pin">M323 - Configure Output Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_13">Description</a>
     </li>
@@ -2365,11 +2367,13 @@
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#parameter_13">Parameter</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#function_1">Function</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#example_14">Example</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m393-set-ethernet-gateway-address">M393 - Set Ethernet Gateway Address</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m389-enable-ethernet">M389 - Enable Ethernet</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_14">Description</a>
     </li>
@@ -2381,7 +2385,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m394-set-ethernet-subnet-address">M394 - Set Ethernet Subnet Address</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m390-set-ethernet-port">M390 - Set Ethernet Port</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_15">Description</a>
     </li>
@@ -2393,7 +2397,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m395-set-ethernet-mac-address">M395 - Set Ethernet MAC Address</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m391-set-ethernet-ip-address">M391 - Set Ethernet IP Address</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_16">Description</a>
     </li>
@@ -2405,29 +2409,77 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m396-save-and-init-ethernet-port">M396 - Save and Init Ethernet Port</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m392-set-ethernet-dns-address">M392 - Set Ethernet DNS Address</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_17">Description</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#usage_17">Usage</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parameter_17">Parameter</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#example_18">Example</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m397-get-ethernet-port-parameters">M397 - Get Ethernet Port Parameters</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m393-set-ethernet-gateway-address">M393 - Set Ethernet Gateway Address</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_18">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#usage_18">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parameter_18">Parameter</a>
     </li>
     <li class="toctree-l4"><a class="reference internal" href="#example_19">Example</a>
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m398-get-ethernet-local-port-parameters">M398 - Get Ethernet Local Port Parameters</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m394-set-ethernet-subnet-address">M394 - Set Ethernet Subnet Address</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_19">Description</a>
     </li>
+    <li class="toctree-l4"><a class="reference internal" href="#usage_19">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parameter_19">Parameter</a>
+    </li>
     <li class="toctree-l4"><a class="reference internal" href="#example_20">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#m395-set-ethernet-mac-address">M395 - Set Ethernet MAC Address</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#description_20">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#usage_20">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#parameter_20">Parameter</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example_21">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#m396-save-and-init-ethernet-port">M396 - Save and Init Ethernet Port</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#description_21">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#usage_21">Usage</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example_22">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#m397-get-ethernet-port-parameters">M397 - Get Ethernet Port Parameters</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#description_22">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example_23">Example</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#m398-get-ethernet-local-port-parameters">M398 - Get Ethernet Local Port Parameters</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#description_23">Description</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#example_24">Example</a>
     </li>
         </ul>
     </li>
@@ -3299,9 +3351,9 @@ M311 -200   ;set speed to 200 mm/s in the opposite direction
 <pre><code>M313 300    ;set speed to 300 mm/s for position move
 </code></pre>
 <hr />
-<h2 id="m314-set-output-pins-level">M314 - Set Output Pins Level<a class="headerlink" href="#m314-set-output-pins-level" title="Permanent link">&para;</a></h2>
+<h2 id="m314-set-motor-pins-level">M314 - Set Motor Pins Level<a class="headerlink" href="#m314-set-motor-pins-level" title="Permanent link">&para;</a></h2>
 <h4 id="description_4">Description<a class="headerlink" href="#description_4" title="Permanent link">&para;</a></h4>
-<p>Set the output pins level in Output Mode.</p>
+<p>Set the Motor pins level in Output Mode.</p>
 <h4 id="usage_4">Usage<a class="headerlink" href="#usage_4" title="Permanent link">&para;</a></h4>
 <pre><code>M314 [P&lt;value&gt;] [V&lt;value&gt;]
 </code></pre>
@@ -3392,34 +3444,121 @@ M317 R        ;reset the position to 0
 <pre><code>M318 S10.24 C2 R1 ;set X2 scale factor, pulses per mm will be doubled, and reverse the direction of the encoder
 </code></pre>
 <hr />
-<h2 id="m319-read-input-pin">M319 - Read Input Pin<a class="headerlink" href="#m319-read-input-pin" title="Permanent link">&para;</a></h2>
+<h2 id="m319-read-encoder-pin">M319 - Read Encoder Pin<a class="headerlink" href="#m319-read-encoder-pin" title="Permanent link">&para;</a></h2>
 <h4 id="description_9">Description<a class="headerlink" href="#description_9" title="Permanent link">&para;</a></h4>
-<p>Get the status of an input pin in several modes.</p>
+<p>Get the status of an encoder pin in several modes.</p>
 <h4 id="usage_9">Usage<a class="headerlink" href="#usage_9" title="Permanent link">&para;</a></h4>
 <pre><code>M319 [V&lt;value&gt;] [T&lt;value&gt;] [S&lt;value&gt;]
 </code></pre>
 <h4 id="parameter_9">Parameter<a class="headerlink" href="#parameter_9" title="Permanent link">&para;</a></h4>
 <ul>
-<li><code>V[pin index]</code>: Get current status of the pin at the specified index (0, 1).</li>
-<li><code>T[pin index]</code>: Set auto feedback when pin status changes.</li>
-<li><code>S[pin index]</code>: Stop auto feedback at the specified pin index.</li>
+<li><code>V[pin index]</code>: Get current status of the encoder pin at the specified index (0, 1).</li>
+<li><code>T[pin index]</code>: Set auto feedback when encoder pin status changes.</li>
+<li><code>S[pin index]</code>: Stop auto feedback at the specified encoder pin index.</li>
 </ul>
 <h4 id="example_10">Example<a class="headerlink" href="#example_10" title="Permanent link">&para;</a></h4>
-<pre><code>M319 V1 ;get status of pin 1
+<pre><code>M319 V1 ;get status of encoder pin 1
 &gt;&gt; I1 V1
-M319 T0 ;set auto feedback for pin 0
+M319 T0 ;set auto feedback for encoder pin 0
 &gt;&gt; I0 V0
 &gt;&gt; I0 V1
-M319 S0 ;stop auto feedback for pin 0
+M319 S0 ;stop auto feedback for encoder pin 0
+</code></pre>
+<hr />
+<h2 id="m320-set-output-pin">M320 - Set Output Pin<a class="headerlink" href="#m320-set-output-pin" title="Permanent link">&para;</a></h2>
+<h4 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">&para;</a></h4>
+<p>Set the output pin state. When activated, the output pin is pulled down to GND. When deactivated, the output pin is floating.</p>
+<h4 id="usage_10">Usage<a class="headerlink" href="#usage_10" title="Permanent link">&para;</a></h4>
+<pre><code>M320 P&lt;pin&gt; V&lt;value&gt;
+</code></pre>
+<h4 id="parameter_10">Parameter<a class="headerlink" href="#parameter_10" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>P&lt;pin&gt;</code>: Index of the output pin.</li>
+<li><code>V&lt;value&gt;</code>: Value to set (0 for deactivated/floating, 1 for activated/pulled down to GND).</li>
+</ul>
+<h4 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h4>
+<pre><code>M320 P1 V1    ;activate output pin 1 and pull it down to GND
+</code></pre>
+<hr />
+<h2 id="m321-read-input-pin">M321 - Read Input Pin<a class="headerlink" href="#m321-read-input-pin" title="Permanent link">&para;</a></h2>
+<h4 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">&para;</a></h4>
+<p>Read the value of an input pin.</p>
+<h4 id="usage_11">Usage<a class="headerlink" href="#usage_11" title="Permanent link">&para;</a></h4>
+<pre><code>M321 V&lt;pin&gt;
+</code></pre>
+<h4 id="parameter_11">Parameter<a class="headerlink" href="#parameter_11" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>V&lt;pin&gt;</code>: Index of the input pin.</li>
+</ul>
+<h4 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h4>
+<pre><code>M321 V1 ;get status of input 1
+&gt;&gt; I1 V1
+</code></pre>
+<hr />
+<h2 id="m322-configure-input-pin">M322 - Configure Input Pin<a class="headerlink" href="#m322-configure-input-pin" title="Permanent link">&para;</a></h2>
+<h4 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">&para;</a></h4>
+<p>View or set the function configuration of input pins.</p>
+<h4 id="usage_12">Usage<a class="headerlink" href="#usage_12" title="Permanent link">&para;</a></h4>
+<pre><code>M322
+M322 I&lt;pin&gt;
+M322 I&lt;pin&gt; F&lt;function&gt; V&lt;value&gt;
+</code></pre>
+<h4 id="parameter_12">Parameter<a class="headerlink" href="#parameter_12" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>I&lt;pin&gt;</code>: Index of the input pin.</li>
+<li><code>F&lt;function&gt;</code>: Function assigned to the input pin.</li>
+<li><code>V&lt;value&gt;</code>: Value used by the assigned function.</li>
+</ul>
+<h4 id="function">Function<a class="headerlink" href="#function" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>F0</code>: No function assigned. The pin operates as a normal input.</li>
+<li><code>F1</code>: Increase speed by <code>V</code> each time the input is triggered.</li>
+<li><code>F2</code>: Decrease speed by <code>V</code> each time the input is triggered.</li>
+<li><code>F3</code>: Move to relative position <code>V</code> when the input is triggered.</li>
+<li><code>F4</code>: Stop the motor when the input is triggered.</li>
+</ul>
+<h4 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h4>
+<pre><code>M322              ;get current configuration of all input pins
+M322 I1           ;get current configuration of input pin 1
+M322 I1 F1 V50    ;increase speed by 50 each time input pin 1 is triggered
+M322 I2 F3 V100   ;move to relative position 100 when input pin 2 is triggered
+</code></pre>
+<hr />
+<h2 id="m323-configure-output-pin">M323 - Configure Output Pin<a class="headerlink" href="#m323-configure-output-pin" title="Permanent link">&para;</a></h2>
+<h4 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">&para;</a></h4>
+<p>View or set the function configuration of output pins.</p>
+<h4 id="usage_13">Usage<a class="headerlink" href="#usage_13" title="Permanent link">&para;</a></h4>
+<pre><code>M323
+M323 P&lt;pin&gt;
+M323 P&lt;pin&gt; F&lt;function&gt; V&lt;value&gt;
+</code></pre>
+<h4 id="parameter_13">Parameter<a class="headerlink" href="#parameter_13" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>P&lt;pin&gt;</code>: Index of the output pin.</li>
+<li><code>F&lt;function&gt;</code>: Function assigned to the output pin.</li>
+<li><code>V&lt;value&gt;</code>: Value used by the assigned function.</li>
+</ul>
+<h4 id="function_1">Function<a class="headerlink" href="#function_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>F0</code>: The pin operates as a normal output and is controlled by <code>M320</code>.</li>
+<li><code>F1</code>: Activate when the position command is complete.</li>
+<li><code>F2 V0</code>: Activate when the target velocity is reached.</li>
+<li><code>F2 V&gt;0</code>: Activate when the velocity is greater than or equal to <code>V</code>.</li>
+</ul>
+<h4 id="example_14">Example<a class="headerlink" href="#example_14" title="Permanent link">&para;</a></h4>
+<pre><code>M323              ;get current configuration of all output pins
+M323 P1           ;get current configuration of output pin 1
+M323 P1 F1 V0     ;activate output pin 1 when the position command is complete
+M323 P2 F2 V50    ;activate output pin 2 when the velocity is greater than or equal to 50
 </code></pre>
 <hr />
 <h2 id="m389-enable-ethernet">M389 - Enable Ethernet<a class="headerlink" href="#m389-enable-ethernet" title="Permanent link">&para;</a></h2>
-<h4 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">&para;</a></h4>
+<h4 id="description_14">Description<a class="headerlink" href="#description_14" title="Permanent link">&para;</a></h4>
 <p>This command can be used to enable or disable Ethernet port.</p>
-<h4 id="usage_10">Usage<a class="headerlink" href="#usage_10" title="Permanent link">&para;</a></h4>
+<h4 id="usage_14">Usage<a class="headerlink" href="#usage_14" title="Permanent link">&para;</a></h4>
 <pre><code>M389 [number]
 </code></pre>
-<h4 id="parameter_10">Parameter<a class="headerlink" href="#parameter_10" title="Permanent link">&para;</a></h4>
+<h4 id="parameter_14">Parameter<a class="headerlink" href="#parameter_14" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>[number]</code><ul>
 <li><code>number = 1</code> : enable Ethernet port</li>
@@ -3427,108 +3566,108 @@ M319 S0 ;stop auto feedback for pin 0
 </ul>
 </li>
 </ul>
-<h4 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h4>
+<h4 id="example_15">Example<a class="headerlink" href="#example_15" title="Permanent link">&para;</a></h4>
 <pre><code>M389 1 ; enable Ethernet port
 </code></pre>
 <hr />
 <h2 id="m390-set-ethernet-port">M390 - Set Ethernet Port<a class="headerlink" href="#m390-set-ethernet-port" title="Permanent link">&para;</a></h2>
-<h4 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">&para;</a></h4>
+<h4 id="description_15">Description<a class="headerlink" href="#description_15" title="Permanent link">&para;</a></h4>
 <p>Set the port number for Ethernet communication.</p>
-<h4 id="usage_11">Usage<a class="headerlink" href="#usage_11" title="Permanent link">&para;</a></h4>
+<h4 id="usage_15">Usage<a class="headerlink" href="#usage_15" title="Permanent link">&para;</a></h4>
 <pre><code>M390 [port]
 </code></pre>
-<h4 id="parameter_11">Parameter<a class="headerlink" href="#parameter_11" title="Permanent link">&para;</a></h4>
+<h4 id="parameter_15">Parameter<a class="headerlink" href="#parameter_15" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>[port]</code>: Ethernet port number.</li>
 </ul>
-<h4 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h4>
+<h4 id="example_16">Example<a class="headerlink" href="#example_16" title="Permanent link">&para;</a></h4>
 <pre><code>M390 3456 ;set Ethernet port to 3456
 </code></pre>
 <hr />
 <h2 id="m391-set-ethernet-ip-address">M391 - Set Ethernet IP Address<a class="headerlink" href="#m391-set-ethernet-ip-address" title="Permanent link">&para;</a></h2>
-<h4 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">&para;</a></h4>
+<h4 id="description_16">Description<a class="headerlink" href="#description_16" title="Permanent link">&para;</a></h4>
 <p>Define the Ethernet IP address.</p>
-<h4 id="usage_12">Usage<a class="headerlink" href="#usage_12" title="Permanent link">&para;</a></h4>
+<h4 id="usage_16">Usage<a class="headerlink" href="#usage_16" title="Permanent link">&para;</a></h4>
 <pre><code>M391 [number] [number] [number] [number]
 </code></pre>
-<h4 id="parameter_12">Parameter<a class="headerlink" href="#parameter_12" title="Permanent link">&para;</a></h4>
+<h4 id="parameter_16">Parameter<a class="headerlink" href="#parameter_16" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>[number]</code>: IP address segments.</li>
 </ul>
-<h4 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h4>
+<h4 id="example_17">Example<a class="headerlink" href="#example_17" title="Permanent link">&para;</a></h4>
 <pre><code>M391 192 168 0 2 ;set IP address to 192.168.0.2
 </code></pre>
 <hr />
 <h2 id="m392-set-ethernet-dns-address">M392 - Set Ethernet DNS Address<a class="headerlink" href="#m392-set-ethernet-dns-address" title="Permanent link">&para;</a></h2>
-<h4 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">&para;</a></h4>
+<h4 id="description_17">Description<a class="headerlink" href="#description_17" title="Permanent link">&para;</a></h4>
 <p>Define the Ethernet DNS address.</p>
-<h4 id="usage_13">Usage<a class="headerlink" href="#usage_13" title="Permanent link">&para;</a></h4>
+<h4 id="usage_17">Usage<a class="headerlink" href="#usage_17" title="Permanent link">&para;</a></h4>
 <pre><code>M392 [number] [number] [number] [number]
 </code></pre>
-<h4 id="parameter_13">Parameter<a class="headerlink" href="#parameter_13" title="Permanent link">&para;</a></h4>
+<h4 id="parameter_17">Parameter<a class="headerlink" href="#parameter_17" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>[number]</code>: DNS address segments.</li>
 </ul>
-<h4 id="example_14">Example<a class="headerlink" href="#example_14" title="Permanent link">&para;</a></h4>
+<h4 id="example_18">Example<a class="headerlink" href="#example_18" title="Permanent link">&para;</a></h4>
 <pre><code>M392 192 168 0 127 ;set DNS address to 192.168.0.127
 </code></pre>
 <hr />
 <h2 id="m393-set-ethernet-gateway-address">M393 - Set Ethernet Gateway Address<a class="headerlink" href="#m393-set-ethernet-gateway-address" title="Permanent link">&para;</a></h2>
-<h4 id="description_14">Description<a class="headerlink" href="#description_14" title="Permanent link">&para;</a></h4>
+<h4 id="description_18">Description<a class="headerlink" href="#description_18" title="Permanent link">&para;</a></h4>
 <p>Define the Ethernet Gateway address.</p>
-<h4 id="usage_14">Usage<a class="headerlink" href="#usage_14" title="Permanent link">&para;</a></h4>
+<h4 id="usage_18">Usage<a class="headerlink" href="#usage_18" title="Permanent link">&para;</a></h4>
 <pre><code>M393 [number] [number] [number] [number]
 </code></pre>
-<h4 id="parameter_14">Parameter<a class="headerlink" href="#parameter_14" title="Permanent link">&para;</a></h4>
+<h4 id="parameter_18">Parameter<a class="headerlink" href="#parameter_18" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>[number]</code>: Gateway address segments.</li>
 </ul>
-<h4 id="example_15">Example<a class="headerlink" href="#example_15" title="Permanent link">&para;</a></h4>
+<h4 id="example_19">Example<a class="headerlink" href="#example_19" title="Permanent link">&para;</a></h4>
 <pre><code>M393 192 168 237 81 ;set Gateway address to 192.168.237.81
 </code></pre>
 <hr />
 <h2 id="m394-set-ethernet-subnet-address">M394 - Set Ethernet Subnet Address<a class="headerlink" href="#m394-set-ethernet-subnet-address" title="Permanent link">&para;</a></h2>
-<h4 id="description_15">Description<a class="headerlink" href="#description_15" title="Permanent link">&para;</a></h4>
+<h4 id="description_19">Description<a class="headerlink" href="#description_19" title="Permanent link">&para;</a></h4>
 <p>Define the Ethernet Subnet address.</p>
-<h4 id="usage_15">Usage<a class="headerlink" href="#usage_15" title="Permanent link">&para;</a></h4>
+<h4 id="usage_19">Usage<a class="headerlink" href="#usage_19" title="Permanent link">&para;</a></h4>
 <pre><code>M394 [number] [number] [number] [number]
 </code></pre>
-<h4 id="parameter_15">Parameter<a class="headerlink" href="#parameter_15" title="Permanent link">&para;</a></h4>
+<h4 id="parameter_19">Parameter<a class="headerlink" href="#parameter_19" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>[number]</code>: Subnet address segments.</li>
 </ul>
-<h4 id="example_16">Example<a class="headerlink" href="#example_16" title="Permanent link">&para;</a></h4>
+<h4 id="example_20">Example<a class="headerlink" href="#example_20" title="Permanent link">&para;</a></h4>
 <pre><code>M394 255 255 255 0 ;set Subnet address to 255.255.255.0
 </code></pre>
 <hr />
 <h2 id="m395-set-ethernet-mac-address">M395 - Set Ethernet MAC Address<a class="headerlink" href="#m395-set-ethernet-mac-address" title="Permanent link">&para;</a></h2>
-<h4 id="description_16">Description<a class="headerlink" href="#description_16" title="Permanent link">&para;</a></h4>
+<h4 id="description_20">Description<a class="headerlink" href="#description_20" title="Permanent link">&para;</a></h4>
 <p>Define the Ethernet MAC address. Convert HEX numbers in the address to DEC numbers before sending to the robot.</p>
-<h4 id="usage_16">Usage<a class="headerlink" href="#usage_16" title="Permanent link">&para;</a></h4>
+<h4 id="usage_20">Usage<a class="headerlink" href="#usage_20" title="Permanent link">&para;</a></h4>
 <pre><code>M395 [number] [number] [number] [number] [number] [number]
 </code></pre>
-<h4 id="parameter_16">Parameter<a class="headerlink" href="#parameter_16" title="Permanent link">&para;</a></h4>
+<h4 id="parameter_20">Parameter<a class="headerlink" href="#parameter_20" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>[number]</code>: MAC address segments (integer).</li>
 </ul>
-<h4 id="example_17">Example<a class="headerlink" href="#example_17" title="Permanent link">&para;</a></h4>
+<h4 id="example_21">Example<a class="headerlink" href="#example_21" title="Permanent link">&para;</a></h4>
 <pre><code>M395 18 52 86 120 171 5 ;set MAC address to 12:34:56:78:AB:05
 </code></pre>
 <hr />
 <h2 id="m396-save-and-init-ethernet-port">M396 - Save and Init Ethernet Port<a class="headerlink" href="#m396-save-and-init-ethernet-port" title="Permanent link">&para;</a></h2>
-<h4 id="description_17">Description<a class="headerlink" href="#description_17" title="Permanent link">&para;</a></h4>
+<h4 id="description_21">Description<a class="headerlink" href="#description_21" title="Permanent link">&para;</a></h4>
 <p>After setting all Ethernet addresses and port, use this command to save and initialize the Ethernet port.</p>
-<h4 id="usage_17">Usage<a class="headerlink" href="#usage_17" title="Permanent link">&para;</a></h4>
+<h4 id="usage_21">Usage<a class="headerlink" href="#usage_21" title="Permanent link">&para;</a></h4>
 <pre><code>M396
 </code></pre>
-<h4 id="example_18">Example<a class="headerlink" href="#example_18" title="Permanent link">&para;</a></h4>
+<h4 id="example_22">Example<a class="headerlink" href="#example_22" title="Permanent link">&para;</a></h4>
 <pre><code>M396 ;initialize Ethernet port
 </code></pre>
 <hr />
 <h2 id="m397-get-ethernet-port-parameters">M397 - Get Ethernet Port Parameters<a class="headerlink" href="#m397-get-ethernet-port-parameters" title="Permanent link">&para;</a></h2>
-<h4 id="description_18">Description<a class="headerlink" href="#description_18" title="Permanent link">&para;</a></h4>
+<h4 id="description_22">Description<a class="headerlink" href="#description_22" title="Permanent link">&para;</a></h4>
 <p>Use this command to check all Ethernet address and port numbers.</p>
-<h4 id="example_19">Example<a class="headerlink" href="#example_19" title="Permanent link">&para;</a></h4>
+<h4 id="example_23">Example<a class="headerlink" href="#example_23" title="Permanent link">&para;</a></h4>
 <pre><code>&gt;&gt;&gt; M397 ;get all Ethernet setting parameters
 &lt;&lt;&lt; E_port:3456
 &lt;&lt;&lt; E_ip:192.168.0.2
@@ -3540,9 +3679,9 @@ M319 S0 ;stop auto feedback for pin 0
 </code></pre>
 <hr />
 <h2 id="m398-get-ethernet-local-port-parameters">M398 - Get Ethernet Local Port Parameters<a class="headerlink" href="#m398-get-ethernet-local-port-parameters" title="Permanent link">&para;</a></h2>
-<h4 id="description_19">Description<a class="headerlink" href="#description_19" title="Permanent link">&para;</a></h4>
+<h4 id="description_23">Description<a class="headerlink" href="#description_23" title="Permanent link">&para;</a></h4>
 <p>Use this command to check all Ethernet local address and port numbers.</p>
-<h4 id="example_20">Example<a class="headerlink" href="#example_20" title="Permanent link">&para;</a></h4>
+<h4 id="example_24">Example<a class="headerlink" href="#example_24" title="Permanent link">&para;</a></h4>
 <pre><code>&gt;&gt;&gt; M398 ;get all Ethernet setting parameters
 &lt;&lt;&lt; E_port:3456
 &lt;&lt;&lt; E_ip:192.168.0.2
