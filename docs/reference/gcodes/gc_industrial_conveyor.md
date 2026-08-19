@@ -285,7 +285,7 @@ M319 S0 ;stop auto feedback for encoder pin 0
 
 ---
 
-## M320 - Set Output Pin
+## M330 - Set Output Pin
 
 #### Description
 
@@ -294,7 +294,7 @@ Set the output pin state. When activated, the output pin is pulled down to GND. 
 #### Usage
 
 ```
-M320 P<pin> V<value>
+M330 P<pin> V<value>
 ```
 
 #### Parameter
@@ -305,12 +305,12 @@ M320 P<pin> V<value>
 #### Example
 
 ```
-M320 P1 V1    ;activate output pin 1 and pull it down to GND
+M330 P1 V1    ;activate output pin 1 and pull it down to GND
 ```
 
 ---
 
-## M321 - Read Input Pin
+## M331 - Read Input Pin
 
 #### Description
 
@@ -319,7 +319,7 @@ Read the value of an input pin.
 #### Usage
 
 ```
-M321 V<pin>
+M331 V<pin>
 ```
 
 #### Parameter
@@ -329,13 +329,13 @@ M321 V<pin>
 #### Example
 
 ```
-M321 V1 ;get status of input 1
+M331 V1 ;get status of input 1
 >> I1 V1
 ```
 
 ---
 
-## M322 - Configure Input Pin
+## M332 - Configure Input Pin
 
 #### Description
 
@@ -344,9 +344,9 @@ View or set the function configuration of input pins.
 #### Usage
 
 ```
-M322
-M322 I<pin>
-M322 I<pin> F<function> V<value>
+M332
+M332 I<pin>
+M332 I<pin> F<function> V<value>
 ```
 
 #### Parameter
@@ -366,15 +366,15 @@ M322 I<pin> F<function> V<value>
 #### Example
 
 ```
-M322              ;get current configuration of all input pins
-M322 I1           ;get current configuration of input pin 1
-M322 I1 F1 V50    ;increase speed by 50 each time input pin 1 is triggered
-M322 I2 F3 V100   ;move to relative position 100 when input pin 2 is triggered
+M332              ;get current configuration of all input pins
+M332 I1           ;get current configuration of input pin 1
+M332 I1 F1 V50    ;increase speed by 50 each time input pin 1 is triggered
+M332 I2 F3 V100   ;move to relative position 100 when input pin 2 is triggered
 ```
 
 ---
 
-## M323 - Configure Output Pin
+## M333 - Configure Output Pin
 
 #### Description
 
@@ -383,9 +383,9 @@ View or set the function configuration of output pins.
 #### Usage
 
 ```
-M323
-M323 P<pin>
-M323 P<pin> F<function> V<value>
+M333
+M333 P<pin>
+M333 P<pin> F<function> V<value>
 ```
 
 #### Parameter
@@ -396,7 +396,7 @@ M323 P<pin> F<function> V<value>
 
 #### Function
 
-* `F0`: The pin operates as a normal output and is controlled by `M320`.
+* `F0`: The pin operates as a normal output and is controlled by `M330`.
 * `F1`: Activate when the position command is complete.
 * `F2 V0`: Activate when the target velocity is reached.
 * `F2 V>0`: Activate when the velocity is greater than or equal to `V`.
@@ -404,10 +404,10 @@ M323 P<pin> F<function> V<value>
 #### Example
 
 ```
-M323              ;get current configuration of all output pins
-M323 P1           ;get current configuration of output pin 1
-M323 P1 F1 V0     ;activate output pin 1 when the position command is complete
-M323 P2 F2 V50    ;activate output pin 2 when the velocity is greater than or equal to 50
+M333              ;get current configuration of all output pins
+M333 P1           ;get current configuration of output pin 1
+M333 P1 F1 V0     ;activate output pin 1 when the position command is complete
+M333 P2 F2 V50    ;activate output pin 2 when the velocity is greater than or equal to 50
 ```
 
 ---
