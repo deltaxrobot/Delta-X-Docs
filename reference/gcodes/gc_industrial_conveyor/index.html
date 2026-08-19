@@ -2321,7 +2321,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m320-set-output-pin">M320 - Set Output Pin</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m330-set-output-pin">M330 - Set Output Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_10">Description</a>
     </li>
@@ -2333,7 +2333,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m321-read-input-pin">M321 - Read Input Pin</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m331-read-input-pin">M331 - Read Input Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_11">Description</a>
     </li>
@@ -2345,7 +2345,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m322-configure-input-pin">M322 - Configure Input Pin</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m332-configure-input-pin">M332 - Configure Input Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_12">Description</a>
     </li>
@@ -2359,7 +2359,7 @@
     </li>
         </ul>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#m323-configure-output-pin">M323 - Configure Output Pin</a>
+    <li class="toctree-l3"><a class="reference internal" href="#m333-configure-output-pin">M333 - Configure Output Pin</a>
         <ul>
     <li class="toctree-l4"><a class="reference internal" href="#description_13">Description</a>
     </li>
@@ -3465,11 +3465,11 @@ M319 T0 ;set auto feedback for encoder pin 0
 M319 S0 ;stop auto feedback for encoder pin 0
 </code></pre>
 <hr />
-<h2 id="m320-set-output-pin">M320 - Set Output Pin<a class="headerlink" href="#m320-set-output-pin" title="Permanent link">&para;</a></h2>
+<h2 id="m330-set-output-pin">M330 - Set Output Pin<a class="headerlink" href="#m330-set-output-pin" title="Permanent link">&para;</a></h2>
 <h4 id="description_10">Description<a class="headerlink" href="#description_10" title="Permanent link">&para;</a></h4>
 <p>Set the output pin state. When activated, the output pin is pulled down to GND. When deactivated, the output pin is floating.</p>
 <h4 id="usage_10">Usage<a class="headerlink" href="#usage_10" title="Permanent link">&para;</a></h4>
-<pre><code>M320 P&lt;pin&gt; V&lt;value&gt;
+<pre><code>M330 P&lt;pin&gt; V&lt;value&gt;
 </code></pre>
 <h4 id="parameter_10">Parameter<a class="headerlink" href="#parameter_10" title="Permanent link">&para;</a></h4>
 <ul>
@@ -3477,31 +3477,31 @@ M319 S0 ;stop auto feedback for encoder pin 0
 <li><code>V&lt;value&gt;</code>: Value to set (0 for deactivated/floating, 1 for activated/pulled down to GND).</li>
 </ul>
 <h4 id="example_11">Example<a class="headerlink" href="#example_11" title="Permanent link">&para;</a></h4>
-<pre><code>M320 P1 V1    ;activate output pin 1 and pull it down to GND
+<pre><code>M330 P1 V1    ;activate output pin 1 and pull it down to GND
 </code></pre>
 <hr />
-<h2 id="m321-read-input-pin">M321 - Read Input Pin<a class="headerlink" href="#m321-read-input-pin" title="Permanent link">&para;</a></h2>
+<h2 id="m331-read-input-pin">M331 - Read Input Pin<a class="headerlink" href="#m331-read-input-pin" title="Permanent link">&para;</a></h2>
 <h4 id="description_11">Description<a class="headerlink" href="#description_11" title="Permanent link">&para;</a></h4>
 <p>Read the value of an input pin.</p>
 <h4 id="usage_11">Usage<a class="headerlink" href="#usage_11" title="Permanent link">&para;</a></h4>
-<pre><code>M321 V&lt;pin&gt;
+<pre><code>M331 V&lt;pin&gt;
 </code></pre>
 <h4 id="parameter_11">Parameter<a class="headerlink" href="#parameter_11" title="Permanent link">&para;</a></h4>
 <ul>
 <li><code>V&lt;pin&gt;</code>: Index of the input pin.</li>
 </ul>
 <h4 id="example_12">Example<a class="headerlink" href="#example_12" title="Permanent link">&para;</a></h4>
-<pre><code>M321 V1 ;get status of input 1
+<pre><code>M331 V1 ;get status of input 1
 &gt;&gt; I1 V1
 </code></pre>
 <hr />
-<h2 id="m322-configure-input-pin">M322 - Configure Input Pin<a class="headerlink" href="#m322-configure-input-pin" title="Permanent link">&para;</a></h2>
+<h2 id="m332-configure-input-pin">M332 - Configure Input Pin<a class="headerlink" href="#m332-configure-input-pin" title="Permanent link">&para;</a></h2>
 <h4 id="description_12">Description<a class="headerlink" href="#description_12" title="Permanent link">&para;</a></h4>
 <p>View or set the function configuration of input pins.</p>
 <h4 id="usage_12">Usage<a class="headerlink" href="#usage_12" title="Permanent link">&para;</a></h4>
-<pre><code>M322
-M322 I&lt;pin&gt;
-M322 I&lt;pin&gt; F&lt;function&gt; V&lt;value&gt;
+<pre><code>M332
+M332 I&lt;pin&gt;
+M332 I&lt;pin&gt; F&lt;function&gt; V&lt;value&gt;
 </code></pre>
 <h4 id="parameter_12">Parameter<a class="headerlink" href="#parameter_12" title="Permanent link">&para;</a></h4>
 <ul>
@@ -3518,19 +3518,19 @@ M322 I&lt;pin&gt; F&lt;function&gt; V&lt;value&gt;
 <li><code>F4</code>: Stop the motor when the input is triggered.</li>
 </ul>
 <h4 id="example_13">Example<a class="headerlink" href="#example_13" title="Permanent link">&para;</a></h4>
-<pre><code>M322              ;get current configuration of all input pins
-M322 I1           ;get current configuration of input pin 1
-M322 I1 F1 V50    ;increase speed by 50 each time input pin 1 is triggered
-M322 I2 F3 V100   ;move to relative position 100 when input pin 2 is triggered
+<pre><code>M332              ;get current configuration of all input pins
+M332 I1           ;get current configuration of input pin 1
+M332 I1 F1 V50    ;increase speed by 50 each time input pin 1 is triggered
+M332 I2 F3 V100   ;move to relative position 100 when input pin 2 is triggered
 </code></pre>
 <hr />
-<h2 id="m323-configure-output-pin">M323 - Configure Output Pin<a class="headerlink" href="#m323-configure-output-pin" title="Permanent link">&para;</a></h2>
+<h2 id="m333-configure-output-pin">M333 - Configure Output Pin<a class="headerlink" href="#m333-configure-output-pin" title="Permanent link">&para;</a></h2>
 <h4 id="description_13">Description<a class="headerlink" href="#description_13" title="Permanent link">&para;</a></h4>
 <p>View or set the function configuration of output pins.</p>
 <h4 id="usage_13">Usage<a class="headerlink" href="#usage_13" title="Permanent link">&para;</a></h4>
-<pre><code>M323
-M323 P&lt;pin&gt;
-M323 P&lt;pin&gt; F&lt;function&gt; V&lt;value&gt;
+<pre><code>M333
+M333 P&lt;pin&gt;
+M333 P&lt;pin&gt; F&lt;function&gt; V&lt;value&gt;
 </code></pre>
 <h4 id="parameter_13">Parameter<a class="headerlink" href="#parameter_13" title="Permanent link">&para;</a></h4>
 <ul>
@@ -3540,16 +3540,16 @@ M323 P&lt;pin&gt; F&lt;function&gt; V&lt;value&gt;
 </ul>
 <h4 id="function_1">Function<a class="headerlink" href="#function_1" title="Permanent link">&para;</a></h4>
 <ul>
-<li><code>F0</code>: The pin operates as a normal output and is controlled by <code>M320</code>.</li>
+<li><code>F0</code>: The pin operates as a normal output and is controlled by <code>M330</code>.</li>
 <li><code>F1</code>: Activate when the position command is complete.</li>
 <li><code>F2 V0</code>: Activate when the target velocity is reached.</li>
 <li><code>F2 V&gt;0</code>: Activate when the velocity is greater than or equal to <code>V</code>.</li>
 </ul>
 <h4 id="example_14">Example<a class="headerlink" href="#example_14" title="Permanent link">&para;</a></h4>
-<pre><code>M323              ;get current configuration of all output pins
-M323 P1           ;get current configuration of output pin 1
-M323 P1 F1 V0     ;activate output pin 1 when the position command is complete
-M323 P2 F2 V50    ;activate output pin 2 when the velocity is greater than or equal to 50
+<pre><code>M333              ;get current configuration of all output pins
+M333 P1           ;get current configuration of output pin 1
+M333 P1 F1 V0     ;activate output pin 1 when the position command is complete
+M333 P2 F2 V50    ;activate output pin 2 when the velocity is greater than or equal to 50
 </code></pre>
 <hr />
 <h2 id="m389-enable-ethernet">M389 - Enable Ethernet<a class="headerlink" href="#m389-enable-ethernet" title="Permanent link">&para;</a></h2>
