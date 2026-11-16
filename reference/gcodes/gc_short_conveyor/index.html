@@ -1,0 +1,708 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Guides, G-code references, and technical specifications for Delta X robots and accessories.">
+  <title>Short Conveyor — G-code reference · Delta X Documentation</title>
+  <link rel="canonical" href="https://docs.deltaxrobot.com/reference/gcodes/gc_short_conveyor/">
+  <link rel="icon" href="../../../img/favicon.ico">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('dx-theme')||'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../../../assets/docs.css">
+  <script defer data-docs-script src="../../../assets/docs.js"></script>
+</head>
+
+
+
+<body class="document-page" data-model="Short Conveyor">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-button mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <a class="brand" href="../../.." aria-label="Delta X documentation home"><img class="brand-logo" src="../../../assets/main-logo.png" alt="Delta X" width="1000" height="477"><span class="brand-divider"></span><span class="brand-caption">Docs</span></a>
+    <button class="header-search" data-open-search aria-label="Search documentation"><i class="fa fa-search" aria-hidden="true"></i><span>Search documentation…</span><kbd>Ctrl K</kbd></button>
+    <div class="header-actions"><a class="header-website" href="https://www.deltaxrobot.com/">deltaxrobot.com <i class="fa fa-external-link" aria-hidden="true"></i></a><button class="icon-button theme-toggle" aria-label="Switch to dark theme"><i class="fa fa-moon-o" aria-hidden="true"></i></button><a class="icon-button github-link" href="https://github.com/deltaxrobot/Delta-X-Docs" aria-label="View documentation on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+  </div>
+</header>
+
+
+
+<div class="sidebar-backdrop" hidden></div>
+<div class="docs-layout ">
+  <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+  <div class="sidebar-heading"><span>DOCUMENTATION</span><button class="icon-button close-menu" aria-label="Close navigation"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+  <a class="sidebar-home " href="../../.." ><i class="fa fa-book" aria-hidden="true"></i> Overview</a>
+  <div class="sidebar-scroll">
+    <nav aria-label="Documentation sections">
+      
+        
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">GET STARTED</span>
+
+  
+    <a class="sidebar-link " href="../../../tutorials/tutorials_list/" >Tutorial List</a>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Assembly Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/assembly_guides/x2_assembly_guide/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/assembly_guides/xs_assembly_guide/" >Delta X S Robot</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/assembly_guides/xs_frame_assembly_guide/" >Delta X S Frame</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/assembly_guides/xs_v5_wiring_tutorial/" >Delta X S IO Wiring</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Control Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/termite/" >Termite (X3 & XS)</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/control_delta_x2_by_arduino/" >Delta X 2</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>DeltaXStudio<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/overview/" >Overview</a>
+  
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Pick & Place Setup<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/" >1. System Setup</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>2. Calibration<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/calibration/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/calibration/static/" >Static calibration</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/calibration/automatic/" >Fully automatic</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/calibration/controlled-conveyor/" >Controlled conveyor · Manual points</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/calibration/external-camera/" >External conveyor · Camera</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/calibration/external-manual/" >External conveyor · Manual points</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>3. Vision<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/vision/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/vision/ai/" >AI</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/vision/color/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/vision/ai-template/" >AI + Template Matching</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/vision/color-template/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/pick_and_place/" >4. Pick & Place</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Blockly Programming<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/blockly/" >Getting started</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Movement examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/blockly/stationary-pick-and-place/" >Stationary pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/blockly/conveyor-pick-and-place/" >Conveyor pick & place (AI)</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/blockly/color-pick-and-place/" >Color filtering + pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/blockly/sort-two-types/" >Sort two object types (AI)</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Vision-only examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/blockly/color-filtering/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/blockly/color-template-matching/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/control_guides/deltaxstudio/daily_operation/" >Daily Operation</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../tutorials/application_guides/deltax_art/" >Applications</a>
+  
+
+</div>
+      
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">REFERENCE</span>
+
+  
+    <details class="nav-group depth-0" open>
+      <summary>G-code Commands<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../useful_commands/" >Useful Commands</a>
+  
+
+  
+    <a class="sidebar-link " href="../gc_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../gc_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../gc_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X 3<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../gc_x3/" >Firmware < 2.0.0</a>
+  
+
+  
+    <a class="sidebar-link " href="../gc_x3_v2/" >Firmware > 2.0.0</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../gc_xs_v4/" >Delta X S V4</a>
+  
+
+  
+    <a class="sidebar-link " href="../gc_xs_v5/" >Delta X S V5</a>
+  
+
+  
+    <a class="sidebar-link current" href="./" aria-current="page">Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../gc_conveyor/" >Desktop Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../gc_industrial_conveyor/" >XConveyor XEncoder</a>
+  
+
+  
+    <a class="sidebar-link " href="../gc_slider/" >Slider X</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Specifications<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../specifications/sp_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/sp_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/sp_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V4<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../specifications/delta_xs_v4/sp_v4_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/delta_xs_v4/sp_v4_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/delta_xs_v4/sp_v4_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V5<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../specifications/delta_xs_v5/sp_v5_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/delta_xs_v5/sp_v5_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/delta_xs_v5/sp_v5_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Delta X 2 Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../specifications/accessories/delta_x2_accessories/conveyor_x/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/accessories/delta_x2_accessories/slider_x/" >Slider X</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/accessories/delta_x2_accessories/vision_kit_v1/" >Vision Kit V1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_basic/" >2020 Aluminum Profile Frames</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/" >Delta X S Accessories</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+</div>
+      
+        
+      
+    </nav>
+    <div class="sidebar-help"><a href="mailto:deltaxrobot@gmail.com"><i class="fa fa-life-ring" aria-hidden="true"></i> Contact support <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+  </div>
+</aside>
+  
+  <main id="main-content" class="article-column">
+    
+    
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../..">Docs</a><i class="fa fa-angle-right" aria-hidden="true"></i><span>G-code</span><i class="fa fa-angle-right" aria-hidden="true"></i><span>Short Conveyor</span></nav>
+      <header class="article-header"><h1 id="gcodes-for-short-conveyor">Short Conveyor — G-code reference</h1><p>Commands, parameters, and practical examples for Short Conveyor.</p><div class="article-meta"><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/reference/gcodes/gc_short_conveyor.md"><i class="fa fa-pencil" aria-hidden="true"></i> Suggest an edit</a></div></header>
+      
+      
+      <details class="mobile-toc"><summary>On this page <i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+  
+    
+    <a href="#communication-and-responses">Communication and Responses</a>
+    
+  
+    
+    <a href="#quick-start">Quick Start</a>
+    
+  
+    
+    <a href="#m310-select-control-mode">M310 - Select Control Mode</a>
+    
+  
+    
+    <a href="#m311-set-continuous-speed">M311 - Set Continuous Speed</a>
+    
+  
+    
+    <a href="#m312-move-relative-distance">M312 - Move Relative Distance</a>
+    
+  
+    
+    <a href="#m313-set-position-move-speed">M313 - Set Position Move Speed</a>
+    
+  
+    
+    <a href="#related-documentation">Related Documentation</a>
+    
+  
+</details>
+      
+<details class="command-index" open>
+  <summary><span><i class="fa fa-list" aria-hidden="true"></i> Command index <small>4 commands</small></span><i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+  <div class="command-index-body">
+    <label class="command-filter"><i class="fa fa-search" aria-hidden="true"></i><input type="search" id="command-filter" placeholder="Find a command on this page…" aria-label="Filter command index"></label>
+    
+      
+<div class="command-grid">
+  
+  <a href="#m310-select-control-mode" data-command="m310 - select control mode "><code>M310</code><span>Select Control Mode</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  
+  <a href="#m311-set-continuous-speed" data-command="m311 - set continuous speed "><code>M311</code><span>Set Continuous Speed</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  
+  <a href="#m312-move-relative-distance" data-command="m312 - move relative distance "><code>M312</code><span>Move Relative Distance</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  
+  <a href="#m313-set-position-move-speed" data-command="m313 - set position move speed "><code>M313</code><span>Set Position Move Speed</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  
+</div>
+
+    
+    <p class="command-empty" hidden>No matching commands on this page.</p>
+  </div>
+</details>
+      
+      
+      <article class="prose"><h1>GCODES FOR SHORT CONVEYOR<a class="headerlink" href="#gcodes-for-short-conveyor" title="Permanent link">&para;</a></h1>
+<h2 id="communication-and-responses">Communication and Responses<a class="headerlink" href="#communication-and-responses" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Connect at <strong>115200 baud</strong>, with <strong>8 data bits, no parity, and 1 stop bit</strong>.</li>
+<li>Send one command per line, ending with a <strong>newline (<code>\n</code>)</strong>. CRLF is also accepted for the numeric commands below.</li>
+<li>Use uppercase command names, starting at the beginning of the line, followed by a space and a numeric value: <code>M311 50</code>.</li>
+<li>Values are positional: use <code>M311 50</code>, not <code>M311 S50</code>. These commands are setters, not queries; always provide a value. Missing or nonnumeric values can be parsed as zero.</li>
+<li>The controller prints <code>Begin:</code> at startup and starts in <strong>potentiometer mode</strong>. The knob can therefore start the belt after power-on or reset.</li>
+<li><code>M310</code>, <code>M311</code>, and <code>M313</code> reply with <code>Ok</code> immediately. A nonzero <code>M312</code> normally replies with <code>Ok</code> when its move completes.</li>
+<li>Settings are held in RAM and return to startup defaults after a reset. There is no save-to-memory command.</li>
+</ul>
+<p>This firmware implements <strong>M310, M311, M312, and M313 only</strong>. It does not implement <code>IsXConveyor</code>, encoder feedback, general-purpose input/output commands, or Ethernet commands. Unsupported commands do not produce an error reply.</p>
+<h2 id="quick-start">Quick Start<a class="headerlink" href="#quick-start" title="Permanent link">&para;</a></h2>
+<p>Send each line separately and wait for its <code>Ok</code> reply before continuing.</p>
+<ol>
+<li>
+<p>Select serial control:</p>
+<p><code>text
+M310 1</code></p>
+</li>
+<li>
+<p>Run continuously at 50 mm/s:</p>
+<p><code>text
+M311 50</code></p>
+</li>
+<li>
+<p>Stop continuous motion:</p>
+<p><code>text
+M311 0</code></p>
+</li>
+</ol>
+<p>For a relative position move, set the position speed with <code>M313</code>, then send <code>M312</code> and wait for its completion reply.</p>
+<h2 id="m310-select-control-mode">M310 - Select Control Mode<a class="headerlink" href="#m310-select-control-mode" title="Permanent link">&para;</a></h2>
+<p>Select whether the potentiometer or serial commands control the conveyor.</p>
+<h4 id="usage">Usage<a class="headerlink" href="#usage" title="Permanent link">&para;</a></h4>
+<pre><code class="language-text">M310 &lt;mode&gt;
+</code></pre>
+<h4 id="parameters">Parameters<a class="headerlink" href="#parameters" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>0</code></td>
+<td>Potentiometer mode, the startup default. The knob controls speed from 0 to 200 mm/s in one direction.</td>
+</tr>
+<tr>
+<td><code>1</code></td>
+<td>Serial mode. Use <code>M311</code> for continuous motion and <code>M312</code> for relative moves.</td>
+</tr>
+</tbody>
+</table>
+<p>The potentiometer is ignored in serial mode. Selecting serial mode sets the continuous speed request to zero; it does not clear an active position move.</p>
+<p>Select <code>M310 1</code> <strong>before</strong> sending serial movement commands. In potentiometer mode, those commands do not immediately drive the motor, even when a command returns <code>Ok</code>.</p>
+<h4 id="example">Example<a class="headerlink" href="#example" title="Permanent link">&para;</a></h4>
+<pre><code class="language-text">M310 1
+</code></pre>
+<p>Response: <code>Ok</code>.</p>
+<p>Switch modes only after a position move has completed. Returning to <code>M310 0</code> lets the current knob setting control the belt again.</p>
+<h2 id="m311-set-continuous-speed">M311 - Set Continuous Speed<a class="headerlink" href="#m311-set-continuous-speed" title="Permanent link">&para;</a></h2>
+<p>Run continuously at a signed speed, or stop continuous motion. Requires serial mode (<code>M310 1</code>).</p>
+<h4 id="usage_1">Usage<a class="headerlink" href="#usage_1" title="Permanent link">&para;</a></h4>
+<pre><code class="language-text">M311 &lt;speed&gt;
+</code></pre>
+<h4 id="parameters_1">Parameters<a class="headerlink" href="#parameters_1" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;speed&gt;</code></td>
+<td>Speed in mm/s. Positive and negative values select opposite directions. <code>0</code> stops continuous motion.</td>
+</tr>
+</tbody>
+</table>
+<p>The firmware limits the speed magnitude to <strong>200 mm/s</strong>. A magnitude below <strong>0.01 mm/s</strong> is treated as zero. It changes the step timing directly, without an acceleration ramp.</p>
+<h4 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h4>
+<p>Run at 50 mm/s:</p>
+<pre><code class="language-text">M311 50
+</code></pre>
+<p>Run in the opposite direction:</p>
+<pre><code class="language-text">M311 -50
+</code></pre>
+<p>Stop continuous motion:</p>
+<pre><code class="language-text">M311 0
+</code></pre>
+<p>Each command replies with <code>Ok</code>. This acknowledges the command; it is not measured speed feedback.</p>
+<p><code>M311 0</code> does <strong>not</strong> cancel an active <code>M312</code> position move. Wait for that move to finish before using continuous-speed commands.</p>
+<h2 id="m312-move-relative-distance">M312 - Move Relative Distance<a class="headerlink" href="#m312-move-relative-distance" title="Permanent link">&para;</a></h2>
+<p>Move a signed distance from the current belt position, then stop. Requires serial mode (<code>M310 1</code>). Set the movement speed with <code>M313</code>.</p>
+<h4 id="usage_2">Usage<a class="headerlink" href="#usage_2" title="Permanent link">&para;</a></h4>
+<pre><code class="language-text">M312 &lt;distance&gt;
+</code></pre>
+<h4 id="parameters_2">Parameters<a class="headerlink" href="#parameters_2" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;distance&gt;</code></td>
+<td>Relative distance in mm. Positive and negative values select opposite directions. This is not an absolute position or a homing command.</td>
+</tr>
+</tbody>
+</table>
+<p>The firmware converts distance to steps using <strong>84 steps/mm</strong>, rounded to the nearest whole step. Position is calculated from commanded motor steps; there is no encoder verification.</p>
+<div class="admonition note">
+<p class="admonition-title">Direction convention</p>
+<p>In this firmware, positive <code>M312</code> moves in the <strong>opposite direction</strong> to positive <code>M311</code>. Negative values also have opposite direction conventions between the two commands.</p>
+</div>
+<h4 id="example_1">Example<a class="headerlink" href="#example_1" title="Permanent link">&para;</a></h4>
+<p>From a stopped conveyor in serial mode, set a position speed of 30 mm/s and wait for <code>Ok</code>:</p>
+<pre><code class="language-text">M313 30
+</code></pre>
+<p>Move 100 mm and wait for the completion <code>Ok</code>:</p>
+<pre><code class="language-text">M312 100
+</code></pre>
+<p>Move 100 mm in the opposite direction:</p>
+<pre><code class="language-text">M312 -100
+</code></pre>
+<h4 id="completion-and-sequencing">Completion and Sequencing<a class="headerlink" href="#completion-and-sequencing" title="Permanent link">&para;</a></h4>
+<ul>
+<li>For a nonzero move, <code>Ok</code> is sent when the requested step count completes. The firmware then stops the step timer and disables the motor driver.</li>
+<li><code>M312 0</code> returns <code>Ok</code> immediately, but does not cancel a move that is already running.</li>
+<li>There is no motion queue or position-move cancellation command. Wait for completion before sending another motion, mode, or position-speed command; commands sent during a move can modify its active step count, direction, or speed.</li>
+<li>Very small nonzero distances can round to zero steps and produce <strong>no completion reply</strong>. One step is approximately <strong>0.0119 mm</strong>; use distances of at least one step for normal positioning.</li>
+</ul>
+<h2 id="m313-set-position-move-speed">M313 - Set Position Move Speed<a class="headerlink" href="#m313-set-position-move-speed" title="Permanent link">&para;</a></h2>
+<p>Set the speed used by <code>M312</code>. The startup default is <strong>30 mm/s</strong>. Configure this while the conveyor is stopped, before starting a position move.</p>
+<h4 id="usage_3">Usage<a class="headerlink" href="#usage_3" title="Permanent link">&para;</a></h4>
+<pre><code class="language-text">M313 &lt;speed&gt;
+</code></pre>
+<h4 id="parameters_3">Parameters<a class="headerlink" href="#parameters_3" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>&lt;speed&gt;</code></td>
+<td>Positive position-move speed in mm/s. Use a value no greater than 200 mm/s. Direction is selected by the sign of <code>M312</code>, not by this value.</td>
+</tr>
+</tbody>
+</table>
+<p>The firmware assigns this value directly: it does <strong>not</strong> validate or clamp <code>M313</code> like it does <code>M311</code>. Do not use zero or negative values. This setting is lost after reset.</p>
+<h4 id="example_2">Example<a class="headerlink" href="#example_2" title="Permanent link">&para;</a></h4>
+<pre><code class="language-text">M313 40
+</code></pre>
+<p>Response: <code>Ok</code>.</p>
+<p>Subsequent <code>M312</code> moves use 40 mm/s. <code>M313</code> does not specify a distance and does not start a move from idle.</p>
+<h2 id="related-documentation">Related Documentation<a class="headerlink" href="#related-documentation" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="../../specifications/accessories/delta_x2_accessories/conveyor_x/">Short Conveyor specifications</a></li>
+<li><a href="https://github.com/deltaxrobot/Conveyor-X-Firmware/blob/e15006cef1c51ca141a2ca4d2dd4efa8df5c57dd/Conveyor-X-Firmware.ino">Firmware source: command parser and motor control</a></li>
+</ul></article>
+      <div class="article-end"><span>Found something that could be clearer?</span><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/reference/gcodes/gc_short_conveyor.md">Suggest an edit <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+      <nav class="page-pagination" aria-label="Related pages">
+        
+          <a href="../gc_xs_v5/"><small>PREVIOUS</small><strong><i class="fa fa-arrow-left" aria-hidden="true"></i> Delta X S V5 — G-code reference</strong></a><a href="../gc_conveyor/"><small>NEXT</small><strong>Desktop Conveyor — G-code reference <i class="fa fa-arrow-right" aria-hidden="true"></i></strong></a>
+        
+      </nav>
+    
+    
+  </main>
+  <aside class="page-toc" aria-label="On this page"><span class="toc-title">On this page</span><nav>
+  
+    
+    <a href="#communication-and-responses">Communication and Responses</a>
+    
+  
+    
+    <a href="#quick-start">Quick Start</a>
+    
+  
+    
+    <a href="#m310-select-control-mode">M310 - Select Control Mode</a>
+    
+  
+    
+    <a href="#m311-set-continuous-speed">M311 - Set Continuous Speed</a>
+    
+  
+    
+    <a href="#m312-move-relative-distance">M312 - Move Relative Distance</a>
+    
+  
+    
+    <a href="#m313-set-position-move-speed">M313 - Set Position Move Speed</a>
+    
+  
+    
+    <a href="#related-documentation">Related Documentation</a>
+    
+  
+</nav><a class="back-top" href="#main-content"><i class="fa fa-arrow-up" aria-hidden="true"></i> Back to top</a></aside>
+
+<footer id="about-us" class="site-footer"><a class="brand footer-brand" href="../../..">DELTA <b>X</b><span>Documentation</span></a><span id="delta-x-robot-store">Delta X Robotics · Documentation</span><div><a href="https://www.deltaxrobot.com/">Website <i class="fa fa-external-link" aria-hidden="true"></i></a><a id="delta-x-community" href="https://www.facebook.com/groups/DeltaXCommunity">Community</a><a href="mailto:deltaxrobot@gmail.com">Support</a></div></footer>
+</div>
+
+<dialog class="search-dialog" aria-label="Search documentation"><form class="search-form" role="search"><div class="search-input-row"><i class="fa fa-search" aria-hidden="true"></i><input id="docs-search" type="search" autocomplete="off" placeholder="Search commands, guides, and specifications…" aria-label="Search documentation"><button type="button" class="close-search" aria-label="Close search"><kbd>Esc</kbd></button></div><div class="search-filters"><label for="search-model">Search in</label><select id="search-model"><option value="all">All models</option></select><span id="search-count" role="status" aria-live="polite"></span></div></form><div id="search-results" class="search-results" aria-live="polite"><div class="search-empty"><i class="fa fa-search" aria-hidden="true"></i><h2>What are you working on?</h2><p>Try a command like G28, a model, or a topic like wiring.</p></div></div><div class="search-footer"><span><kbd>Tab</kbd> navigate results <kbd>Enter</kbd> open</span><span>Delta X Documentation</span></div></dialog>
+<dialog class="image-dialog" aria-label="Image detail"><button class="icon-button close-image" aria-label="Close image"><i class="fa fa-times" aria-hidden="true"></i></button><img alt=""><p></p></dialog>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

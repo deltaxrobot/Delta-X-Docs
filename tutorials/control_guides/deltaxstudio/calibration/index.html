@@ -1,0 +1,550 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Choose the calibration procedure for your application and hardware.">
+  <title>DeltaXStudio — Calibration · Delta X Documentation</title>
+  <link rel="canonical" href="https://docs.deltaxrobot.com/tutorials/control_guides/deltaxstudio/calibration/">
+  <link rel="icon" href="../../../../img/favicon.ico">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('dx-theme')||'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../../../../assets/docs.css">
+  <script defer data-docs-script src="../../../../assets/docs.js"></script>
+</head>
+
+
+
+<body class="document-page" data-model="Delta X 3 / Delta X S">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-button mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <a class="brand" href="../../../.." aria-label="Delta X documentation home"><img class="brand-logo" src="../../../../assets/main-logo.png" alt="Delta X" width="1000" height="477"><span class="brand-divider"></span><span class="brand-caption">Docs</span></a>
+    <button class="header-search" data-open-search aria-label="Search documentation"><i class="fa fa-search" aria-hidden="true"></i><span>Search documentation…</span><kbd>Ctrl K</kbd></button>
+    <div class="header-actions"><a class="header-website" href="https://www.deltaxrobot.com/">deltaxrobot.com <i class="fa fa-external-link" aria-hidden="true"></i></a><button class="icon-button theme-toggle" aria-label="Switch to dark theme"><i class="fa fa-moon-o" aria-hidden="true"></i></button><a class="icon-button github-link" href="https://github.com/deltaxrobot/Delta-X-Docs" aria-label="View documentation on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+  </div>
+</header>
+
+
+
+<div class="sidebar-backdrop" hidden></div>
+<div class="docs-layout ">
+  <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+  <div class="sidebar-heading"><span>DOCUMENTATION</span><button class="icon-button close-menu" aria-label="Close navigation"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+  <a class="sidebar-home " href="../../../.." ><i class="fa fa-book" aria-hidden="true"></i> Overview</a>
+  <div class="sidebar-scroll">
+    <nav aria-label="Documentation sections">
+      
+        
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">GET STARTED</span>
+
+  
+    <a class="sidebar-link " href="../../../tutorials_list/" >Tutorial List</a>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Assembly Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../assembly_guides/x2_assembly_guide/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../assembly_guides/xs_assembly_guide/" >Delta X S Robot</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../assembly_guides/xs_frame_assembly_guide/" >Delta X S Frame</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../assembly_guides/xs_v5_wiring_tutorial/" >Delta X S IO Wiring</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" open>
+      <summary>Control Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../termite/" >Termite (X3 & XS)</a>
+  
+
+  
+    <a class="sidebar-link " href="../../control_delta_x2_by_arduino/" >Delta X 2</a>
+  
+
+  
+    <details class="nav-group depth-1" open>
+      <summary>DeltaXStudio<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../overview/" >Overview</a>
+  
+
+  
+    <details class="nav-group depth-2" open>
+      <summary>Pick & Place Setup<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../" >1. System Setup</a>
+  
+
+  
+    <details class="nav-group depth-3" open>
+      <summary>2. Calibration<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link current" href="./" aria-current="page">Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="static/" >Static calibration</a>
+  
+
+  
+    <a class="sidebar-link " href="automatic/" >Fully automatic</a>
+  
+
+  
+    <a class="sidebar-link " href="controlled-conveyor/" >Controlled conveyor · Manual points</a>
+  
+
+  
+    <a class="sidebar-link " href="external-camera/" >External conveyor · Camera</a>
+  
+
+  
+    <a class="sidebar-link " href="external-manual/" >External conveyor · Manual points</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>3. Vision<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../vision/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="../vision/ai/" >AI</a>
+  
+
+  
+    <a class="sidebar-link " href="../vision/color/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../vision/ai-template/" >AI + Template Matching</a>
+  
+
+  
+    <a class="sidebar-link " href="../vision/color-template/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../pick_and_place/" >4. Pick & Place</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Blockly Programming<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../blockly/" >Getting started</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Movement examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../blockly/stationary-pick-and-place/" >Stationary pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../blockly/conveyor-pick-and-place/" >Conveyor pick & place (AI)</a>
+  
+
+  
+    <a class="sidebar-link " href="../blockly/color-pick-and-place/" >Color filtering + pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../blockly/sort-two-types/" >Sort two object types (AI)</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Vision-only examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../blockly/color-filtering/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../blockly/color-template-matching/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../daily_operation/" >Daily Operation</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../application_guides/deltax_art/" >Applications</a>
+  
+
+</div>
+      
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">REFERENCE</span>
+
+  
+    <details class="nav-group depth-0" >
+      <summary>G-code Commands<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/useful_commands/" >Useful Commands</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X 3<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x3/" >Firmware < 2.0.0</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x3_v2/" >Firmware > 2.0.0</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_xs_v4/" >Delta X S V4</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_xs_v5/" >Delta X S V5</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_short_conveyor/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_conveyor/" >Desktop Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_industrial_conveyor/" >XConveyor XEncoder</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_slider/" >Slider X</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Specifications<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/sp_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/sp_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/sp_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V4<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v4/sp_v4_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v4/sp_v4_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v4/sp_v4_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V5<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v5/sp_v5_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v5/sp_v5_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v5/sp_v5_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Delta X 2 Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_x2_accessories/conveyor_x/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_x2_accessories/slider_x/" >Slider X</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_x2_accessories/vision_kit_v1/" >Vision Kit V1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_basic/" >2020 Aluminum Profile Frames</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/" >Delta X S Accessories</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+</div>
+      
+        
+      
+    </nav>
+    <div class="sidebar-help"><a href="mailto:deltaxrobot@gmail.com"><i class="fa fa-life-ring" aria-hidden="true"></i> Contact support <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+  </div>
+</aside>
+  
+  <main id="main-content" class="article-column">
+    
+    
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../../..">Docs</a><i class="fa fa-angle-right" aria-hidden="true"></i><span>Guides</span><i class="fa fa-angle-right" aria-hidden="true"></i><span>Delta X 3 / Delta X S</span></nav>
+      <header class="article-header"><h1 id="deltaxstudio-calibration">DeltaXStudio — Calibration</h1><div class="article-meta"><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio/calibration.md"><i class="fa fa-pencil" aria-hidden="true"></i> Suggest an edit</a></div></header>
+      
+      
+      <details class="mobile-toc"><summary>On this page <i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+  
+    
+    <a href="#stationary-objects">Stationary objects</a>
+    
+  
+    
+    <a href="#moving-objects-on-a-conveyor">Moving objects on a conveyor</a>
+    
+  
+    
+    <a href="#after-calibration">After calibration</a>
+    
+  
+</details>
+      
+      
+      <nav class="studio-setup-progress" aria-label="Pick and Place setup stages">
+  <div><a href="../overview/">DeltaXStudio overview</a><span>Pick &amp; Place setup · Step 2 of 4</span></div>
+  <ol>
+    
+    <li><a href="../" ><span>1</span>System Setup</a></li>
+    
+    <li><a href="./" aria-current="step"><span>2</span>Calibration</a></li>
+    
+    <li><a href="../vision/" ><span>3</span>Vision</a></li>
+    
+    <li><a href="../pick_and_place/" ><span>4</span>Pick & Place</a></li>
+    
+  </ol>
+</nav>
+      <article class="prose"><h1>DeltaXStudio — Calibration<a class="headerlink" href="#deltaxstudio-calibration" title="Permanent link">&para;</a></h1>
+<p>Choose the setup that matches your installation. Each guide includes its own preparation, settings, capture steps, and checks. Follow only the guide you need.</p>
+<p><span class="legacy-anchor" id="1-choose-a-calibration-method"></span></p>
+<h2 id="stationary-objects">Stationary objects<a class="headerlink" href="#stationary-objects" title="Permanent link">&para;</a></h2>
+<p>Use this when the objects stay still inside both the camera view and robot reach.</p>
+<div class="guide-card" id="e-static-calibration">
+<h3 id="static-calibration"><a href="static/">Static calibration</a><a class="headerlink" href="#static-calibration" title="Permanent link">&para;</a></h3>
+<p>Capture two reference points on a fixed board. The conveyor, if present, stays stopped.</p>
+<p class="guide-card-tags"><span>No encoder required</span><span>No calibration camera</span></p>
+<p><a href="static/">Open guide →</a></p>
+</div>
+<h2 id="moving-objects-on-a-conveyor">Moving objects on a conveyor<a class="headerlink" href="#moving-objects-on-a-conveyor" title="Permanent link">&para;</a></h2>
+<p>All conveyor methods require <span class="doc-accent">encoder feedback connected to DeltaXStudio</span>. First choose who controls the conveyor, then whether a calibration camera is installed.</p>
+<h3 id="deltaxstudio-controls-the-conveyor">DeltaXStudio controls the conveyor<a class="headerlink" href="#deltaxstudio-controls-the-conveyor" title="Permanent link">&para;</a></h3>
+<div class="guide-card-grid">
+<div class="guide-card" id="a-fully-automatic-calibration">
+<h3 id="fully-automatic"><a href="automatic/">Fully automatic</a><a class="headerlink" href="#fully-automatic" title="Permanent link">&para;</a></h3>
+<p>The software controls belt movement and uses the calibration camera to align robot points.</p>
+<p class="guide-card-tags"><span>Encoder required</span><span>Calibration camera</span></p>
+<p><a href="automatic/">Open guide →</a></p>
+</div>
+<div class="guide-card" id="b-controlled-conveyor-with-manual-robot-points">
+<h3 id="manual-robot-points"><a href="controlled-conveyor/">Manual robot points</a><a class="headerlink" href="#manual-robot-points" title="Permanent link">&para;</a></h3>
+<p>The software controls the belt. You align the tool and capture each robot point.</p>
+<p class="guide-card-tags"><span>Encoder required</span><span>No calibration camera</span></p>
+<p><a href="controlled-conveyor/">Open guide →</a></p>
+</div>
+</div>
+<h3 id="operator-controls-the-conveyor-externally">Operator controls the conveyor externally<a class="headerlink" href="#operator-controls-the-conveyor-externally" title="Permanent link">&para;</a></h3>
+<div class="guide-card-grid">
+<div class="guide-card" id="c-external-conveyor-with-a-calibration-camera">
+<h3 id="with-calibration-camera"><a href="external-camera/">With calibration camera</a><a class="headerlink" href="#with-calibration-camera" title="Permanent link">&para;</a></h3>
+<p>You start and stop the belt when prompted. The camera handles robot-point alignment.</p>
+<p class="guide-card-tags"><span>Encoder required</span><span>Calibration camera</span></p>
+<p><a href="external-camera/">Open guide →</a></p>
+</div>
+<div class="guide-card" id="d-external-conveyor-with-manual-robot-points">
+<h3 id="with-manual-robot-points"><a href="external-manual/">With manual robot points</a><a class="headerlink" href="#with-manual-robot-points" title="Permanent link">&para;</a></h3>
+<p>You control the belt and align the tool to capture the reference points.</p>
+<p class="guide-card-tags"><span>Encoder required</span><span>No calibration camera</span></p>
+<p><a href="external-manual/">Open guide →</a></p>
+</div>
+</div>
+<p><span class="legacy-anchor" id="2-prepare-the-system-and-working-heights"></span>
+<span class="legacy-anchor" id="3-prepare-the-board-and-crop"></span></p>
+<p>The selected guide contains the working-height and crop instructions for that setup. There is no need to read the other methods.</p>
+<p><span class="legacy-anchor" id="4-finish-and-verify"></span>
+<span class="legacy-anchor" id="if-calibration-cannot-finish"></span></p>
+<h2 id="after-calibration">After calibration<a class="headerlink" href="#after-calibration" title="Permanent link">&para;</a></h2>
+<p>Check the completion message and camera crop, then continue to <a href="../vision/">Vision</a>. If calibration stops or fails, use the troubleshooting section at the end of your selected guide.</p></article>
+      <div class="article-end"><span>Found something that could be clearer?</span><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio/calibration.md">Suggest an edit <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+      <nav class="page-pagination" aria-label="Related pages">
+        
+          
+          <a href="../"><small>BACK</small><span><i class="fa fa-arrow-left" aria-hidden="true"></i> System Setup</span></a>
+          <a href="../vision/"><small>NEXT STEP</small><span>Vision <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+        
+      </nav>
+    
+    
+  </main>
+  <aside class="page-toc" aria-label="On this page"><span class="toc-title">On this page</span><nav>
+  
+    
+    <a href="#stationary-objects">Stationary objects</a>
+    
+  
+    
+    <a href="#moving-objects-on-a-conveyor">Moving objects on a conveyor</a>
+    
+  
+    
+    <a href="#after-calibration">After calibration</a>
+    
+  
+</nav><a class="back-top" href="#main-content"><i class="fa fa-arrow-up" aria-hidden="true"></i> Back to top</a></aside>
+
+<footer id="about-us" class="site-footer"><a class="brand footer-brand" href="../../../..">DELTA <b>X</b><span>Documentation</span></a><span id="delta-x-robot-store">Delta X Robotics · Documentation</span><div><a href="https://www.deltaxrobot.com/">Website <i class="fa fa-external-link" aria-hidden="true"></i></a><a id="delta-x-community" href="https://www.facebook.com/groups/DeltaXCommunity">Community</a><a href="mailto:deltaxrobot@gmail.com">Support</a></div></footer>
+</div>
+
+<dialog class="search-dialog" aria-label="Search documentation"><form class="search-form" role="search"><div class="search-input-row"><i class="fa fa-search" aria-hidden="true"></i><input id="docs-search" type="search" autocomplete="off" placeholder="Search commands, guides, and specifications…" aria-label="Search documentation"><button type="button" class="close-search" aria-label="Close search"><kbd>Esc</kbd></button></div><div class="search-filters"><label for="search-model">Search in</label><select id="search-model"><option value="all">All models</option></select><span id="search-count" role="status" aria-live="polite"></span></div></form><div id="search-results" class="search-results" aria-live="polite"><div class="search-empty"><i class="fa fa-search" aria-hidden="true"></i><h2>What are you working on?</h2><p>Try a command like G28, a model, or a topic like wiring.</p></div></div><div class="search-footer"><span><kbd>Tab</kbd> navigate results <kbd>Enter</kbd> open</span><span>Delta X Documentation</span></div></dialog>
+<dialog class="image-dialog" aria-label="Image detail"><button class="icon-button close-image" aria-label="Close image"><i class="fa fa-times" aria-hidden="true"></i></button><img alt=""><p></p></dialog>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

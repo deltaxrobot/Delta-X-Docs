@@ -1,0 +1,834 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Capture and download images in DeltaXStudio, label and train in DeltaXHub AI Hub, then upload and test the RKNN model.">
+  <title>Vision — AI · Delta X Documentation</title>
+  <link rel="canonical" href="https://docs.deltaxrobot.com/tutorials/control_guides/deltaxstudio/vision/ai/">
+  <link rel="icon" href="../../../../../img/favicon.ico">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('dx-theme')||'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../../../../../assets/docs.css">
+  <script defer data-docs-script src="../../../../../assets/docs.js"></script>
+</head>
+
+
+
+<body class="document-page" data-model="Delta X 3 / Delta X S">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-button mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <a class="brand" href="../../../../.." aria-label="Delta X documentation home"><img class="brand-logo" src="../../../../../assets/main-logo.png" alt="Delta X" width="1000" height="477"><span class="brand-divider"></span><span class="brand-caption">Docs</span></a>
+    <button class="header-search" data-open-search aria-label="Search documentation"><i class="fa fa-search" aria-hidden="true"></i><span>Search documentation…</span><kbd>Ctrl K</kbd></button>
+    <div class="header-actions"><a class="header-website" href="https://www.deltaxrobot.com/">deltaxrobot.com <i class="fa fa-external-link" aria-hidden="true"></i></a><button class="icon-button theme-toggle" aria-label="Switch to dark theme"><i class="fa fa-moon-o" aria-hidden="true"></i></button><a class="icon-button github-link" href="https://github.com/deltaxrobot/Delta-X-Docs" aria-label="View documentation on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+  </div>
+</header>
+
+
+
+<div class="sidebar-backdrop" hidden></div>
+<div class="docs-layout ">
+  <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+  <div class="sidebar-heading"><span>DOCUMENTATION</span><button class="icon-button close-menu" aria-label="Close navigation"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+  <a class="sidebar-home " href="../../../../.." ><i class="fa fa-book" aria-hidden="true"></i> Overview</a>
+  <div class="sidebar-scroll">
+    <nav aria-label="Documentation sections">
+      
+        
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">GET STARTED</span>
+
+  
+    <a class="sidebar-link " href="../../../../tutorials_list/" >Tutorial List</a>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Assembly Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../assembly_guides/x2_assembly_guide/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../assembly_guides/xs_assembly_guide/" >Delta X S Robot</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../assembly_guides/xs_frame_assembly_guide/" >Delta X S Frame</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../assembly_guides/xs_v5_wiring_tutorial/" >Delta X S IO Wiring</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" open>
+      <summary>Control Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../termite/" >Termite (X3 & XS)</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../control_delta_x2_by_arduino/" >Delta X 2</a>
+  
+
+  
+    <details class="nav-group depth-1" open>
+      <summary>DeltaXStudio<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../overview/" >Overview</a>
+  
+
+  
+    <details class="nav-group depth-2" open>
+      <summary>Pick & Place Setup<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../" >1. System Setup</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>2. Calibration<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../calibration/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/static/" >Static calibration</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/automatic/" >Fully automatic</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/controlled-conveyor/" >Controlled conveyor · Manual points</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/external-camera/" >External conveyor · Camera</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/external-manual/" >External conveyor · Manual points</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" open>
+      <summary>3. Vision<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link current" href="./" aria-current="page">AI</a>
+  
+
+  
+    <a class="sidebar-link " href="../color/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../ai-template/" >AI + Template Matching</a>
+  
+
+  
+    <a class="sidebar-link " href="../color-template/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../pick_and_place/" >4. Pick & Place</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Blockly Programming<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../blockly/" >Getting started</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Movement examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../blockly/stationary-pick-and-place/" >Stationary pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../../blockly/conveyor-pick-and-place/" >Conveyor pick & place (AI)</a>
+  
+
+  
+    <a class="sidebar-link " href="../../blockly/color-pick-and-place/" >Color filtering + pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../../blockly/sort-two-types/" >Sort two object types (AI)</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Vision-only examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../blockly/color-filtering/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../../blockly/color-template-matching/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../daily_operation/" >Daily Operation</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../application_guides/deltax_art/" >Applications</a>
+  
+
+</div>
+      
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">REFERENCE</span>
+
+  
+    <details class="nav-group depth-0" >
+      <summary>G-code Commands<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/useful_commands/" >Useful Commands</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X 3<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x3/" >Firmware < 2.0.0</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x3_v2/" >Firmware > 2.0.0</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_xs_v4/" >Delta X S V4</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_xs_v5/" >Delta X S V5</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_short_conveyor/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_conveyor/" >Desktop Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_industrial_conveyor/" >XConveyor XEncoder</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_slider/" >Slider X</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Specifications<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/sp_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/sp_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/sp_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V4<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v4/sp_v4_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v4/sp_v4_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v4/sp_v4_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V5<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v5/sp_v5_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v5/sp_v5_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v5/sp_v5_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Delta X 2 Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_x2_accessories/conveyor_x/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_x2_accessories/slider_x/" >Slider X</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_x2_accessories/vision_kit_v1/" >Vision Kit V1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_basic/" >2020 Aluminum Profile Frames</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/" >Delta X S Accessories</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+</div>
+      
+        
+      
+    </nav>
+    <div class="sidebar-help"><a href="mailto:deltaxrobot@gmail.com"><i class="fa fa-life-ring" aria-hidden="true"></i> Contact support <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+  </div>
+</aside>
+  
+  <main id="main-content" class="article-column">
+    
+    
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../../../..">Docs</a><i class="fa fa-angle-right" aria-hidden="true"></i><span>Guides</span><i class="fa fa-angle-right" aria-hidden="true"></i><span>Delta X 3 / Delta X S</span></nav>
+      <header class="article-header"><h1 id="vision-ai">Vision — AI</h1><div class="article-meta"><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio/vision/ai.md"><i class="fa fa-pencil" aria-hidden="true"></i> Suggest an edit</a></div></header>
+      
+      
+      <details class="mobile-toc"><summary>On this page <i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+  
+    
+    <a href="#from-camera-images-to-a-working-model">From camera images to a working model</a>
+    
+  
+    
+    <a href="#capture-and-download-images-in-deltaxstudio">Capture and download images in DeltaXStudio</a>
+    
+  
+    
+    <a href="#create-a-server-project-in-deltaxhub">Create a server project in DeltaXHub</a>
+    
+  
+    
+    <a href="#upload-images-and-create-classes">Upload images and create classes</a>
+    
+  
+    
+    <a href="#label-and-review-every-image">Label and review every image</a>
+    
+  
+    
+    <a href="#configure-and-start-training">Configure and start training</a>
+    
+  
+    
+    <a href="#review-results-and-download-rknn">Review results and download RKNN</a>
+    
+  
+    
+    <a href="#upload-and-enable-the-model-in-deltaxstudio">Upload and enable the model in DeltaXStudio</a>
+    
+  
+    
+    <a href="#verify-detection-before-picking">Verify detection before picking</a>
+    
+  
+    
+    <a href="#if-detection-does-not-work">If detection does not work</a>
+    
+  
+</details>
+      
+      
+      <nav class="studio-setup-progress" aria-label="Pick and Place setup stages">
+  <div><a href="../../overview/">DeltaXStudio overview</a><span>Pick &amp; Place setup · Step 3 of 4</span></div>
+  <ol>
+    
+    <li><a href="../../" ><span>1</span>System Setup</a></li>
+    
+    <li><a href="../../calibration/" ><span>2</span>Calibration</a></li>
+    
+    <li><a href="../" aria-current="step"><span>3</span>Vision</a></li>
+    
+    <li><a href="../../pick_and_place/" ><span>4</span>Pick & Place</a></li>
+    
+  </ol>
+</nav>
+      <article class="prose"><h1>Vision — AI<a class="headerlink" href="#vision-ai" title="Permanent link">&para;</a></h1>
+<div class="guide-context">
+<p><span>Vision · AI</span></p>
+<p><a href="../">Change method</a></p>
+</div>
+<p>Capture images in DeltaXStudio → label and train in <a href="https://deltaxhub.com">DeltaXHub</a> → upload RKNN → verify detection.</p>
+<div class="guide-requirements">
+<p>Before starting: complete <a href="../../calibration/">Calibration</a>, check the live camera and lighting, and keep robot movement stopped.</p>
+<ul>
+<li><span class="doc-accent">Already have an RKNN model?</span> Go to <a href="#upload-and-enable-the-model-in-deltaxstudio">Upload and enable the model</a>, then verify detection.</li>
+<li><span class="doc-accent">Need to train a model?</span> Start with <a href="#capture-and-download-images-in-deltaxstudio">Capture and download images</a> below. Labeling and training require a DeltaXHub account and Internet access.</li>
+</ul>
+</div>
+<h2 id="from-camera-images-to-a-working-model">From camera images to a working model<a class="headerlink" href="#from-camera-images-to-a-working-model" title="Permanent link">&para;</a></h2>
+<p>Use <span class="doc-accent">DeltaXStudio</span> for image capture and robot-side detection. Use <span class="doc-accent">AI Hub</span> on <a href="https://deltaxhub.com">deltaxhub.com</a> for labeling and training.</p>
+<table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>What you should have before continuing</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#capture-and-download-images-in-deltaxstudio">Capture and download</a><br>DeltaXStudio</td>
+<td>A downloaded project ZIP, extracted to an <code>images</code> folder on your computer.</td>
+</tr>
+<tr>
+<td><a href="#upload-images-and-create-classes">Upload and label</a><br>AI Hub</td>
+<td>Images uploaded, classes defined, and every target object labeled and reviewed.</td>
+</tr>
+<tr>
+<td><a href="#configure-and-start-training">Train</a><br>AI Hub</td>
+<td>A completed training run for that server project.</td>
+</tr>
+<tr>
+<td><a href="#review-results-and-download-rknn">Download the model</a><br>AI Hub</td>
+<td>The trained <code>.rknn</code> file and its class names in model order.</td>
+</tr>
+<tr>
+<td><a href="#upload-and-enable-the-model-in-deltaxstudio">Upload and activate</a><br>DeltaXStudio</td>
+<td>The uploaded model selected, matching model type and classes entered, and settings saved.</td>
+</tr>
+</tbody>
+</table>
+<p>Keep the robot&rsquo;s DeltaXStudio address available. Your computer needs Internet access for DeltaXHub and a connection to the robot&rsquo;s network when you return to upload the model. See <a href="../../">System Setup</a> if the robot is still only accessible through its hotspot.</p>
+<p><span class="legacy-anchor" id="1-capture-and-download-images-in-deltaxstudio"></span></p>
+<h2 id="capture-and-download-images-in-deltaxstudio">Capture and download images in DeltaXStudio<a class="headerlink" href="#capture-and-download-images-in-deltaxstudio" title="Permanent link">&para;</a></h2>
+<h3 id="create-an-image-project">Create an image project<a class="headerlink" href="#create-an-image-project" title="Permanent link">&para;</a></h3>
+<p>Open the robot&rsquo;s DeltaXStudio interface and select <span class="doc-accent">Vision</span> in the sidebar. Set <span class="doc-accent">Mode</span> to <span class="doc-accent">Vision AI</span>.</p>
+<p>Beside the <span class="doc-accent">Project</span> selector, click <span class="doc-accent">+ New</span>. Enter a descriptive name, such as <code>sorting-parts</code>, then click the check mark or press Enter. Confirm that the new name is selected. To add images to an existing collection, select that project instead.</p>
+<p>Open the <span class="doc-accent">Images</span> tab. These images are stored on the robot controller; download them to your computer before uploading them to AI Hub.</p>
+<figure class="studio-figure" style="max-width:420px">
+<p><img alt="New image-project name field with check-mark and cancel buttons" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/create-image-project.png" /></p>
+<figcaption>Click + New, enter a project name, and confirm with the check mark. This example enters sorting-parts.</figcaption>
+</figure>
+<h3 id="capture-representative-images">Capture representative images<a class="headerlink" href="#capture-representative-images" title="Permanent link">&para;</a></h3>
+<p>In the right-hand <span class="doc-accent">Camera Controls</span> panel, check that the camera is connected. Set <span class="doc-accent">Image Type</span> to <span class="doc-accent">Cropped</span>, then click <span class="doc-accent">Open Live Camera</span>. Check that the preview shows the calibrated detection area used during operation.</p>
+<p>Place objects in the detection area and click <span class="doc-accent">Save Current Image</span>. Confirm that a new image appears in the list. Change the objects&rsquo; positions, rotations, and spacing before capturing the next frame. Include every class and the lighting, backgrounds, and object arrangements expected during operation.</p>
+<figure class="studio-figure block-detail">
+<p><img alt="A real Cropped live-camera frame beside Camera Controls and Save Current Image" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/capture-live-camera.png" /></p>
+<figcaption>Select Cropped and open the live camera, then use Save Current Image to collect each frame. The object shown is an example.</figcaption>
+</figure>
+<p>Review the saved images. Remove blurred captures, accidental duplicates, and unusable frames; check that one class or one pose does not dominate the dataset. Around 100 varied images can be a starting collection, rather than a fixed requirement. Keep some fresh captures for testing the finished model.</p>
+<details class="guide-details">
+<summary>Optional: capture a series with Auto Save</summary>
+<p>With the live camera open, set <span class="doc-accent">Max images</span> to the number of frames to collect and <span class="doc-accent">Min time (s)</span> to the interval between saves. Enable <span class="doc-accent">Enable Auto Save</span> while changing the scene between captures.</p>
+<figure class="studio-figure portrait">
+<p><img alt="Camera Controls with Cropped selected, Save Current Image, Auto Save, maximum count and minimum interval" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/capture-controls.png" /></p>
+<figcaption>Set the capture limits before enabling Auto Save. Leave automatic AIX annotation off for the first dataset.</figcaption>
+</figure>
+<p>Leave <span class="doc-accent">Auto annotation with AIX</span> off when preparing the first dataset. This guide labels the images in AI Hub. Turn Auto Save off when finished and review the collection before downloading it.</p>
+</details>
+<h3 id="download-and-extract-the-images">Download and extract the images<a class="headerlink" href="#download-and-extract-the-images" title="Permanent link">&para;</a></h3>
+<p>Close the live camera when capture is complete. Check the selected project, then click the download icon beside it, labeled <span class="doc-accent">Download project</span>. Save the downloaded ZIP to your computer.</p>
+<figure class="studio-figure" style="max-width:360px">
+<p><img alt="Image-project selector with the download icon immediately before + New" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/download-image-project.png" /></p>
+<figcaption>Download the selected project with the icon immediately before + New, then extract its ZIP on your computer.</figcaption>
+</figure>
+<p>In Windows, right-click the ZIP and choose <span class="doc-accent">Extract All</span>. Open the extracted folder, then its <span class="doc-accent">images</span> folder, and check that your captured images are present and readable.</p>
+<p>In the AI Hub steps below, upload the <span class="doc-accent">image files inside this folder</span>. The project ZIP may also contain a <code>labels</code> folder; the image-upload button expects the images, not the ZIP or that labels folder.</p>
+<p><span class="legacy-anchor" id="2-create-a-server-project-in-deltaxhub"></span></p>
+<h2 id="create-a-server-project-in-deltaxhub">Create a server project in DeltaXHub<a class="headerlink" href="#create-a-server-project-in-deltaxhub" title="Permanent link">&para;</a></h2>
+<p>Open <a href="https://deltaxhub.com">deltaxhub.com</a> and sign in. Select <span class="doc-accent">AI Hub → Projects → Create Project</span>.</p>
+<p>Enter a descriptive project name and select <span class="doc-accent">Storage: Server</span>. Server storage is required for the training workflow below. Local storage is for labeling and exporting data to train elsewhere.</p>
+<p>Choose the project&rsquo;s label type using the table below. Leave <span class="doc-accent">Public</span> off unless you intend to share the project. Click <span class="doc-accent">Create</span>, then <span class="doc-accent">Open</span> on the new project card.</p>
+<p>This is a separate project in DeltaXHub. Using the same name as the DeltaXStudio image project makes it easier to identify, but the images are transferred by the upload below.</p>
+<figure class="studio-figure">
+<p><img alt="AI Hub Projects page and Create Project button" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-projects.jpg" /></p>
+<figcaption>Open AI Hub and create a project.</figcaption>
+</figure>
+<figure class="studio-figure portrait">
+<p><img alt="Create New Project with Server storage and SEG label type" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-create-server-project.jpg" /></p>
+<figcaption>Select Server storage and the label type required by your application.</figcaption>
+</figure>
+<table>
+<thead>
+<tr>
+<th>DeltaXHub label type</th>
+<th>Meaning</th>
+<th>DeltaXStudio model type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RECT</td>
+<td>A rectangular bounding box for locating an object without orientation. Suitable for simple position-based picking, such as round fruit.</td>
+<td>DET</td>
+</tr>
+<tr>
+<td>ORI</td>
+<td>An oriented bounding box for an object whose rotation matters. Label its direction consistently.</td>
+<td>ORI</td>
+</tr>
+<tr>
+<td>SEG</td>
+<td>A polygon or mask describing the object boundary, useful when the outline is important.</td>
+<td>SEG</td>
+</tr>
+</tbody>
+</table>
+<p>The project label type describes the annotation format. Classes describe the object categories, such as <code>class_A</code> and <code>class_B</code>; create one class for each category the robot must distinguish.</p>
+<figure class="studio-figure">
+<p><img alt="New server project card with Open button" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-open-project.jpg" /></p>
+<figcaption>Open the newly created project to upload images and add labels.</figcaption>
+</figure>
+<p><span class="legacy-anchor" id="3-upload-images-and-create-classes"></span></p>
+<h2 id="upload-images-and-create-classes">Upload images and create classes<a class="headerlink" href="#upload-images-and-create-classes" title="Permanent link">&para;</a></h2>
+<p>In the open AI Hub project, click the plus button in the left <span class="doc-accent">Images</span> panel. Browse to the extracted <span class="doc-accent">images</span> folder, select the captured image files, then click <span class="doc-accent">Open</span>. Wait for the upload to finish and confirm the images appear in the list. Select one to check that the correct camera images were uploaded.</p>
+<p>In the right <span class="doc-accent">Classes</span> panel, click plus to add the classes you need. Give them clear, consistent names. Check the class list and order before labeling. Keep a record of that order for the Objects setting on the robot.</p>
+<figure class="studio-figure">
+<p><img alt="Project editor with Images upload button and Classes panel" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-upload-images.jpg" /></p>
+<figcaption>Upload captured images on the left and define object classes on the right.</figcaption>
+</figure>
+<p><span class="legacy-anchor" id="4-label-and-review-every-image"></span></p>
+<h2 id="label-and-review-every-image">Label and review every image<a class="headerlink" href="#label-and-review-every-image" title="Permanent link">&para;</a></h2>
+<p>With an image and its intended class selected, draw a rectangle, oriented box, or segmentation outline around each target object according to the project’s label type. Check the <span class="doc-accent">Objects</span> list. Correct the class of any mislabeled object and remove unwanted annotations.</p>
+<p><span class="doc-accent">SAM</span> can assist with every project label type: <span class="doc-accent">RECT, ORI, or SEG</span>. It starts disabled. After selecting an image, enable SAM near the top of the editor and wait for it to become ready. First use on a new computer may take longer while the required files download. SAM needs a supported, sufficiently capable GPU; if it is unavailable, continue labeling manually.</p>
+<p>Review and correct every assisted annotation, including its box or outline, orientation where applicable, and assigned class. SAM assistance does not replace this review.</p>
+<p>Repeat for the remaining images. Review all visible target objects, including rotated or difficult examples, before starting training. Confirm the annotations are retained when you revisit an image, then click <span class="doc-accent">Back</span> to leave the editor.</p>
+<figure class="studio-figure">
+<p><img alt="Segmentation annotations for class A and class B with SAM enabled" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-annotate-classes.jpg" /></p>
+<figcaption>Annotation in progress: review each outline and class, then label the remaining target objects.</figcaption>
+</figure>
+<p>For ORI, keep the object&rsquo;s reference direction consistent across images. For SEG, follow the actual boundary instead of including large areas of background. Assisted labeling still needs review; a plausible-looking outline can belong to the wrong class or miss part of the object.</p>
+<p><span class="legacy-anchor" id="5-configure-and-start-training"></span></p>
+<h2 id="configure-and-start-training">Configure and start training<a class="headerlink" href="#configure-and-start-training" title="Permanent link">&para;</a></h2>
+<p>Find your server project in AI Hub’s <span class="doc-accent">Workspace</span> tab and check its image and class counts. Click <span class="doc-accent">Train</span>, or <span class="doc-accent">Retrain</span> for a project with previous training runs.</p>
+<p>In the training dialog, select <span class="doc-accent">AIX New</span>. Review Auto Configuration, or open <span class="doc-accent">Customize Settings</span> to adjust the parameters.</p>
+<p>Review the displayed cost information and available credits, then click <span class="doc-accent">Start Training</span>. Wait for the queued job to run and reach <span class="doc-accent">Completed</span>. A queued job has not yet finished training.</p>
+<figure class="studio-figure">
+<p><img alt="Workspace listing server projects with Train and Retrain buttons" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-workspace.jpg" /></p>
+<figcaption>Start training from the project's Workspace card.</figcaption>
+</figure>
+<figure class="studio-figure portrait">
+<p><img alt="Start Training dialog with AIX New and Auto Configuration" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-start-training.jpg" /></p>
+<figcaption>Review the dataset, training configuration, and current cost information.</figcaption>
+</figure>
+<details class="guide-details">
+<summary>Optional: custom training parameters</summary>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>What it controls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Epochs</td>
+<td>The maximum number of passes through the training dataset. More epochs take longer and do not automatically improve results. The supplied example uses 100.</td>
+</tr>
+<tr>
+<td>Batch Size</td>
+<td>Images processed together in each training step. Choose a value that fits the dataset and training server memory; a larger batch is not inherently more accurate.</td>
+</tr>
+<tr>
+<td>Image Size</td>
+<td>Input resolution for training. The example uses 640 px. Higher resolution can retain small details but requires more resources.</td>
+</tr>
+<tr>
+<td>Learning Rate</td>
+<td>The size of the model&rsquo;s update steps. Start with the offered default unless you have a reason to change it.</td>
+</tr>
+<tr>
+<td>Early Stopping Patience</td>
+<td>The number of epochs without sufficient improvement before training stops early.</td>
+</tr>
+</tbody>
+</table>
+<figure class="studio-figure portrait">
+<p><img alt="Custom epochs, batch size, image size, learning rate, and early stopping settings" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-training-settings.jpg" /></p>
+<figcaption>Example custom settings. Training time and credit estimates depend on the selected job.</figcaption>
+</figure>
+</details>
+<p>Improve dataset coverage and annotation quality before simply increasing epochs or image count. Inspect performance on fresh images as well as the reported training results.</p>
+<p><span class="legacy-anchor" id="6-review-results-and-download-rknn"></span></p>
+<h2 id="review-results-and-download-rknn">Review results and download RKNN<a class="headerlink" href="#review-results-and-download-rknn" title="Permanent link">&para;</a></h2>
+<p>Open the project&rsquo;s training details and select the completed run in <span class="doc-accent">Training History</span>. Inspect the training curves, class results, and confusion matrix. Check both missed objects and false detections; a high summary score alone does not verify the robot&rsquo;s working conditions.</p>
+<p>Scroll to the downloads for that completed run. Click <span class="doc-accent">RKNN (best.rknn)</span> and save the <code>.rknn</code> file on your computer. Keep it with the project name, label type, class names in model order, and training run. You will need this file and class order in DeltaXStudio.</p>
+<figure class="studio-figure">
+<p><img alt="Project details and completed training run in Training History" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-training-history.jpg" /></p>
+<figcaption>Select a completed run to inspect its results.</figcaption>
+</figure>
+<figure class="studio-figure">
+<p><img alt="Training curves, confusion matrix, and RKNN download button" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/aihub-download-rknn.jpg" /></p>
+<figcaption>Download the RKNN model for upload to DeltaXStudio.</figcaption>
+</figure>
+<p>The <span class="doc-accent">Model (best.pt)</span> download is a different format. For DeltaXStudio&rsquo;s New RKNN Model upload, use the <code>.rknn</code> file.</p>
+<p><span class="legacy-anchor" id="7-upload-and-enable-the-model-in-deltaxstudio"></span></p>
+<h2 id="upload-and-enable-the-model-in-deltaxstudio">Upload and enable the model in DeltaXStudio<a class="headerlink" href="#upload-and-enable-the-model-in-deltaxstudio" title="Permanent link">&para;</a></h2>
+<p>Reconnect your computer to the robot&rsquo;s network and open DeltaXStudio at its current IP address and web port, normally <code>http://&lt;robot-ip&gt;:3000</code>. Keep movement tasks stopped while uploading and checking the model.</p>
+<ol>
+<li>Open <span class="doc-accent">Settings → System → Vision AI Settings</span>. At <span class="doc-accent">New RKNN Model</span>, click <span class="doc-accent">Choose File</span>, select the downloaded <code>.rknn</code> file, and click <span class="doc-accent">Upload</span>. Wait for the upload-success message.</li>
+<li>Select the uploaded model in <span class="doc-accent">Vision AI Model</span>. Select its matching type in the adjacent dropdown: <span class="doc-accent">RECT → DET</span>, <span class="doc-accent">ORI → ORI</span>, or <span class="doc-accent">SEG → SEG</span>.</li>
+<li>In <span class="doc-accent">Objects</span>, enter all class names in the trained model&rsquo;s order, separated by commas. For example, enter <code>class_A,class_B</code> for a model whose classes are class_A at index 0 and class_B at index 1. Do not add a trailing comma.</li>
+<li>Set the switch beside the <span class="doc-accent">Vision AI Settings</span> heading to <span class="doc-accent">Enabled</span>. For AI-only operation, leave <span class="doc-accent">Template Matching</span> disabled. Click <span class="doc-accent">Save System</span> at the top right and wait for confirmation. Uploading the file alone does not select or activate it.</li>
+<li>Return to <span class="doc-accent">Dashboard</span>, open the camera view, and place a test object in the detection area. Check its class, center, and orientation before starting a movement task. If the new configuration has not taken effect after saving, use <span class="doc-accent">System Control → Reset</span>, wait for reconnection, and check again.</li>
+</ol>
+<figure class="studio-figure">
+<p><img alt="Vision AI enabled with the model, class list, confidence thresholds and upload controls; Template Matching is disabled" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/vision-ai-enabled.png" /></p>
+<figcaption>Vision AI is Enabled and Template Matching is Disabled. Select your model, type, and classes, then click Save System. The pictured model and good,bad class names are examples.</figcaption>
+</figure>
+<p>Class index <code>0</code> corresponds to the first Objects entry, index <code>1</code> to the second, and so on. Keep every model class in this list even when a class should not be picked. Configure that selection under <a href="../../pick_and_place/#2-assign-object-types-to-place-destinations">Pick Objects Index</a>.</p>
+<p><span class="doc-accent">Conf</span> and <span class="doc-accent">IOU</span> use values from <code>0</code> to <code>1</code>. Start with the provided IOU default. Increasing Conf removes lower-confidence predictions, which can also remove valid objects; it does not improve the model itself. Change one setting at a time and inspect the live result.</p>
+<p><span class="legacy-anchor" id="8-verify-detection-before-picking"></span></p>
+<h2 id="verify-detection-before-picking">Verify detection before picking<a class="headerlink" href="#verify-detection-before-picking" title="Permanent link">&para;</a></h2>
+<p>Keep movement tasks stopped while checking the camera preview:</p>
+<ul>
+<li>Each class is detected at the positions, rotations, spacing, and partial occlusion expected during operation.</li>
+<li>Each object has one stable detection with the correct center, orientation, and class index.</li>
+<li>The empty background produces no false detections.</li>
+</ul>
+<p>Once detection is reliable, continue to <a href="../../pick_and_place/#4-choose-how-to-run-the-system">Pick &amp; Place</a> and start with one object at a low test speed.</p>
+<p>To refine AI detections with reference images, continue with <a href="../ai-template/#prepare-the-reference-templates">AI + Template Matching</a> before testing picking.</p>
+<h2 id="if-detection-does-not-work">If detection does not work<a class="headerlink" href="#if-detection-does-not-work" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Save Current Image is unavailable</td>
+<td>Camera connection, Open Live Camera, and a live frame in the preview.</td>
+</tr>
+<tr>
+<td>Captures are missing from the download</td>
+<td>Selected DeltaXStudio project and the extracted ZIP&rsquo;s <code>images</code> folder.</td>
+</tr>
+<tr>
+<td>Project is missing from training</td>
+<td>Server storage, completed image uploads, and the correct project in AI Hub Workspace.</td>
+</tr>
+<tr>
+<td>Wrong model file selected</td>
+<td>Download RKNN from the completed run and upload the <code>.rknn</code> file.</td>
+</tr>
+<tr>
+<td>Uploaded model is not active</td>
+<td>Vision AI Model selection, matching type, main enable switch, and Save System confirmation.</td>
+</tr>
+<tr>
+<td>No AI detections</td>
+<td>Model upload, enabled state, model type, camera crop, and Conf threshold.</td>
+</tr>
+<tr>
+<td>Swapped classes</td>
+<td>Trained class order and the Objects list.</td>
+</tr>
+<tr>
+<td>Training results look good but real objects fail</td>
+<td>Fresh operating images, lighting, and annotation quality.</td>
+</tr>
+</tbody>
+</table></article>
+      <div class="article-end"><span>Found something that could be clearer?</span><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio/vision/ai.md">Suggest an edit <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+      <nav class="page-pagination" aria-label="Related pages">
+        
+          
+          <a href="../"><small>BACK</small><span><i class="fa fa-arrow-left" aria-hidden="true"></i> Choose vision method</span></a>
+          <a href="../../pick_and_place/"><small>NEXT STEP</small><span>Continue to Pick & Place <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+        
+      </nav>
+    
+    
+  </main>
+  <aside class="page-toc" aria-label="On this page"><span class="toc-title">On this page</span><nav>
+  
+    
+    <a href="#from-camera-images-to-a-working-model">From camera images to a working model</a>
+    
+  
+    
+    <a href="#capture-and-download-images-in-deltaxstudio">Capture and download images in DeltaXStudio</a>
+    
+  
+    
+    <a href="#create-a-server-project-in-deltaxhub">Create a server project in DeltaXHub</a>
+    
+  
+    
+    <a href="#upload-images-and-create-classes">Upload images and create classes</a>
+    
+  
+    
+    <a href="#label-and-review-every-image">Label and review every image</a>
+    
+  
+    
+    <a href="#configure-and-start-training">Configure and start training</a>
+    
+  
+    
+    <a href="#review-results-and-download-rknn">Review results and download RKNN</a>
+    
+  
+    
+    <a href="#upload-and-enable-the-model-in-deltaxstudio">Upload and enable the model in DeltaXStudio</a>
+    
+  
+    
+    <a href="#verify-detection-before-picking">Verify detection before picking</a>
+    
+  
+    
+    <a href="#if-detection-does-not-work">If detection does not work</a>
+    
+  
+</nav><a class="back-top" href="#main-content"><i class="fa fa-arrow-up" aria-hidden="true"></i> Back to top</a></aside>
+
+<footer id="about-us" class="site-footer"><a class="brand footer-brand" href="../../../../..">DELTA <b>X</b><span>Documentation</span></a><span id="delta-x-robot-store">Delta X Robotics · Documentation</span><div><a href="https://www.deltaxrobot.com/">Website <i class="fa fa-external-link" aria-hidden="true"></i></a><a id="delta-x-community" href="https://www.facebook.com/groups/DeltaXCommunity">Community</a><a href="mailto:deltaxrobot@gmail.com">Support</a></div></footer>
+</div>
+
+<dialog class="search-dialog" aria-label="Search documentation"><form class="search-form" role="search"><div class="search-input-row"><i class="fa fa-search" aria-hidden="true"></i><input id="docs-search" type="search" autocomplete="off" placeholder="Search commands, guides, and specifications…" aria-label="Search documentation"><button type="button" class="close-search" aria-label="Close search"><kbd>Esc</kbd></button></div><div class="search-filters"><label for="search-model">Search in</label><select id="search-model"><option value="all">All models</option></select><span id="search-count" role="status" aria-live="polite"></span></div></form><div id="search-results" class="search-results" aria-live="polite"><div class="search-empty"><i class="fa fa-search" aria-hidden="true"></i><h2>What are you working on?</h2><p>Try a command like G28, a model, or a topic like wiring.</p></div></div><div class="search-footer"><span><kbd>Tab</kbd> navigate results <kbd>Enter</kbd> open</span><span>Delta X Documentation</span></div></dialog>
+<dialog class="image-dialog" aria-label="Image detail"><button class="icon-button close-image" aria-label="Close image"><i class="fa fa-times" aria-hidden="true"></i></button><img alt=""><p></p></dialog>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

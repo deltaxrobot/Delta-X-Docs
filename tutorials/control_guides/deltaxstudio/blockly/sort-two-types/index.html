@@ -1,0 +1,674 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Branch on detected object type in Blockly and send types 0 and 1 to different destinations.">
+  <title>Blockly example — Sort two object types · Delta X Documentation</title>
+  <link rel="canonical" href="https://docs.deltaxrobot.com/tutorials/control_guides/deltaxstudio/blockly/sort-two-types/">
+  <link rel="icon" href="../../../../../img/favicon.ico">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('dx-theme')||'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../../../../../assets/docs.css">
+  <script defer data-docs-script src="../../../../../assets/docs.js"></script>
+</head>
+
+
+
+<body class="document-page" data-model="Delta X 3 / Delta X S">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-button mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <a class="brand" href="../../../../.." aria-label="Delta X documentation home"><img class="brand-logo" src="../../../../../assets/main-logo.png" alt="Delta X" width="1000" height="477"><span class="brand-divider"></span><span class="brand-caption">Docs</span></a>
+    <button class="header-search" data-open-search aria-label="Search documentation"><i class="fa fa-search" aria-hidden="true"></i><span>Search documentation…</span><kbd>Ctrl K</kbd></button>
+    <div class="header-actions"><a class="header-website" href="https://www.deltaxrobot.com/">deltaxrobot.com <i class="fa fa-external-link" aria-hidden="true"></i></a><button class="icon-button theme-toggle" aria-label="Switch to dark theme"><i class="fa fa-moon-o" aria-hidden="true"></i></button><a class="icon-button github-link" href="https://github.com/deltaxrobot/Delta-X-Docs" aria-label="View documentation on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+  </div>
+</header>
+
+
+
+<div class="sidebar-backdrop" hidden></div>
+<div class="docs-layout ">
+  <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+  <div class="sidebar-heading"><span>DOCUMENTATION</span><button class="icon-button close-menu" aria-label="Close navigation"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+  <a class="sidebar-home " href="../../../../.." ><i class="fa fa-book" aria-hidden="true"></i> Overview</a>
+  <div class="sidebar-scroll">
+    <nav aria-label="Documentation sections">
+      
+        
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">GET STARTED</span>
+
+  
+    <a class="sidebar-link " href="../../../../tutorials_list/" >Tutorial List</a>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Assembly Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../assembly_guides/x2_assembly_guide/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../assembly_guides/xs_assembly_guide/" >Delta X S Robot</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../assembly_guides/xs_frame_assembly_guide/" >Delta X S Frame</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../assembly_guides/xs_v5_wiring_tutorial/" >Delta X S IO Wiring</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" open>
+      <summary>Control Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../termite/" >Termite (X3 & XS)</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../control_delta_x2_by_arduino/" >Delta X 2</a>
+  
+
+  
+    <details class="nav-group depth-1" open>
+      <summary>DeltaXStudio<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../overview/" >Overview</a>
+  
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Pick & Place Setup<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../" >1. System Setup</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>2. Calibration<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../calibration/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/static/" >Static calibration</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/automatic/" >Fully automatic</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/controlled-conveyor/" >Controlled conveyor · Manual points</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/external-camera/" >External conveyor · Camera</a>
+  
+
+  
+    <a class="sidebar-link " href="../../calibration/external-manual/" >External conveyor · Manual points</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>3. Vision<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../vision/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="../../vision/ai/" >AI</a>
+  
+
+  
+    <a class="sidebar-link " href="../../vision/color/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../../vision/ai-template/" >AI + Template Matching</a>
+  
+
+  
+    <a class="sidebar-link " href="../../vision/color-template/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../pick_and_place/" >4. Pick & Place</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-2" open>
+      <summary>Blockly Programming<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../" >Getting started</a>
+  
+
+  
+    <details class="nav-group depth-3" open>
+      <summary>Movement examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../stationary-pick-and-place/" >Stationary pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../conveyor-pick-and-place/" >Conveyor pick & place (AI)</a>
+  
+
+  
+    <a class="sidebar-link " href="../color-pick-and-place/" >Color filtering + pick & place</a>
+  
+
+  
+    <a class="sidebar-link current" href="./" aria-current="page">Sort two object types (AI)</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Vision-only examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../color-filtering/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../color-template-matching/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../daily_operation/" >Daily Operation</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../application_guides/deltax_art/" >Applications</a>
+  
+
+</div>
+      
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">REFERENCE</span>
+
+  
+    <details class="nav-group depth-0" >
+      <summary>G-code Commands<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/useful_commands/" >Useful Commands</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X 3<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x3/" >Firmware < 2.0.0</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_x3_v2/" >Firmware > 2.0.0</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_xs_v4/" >Delta X S V4</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_xs_v5/" >Delta X S V5</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_short_conveyor/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_conveyor/" >Desktop Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_industrial_conveyor/" >XConveyor XEncoder</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/gcodes/gc_slider/" >Slider X</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Specifications<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/sp_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/sp_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/sp_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V4<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v4/sp_v4_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v4/sp_v4_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v4/sp_v4_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V5<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v5/sp_v5_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v5/sp_v5_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/delta_xs_v5/sp_v5_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Delta X 2 Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_x2_accessories/conveyor_x/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_x2_accessories/slider_x/" >Slider X</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_x2_accessories/vision_kit_v1/" >Vision Kit V1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_basic/" >2020 Aluminum Profile Frames</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../../reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/" >Delta X S Accessories</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+</div>
+      
+        
+      
+    </nav>
+    <div class="sidebar-help"><a href="mailto:deltaxrobot@gmail.com"><i class="fa fa-life-ring" aria-hidden="true"></i> Contact support <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+  </div>
+</aside>
+  
+  <main id="main-content" class="article-column">
+    
+    
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../../../..">Docs</a><i class="fa fa-angle-right" aria-hidden="true"></i><span>Guides</span><i class="fa fa-angle-right" aria-hidden="true"></i><span>Delta X 3 / Delta X S</span></nav>
+      <header class="article-header"><h1 id="blockly-example-sort-two-object-types">Blockly example — Sort two object types</h1><div class="article-meta"><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio/blockly/sort-two-types.md"><i class="fa fa-pencil" aria-hidden="true"></i> Suggest an edit</a></div></header>
+      
+      
+      <details class="mobile-toc"><summary>On this page <i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+  
+    
+    <a href="#set-up-vision-ai">Set up Vision AI</a>
+    
+  
+    
+    <a href="#block-program">Block program</a>
+    
+  
+    
+    <a href="#setup-before-the-loop">Setup before the loop</a>
+    
+  
+    
+    <a href="#retrieve-pick-and-sort">Retrieve, pick, and sort</a>
+    
+  
+    
+    <a href="#define-the-destinations">Define the destinations</a>
+    
+  
+    
+    <a href="#complete-the-template">Complete the template</a>
+    
+  
+    
+    <a href="#test-each-branch">Test each branch</a>
+    
+  
+</details>
+      
+      
+      
+      <article class="prose"><h1>Blockly example — Sort two object types<a class="headerlink" href="#blockly-example-sort-two-object-types" title="Permanent link">&para;</a></h1>
+<div class="guide-context">
+<p><span>Movement example · AI sorting</span></p>
+<p><a href="../../pick_and_place/#choose-how-to-run-the-system">Choose a movement task</a></p>
+</div>
+<p>Send detected type <code>0</code> to one destination and type <code>1</code> to another. The program shown is saved as <span class="doc-accent">Docs_SortTwoTypes_Draft</span> and uses encoder tracking for pickup. To build your own version, start from <span class="doc-accent">Programs → Templates → Sort two object types</span> and adapt the two movement branches to your application.</p>
+<p>This guide uses <span class="doc-accent">Vision AI</span> to distinguish the objects. Complete <a href="../../calibration/">Calibration</a> and use an AI model trained for at least two classes before starting the movement program.</p>
+<h2 id="set-up-vision-ai">Set up Vision AI<a class="headerlink" href="#set-up-vision-ai" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Keep movement tasks stopped. Open <span class="doc-accent">Settings → System → Vision AI Settings</span>.</li>
+<li>Select your trained model and its matching model type, DET, ORI, or SEG. If it is not uploaded yet, follow <a href="../../vision/ai/#upload-and-enable-the-model-in-deltaxstudio">Upload and enable the model</a>.</li>
+<li>Enter the model&rsquo;s full class list in Objects, in its original order. For a model trained with <code>part_A</code> first and <code>part_B</code> second, enter <code>part_A,part_B</code>. These become types <code>0</code> and <code>1</code> in the program.</li>
+<li>Set the switch beside the Vision AI Settings heading to <span class="doc-accent">Enabled</span>. Leave Template Matching disabled for this example, then click <span class="doc-accent">Save System</span> at the top right and wait for confirmation.</li>
+<li>Return to Dashboard and click the camera in the scene to open the preview. Test one object of each class. Continue only when both have stable detections with the expected classes.</li>
+</ol>
+<figure class="studio-figure">
+<p><img alt="Vision AI enabled with the example good and bad class list, while Template Matching is disabled" src="../../../../../images/tutorials/control_guides/DeltaXStudio/vision/vision-ai-enabled.png" /></p>
+<figcaption>Enable Vision AI and leave Template Matching Disabled, then click Save System. The pictured good,bad names are examples; use a model trained for your two object types and enter its full class list in model order.</figcaption>
+</figure>
+<p>Adding another name to Objects does not train a new class. If your model recognizes only one class, complete the <a href="../../vision/ai/">AI training guide</a> with both object classes first. The separate Filter switch is not the main AI switch.</p>
+<h2 id="block-program">Block program<a class="headerlink" href="#block-program" title="Permanent link">&para;</a></h2>
+<figure class="studio-figure">
+<p><img alt="Blockly sorting program with encoder tracking, two destination variables, working-height variables, and separate pick and place branches for object types 0 and 1" src="../../../../../images/tutorials/control_guides/DeltaXStudio/Blockly/SortTwoTypes.png" /></p>
+<figcaption>Docs_SortTwoTypes_Draft with two destinations and working heights entered. Adapt these values to your conveyor, tool, and placement locations.</figcaption>
+</figure>
+<h2 id="setup-before-the-loop">Setup before the loop<a class="headerlink" href="#setup-before-the-loop" title="Permanent link">&para;</a></h2>
+<figure class="studio-figure block-detail">
+<p><img alt="Setup before the loop — illustration" src="../../../../../images/tutorials/control_guides/DeltaXStudio/Blockly/SortTwoTypesSetup.png" /></p>
+<figcaption>Define the tool, tracker, two destinations, and working heights before sorting.</figcaption>
+</figure>
+<p>Before the loop, Configure End Effectors defines vacuum tool <code>0</code> on pin <code>0</code>, with <code>100 ms</code> grip/release delays and zero X/Y offsets. Configure Tracking Parameters defines tracker <code>0</code>, using the main encoder and direction angle <code>0°</code>.</p>
+<h2 id="retrieve-pick-and-sort">Retrieve, pick, and sort<a class="headerlink" href="#retrieve-pick-and-sort" title="Permanent link">&para;</a></h2>
+<figure class="studio-figure block-detail">
+<p><img alt="Detail of the sorting loop with the object-found condition and separate branches for object types 0 and 1" src="../../../../../images/tutorials/control_guides/DeltaXStudio/Blockly/SortTwoTypesLoop.png" /></p>
+<figcaption>Each class uses the same pickup logic and its own placement variable.</figcaption>
+</figure>
+<p>The loop retrieves an object into <code>detected_object</code>. The <span class="doc-accent">if detected_object</span> condition allows the movement branches to run only when an object is available, before reading its type or pose.</p>
+<p>Inside the object-found condition, compare <span class="doc-accent">Get Object Type</span> against <code>0</code>. In that branch, pick using Get Object Pos and place at destination A. Add an else-if comparison against <code>1</code>; that branch picks the detected object and places it at destination B.</p>
+<p>After a branch finishes, the loop requests the next object. The example has no pick/place branch for other types.</p>
+<h2 id="define-the-destinations">Define the destinations<a class="headerlink" href="#define-the-destinations" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Detection result</th>
+<th>Program action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>No object (<code>None</code>)</td>
+<td>Skip the movement branches and request an object again.</td>
+</tr>
+<tr>
+<td>Type <code>0</code></td>
+<td>Move Pick at the detected pose, then Move Place using <code>PlacePosition1 = [50, 100, 0]</code>.</td>
+</tr>
+<tr>
+<td>Type <code>1</code></td>
+<td>Move Pick at the detected pose, then Move Place using <code>PlacePosition2 = [100, 100, 0]</code>.</td>
+</tr>
+<tr>
+<td>Another type</td>
+<td>No pick/place branch in this example; add handling only if the application requires it.</td>
+</tr>
+</tbody>
+</table>
+<p>Check type indices against the final Vision output. For AI they depend on the model&rsquo;s class order; if Template Matching supplies the type, verify its template-index mapping. Do not identify a branch only by the displayed object name.</p>
+<p>Both branches use the same height variables:</p>
+<table>
+<thead>
+<tr>
+<th>Variable</th>
+<th>Value shown</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>ZPick</code></td>
+<td><code>-700</code></td>
+<td>Tool height for gripping an object.</td>
+</tr>
+<tr>
+<td><code>ZPlace</code></td>
+<td><code>-690</code></td>
+<td>Tool height for releasing an object.</td>
+</tr>
+<tr>
+<td><code>ZMove</code></td>
+<td><code>-650</code></td>
+<td>Transfer height on both pick and place.</td>
+</tr>
+</tbody>
+</table>
+<p>Both Move Pick blocks select EE <code>0</code> and Tracker <code>0</code>. Both Move Place blocks select EE <code>0</code> and Tracker <code>None</code> because the destinations are fixed.</p>
+<h2 id="complete-the-template">Complete the template<a class="headerlink" href="#complete-the-template" title="Permanent link">&para;</a></h2>
+<p>When starting from Programs → Templates → Sort two object types, the branch conditions are already connected. Complete its movement inputs using the saved example above:</p>
+<table>
+<thead>
+<tr>
+<th>Part of the program</th>
+<th>What to do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Configure End Effectors</td>
+<td>Set the actual tool type, output pin, and grip/release delays. Note its ID, such as <code>0</code>.</td>
+</tr>
+<tr>
+<td>Get Object in Robot Area</td>
+<td>Keep Object Type at <code>None</code> so the lookup can return either class.</td>
+</tr>
+<tr>
+<td>Position and height variables</td>
+<td>Use Variables → Create variable to create PlacePosition1, PlacePosition2, ZPick, ZPlace, and ZMove. Assign the two positions with Vision → Objects → Object Pos from; fill X, Y, Angle, and height values using number blocks from Math.</td>
+</tr>
+<tr>
+<td>Move Pick in both branches</td>
+<td>Keep Get Object Pos connected to Obj Pos. Select the installed EE; connect ZMove to Z Move and ZPick to Z Pick.</td>
+</tr>
+<tr>
+<td>Move Place for type <code>0</code></td>
+<td>Connect PlacePosition1 to Obj Pos, ZMove to Z Move, and ZPlace to Z Place. Select the same EE as pickup.</td>
+</tr>
+<tr>
+<td>Move Place for type <code>1</code></td>
+<td>Repeat with PlacePosition2 as Obj Pos.</td>
+</tr>
+<tr>
+<td>Motion settings</td>
+<td>Set F, A, J, S, and E once before the picking loop using Robot Control → Movement → Set Motion Params. They continue to apply until changed.</td>
+</tr>
+</tbody>
+</table>
+<p>For a moving conveyor, add Configure Tracking Parameters before the loop and select its tracker on both Move Pick blocks, as shown in the saved example. Follow the <a href="../conveyor-pick-and-place/#setup-before-the-loop">conveyor example</a> for encoder setup. For fixed objects and fixed destinations, use Tracker <code>None</code>.</p>
+<p>Use <a href="../#fill-an-empty-input">Fill an empty input</a> if you are new to number blocks and Object Pos from. Measure the actual heights and destinations before replacing the values shown in the screenshot.</p>
+<p>Home the robot before the first position-based test. To include homing in this program, connect Robot Control → Movement → Go Home before the picking loop.</p>
+<p>The <a href="../color-filtering/">color-filtering example</a> sends every object as type <code>0</code>. It cannot supply both branches of this AI sorting example.</p>
+<h2 id="test-each-branch">Test each branch<a class="headerlink" href="#test-each-branch" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Click Check program and correct the reported missing inputs or errors. Save under your own task name, such as <code>My_TwoTypeSorting</code>, and wait for confirmation.</li>
+<li>With Vision AI already detecting both classes, find that task in Saved Tasks and click its green triangular play button.</li>
+<li>In Select Target Robots, select the intended robot and click Run Task. Present one type-0 object and confirm destination A, then one type-1 object and confirm destination B.</li>
+</ol>
+<figure class="studio-figure" style="max-width:280px">
+<p><img alt="Saved sorting task card with its green triangular play button" src="../../../../../images/tutorials/control_guides/DeltaXStudio/Blockly/StartSortingTask.png" /></p>
+<figcaption>Use the green triangle beside your completed, saved task. Your task name may differ from this draft.</figcaption>
+</figure>
+<p>Check both grip/release actions and transfer clearances before testing a mixed sequence. While running, the play button changes to a square Stop task button. Stop before editing, then Check program and Update the saved task before the next test.</p>
+<p>If destinations are swapped, inspect the detected type and branch comparison first. If an unexpected type is detected, the example should not execute either movement branch.</p>
+<figure class="studio-figure compact">
+<p><img alt="Select Target Robots dialog with the intended robot selected" src="../../../../../images/tutorials/control_guides/DeltaXStudio/Blockly/SelectTargetRobots.png" /></p>
+<figcaption>Choose the robot for this saved task before clicking Run Task. The robot name shown is an example.</figcaption>
+</figure></article>
+      <div class="article-end"><span>Found something that could be clearer?</span><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio/blockly/sort-two-types.md">Suggest an edit <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+      <nav class="page-pagination" aria-label="Related pages">
+        
+          
+          <a href="../#program-examples"><small>BACK</small><span><i class="fa fa-arrow-left" aria-hidden="true"></i> Blockly examples</span></a>
+          <a href="../../daily_operation/"><small>AFTER TESTING</small><span>Daily Operation <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+        
+      </nav>
+    
+    
+  </main>
+  <aside class="page-toc" aria-label="On this page"><span class="toc-title">On this page</span><nav>
+  
+    
+    <a href="#set-up-vision-ai">Set up Vision AI</a>
+    
+  
+    
+    <a href="#block-program">Block program</a>
+    
+  
+    
+    <a href="#setup-before-the-loop">Setup before the loop</a>
+    
+  
+    
+    <a href="#retrieve-pick-and-sort">Retrieve, pick, and sort</a>
+    
+  
+    
+    <a href="#define-the-destinations">Define the destinations</a>
+    
+  
+    
+    <a href="#complete-the-template">Complete the template</a>
+    
+  
+    
+    <a href="#test-each-branch">Test each branch</a>
+    
+  
+</nav><a class="back-top" href="#main-content"><i class="fa fa-arrow-up" aria-hidden="true"></i> Back to top</a></aside>
+
+<footer id="about-us" class="site-footer"><a class="brand footer-brand" href="../../../../..">DELTA <b>X</b><span>Documentation</span></a><span id="delta-x-robot-store">Delta X Robotics · Documentation</span><div><a href="https://www.deltaxrobot.com/">Website <i class="fa fa-external-link" aria-hidden="true"></i></a><a id="delta-x-community" href="https://www.facebook.com/groups/DeltaXCommunity">Community</a><a href="mailto:deltaxrobot@gmail.com">Support</a></div></footer>
+</div>
+
+<dialog class="search-dialog" aria-label="Search documentation"><form class="search-form" role="search"><div class="search-input-row"><i class="fa fa-search" aria-hidden="true"></i><input id="docs-search" type="search" autocomplete="off" placeholder="Search commands, guides, and specifications…" aria-label="Search documentation"><button type="button" class="close-search" aria-label="Close search"><kbd>Esc</kbd></button></div><div class="search-filters"><label for="search-model">Search in</label><select id="search-model"><option value="all">All models</option></select><span id="search-count" role="status" aria-live="polite"></span></div></form><div id="search-results" class="search-results" aria-live="polite"><div class="search-empty"><i class="fa fa-search" aria-hidden="true"></i><h2>What are you working on?</h2><p>Try a command like G28, a model, or a topic like wiring.</p></div></div><div class="search-footer"><span><kbd>Tab</kbd> navigate results <kbd>Enter</kbd> open</span><span>Delta X Documentation</span></div></dialog>
+<dialog class="image-dialog" aria-label="Image detail"><button class="icon-button close-image" aria-label="Close image"><i class="fa fa-times" aria-hidden="true"></i></button><img alt=""><p></p></dialog>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

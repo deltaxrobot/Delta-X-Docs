@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Configure pick and place positions, select object classes, choose a movement task, and tune picking accuracy.">
+  <title>DeltaXStudio — Pick & Place · Delta X Documentation</title>
+  <link rel="canonical" href="https://docs.deltaxrobot.com/tutorials/control_guides/deltaxstudio/pick_and_place/">
+  <link rel="icon" href="../../../../img/favicon.ico">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('dx-theme')||'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../../../../assets/docs.css">
+  <script defer data-docs-script src="../../../../assets/docs.js"></script>
+</head>
+
+
+
+<body class="document-page" data-model="Delta X 3 / Delta X S">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-button mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <a class="brand" href="../../../.." aria-label="Delta X documentation home"><img class="brand-logo" src="../../../../assets/main-logo.png" alt="Delta X" width="1000" height="477"><span class="brand-divider"></span><span class="brand-caption">Docs</span></a>
+    <button class="header-search" data-open-search aria-label="Search documentation"><i class="fa fa-search" aria-hidden="true"></i><span>Search documentation…</span><kbd>Ctrl K</kbd></button>
+    <div class="header-actions"><a class="header-website" href="https://www.deltaxrobot.com/">deltaxrobot.com <i class="fa fa-external-link" aria-hidden="true"></i></a><button class="icon-button theme-toggle" aria-label="Switch to dark theme"><i class="fa fa-moon-o" aria-hidden="true"></i></button><a class="icon-button github-link" href="https://github.com/deltaxrobot/Delta-X-Docs" aria-label="View documentation on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+  </div>
+</header>
+
+
+
+<div class="sidebar-backdrop" hidden></div>
+<div class="docs-layout ">
+  <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+  <div class="sidebar-heading"><span>DOCUMENTATION</span><button class="icon-button close-menu" aria-label="Close navigation"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+  <a class="sidebar-home " href="../../../.." ><i class="fa fa-book" aria-hidden="true"></i> Overview</a>
+  <div class="sidebar-scroll">
+    <nav aria-label="Documentation sections">
+      
+        
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">GET STARTED</span>
+
+  
+    <a class="sidebar-link " href="../../../tutorials_list/" >Tutorial List</a>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Assembly Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../assembly_guides/x2_assembly_guide/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../assembly_guides/xs_assembly_guide/" >Delta X S Robot</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../assembly_guides/xs_frame_assembly_guide/" >Delta X S Frame</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../assembly_guides/xs_v5_wiring_tutorial/" >Delta X S IO Wiring</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" open>
+      <summary>Control Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../termite/" >Termite (X3 & XS)</a>
+  
+
+  
+    <a class="sidebar-link " href="../../control_delta_x2_by_arduino/" >Delta X 2</a>
+  
+
+  
+    <details class="nav-group depth-1" open>
+      <summary>DeltaXStudio<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../overview/" >Overview</a>
+  
+
+  
+    <details class="nav-group depth-2" open>
+      <summary>Pick & Place Setup<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../" >1. System Setup</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>2. Calibration<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../calibration/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="../calibration/static/" >Static calibration</a>
+  
+
+  
+    <a class="sidebar-link " href="../calibration/automatic/" >Fully automatic</a>
+  
+
+  
+    <a class="sidebar-link " href="../calibration/controlled-conveyor/" >Controlled conveyor · Manual points</a>
+  
+
+  
+    <a class="sidebar-link " href="../calibration/external-camera/" >External conveyor · Camera</a>
+  
+
+  
+    <a class="sidebar-link " href="../calibration/external-manual/" >External conveyor · Manual points</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>3. Vision<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../vision/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="../vision/ai/" >AI</a>
+  
+
+  
+    <a class="sidebar-link " href="../vision/color/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../vision/ai-template/" >AI + Template Matching</a>
+  
+
+  
+    <a class="sidebar-link " href="../vision/color-template/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link current" href="./" aria-current="page">4. Pick & Place</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Blockly Programming<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../blockly/" >Getting started</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Movement examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../blockly/stationary-pick-and-place/" >Stationary pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../blockly/conveyor-pick-and-place/" >Conveyor pick & place (AI)</a>
+  
+
+  
+    <a class="sidebar-link " href="../blockly/color-pick-and-place/" >Color filtering + pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="../blockly/sort-two-types/" >Sort two object types (AI)</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Vision-only examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../blockly/color-filtering/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="../blockly/color-template-matching/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../daily_operation/" >Daily Operation</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../application_guides/deltax_art/" >Applications</a>
+  
+
+</div>
+      
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">REFERENCE</span>
+
+  
+    <details class="nav-group depth-0" >
+      <summary>G-code Commands<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/useful_commands/" >Useful Commands</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X 3<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x3/" >Firmware < 2.0.0</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_x3_v2/" >Firmware > 2.0.0</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_xs_v4/" >Delta X S V4</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_xs_v5/" >Delta X S V5</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_short_conveyor/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_conveyor/" >Desktop Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_industrial_conveyor/" >XConveyor XEncoder</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/gcodes/gc_slider/" >Slider X</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Specifications<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/sp_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/sp_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/sp_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V4<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v4/sp_v4_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v4/sp_v4_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v4/sp_v4_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V5<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v5/sp_v5_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v5/sp_v5_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/delta_xs_v5/sp_v5_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Delta X 2 Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_x2_accessories/conveyor_x/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_x2_accessories/slider_x/" >Slider X</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_x2_accessories/vision_kit_v1/" >Vision Kit V1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_basic/" >2020 Aluminum Profile Frames</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../../reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/" >Delta X S Accessories</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+</div>
+      
+        
+      
+    </nav>
+    <div class="sidebar-help"><a href="mailto:deltaxrobot@gmail.com"><i class="fa fa-life-ring" aria-hidden="true"></i> Contact support <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+  </div>
+</aside>
+  
+  <main id="main-content" class="article-column">
+    
+    
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../../..">Docs</a><i class="fa fa-angle-right" aria-hidden="true"></i><span>Guides</span><i class="fa fa-angle-right" aria-hidden="true"></i><span>Delta X 3 / Delta X S</span></nav>
+      <header class="article-header"><h1 id="deltaxstudio-pick-place">DeltaXStudio — Pick & Place</h1><div class="article-meta"><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio/pick_and_place.md"><i class="fa fa-pencil" aria-hidden="true"></i> Suggest an edit</a></div></header>
+      
+      
+      <details class="mobile-toc"><summary>On this page <i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+  
+    
+    <a href="#choose-how-to-run-the-system">Choose how to run the system</a>
+    
+  
+    
+    <a href="#configure-the-pick-and-place-parameters">Configure the pick and place parameters</a>
+    
+  
+    
+    <a href="#assign-object-types-to-place-destinations">Assign object types to place destinations</a>
+    
+  
+    
+    <a href="#make-the-first-pick">Make the first pick</a>
+    
+  
+    
+    <a href="#correct-picking-and-release-errors">Correct picking and release errors</a>
+    
+  
+    
+    <a href="#enable-automatic-startup">Enable automatic startup</a>
+    
+  
+    
+    <a href="#setup-complete">Setup complete</a>
+    
+  
+</details>
+      
+      
+      <nav class="studio-setup-progress" aria-label="Pick and Place setup stages">
+  <div><a href="../overview/">DeltaXStudio overview</a><span>Pick &amp; Place setup · Step 4 of 4</span></div>
+  <ol>
+    
+    <li><a href="../" ><span>1</span>System Setup</a></li>
+    
+    <li><a href="../calibration/" ><span>2</span>Calibration</a></li>
+    
+    <li><a href="../vision/" ><span>3</span>Vision</a></li>
+    
+    <li><a href="./" aria-current="step"><span>4</span>Pick & Place</a></li>
+    
+  </ol>
+</nav>
+      <article class="prose"><h1>DeltaXStudio — Pick &amp; Place<a class="headerlink" href="#deltaxstudio-pick-place" title="Permanent link">&para;</a></h1>
+<p>Complete <a href="../calibration/">Calibration</a> and verify <a href="../vision/">Vision</a> before running the robot automatically. Choose how the robot will move first: built-in Main Task or your own Blockly program. Then configure that task and test one object.</p>
+<p><span class="legacy-anchor" id="4-choose-how-to-run-the-system"></span></p>
+<h2 id="choose-how-to-run-the-system">Choose how to run the system<a class="headerlink" href="#choose-how-to-run-the-system" title="Permanent link">&para;</a></h2>
+<p>Vision supplies tracked objects; the movement task decides how the robot picks and places them. Choose the movement method that fits your application.</p>
+<div class="guide-card-grid">
+<div class="guide-card">
+<h3 id="built-in-main-task">Built-in Main Task<a class="headerlink" href="#built-in-main-task" title="Permanent link">&para;</a></h3>
+<p>Use the supplied picking behavior. Set heights, object selections, and destinations in Settings → Parameters.</p>
+<p><a href="#configure-the-pick-and-place-parameters">Configure built-in picking →</a></p>
+</div>
+<div class="guide-card">
+<h3 id="blockly-movement-program">Blockly movement program<a class="headerlink" href="#blockly-movement-program" title="Permanent link">&para;</a></h3>
+<p>Define the sequence, poses, heights, and tool actions in blocks. Start with a saved example and adapt it to your application.</p>
+<p><a href="#create-and-run-a-movement-program">Choose a movement example →</a></p>
+</div>
+</div>
+<p>Use the row below that matches your <a href="../vision/#choose-your-detection-method">detection method</a> and movement choice:</p>
+<table>
+<thead>
+<tr>
+<th>Detection</th>
+<th>Movement</th>
+<th>How to start</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AI, with or without Template Matching</td>
+<td>Built-in pick and place</td>
+<td>Enable and test the configured detection, select Main Task for Run Button Task, then click Run.</td>
+</tr>
+<tr>
+<td>AI, with or without Template Matching</td>
+<td>Movement blocks</td>
+<td>Enable the configured detection, then run the saved movement task for the intended robot.</td>
+</tr>
+<tr>
+<td>Color filtering, with or without a Match With Template block</td>
+<td>Built-in pick and place</td>
+<td>Disable Vision AI. Run the vision-only task and check detection, then start Main Task.</td>
+</tr>
+<tr>
+<td>Color filtering, with or without a Match With Template block</td>
+<td>Movement blocks</td>
+<td>Disable Vision AI. Save and run one program containing both parts; follow <a href="../blockly/color-pick-and-place/">Color filtering + pick &amp; place</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>The header Run button executes the task selected in <span class="doc-accent">Run Button Task</span>. When starting a custom movement task from Saved Tasks, do not also start Main Task for the same robot.</p>
+<h3 id="create-and-run-a-movement-program">Create and run a movement program<a class="headerlink" href="#create-and-run-a-movement-program" title="Permanent link">&para;</a></h3>
+<p>Use <a href="../blockly/">Blockly Getting started</a> if you are new to the editor. Then choose the program that matches your task:</p>
+<table>
+<thead>
+<tr>
+<th>Program</th>
+<th>Use it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../blockly/stationary-pick-and-place/">Stationary pick &amp; place</a></td>
+<td>One pick and place at entered fixed positions.</td>
+</tr>
+<tr>
+<td><a href="../blockly/conveyor-pick-and-place/">Conveyor pick &amp; place (AI)</a></td>
+<td>Picking AI-detected objects with encoder tracking.</td>
+</tr>
+<tr>
+<td><a href="../blockly/color-pick-and-place/">Color filtering + pick &amp; place</a></td>
+<td>Detecting by HSV and running the picking loop in one task.</td>
+</tr>
+<tr>
+<td><a href="../blockly/sort-two-types/">Sort two object types (AI)</a></td>
+<td>Sending two AI classes to separate destinations.</td>
+</tr>
+</tbody>
+</table>
+<p>Follow the selected example for tool setup, position and height inputs, checking, saving, and running on the intended robot. Enter the movement values in its blocks. For camera-based picking, complete calibration and check the configured Robot Pick Area before testing.</p>
+<p>After the program passes its picking tests, continue with <a href="../daily_operation/">Daily Operation</a>. The parameter and destination sections below describe the built-in Main Task.</p>
+<p><span class="legacy-anchor" id="1-configure-the-pick-and-place-parameters"></span></p>
+<h2 id="configure-the-pick-and-place-parameters">Configure the pick and place parameters<a class="headerlink" href="#configure-the-pick-and-place-parameters" title="Permanent link">&para;</a></h2>
+<p>For <span class="doc-accent">built-in Main Task</span>, open <span class="doc-accent">Settings → Parameters</span>. If there are multiple robots, select the robot whose parameters you want to edit.</p>
+<table>
+<thead>
+<tr>
+<th>Setting</th>
+<th>What to enter</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pick Parameters → Pick Z (mm)</td>
+<td>The tool height at which the object is picked, in robot coordinates.</td>
+</tr>
+<tr>
+<td>Pick Parameters → Dwell (s)</td>
+<td>The time allowed for the end effector to grip the object before lifting.</td>
+</tr>
+<tr>
+<td>Place Parameters → Place Z (mm)</td>
+<td>The tool height at which the object is released.</td>
+</tr>
+<tr>
+<td>Place Parameters → Dwell (s)</td>
+<td>The time allowed for release before moving away.</td>
+</tr>
+<tr>
+<td>Other Parameters → Travel Z (mm)</td>
+<td>The transfer height between pick and place, with clearance for the object, fixtures, and destination.</td>
+</tr>
+<tr>
+<td>Motion parameters</td>
+<td>Feedrate F in mm/s, acceleration A in mm/s², jerk J in mm/s³, and start/end speeds S/E in mm/s. Keep start/end speeds within the selected feedrate.</td>
+</tr>
+<tr>
+<td>Robot Pick Area</td>
+<td>The part of the tracked working area assigned to this robot.</td>
+</tr>
+</tbody>
+</table>
+<p>Pick Z, Place Z, and Travel Z are absolute robot-coordinate heights. Determine them for the installed tool and object; values from another robot or a sample program may not fit your machine.</p>
+<p>Check the end-effector type and output configuration in <span class="doc-accent">Settings → System</span>. Save the parameter changes and wait for the saved confirmation before running.</p>
+<figure class="studio-figure">
+<p><img alt="Pick Parameters with center offsets, Pick Z, dwell, movement limits and class selection" src="../../../../images/tutorials/control_guides/DeltaXStudio/pick_and_place/pick-parameters.png" /></p>
+<figcaption>Set pickup height, grip dwell, and motion for the installed robot and tool. Use measured values rather than copying the screenshot.</figcaption>
+</figure>
+<figure class="studio-figure">
+<p><img alt="Conveyor Z and Travel Z fields in Other Parameters" src="../../../../images/tutorials/control_guides/DeltaXStudio/pick_and_place/working-heights.png" /></p>
+<figcaption>Travel Z is an absolute transfer height in robot coordinates. Conveyor Z records the measured belt surface.</figcaption>
+</figure>
+<figure class="studio-figure">
+<p><img alt="Robot Pick Area settings with Pick Area and Offset inputs" src="../../../../images/tutorials/control_guides/DeltaXStudio/pick_and_place/robot-pick-area.png" /></p>
+<figcaption>Configure the tracked picking region assigned to this robot and check it against the calibrated workspace.</figcaption>
+</figure>
+<p><span class="legacy-anchor" id="2-assign-object-types-to-place-destinations"></span></p>
+<h2 id="assign-object-types-to-place-destinations">Assign object types to place destinations<a class="headerlink" href="#assign-object-types-to-place-destinations" title="Permanent link">&para;</a></h2>
+<p>For built-in Main Task, start with the point-based place mode and configure <span class="doc-accent">Place candidates</span> under Place Parameters.</p>
+<p>Match each <span class="doc-accent">Object index</span> to the class order in Vision AI Objects: index <code>0</code> is the first class, index <code>1</code> the second. Enter the destination <span class="doc-accent">X</span>, <span class="doc-accent">Y</span>, and <span class="doc-accent">Angle</span> for each class you want to place.</p>
+<p>Use <span class="doc-accent">+ Object type</span> to add another class. The plus button on a row adds another candidate destination for that same class.</p>
+<figure class="studio-figure">
+<p><img alt="Place Parameters with Points mode, Place Z, release dwell and a destination table indexed by object class" src="../../../../images/tutorials/control_guides/DeltaXStudio/pick_and_place/place-parameters.png" /></p>
+<figcaption>Each Object index has its own destination candidates. Add only indices used by your model and enter reachable positions for your installation.</figcaption>
+</figure>
+<p>Under <span class="doc-accent">Pick Objects Index → Config</span>, select the classes this robot should pick. Save and verify the class-to-destination mapping using one object from each selected class.</p>
+<figure class="studio-figure compact">
+<p><img alt="Pick Objects Index dialog showing All objects, good at index zero and bad at index one" src="../../../../images/tutorials/control_guides/DeltaXStudio/pick_and_place/pick-object-classes.png" /></p>
+<figcaption>Choose which trained classes may be picked. All objects includes every class; the names shown are examples.</figcaption>
+</figure>
+<p>To skip a class, exclude it from the pick selection. In point-based placement, an object without a valid place candidate is also skipped. Preserve the other class indices when removing candidates; do not remove a class name from the Vision AI Objects list to skip it.</p>
+<p>An empty Pick Objects Index setting means all classes. Do not use an empty setting as a way to disable picking.</p>
+<p><span class="legacy-anchor" id="3-make-the-first-pick"></span></p>
+<h2 id="make-the-first-pick">Make the first pick<a class="headerlink" href="#make-the-first-pick" title="Permanent link">&para;</a></h2>
+<p>Use this procedure for <span class="doc-accent">built-in Main Task</span>. For a Blockly task, follow the run procedure in its selected example.</p>
+<p>Confirm that calibration is complete, the intended model or vision program is active, and the camera recognizes a test object correctly. Check the pick height, transfer clearance, destination, and end-effector operation.</p>
+<ol>
+<li>Open <span class="doc-accent">Settings → System → System Control</span>. Set <span class="doc-accent">Run Button Task</span> to <span class="doc-accent">Main Task</span> and save. Return to Dashboard and click <span class="doc-accent">Run</span> to start the built-in pick-and-place task.</li>
+<li>For a conveyor setup, start the conveyor at a low test speed and introduce one object. Observe the pick, transfer, and release.</li>
+<li>Stop the task before adjusting parameters. Repeat with each object class and several positions before increasing throughput.</li>
+</ol>
+<p>Use the normal task Stop control to end a test. If immediate intervention is required, use the physical emergency stop.</p>
+<figure class="studio-figure">
+<p><img alt="Run Button Task set to Main Task, separate from Auto Run Task, with Auto Start disabled" src="../../../../images/tutorials/control_guides/DeltaXStudio/pick_and_place/task-startup-settings.png" /></p>
+<figcaption>Select Main Task for Run Button Task during the built-in picking test. Keep Auto Start Disabled while commissioning.</figcaption>
+</figure>
+<p><span class="legacy-anchor" id="5-correct-picking-and-release-errors"></span></p>
+<h2 id="correct-picking-and-release-errors">Correct picking and release errors<a class="headerlink" href="#correct-picking-and-release-errors" title="Permanent link">&para;</a></h2>
+<h3 id="the-tool-consistently-misses-by-the-same-amount">The tool consistently misses by the same amount<a class="headerlink" href="#the-tool-consistently-misses-by-the-same-amount" title="Permanent link">&para;</a></h3>
+<p>Open <span class="doc-accent">Settings → Parameters → Pick Parameters → Robot Center Offset</span>. Apply the correction in robot X/Y coordinates.</p>
+<p>For example, if the tool is consistently <code>5 mm</code> too far in negative X and <code>3 mm</code> too far in positive Y, the required correction is <code>+5 mm</code> in X and <code>−3 mm</code> in Y. Add this correction to the current offset, save, and test again.</p>
+<p>Use <span class="doc-accent">Object Center Offset</span> when the desired grip point is displaced from the detected object center and that displacement should follow the object&rsquo;s rotation. Leave it at zero when picking at the detected center.</p>
+<p>If the error changes with conveyor speed, object position, or rotation, check tracking, calibration, and orientation first. A fixed Robot Center Offset cannot correct all of those errors.</p>
+<h3 id="the-tool-reaches-the-object-but-does-not-hold-it">The tool reaches the object but does not hold it<a class="headerlink" href="#the-tool-reaches-the-object-but-does-not-hold-it" title="Permanent link">&para;</a></h3>
+<p>Check Pick Z, tool contact, vacuum or gripper operation, and the configured output. If the tool needs more time to grip, increase <span class="doc-accent">Pick Parameters → Dwell (s)</span> gradually. Keep the delay only as long as needed for reliable pickup.</p>
+<h3 id="the-object-is-still-attached-when-the-robot-leaves">The object is still attached when the robot leaves<a class="headerlink" href="#the-object-is-still-attached-when-the-robot-leaves" title="Permanent link">&para;</a></h3>
+<p>Check the release output and tool operation. Increase <span class="doc-accent">Place Parameters → Dwell (s)</span> if the object needs more time to release before the robot moves away.</p>
+<h3 id="a-detected-object-is-not-picked">A detected object is not picked<a class="headerlink" href="#a-detected-object-is-not-picked" title="Permanent link">&para;</a></h3>
+<p>Check that its class is included in Pick Objects Index, it has a valid destination, it enters Robot Pick Area, and the selected task is running on the intended robot. For vision blocks, also check that detections reach <span class="doc-accent">Push To Tracking Manager</span>.</p>
+<p><span class="legacy-anchor" id="6-enable-automatic-startup"></span></p>
+<h2 id="enable-automatic-startup">Enable automatic startup<a class="headerlink" href="#enable-automatic-startup" title="Permanent link">&para;</a></h2>
+<p>Enable automatic startup only after the selected task has passed manual tests with the installed hardware and workspace clear.</p>
+<p>Open <span class="doc-accent">Settings → System → System Control</span>. Set <span class="doc-accent">Auto Run Task</span> to Main Task or the saved program that should start after power-up. Enable <span class="doc-accent">Auto Start</span>, then save and wait for confirmation.</p>
+<figure class="studio-figure">
+<p><img alt="Auto Run Task configured and Auto Start enabled" src="../../../../images/tutorials/control_guides/DeltaXStudio/pick_and_place/automatic-startup-enabled.png" /></p>
+<figcaption>Enable Auto Start only after manual tests pass. Auto Run Task selects the startup program; Run Button Task controls the header button.</figcaption>
+</figure>
+<p>Test a controlled restart with the work area clear. The controller attempts automatic startup approximately 15 seconds after its application starts, subject to its connection and run-state checks.</p>
+<p>Auto Run Task is separate from Run Button Task. Check both selections. A custom automatic-start task is dispatched to the configured robots, so verify the program is suitable for every target in a multi-robot installation. Turn Auto Start off and save before returning to setup or changing the application.</p>
+<h2 id="setup-complete">Setup complete<a class="headerlink" href="#setup-complete" title="Permanent link">&para;</a></h2>
+<p>The setup is ready for routine operation when low-speed tests reliably pick, transfer, and release each selected object class at several positions. For conveyor applications, verify tracking as well. Continue with <a href="../daily_operation/">Daily Operation</a> for normal startup, checks, and stopping.</p>
+<p>To customize the application, use <a href="../blockly/">Blockly Programming</a>. This is optional when the built-in task meets your needs.</p></article>
+      <div class="article-end"><span>Found something that could be clearer?</span><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio/pick_and_place.md">Suggest an edit <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+      <nav class="page-pagination" aria-label="Related pages">
+        
+          
+          <a href="../vision/"><small>BACK</small><span><i class="fa fa-arrow-left" aria-hidden="true"></i> Vision</span></a>
+          <a href="../daily_operation/"><small>AFTER SETUP</small><span>Daily Operation <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+        
+      </nav>
+    
+    
+  </main>
+  <aside class="page-toc" aria-label="On this page"><span class="toc-title">On this page</span><nav>
+  
+    
+    <a href="#choose-how-to-run-the-system">Choose how to run the system</a>
+    
+  
+    
+    <a href="#configure-the-pick-and-place-parameters">Configure the pick and place parameters</a>
+    
+  
+    
+    <a href="#assign-object-types-to-place-destinations">Assign object types to place destinations</a>
+    
+  
+    
+    <a href="#make-the-first-pick">Make the first pick</a>
+    
+  
+    
+    <a href="#correct-picking-and-release-errors">Correct picking and release errors</a>
+    
+  
+    
+    <a href="#enable-automatic-startup">Enable automatic startup</a>
+    
+  
+    
+    <a href="#setup-complete">Setup complete</a>
+    
+  
+</nav><a class="back-top" href="#main-content"><i class="fa fa-arrow-up" aria-hidden="true"></i> Back to top</a></aside>
+
+<footer id="about-us" class="site-footer"><a class="brand footer-brand" href="../../../..">DELTA <b>X</b><span>Documentation</span></a><span id="delta-x-robot-store">Delta X Robotics · Documentation</span><div><a href="https://www.deltaxrobot.com/">Website <i class="fa fa-external-link" aria-hidden="true"></i></a><a id="delta-x-community" href="https://www.facebook.com/groups/DeltaXCommunity">Community</a><a href="mailto:deltaxrobot@gmail.com">Support</a></div></footer>
+</div>
+
+<dialog class="search-dialog" aria-label="Search documentation"><form class="search-form" role="search"><div class="search-input-row"><i class="fa fa-search" aria-hidden="true"></i><input id="docs-search" type="search" autocomplete="off" placeholder="Search commands, guides, and specifications…" aria-label="Search documentation"><button type="button" class="close-search" aria-label="Close search"><kbd>Esc</kbd></button></div><div class="search-filters"><label for="search-model">Search in</label><select id="search-model"><option value="all">All models</option></select><span id="search-count" role="status" aria-live="polite"></span></div></form><div id="search-results" class="search-results" aria-live="polite"><div class="search-empty"><i class="fa fa-search" aria-hidden="true"></i><h2>What are you working on?</h2><p>Try a command like G28, a model, or a topic like wiring.</p></div></div><div class="search-footer"><span><kbd>Tab</kbd> navigate results <kbd>Enter</kbd> open</span><span>Delta X Documentation</span></div></dialog>
+<dialog class="image-dialog" aria-label="Image detail"><button class="icon-button close-image" aria-label="Close image"><i class="fa fa-times" aria-hidden="true"></i></button><img alt=""><p></p></dialog>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

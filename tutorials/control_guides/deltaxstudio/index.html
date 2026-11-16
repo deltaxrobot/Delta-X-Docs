@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Connect DeltaXStudio to your Wi-Fi network, check the installed hardware, and prepare for calibration.">
+  <title>DeltaXStudio — System Setup · Delta X Documentation</title>
+  <link rel="canonical" href="https://docs.deltaxrobot.com/tutorials/control_guides/deltaxstudio/">
+  <link rel="icon" href="../../../img/favicon.ico">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('dx-theme')||'light'}catch(e){}</script>
+  <link rel="stylesheet" href="../../../assets/docs.css">
+  <script defer data-docs-script src="../../../assets/docs.js"></script>
+</head>
+
+
+
+<body class="document-page" data-model="Delta X 3 / Delta X S">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-button mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <a class="brand" href="../../.." aria-label="Delta X documentation home"><img class="brand-logo" src="../../../assets/main-logo.png" alt="Delta X" width="1000" height="477"><span class="brand-divider"></span><span class="brand-caption">Docs</span></a>
+    <button class="header-search" data-open-search aria-label="Search documentation"><i class="fa fa-search" aria-hidden="true"></i><span>Search documentation…</span><kbd>Ctrl K</kbd></button>
+    <div class="header-actions"><a class="header-website" href="https://www.deltaxrobot.com/">deltaxrobot.com <i class="fa fa-external-link" aria-hidden="true"></i></a><button class="icon-button theme-toggle" aria-label="Switch to dark theme"><i class="fa fa-moon-o" aria-hidden="true"></i></button><a class="icon-button github-link" href="https://github.com/deltaxrobot/Delta-X-Docs" aria-label="View documentation on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+  </div>
+</header>
+
+
+
+<div class="sidebar-backdrop" hidden></div>
+<div class="docs-layout ">
+  <aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+  <div class="sidebar-heading"><span>DOCUMENTATION</span><button class="icon-button close-menu" aria-label="Close navigation"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+  <a class="sidebar-home " href="../../.." ><i class="fa fa-book" aria-hidden="true"></i> Overview</a>
+  <div class="sidebar-scroll">
+    <nav aria-label="Documentation sections">
+      
+        
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">GET STARTED</span>
+
+  
+    <a class="sidebar-link " href="../../tutorials_list/" >Tutorial List</a>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Assembly Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../assembly_guides/x2_assembly_guide/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../assembly_guides/xs_assembly_guide/" >Delta X S Robot</a>
+  
+
+  
+    <a class="sidebar-link " href="../../assembly_guides/xs_frame_assembly_guide/" >Delta X S Frame</a>
+  
+
+  
+    <a class="sidebar-link " href="../../assembly_guides/xs_v5_wiring_tutorial/" >Delta X S IO Wiring</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" open>
+      <summary>Control Guides<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../termite/" >Termite (X3 & XS)</a>
+  
+
+  
+    <a class="sidebar-link " href="../control_delta_x2_by_arduino/" >Delta X 2</a>
+  
+
+  
+    <details class="nav-group depth-1" open>
+      <summary>DeltaXStudio<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="overview/" >Overview</a>
+  
+
+  
+    <details class="nav-group depth-2" open>
+      <summary>Pick & Place Setup<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link current" href="./" aria-current="page">1. System Setup</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>2. Calibration<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="calibration/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="calibration/static/" >Static calibration</a>
+  
+
+  
+    <a class="sidebar-link " href="calibration/automatic/" >Fully automatic</a>
+  
+
+  
+    <a class="sidebar-link " href="calibration/controlled-conveyor/" >Controlled conveyor · Manual points</a>
+  
+
+  
+    <a class="sidebar-link " href="calibration/external-camera/" >External conveyor · Camera</a>
+  
+
+  
+    <a class="sidebar-link " href="calibration/external-manual/" >External conveyor · Manual points</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>3. Vision<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="vision/" >Choose a method</a>
+  
+
+  
+    <a class="sidebar-link " href="vision/ai/" >AI</a>
+  
+
+  
+    <a class="sidebar-link " href="vision/color/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="vision/ai-template/" >AI + Template Matching</a>
+  
+
+  
+    <a class="sidebar-link " href="vision/color-template/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="pick_and_place/" >4. Pick & Place</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Blockly Programming<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="blockly/" >Getting started</a>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Movement examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="blockly/stationary-pick-and-place/" >Stationary pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="blockly/conveyor-pick-and-place/" >Conveyor pick & place (AI)</a>
+  
+
+  
+    <a class="sidebar-link " href="blockly/color-pick-and-place/" >Color filtering + pick & place</a>
+  
+
+  
+    <a class="sidebar-link " href="blockly/sort-two-types/" >Sort two object types (AI)</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-3" >
+      <summary>Vision-only examples<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="blockly/color-filtering/" >Color filtering</a>
+  
+
+  
+    <a class="sidebar-link " href="blockly/color-template-matching/" >Color + Template Matching</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="daily_operation/" >Daily Operation</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../application_guides/deltax_art/" >Applications</a>
+  
+
+</div>
+      
+      
+        
+      
+        <div class="nav-section"><span class="nav-section-label">REFERENCE</span>
+
+  
+    <details class="nav-group depth-0" >
+      <summary>G-code Commands<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/useful_commands/" >Useful Commands</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X 3<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_x3/" >Firmware < 2.0.0</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_x3_v2/" >Firmware > 2.0.0</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_xs_v4/" >Delta X S V4</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_xs_v5/" >Delta X S V5</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_short_conveyor/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_conveyor/" >Desktop Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_industrial_conveyor/" >XConveyor XEncoder</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/gcodes/gc_slider/" >Slider X</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-0" >
+      <summary>Specifications<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/sp_x1/" >Delta X 1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/sp_x2/" >Delta X 2</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/sp_x2_plus/" >Delta X 2 Plus</a>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V4<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/delta_xs_v4/sp_v4_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/delta_xs_v4/sp_v4_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/delta_xs_v4/sp_v4_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Delta X S V5<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/delta_xs_v5/sp_v5_d400/" >D400</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/delta_xs_v5/sp_v5_d600/" >D600</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/delta_xs_v5/sp_v5_d800/" >D800</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <details class="nav-group depth-1" >
+      <summary>Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <details class="nav-group depth-2" >
+      <summary>Delta X 2 Accessories<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/accessories/delta_x2_accessories/conveyor_x/" >Short Conveyor</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/accessories/delta_x2_accessories/slider_x/" >Slider X</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/accessories/delta_x2_accessories/vision_kit_v1/" >Vision Kit V1</a>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_basic/" >2020 Aluminum Profile Frames</a>
+  
+
+</div>
+    </details>
+  
+
+  
+    <a class="sidebar-link " href="../../../reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/" >Delta X S Accessories</a>
+  
+
+</div>
+    </details>
+  
+
+</div>
+    </details>
+  
+
+</div>
+      
+        
+      
+    </nav>
+    <div class="sidebar-help"><a href="mailto:deltaxrobot@gmail.com"><i class="fa fa-life-ring" aria-hidden="true"></i> Contact support <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+  </div>
+</aside>
+  
+  <main id="main-content" class="article-column">
+    
+    
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../../..">Docs</a><i class="fa fa-angle-right" aria-hidden="true"></i><span>Guides</span><i class="fa fa-angle-right" aria-hidden="true"></i><span>Delta X 3 / Delta X S</span></nav>
+      <header class="article-header"><h1 id="deltaxstudio-system-setup">DeltaXStudio — System Setup</h1><div class="article-meta"><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio.md"><i class="fa fa-pencil" aria-hidden="true"></i> Suggest an edit</a></div></header>
+      
+      
+      <details class="mobile-toc"><summary>On this page <i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+  
+    
+    <a href="#connect-to-the-robot-for-the-first-time">Connect to the robot for the first time</a>
+    
+  
+    
+    <a href="#connect-the-robot-to-your-wi-fi">Connect the robot to your Wi-Fi</a>
+    
+  
+    
+    <a href="#open-deltaxstudio-through-your-wi-fi">Open DeltaXStudio through your Wi-Fi</a>
+    
+  
+    
+    <a href="#find-the-main-controls">Find the main controls</a>
+    
+  
+    
+    <a href="#check-the-installed-hardware">Check the installed hardware</a>
+    
+  
+    
+    <a href="#ready-for-calibration">Ready for calibration</a>
+    
+  
+    
+    <a href="#if-you-cannot-connect">If you cannot connect</a>
+    
+  
+</details>
+      
+      
+      <nav class="studio-setup-progress" aria-label="Pick and Place setup stages">
+  <div><a href="overview/">DeltaXStudio overview</a><span>Pick &amp; Place setup · Step 1 of 4</span></div>
+  <ol>
+    
+    <li><a href="./" aria-current="step"><span>1</span>System Setup</a></li>
+    
+    <li><a href="calibration/" ><span>2</span>Calibration</a></li>
+    
+    <li><a href="vision/" ><span>3</span>Vision</a></li>
+    
+    <li><a href="pick_and_place/" ><span>4</span>Pick & Place</a></li>
+    
+  </ol>
+</nav>
+      <article class="prose"><h1>DeltaXStudio — System Setup<a class="headerlink" href="#deltaxstudio-system-setup" title="Permanent link">&para;</a></h1>
+<p><span class="legacy-anchor" id="deltaxstudio"></span></p>
+<p>Start by connecting the robot to your network and checking its hardware. Then continue with <a href="calibration/">Calibration</a>, <a href="vision/">Vision</a>, and <a href="pick_and_place/">Pick &amp; Place</a>.</p>
+<p>For custom programs, use the separate <a href="blockly/">Blockly guide</a>.</p>
+<p><span class="legacy-anchor" id="1-connect-to-the-robot-for-the-first-time"></span></p>
+<h2 id="connect-to-the-robot-for-the-first-time">Connect to the robot for the first time<a class="headerlink" href="#connect-to-the-robot-for-the-first-time" title="Permanent link">&para;</a></h2>
+<p>Power on the robot and its controller, then wait for the robot&rsquo;s Wi-Fi access point (AP) to appear. On your computer or tablet, open the Wi-Fi list and join the robot&rsquo;s AP. Its name normally follows <span class="doc-accent">DeltaXSmart-xxxx</span>. The default password is <code>12345678</code>; use the configured password if it has been changed.</p>
+<p>Stay connected even if your device reports that this network has no Internet access. Open <span class="doc-accent">http://deltax.com</span> in your browser. DeltaXStudio should appear as shown below.</p>
+<p><img alt="Connect to the robot for the first time — illustration" src="../../../images/tutorials/control_guides/DeltaXStudio/Overview.png" /></p>
+<p><span class="legacy-anchor" id="2-connect-the-robot-to-your-wi-fi"></span></p>
+<h2 id="connect-the-robot-to-your-wi-fi">Connect the robot to your Wi-Fi<a class="headerlink" href="#connect-the-robot-to-your-wi-fi" title="Permanent link">&para;</a></h2>
+<p>Open <span class="doc-accent">WiFi</span> at the upper left of DeltaXStudio, then use <span class="doc-accent">Scan WiFi</span> to find and select your network. Enter your Wi-Fi password and click <span class="doc-accent">Connect</span>.</p>
+<p>Wait for the connection to succeed. At the top of the window, check that <span class="doc-accent">Connected WiFi</span> shows your network name and <span class="doc-accent">Local IP</span> shows an IP address. Write down <span class="doc-accent">Local IP</span> before switching your computer to another network.</p>
+<p><img alt="Connect the robot to your Wi-Fi — illustration" src="../../../images/tutorials/control_guides/DeltaXStudio/IPAddress.png" /></p>
+<p>In this screenshot, the robot has joined <span class="doc-accent">Delta X Lab_5G</span> and its <span class="doc-accent">Local IP</span> is <code>192.168.50.231</code>. Your network name and IP address will be different. Use <span class="doc-accent">Local IP</span> for access through your Wi-Fi; the address under <span class="doc-accent">Access</span> belongs to the robot&rsquo;s AP.</p>
+<p><span class="legacy-anchor" id="3-open-deltaxstudio-through-your-wi-fi"></span></p>
+<h2 id="open-deltaxstudio-through-your-wi-fi">Open DeltaXStudio through your Wi-Fi<a class="headerlink" href="#open-deltaxstudio-through-your-wi-fi" title="Permanent link">&para;</a></h2>
+<p>Connect your computer or tablet to the same Wi-Fi network as the robot. In your browser, enter <code>http://&lt;Local IP&gt;:3000</code>, replacing <code>&lt;Local IP&gt;</code> with the address you wrote down. For the screenshot above, the address is <code>http://192.168.50.231:3000</code>.</p>
+<p>Confirm that DeltaXStudio opens. You can now access the robot through your own network.</p>
+<p>The standard web port is <code>3000</code>; use the port supplied with your installation if it differs. After switching to your Wi-Fi, use the robot&rsquo;s IP address instead of <code>deltax.com</code>.</p>
+<p>Once IP access works, you can turn off <span class="doc-accent">Enable AP</span> in the WiFi window if you no longer need the robot&rsquo;s hotspot.</p>
+<p><span class="legacy-anchor" id="4-find-the-main-controls"></span></p>
+<h2 id="find-the-main-controls">Find the main controls<a class="headerlink" href="#find-the-main-controls" title="Permanent link">&para;</a></h2>
+<p>Once connected, use the navigation to work through the setup:</p>
+<table>
+<thead>
+<tr>
+<th>Area</th>
+<th>Use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dashboard</td>
+<td>View the robot, camera, conveyor, and operating status.</td>
+</tr>
+<tr>
+<td>Settings → System</td>
+<td>Configure the installed hardware, robot, vision, and startup behavior.</td>
+</tr>
+<tr>
+<td>Settings → Calibration</td>
+<td>Run the guided camera and robot calibration.</td>
+</tr>
+<tr>
+<td>Settings → Parameters</td>
+<td>Set pick and place positions, motion parameters, and object selections.</td>
+</tr>
+<tr>
+<td>Vision</td>
+<td>Capture images for labeling and training in DeltaXHub, or prepare template images for detection.</td>
+</tr>
+<tr>
+<td>Programs</td>
+<td>Create, check, save, and run Blockly tasks.</td>
+</tr>
+</tbody>
+</table>
+<p>Keep <span class="doc-accent">Auto Start</span> disabled while setting up the system. After changing settings, click <span class="doc-accent">Save</span> and wait for confirmation. When a configuration change requires a restart, stop the running task first, then use <span class="doc-accent">Settings → System → System Control → Reset</span> and wait for the interface to reconnect.</p>
+<p><span class="legacy-anchor" id="5-check-the-installed-hardware"></span></p>
+<h2 id="check-the-installed-hardware">Check the installed hardware<a class="headerlink" href="#check-the-installed-hardware" title="Permanent link">&para;</a></h2>
+<p>Open <span class="doc-accent">Settings → System</span> and review <span class="doc-accent">Hardware Settings</span>. Enable the devices actually installed, including the main camera and, for a conveyor setup, the conveyor and encoder.</p>
+<figure class="studio-figure">
+<p><img alt="Hardware Settings with the main camera, calibration camera, conveyor, encoder and end-effector pinouts" src="../../../images/tutorials/control_guides/DeltaXStudio/system_setup/hardware-settings.png" /></p>
+<figcaption>Check the installed camera, encoder, conveyor, and tool outputs. The selected devices and numeric values are examples; use the hardware fitted to your installation.</figcaption>
+</figure>
+<p>In <span class="doc-accent">Robot Settings</span>, check the robot model and its detected address. The robot address identifies the robot controller; it is separate from the Wi-Fi Local IP used to open the web page. Check the end-effector type and output configuration for your vacuum tool or gripper.</p>
+<figure class="studio-figure">
+<p><img alt="Robot Settings table with robot model, controller address and installation position" src="../../../images/tutorials/control_guides/DeltaXStudio/system_setup/robot-settings.png" /></p>
+<figcaption>Verify the model and controller address for each robot. This address is separate from the web interface IP.</figcaption>
+</figure>
+<p>Save the settings and return to <span class="doc-accent">Dashboard</span>. Confirm that the intended robot is connected and that the camera produces a current image. For a conveyor system, confirm that encoder readings respond to conveyor movement before starting calibration.</p>
+<p>A working web page confirms access to DeltaXStudio; check the device status separately before sending robot commands. If an advanced setting is hidden, switch the settings view from <span class="doc-accent">Basic</span> to <span class="doc-accent">Advanced</span>.</p>
+<h2 id="ready-for-calibration">Ready for calibration<a class="headerlink" href="#ready-for-calibration" title="Permanent link">&para;</a></h2>
+<p>Continue when the intended robot and camera respond correctly, and the encoder responds to conveyor movement if your setup uses tracking. Then <a href="calibration/">calibrate the camera and robot coordinates</a>.</p>
+<h2 id="if-you-cannot-connect">If you cannot connect<a class="headerlink" href="#if-you-cannot-connect" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Problem</th>
+<th>What to check</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>The robot AP is missing</td>
+<td>Check power and wait for the controller to start, then refresh your device&rsquo;s Wi-Fi list.</td>
+</tr>
+<tr>
+<td><code>deltax.com</code> does not open</td>
+<td>Make sure you are connected to the robot&rsquo;s AP and enter <code>http://deltax.com</code> explicitly. Stay on the AP if your device warns about no Internet access.</td>
+</tr>
+<tr>
+<td>The robot cannot join your Wi-Fi</td>
+<td>Check the selected network and password, move within signal range, and scan again.</td>
+</tr>
+<tr>
+<td>The AP disconnects during setup</td>
+<td>Join your own Wi-Fi and find the robot controller&rsquo;s IP in the router&rsquo;s connected-device list.</td>
+</tr>
+<tr>
+<td>The IP address does not open</td>
+<td>Confirm that your computer and robot are on the same network. Check the current Local IP and include the web port, normally <code>3000</code>.</td>
+</tr>
+<tr>
+<td>A previously working bookmark stops opening</td>
+<td>Your router may have assigned a new IP address. Check the controller&rsquo;s current address in the router, or through the robot AP if it is available.</td>
+</tr>
+</tbody>
+</table></article>
+      <div class="article-end"><span>Found something that could be clearer?</span><a href="https://github.com/deltaxrobot/Delta-X-Docs/edit/master/docs/tutorials/control_guides/deltaxstudio.md">Suggest an edit <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+      <nav class="page-pagination" aria-label="Related pages">
+        
+          
+          <a href="overview/"><small>BACK</small><span><i class="fa fa-arrow-left" aria-hidden="true"></i> DeltaXStudio overview</span></a>
+          <a href="calibration/"><small>NEXT STEP</small><span>Calibration <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>
+        
+      </nav>
+    
+    
+  </main>
+  <aside class="page-toc" aria-label="On this page"><span class="toc-title">On this page</span><nav>
+  
+    
+    <a href="#connect-to-the-robot-for-the-first-time">Connect to the robot for the first time</a>
+    
+  
+    
+    <a href="#connect-the-robot-to-your-wi-fi">Connect the robot to your Wi-Fi</a>
+    
+  
+    
+    <a href="#open-deltaxstudio-through-your-wi-fi">Open DeltaXStudio through your Wi-Fi</a>
+    
+  
+    
+    <a href="#find-the-main-controls">Find the main controls</a>
+    
+  
+    
+    <a href="#check-the-installed-hardware">Check the installed hardware</a>
+    
+  
+    
+    <a href="#ready-for-calibration">Ready for calibration</a>
+    
+  
+    
+    <a href="#if-you-cannot-connect">If you cannot connect</a>
+    
+  
+</nav><a class="back-top" href="#main-content"><i class="fa fa-arrow-up" aria-hidden="true"></i> Back to top</a></aside>
+
+<footer id="about-us" class="site-footer"><a class="brand footer-brand" href="../../..">DELTA <b>X</b><span>Documentation</span></a><span id="delta-x-robot-store">Delta X Robotics · Documentation</span><div><a href="https://www.deltaxrobot.com/">Website <i class="fa fa-external-link" aria-hidden="true"></i></a><a id="delta-x-community" href="https://www.facebook.com/groups/DeltaXCommunity">Community</a><a href="mailto:deltaxrobot@gmail.com">Support</a></div></footer>
+</div>
+
+<dialog class="search-dialog" aria-label="Search documentation"><form class="search-form" role="search"><div class="search-input-row"><i class="fa fa-search" aria-hidden="true"></i><input id="docs-search" type="search" autocomplete="off" placeholder="Search commands, guides, and specifications…" aria-label="Search documentation"><button type="button" class="close-search" aria-label="Close search"><kbd>Esc</kbd></button></div><div class="search-filters"><label for="search-model">Search in</label><select id="search-model"><option value="all">All models</option></select><span id="search-count" role="status" aria-live="polite"></span></div></form><div id="search-results" class="search-results" aria-live="polite"><div class="search-empty"><i class="fa fa-search" aria-hidden="true"></i><h2>What are you working on?</h2><p>Try a command like G28, a model, or a topic like wiring.</p></div></div><div class="search-footer"><span><kbd>Tab</kbd> navigate results <kbd>Enter</kbd> open</span><span>Delta X Documentation</span></div></dialog>
+<dialog class="image-dialog" aria-label="Image detail"><button class="icon-button close-image" aria-label="Close image"><i class="fa fa-times" aria-hidden="true"></i></button><img alt=""><p></p></dialog>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>
