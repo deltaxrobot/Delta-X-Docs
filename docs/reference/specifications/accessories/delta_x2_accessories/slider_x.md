@@ -1,6 +1,6 @@
 # Slider X Specifications
 
-![slider_x](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/slider.png)
+![slider_x](../../../../images/shared/accessories/slider_x/slider.png)
 
 Slider X is used when you need to open the range of the robot's working space. It can be used with `Delta X 1`, `Delta X 2`.
 
@@ -28,7 +28,7 @@ Slider X is used when you need to open the range of the robot's working space. I
 
 ## Dimensions
 
-![slider_x_dims](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/slider_x_dimensions.png)
+![slider_x_dims](../../../../images/reference/specifications/accessories/delta_x2_accessories/slider_x/slider_x_dimensions.png)
 
 ## Applications
 

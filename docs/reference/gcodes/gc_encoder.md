@@ -1,123 +1,84 @@
+---
+redirect_to: reference/gcodes/gc_industrial_conveyor/
+redirect_fragment: encoder-commands
+redirect_fragments:
+  gcodes-for-x-encoder: encoder-commands
+  identity-x-encoder: detect-conveyor-com-port
+  m316-select-response-mode: m316-set-encoder-mode
+  description: m316-set-encoder-mode
+  usage: m316-set-encoder-mode
+  parameter: m316-set-encoder-mode
+  example: m316-set-encoder-mode
+  m317-get-current-position: m317-get-position-from-encoder
+  description_1: m317-get-position-from-encoder
+  usage_1: m317-get-position-from-encoder
+  parameter_1: m317-get-position-from-encoder
+  example_1: m317-get-position-from-encoder
+  m318-set-pulsemm-value: m318-set-encoder-parameters
+  description_2: m318-set-encoder-parameters
+  usage_2: m318-set-encoder-parameters
+  parameter_2: m318-set-encoder-parameters
+  example_2: m318-set-encoder-parameters
+  m319-read-proximity-sensor: m319-read-encoder-pin
+  description_3: m319-read-encoder-pin
+  usage_3: m319-read-encoder-pin
+  parameter_3: m319-read-encoder-pin
+  contact-us: contact-us
+---
+
 # GCODES FOR X ENCODER
 
-## Identity X Encoder
+X Encoder commands are now documented in the **X Conveyor G-code reference**. This page keeps existing links working and opens the corresponding section automatically.
 
-To identify whether the COM port is associated with the `X Encoder`, send the command IsXEncoder. If it is indeed linked to the `X Encoder`, it will respond with YesXEncoder.
+[Open the shared X Conveyor reference](gc_industrial_conveyor.md#encoder-commands). If automatic navigation is unavailable, use a link below.
 
-For Eg:
+<span class="legacy-anchor" id="identity-x-encoder"></span>
 
-```
-IsXEncoder
+## Controller Identification
 
->>> YesXEncoder
-```
+[Continue to Controller Identification in X Conveyor](gc_industrial_conveyor.md#detect-conveyor-com-port).
 
-## M316 - Select Response Mode
+<span class="legacy-anchor" id="m316-select-response-mode"></span>
+<span class="legacy-anchor" id="description"></span>
+<span class="legacy-anchor" id="usage"></span>
+<span class="legacy-anchor" id="parameter"></span>
+<span class="legacy-anchor" id="example"></span>
 
-#### Description
+## M316 - Encoder Mode
 
-There are 2 types of response modes: Absolute Mode and Relative Mode. In ABSOLUTE MODE, all responsed positions relative to the origin location. With RELATIVE MODE, reponsed positions relative to the previous position.
+[Continue to M316 - Encoder Mode in X Conveyor](gc_industrial_conveyor.md#m316-set-encoder-mode).
 
-#### Usage
+<span class="legacy-anchor" id="m317-get-current-position"></span>
+<span class="legacy-anchor" id="description_1"></span>
+<span class="legacy-anchor" id="usage_1"></span>
+<span class="legacy-anchor" id="parameter_1"></span>
+<span class="legacy-anchor" id="example_1"></span>
 
-```
-M316 [<mode>]
-```
+## M317 - Encoder Position
 
-#### Parameter
+[Continue to M317 - Encoder Position in X Conveyor](gc_industrial_conveyor.md#m317-get-position-from-encoder).
 
-`[mode]`: mode index
+<span class="legacy-anchor" id="m318-set-pulsemm-value"></span>
+<span class="legacy-anchor" id="description_2"></span>
+<span class="legacy-anchor" id="usage_2"></span>
+<span class="legacy-anchor" id="parameter_2"></span>
+<span class="legacy-anchor" id="example_2"></span>
 
-* 0: Absolute Mode (default)
-* 1: Relative Mode
+## M318 - Encoder Parameters
 
-#### Example
+[Continue to M318 - Encoder Parameters in X Conveyor](gc_industrial_conveyor.md#m318-set-encoder-parameters).
 
-```
-M316 1   ;relative mode
-```
+<span class="legacy-anchor" id="m319-read-proximity-sensor"></span>
+<span class="legacy-anchor" id="description_3"></span>
+<span class="legacy-anchor" id="usage_3"></span>
+<span class="legacy-anchor" id="parameter_3"></span>
 
----
+## M319 - Encoder Inputs
 
+[Continue to M319 - Encoder Inputs in X Conveyor](gc_industrial_conveyor.md#m319-read-encoder-pin).
 
-## M317 - Get Current Position
+<span class="legacy-anchor" id="contact-us"></span>
 
-#### Description
+## Support
 
-Get current position (mm) in current mode. You can also set a feedback cycle time to auto response current position.
-
-#### Usage
-
-```
-M317
-M317 [T<period>]
-```
-
-#### Parameter
-
-* `M317` : return current position
-* `M317 T[period]`: auto feedback position in every `period` miliseconds.
-
-#### Example 
-
-```
-M317   ;get current position
->>> P:13.2    ;current pos is 13.2 mm
-
-M317 T200    ;set auto feedback position every 200ms
->>> P:14.5
->>> P:21.2
->>> P:27.5
-
-```
-
----
-
-## M318 - Set Pulse/MM value
-
-#### Description
-
-When you need to calibrate the encoder, you can change the pul/mm parameter to exactly what you have checked. Default is 5.12 pulse/mm.
-
-#### Usage
-
-```
-M318 [S<value>]
-```
-
-#### Parameter
-
-`S[value]` : pulse per mm value
-
-#### Example
-
-```
-M318 S1.0    ;now you can get the origin pulse by M317
-```
-
----
-
-## M319 - Read Proximity Sensor
-
-#### Description
-
-X Encoder have a 3-pin GX jack to plug proximity in. This command help you read the sensor status right away or auto response status when it have changed.
-
-#### Usage
-
-```
-M319 V
-M319 T
-```
-
-#### Parameter
-
-* `M319 V` : get current sensor value
-* `M319 T` : set auto feedback when the sensor value changed
-
-## Contact Us
-
-* Store: [https://deltaxstore.com](https://deltaxstore.com)
-* Website: [https://www.deltaxrobot.com](https://www.deltaxrobot.com)
-* Email: [deltaxrobot@gmail.com](mailto:deltaxrobot@gmail.com)
-* Phone: +84 38 875 2005
+[Continue to Support in X Conveyor](gc_industrial_conveyor.md#contact-us).

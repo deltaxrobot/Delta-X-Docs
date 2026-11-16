@@ -1,0 +1,10 @@
+<div class="firmware-picker">
+  <label for="firmware-version">Firmware version</label>
+  <select id="firmware-version" aria-describedby="firmware-version-hint" disabled>
+    {% for version in firmware_versions %}
+    <option value="{{ version.url|url }}"{% if version.selected %} selected{% endif %}>Firmware {{ version.label }}</option>
+    {% endfor %}
+  </select>
+  <p id="firmware-version-hint">Choose the firmware installed on your Delta X 3.</p>
+  <noscript><p>{% for version in firmware_versions %}<a href="{{ version.url|url }}">Firmware {{ version.label }}</a>{% if not loop.last %} · {% endif %}{% endfor %}</p></noscript>
+</div>

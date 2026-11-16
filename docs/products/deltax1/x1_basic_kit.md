@@ -54,11 +54,11 @@
 
 ### Reach
 
-![x1_working_space_reach](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace.png)
+![x1_working_space_reach](../../images/shared/delta_x1/x1_workingspace.png)
 
 ### Safe Working Area
 
-![x1_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x1_workingspace_dia.png)
+![x1_working_space_dia](../../images/shared/delta_x1/x1_workingspace_dia.png)
 
 ## Contact Us
 

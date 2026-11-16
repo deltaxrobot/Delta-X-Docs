@@ -8,7 +8,7 @@ This document provides a comprehensive guide for wiring the Delta X S robot, foc
 
 **Digital INPUT port pins (24VDC/3mA) & Analog input pins (0-10VDC/0-4096):**
 
-![input_ter](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/InputTerminal.png)
+![input_ter](../../images/tutorials/assembly_guides/xs_v5_wiring_tutorial/InputTerminal.png)
 
 ### Wiring Steps
 
@@ -26,5 +26,5 @@ This document provides a comprehensive guide for wiring the Delta X S robot, foc
 
 ### Input Breakout Terminal Board Pinout.
 
-![input_breakout](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/InputWiring.png)
+![input_breakout](../../images/shared/delta_xs_v5/InputWiring.png)
 

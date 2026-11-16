@@ -11,7 +11,7 @@ Before getting started, make sure you have the following tools and materials:
 - Frame components (including individual parts as listed below)
 - Hexagon Tool & other assembly accessories
 
-![part_list](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/part_list.png "Alumium Profile Frame Part List")
+![part_list](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/part_list.png "Alumium Profile Frame Part List")
 
 
 ## Step 1: Preparation
@@ -30,17 +30,17 @@ Place the frame on a suitable work surface. Use assembly tools to connect the fr
 
 > **_NOTE:_** Use *M8x15mm Bolts(6)* and ***DON'T*** forget to install *M8 Washer(7)* in every joints.
 
-![step_1](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step1.png)
+![step_1](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step1.png)
 
 ### 2.2. Install the rectangular frame below
 
 > Prepare the two edges of the rectangular frame as follows, **DON'T** forget to insert 8x *M8 T-nut(8)*.
 
-![step_2_1](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step2_1.png)
+![step_2_1](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step2_1.png)
 
 > Then complete the rect by adding 2 remaining edges.
 
-![step_2_2](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step2_2.png)
+![step_2_2](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step2_2.png)
 
 ### 2.3 Adding 4 Support Columns to the Frame
 
@@ -50,32 +50,32 @@ Place the frame on a suitable work surface. Use assembly tools to connect the fr
 
 - Attach the support column to the frame using 2x *4040 Corner Brackets(5)* on the 2 sides as the 2 edges of the rectangular frame below. Ensure a secure and stable connection.
 
-![step_2_3_1](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step3_1.png)
+![step_2_3_1](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step3_1.png)
 
 - Adding Diagonal Braces for Frame Reinforcement: use *4040 Angled Brackets 135deg (4)* and *Corner Alu(3)* to create diagonal braces for the frame. This step uses *M8x20mm Bolts(9)*, *M8 Washer(7)* and *M8 T-nut(8)*.
 
-![step_2_3_1](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step3_2.png)
+![step_2_3_1](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step3_2.png)
 
 - Repeat these steps for the remaining 3 support columns, placing one near each corner of the frame and we got this one:
 
-![step_2_3_2](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step3_3.png)
+![step_2_3_2](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step3_3.png)
 
 - Adding Top Diagonal Braces: as a part of frame reinforcement, we will add more some diagonal braces to the frame.
 
-![step_2_3_2](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step3_4.png)
+![step_2_3_2](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step3_4.png)
 
 ### 2.4 Create Top Rectangular Frame with Crossbars for Robot Mounting
 
 - Create a rect frame like the rect below and then add 2 middle crossbars, follow these dimensions for model **Delta X S D600** and **Delta X S D800**.
 
-![step_2_3_2](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step4.png)
+![step_2_3_2](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step4.png)
 
 ### 2.5 Install Top Rectangular Frame with the Main Frame Body
 
 - Flip the Top Rectangular Frame, position the main frame body components within the rectangular frame, ensuring they fit securely.
 - Adding Bolts and Washers and ensure a firm connection throughout the frame.
 
-![step_2_5](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_frame/step5.png)
+![step_2_5](../../images/tutorials/assembly_guides/xs_frame_assembly_guide/step5.png)
 
 ## Step 3: Finalizing the Assembly
 

@@ -1,6 +1,6 @@
 # Delta X 2 Specifications
 
-![deltax2](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/deltax2.png)
+![deltax2](../../images/shared/delta_x2/deltax2.png)
 
 ## Basic Parameters
 
@@ -46,17 +46,17 @@
 
 ### Working Space
 
-![x2_working_space_reach](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_workingspace.png)
+![x2_working_space_reach](../../images/shared/delta_x2/x2_workingspace.png)
 
 ### Safe Working Area
 
-![x2_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_workingspace_dia.png)
+![x2_working_space_dia](../../images/shared/delta_x2/x2_workingspace_dia.png)
 
 ---
 
 ## Moving Base Dimensions
 
-![x2_moving_base](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_moving_base_small.png)
+![x2_moving_base](../../images/shared/delta_x2/x2_moving_base_small.png)
 
 ---
 
@@ -64,7 +64,7 @@
 
 ### Pinout
 
-![x2_pinout](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_pinout_2.png)
+![x2_pinout](../../images/shared/delta_x2/x2_pinout_2.png)
 
 `Delta X 2 Robot` has multiple port for different end effectors. The port is located on a side of robot body. Includes:
 
@@ -79,7 +79,7 @@
 
 ### Communication Ports and Power Supply
 
-![x2_ports](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_pinout_1.png)
+![x2_ports](../../images/shared/delta_x2/x2_pinout_1.png)
 
 The robot has a USB-B port and a UART port for communication. The USB-B port is used for programming and debugging. The robot can be powered by a 12 ~ 24 VDC power supply with minimum 5A current.
 

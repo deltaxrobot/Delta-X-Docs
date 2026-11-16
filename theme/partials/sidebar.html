@@ -1,0 +1,15 @@
+<aside class="sidebar" id="sidebar" aria-label="Documentation navigation">
+  <div class="sidebar-heading"><span>DOCUMENTATION</span><button class="icon-button close-menu" aria-label="Close navigation"><i class="fa fa-times" aria-hidden="true"></i></button></div>
+  <a class="sidebar-home {% if home %}current{% endif %}" href="{{ nav.homepage.url|url }}" {% if home %}aria-current="page"{% endif %}><i class="fa fa-book" aria-hidden="true"></i> Overview</a>
+  <div class="sidebar-scroll">
+    <nav aria-label="Documentation sections">
+      {% for section in nav %}
+        {% if section.title == 'Tutorials' %}<div class="nav-section"><span class="nav-section-label">GET STARTED</span>{{ tree(section.children) }}</div>{% endif %}
+      {% endfor %}
+      {% for section in nav %}
+        {% if section.title == 'References' %}<div class="nav-section"><span class="nav-section-label">REFERENCE</span>{{ tree(section.children) }}</div>{% endif %}
+      {% endfor %}
+    </nav>
+    <div class="sidebar-help"><a href="mailto:deltaxrobot@gmail.com"><i class="fa fa-life-ring" aria-hidden="true"></i> Contact support <i class="fa fa-external-link" aria-hidden="true"></i></a></div>
+  </div>
+</aside>

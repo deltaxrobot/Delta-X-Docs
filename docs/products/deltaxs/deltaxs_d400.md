@@ -4,7 +4,7 @@
 
 ## [Purchase Now](https://deltaxstore.com/products/delta-x-s-v5?variant=43448384487591)
 
-![D400](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/xs_d400_4axes.png)
+![D400](../../images/shared/delta_xs/xs_d400_4axes.png)
 
 ## Basic Parameters
 
@@ -50,11 +50,11 @@
 
 ### Reach
 
-![xs_d400_working_space_reach](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/xs_v4_d400_workingspace.png)
+![xs_d400_working_space_reach](../../images/shared/delta_xs/xs_v4_d400_workingspace.png)
 
 ### Safe Working Area
 
-![xs_v4_d400_working_space_dia](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/xs_v4_d400_workingspace_dia.png)
+![xs_v4_d400_working_space_dia](../../images/shared/delta_xs/xs_v4_d400_workingspace_dia.png)
 
 ---
 

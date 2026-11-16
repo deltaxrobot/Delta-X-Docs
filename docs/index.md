@@ -1,6 +1,6 @@
 # Delta X Robot
 
-![delta_x_models](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/home_cover.png)
+![delta_x_models](images/index/home_cover.png)
 
 ## Products and Customer Segments
 
@@ -11,12 +11,15 @@
 ## Reference
 
 - [G-codes](reference/gcodes/gc_x1.md) - All kind of delta robot is being control via G-code commands. It's easy to learn.
+<!-- Temporarily hidden; keep for future use.
 - [Marco Programming](reference/macro_programming/macro_programming.md) - Using G-codes with variables, if else conditions, arithmetic operators...
+-->
 - [Robot Specifications & Dimensions](reference/specifications/sp_x1.md) - Get all kind of Delta X robot specifications and dimensions. You'll need these docs to create your custom end effectors.
 
 ## Download
 
 - [Delta X Software](https://sourceforge.net/projects/delta-x-software/) - Control robots via software.
+- [Termite](https://www.compuphase.com/software_termite.htm) - Send G-code and read serial responses.
 - [Firmware Open Source](https://github.com/deltaxrobot/Delta-X-Firmware/releases/tag/delta-x-firmware_v0.95) - Open source firmware for Delta X 1.
 - [Hardware Open Source Parts](https://github.com/deltaxrobot/Delta-X-3D-Printed-Parts/releases) - 3D parts of Delta X 1.
 - [Schematic Open Source](https://github.com/deltaxrobot/Delta-X-Firmware/blob/master/delta%20x%20circuit.pdf) - Delta X 1 open source circuit.

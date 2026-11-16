@@ -1,14 +1,20 @@
 site_name: Delta X Robot
+site_url: https://docs.deltaxrobot.com/
+# Preserve published /path/ and /path/index.html URLs when changing the theme.
+use_directory_urls: true
+site_description: Guides, G-code references, and technical specifications for Delta X robots and accessories.
+hooks:
+    - hooks/docs.py
 copyright: Copyright &copy; 2021 <a href="https://deltaxrobot.com">IMWI Technology</a>
 markdown_extensions:
+    - md_in_html
     - smarty
     - toc:
         permalink: True
     - sane_lists
     - admonition
-    - smarty
 
-repo_name: Github
+repo_name: GitHub
 repo_url: https://github.com/deltaxrobot/Delta-X-Docs
 nav:
     - Home: index.md
@@ -17,18 +23,23 @@ nav:
             - Useful Commands: reference/gcodes/useful_commands.md
             - Delta X 1: reference/gcodes/gc_x1.md
             - Delta X 2: reference/gcodes/gc_x2.md
-            - Delta X 3: reference/gcodes/gc_x3.md
+            - Delta X 2 Plus: reference/gcodes/gc_x2_plus.md
+            - Delta X 3:
+                - "Firmware < 2.0.0": reference/gcodes/gc_x3.md
+                - "Firmware > 2.0.0": reference/gcodes/gc_x3_v2.md
             - Delta X S V4: reference/gcodes/gc_xs_v4.md
             - Delta X S V5: reference/gcodes/gc_xs_v5.md
+            - Short Conveyor: reference/gcodes/gc_short_conveyor.md
             - Desktop Conveyor: reference/gcodes/gc_conveyor.md
-            - X Conveyor: reference/gcodes/gc_industrial_conveyor.md
+            - XConveyor XEncoder: reference/gcodes/gc_industrial_conveyor.md
             - Slider X: reference/gcodes/gc_slider.md
-            - X Encoder: reference/gcodes/gc_encoder.md
-        - Macro Programming:
-            - Macro Programming: reference/macro_programming/macro_programming.md
+        # Temporarily hidden; keep for future use.
+        # - Macro Programming:
+        #     - Macro Programming: reference/macro_programming/macro_programming.md
         - Specifications: 
             - Delta X 1: reference/specifications/sp_x1.md
             - Delta X 2: reference/specifications/sp_x2.md
+            - Delta X 2 Plus: reference/specifications/sp_x2_plus.md
             - Delta X S V4: 
                 - D400: reference/specifications/delta_xs_v4/sp_v4_d400.md
                 - D600: reference/specifications/delta_xs_v4/sp_v4_d600.md
@@ -39,18 +50,13 @@ nav:
                 - D800: reference/specifications/delta_xs_v5/sp_v5_d800.md
             - Accessories:
                 - Delta X 2 Accessories: 
-                    - Desktop Conveyor: reference/specifications/accessories/delta_x2_accessories/conveyor_x.md
+                    - Short Conveyor: reference/specifications/accessories/delta_x2_accessories/conveyor_x.md
                     - Slider X: reference/specifications/accessories/delta_x2_accessories/slider_x.md
                     - Vision Kit V1: reference/specifications/accessories/delta_x2_accessories/vision_kit_v1.md
                     - 2020 Aluminum Profile Frames:
                         - Hyper Cube Frame 2020 Basic Kit: reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_basic.md
-                        - Hyper Cube Frame 2020 Develop Kit: reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_dev.md
                 - Delta X S Accessories:
                     - X Conveyor D120/200/300/400 L1200: reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts.md
-                    - Industrial Vision System Kit (for Delta X S): reference/specifications/accessories/delta_xs_accessories/industrial_vision_system_kit.md
-                    - 4040 Aluminum Profile Frames:
-                        - On-Table Frames: reference/specifications/accessories/delta_xs_accessories/frames/on_table_frames.md
-                        - Stand Frames: reference/specifications/accessories/delta_xs_accessories/frames/stand_frames.md
     - Tutorials:
         - Tutorial List:  tutorials/tutorials_list.md
         - Assembly Guides:
@@ -59,7 +65,37 @@ nav:
             - Delta X S Frame: tutorials/assembly_guides/xs_frame_assembly_guide.md
             - Delta X S IO Wiring: tutorials/assembly_guides/xs_v5_wiring_tutorial.md
         - Control Guides:
-            - Use Arduino to Control Delta X 2: tutorials/control_guides/control_delta_x2_by_arduino.md
+            - Termite (X3 & XS): tutorials/control_guides/termite.md
+            - Delta X 2: tutorials/control_guides/control_delta_x2_by_arduino.md
+            - DeltaXStudio:
+                - Overview: tutorials/control_guides/deltaxstudio/overview.md
+                - Pick & Place Setup:
+                    - 1. System Setup: tutorials/control_guides/deltaxstudio.md
+                    - 2. Calibration:
+                        - Choose a method: tutorials/control_guides/deltaxstudio/calibration.md
+                        - Static calibration: tutorials/control_guides/deltaxstudio/calibration/static.md
+                        - Fully automatic: tutorials/control_guides/deltaxstudio/calibration/automatic.md
+                        - Controlled conveyor · Manual points: tutorials/control_guides/deltaxstudio/calibration/controlled-conveyor.md
+                        - External conveyor · Camera: tutorials/control_guides/deltaxstudio/calibration/external-camera.md
+                        - External conveyor · Manual points: tutorials/control_guides/deltaxstudio/calibration/external-manual.md
+                    - 3. Vision:
+                        - Choose a method: tutorials/control_guides/deltaxstudio/vision.md
+                        - AI: tutorials/control_guides/deltaxstudio/vision/ai.md
+                        - Color filtering: tutorials/control_guides/deltaxstudio/vision/color.md
+                        - AI + Template Matching: tutorials/control_guides/deltaxstudio/vision/ai-template.md
+                        - Color + Template Matching: tutorials/control_guides/deltaxstudio/vision/color-template.md
+                    - 4. Pick & Place: tutorials/control_guides/deltaxstudio/pick_and_place.md
+                - Blockly Programming:
+                    - Getting started: tutorials/control_guides/deltaxstudio/blockly.md
+                    - Movement examples:
+                        - Stationary pick & place: tutorials/control_guides/deltaxstudio/blockly/stationary-pick-and-place.md
+                        - Conveyor pick & place (AI): tutorials/control_guides/deltaxstudio/blockly/conveyor-pick-and-place.md
+                        - Color filtering + pick & place: tutorials/control_guides/deltaxstudio/blockly/color-pick-and-place.md
+                        - Sort two object types (AI): tutorials/control_guides/deltaxstudio/blockly/sort-two-types.md
+                    - Vision-only examples:
+                        - Color filtering: tutorials/control_guides/deltaxstudio/blockly/color-filtering.md
+                        - Color + Template Matching: tutorials/control_guides/deltaxstudio/blockly/color-template-matching.md
+                - Daily Operation: tutorials/control_guides/deltaxstudio/daily_operation.md
         - Applications:
             - Delta X Drawing: tutorials/application_guides/deltax_art.md
     # - Products:
@@ -77,9 +113,20 @@ nav:
     #         - Delta X S D800: products/deltaxs/deltaxs_d800.md
 theme:
     name: readthedocs
-    # custom_dir: 'readthedocshm'
+    custom_dir: theme
     analytics: null
     navigation_depth: 5
     sticky_navigation: false
     collapse_navigation: false
+# Keep archived pages reachable at their original URLs. Macro Programming stays
+# out of navigation and the custom search index (see ARCHIVED_PAGES in hooks/docs.py).
+# To restore it, remove that search exclusion and uncomment its navigation/home links.
+not_in_nav: |
+    reference/gcodes/gc_encoder.md
+    reference/macro_programming/macro_programming.md
+    products/
+    reference/specifications/accessories/delta_x2_accessories/frames/hyper_cube_frame_2020_dev.md
+    reference/specifications/accessories/delta_xs_accessories/frames/on_table_frames.md
+    reference/specifications/accessories/delta_xs_accessories/frames/stand_frames.md
+    reference/specifications/accessories/delta_xs_accessories/industrial_vision_system_kit.md
     

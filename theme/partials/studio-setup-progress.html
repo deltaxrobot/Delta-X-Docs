@@ -1,0 +1,8 @@
+<nav class="studio-setup-progress" aria-label="Pick and Place setup stages">
+  <div><a href="{{ 'tutorials/control_guides/deltaxstudio/overview/'|url }}">DeltaXStudio overview</a><span>Pick &amp; Place setup · Step {{ page.meta.studio_setup_step }} of 4</span></div>
+  <ol>
+    {% for label, target in [('System Setup', 'tutorials/control_guides/deltaxstudio/'), ('Calibration', 'tutorials/control_guides/deltaxstudio/calibration/'), ('Vision', 'tutorials/control_guides/deltaxstudio/vision/'), ('Pick & Place', 'tutorials/control_guides/deltaxstudio/pick_and_place/')] %}
+    <li><a href="{{ target|url }}" {% if loop.index == page.meta.studio_setup_step %}aria-current="step"{% endif %}><span>{{ loop.index }}</span>{{ label }}</a></li>
+    {% endfor %}
+  </ol>
+</nav>

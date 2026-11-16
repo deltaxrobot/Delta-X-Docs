@@ -4,7 +4,7 @@
 
 ## [Purchase Now](https://deltaxstore.com/products/delta-x-2-develop-kit)
 
-![deltax2_dev_kit](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/deltax2_dev_kit.png)
+![deltax2_dev_kit](../../images/products/deltax2/deltax2_dev_kit/deltax2_dev_kit.png)
 
 `Delta X 2 Develop Kit` provide you all the things you'll need to build an automative station. It's suitable for teaching, research, testing or even a small manufactory line.
 
@@ -76,7 +76,7 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 
 ### Pinout
 
-![x2_pinout](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_pinout_2.png)
+![x2_pinout](../../images/shared/delta_x2/x2_pinout_2.png)
 
 `Delta X 2 Robot` has multiple port for different end effectors. The port is located on a side of robot body. Includes:
 
@@ -90,13 +90,13 @@ Let see what we have in a `Delta X 2 Develop Kit`:
 
 ### Communication Ports and Power Supply
 
-![x2_ports](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/x2_pinout_1.png)
+![x2_ports](../../images/shared/delta_x2/x2_pinout_1.png)
 
 The robot has a USB-B port and a UART port for communication. The USB-B port is used for programming and debugging. The UART port is used for communication with other devices. The robot can be powered by a 12VDC power supply with minimum 5A current.
 
 ## Conveyor X Parameters
 
-![conveyor_x](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/short_conveyor.png)
+![conveyor_x](../../images/shared/accessories/conveyor_x/short_conveyor.png)
 
 |Parameters                   | Infors              |
 |-----------------------------|---------------------|
@@ -114,7 +114,7 @@ The robot has a USB-B port and a UART port for communication. The USB-B port is 
 
 ## Slider X Parameters
 
-![slider_x](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/slider.png)
+![slider_x](../../images/shared/accessories/slider_x/slider.png)
 
 |Parameters                   | Infors              |
 |-----------------------------|---------------------|

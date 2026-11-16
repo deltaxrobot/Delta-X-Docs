@@ -14,7 +14,7 @@ Welcome to the Delta X S Robot Manual. This guide will help you assemble your De
 
 Before you begin, make sure you have received all the components listed in the package:
 
-![package_list](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/part_list.png)
+![package_list](../../images/tutorials/assembly_guides/xs_assembly_guide/part_list.png)
 
 ## Assembly Instructions
 
@@ -24,7 +24,7 @@ Before mounting the Delta robot, ensure that the frame or surface you are attach
 
 On the base of the robot body, there are four Ø8 holes used for attaching the Delta robot body to the frame. Please use M8 bolts to tighten and secure the robot.
 
-![mount_robot_body](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/BodyToFrame2.png)
+![mount_robot_body](../../images/tutorials/assembly_guides/xs_assembly_guide/BodyToFrame2.png)
 
 ### Step 2: Power on and Home the robot
 
@@ -33,7 +33,7 @@ On the base of the robot body, there are four Ø8 holes used for attaching the D
 * Plug in the Robot Power Cable: Connect the power cable from the power supply unit to the robot's power input port. Ensure a secure connection.
 * Turn on the Power Supply: Switch the power button  on the power supply unit. You should see the power LED  confirming that power is flowing.
 
-![power_supply](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/DayNguon220V.png)
+![power_supply](../../images/tutorials/assembly_guides/xs_assembly_guide/DayNguon220V.png)
 
 #### Home the robot
 
@@ -45,27 +45,27 @@ On the base of the robot body, there are four Ø8 holes used for attaching the D
 
 Mounting the **Upper Arms** to the flanges: **DO NOT** attempt to rotate the flange if the upper arm is not installed. Use 6x M6x16mm bolts to assemble the upper arm onto the flange, ensuring that the marked surfaces align with each other.
 
-![MountUpperArm](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/MountUpperArm_sliced.png)
+![MountUpperArm](../../images/tutorials/assembly_guides/xs_assembly_guide/MountUpperArm_sliced.png)
 
 Install the **Lower Arms** and the **Moving Base**: Pull the lower arm out and position it on the outside of the ball end of the upper arm. Repeat this process with the other two arms.
 
-![MountLowerArm](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/MountLowerArm_sliced.png)
+![MountLowerArm](../../images/tutorials/assembly_guides/xs_assembly_guide/MountLowerArm_sliced.png)
 
 Do the same with moving base:
 
-![MountMovingBase](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/MountMovingBase_slice.png)
+![MountMovingBase](../../images/tutorials/assembly_guides/xs_assembly_guide/MountMovingBase_slice.png)
 
 ### Step 4(Optional): Install Axis 4 (5,6)
 
 If the robot has axis 4, assemble the universal joint of axis 4 onto the rotating flange underneath the robot body, ensuring a snug fit. Then, tighten the *M3 bolt* securely first and then fasten the *hex socket set screw M3*.
 
-![InstallAxis4](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/InstallAxis4_2.png)
+![InstallAxis4](../../images/tutorials/assembly_guides/xs_assembly_guide/InstallAxis4_2.png)
 
 And the basic assembly of the robot is now complete.
 
 ## Input & Output Connection
 
-![title](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/XS_V5_Interface.png)
+![title](../../images/shared/delta_xs_v5/XS_V5_Interface.png)
 
 Digital **INPUT** pins (24VDC/3mA) & Analog input pins(0-10VDC/0-4096):
 
@@ -94,11 +94,11 @@ E-STOP pins:
 
 ### Input Terminal Adapter (DB9 Male) and Wiring Example
 
-![title](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/InputWiring.png)
+![title](../../images/shared/delta_xs_v5/InputWiring.png)
 
 ### Output Terminal Adapter (DB15 Male) and Wiring Example
 
-![title](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/assembly/xs_v5/CustomOutput.png)
+![title](../../images/shared/delta_xs_v5/CustomOutput.png)
 
 ### Caution
 

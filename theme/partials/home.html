@@ -1,0 +1,87 @@
+{% set robot_models = [
+          ('Delta X S V5', 'gc_xs_v5', 'xs_assembly_guide', [('D400','delta_xs_v5/sp_v5_d400'),('D600','delta_xs_v5/sp_v5_d600'),('D800','delta_xs_v5/sp_v5_d800')]),
+          ('Delta X S V4', 'gc_xs_v4', '', [('D400','delta_xs_v4/sp_v4_d400'),('D600','delta_xs_v4/sp_v4_d600'),('D800','delta_xs_v4/sp_v4_d800')]),
+          ('Delta X 3', 'gc_x3', '', []),
+          ('Delta X 2 Plus', 'gc_x2_plus', '', [('View specs','sp_x2_plus')]),
+          ('Delta X 2', 'gc_x2', 'x2_assembly_guide', [('View specs','sp_x2')]),
+          ('Delta X 1', 'gc_x1', '', [('View specs','sp_x1')])
+] %}
+<main id="main-content" class="home-content">
+  <header class="home-intro">
+    <h1 id="delta-x-robot">Delta X Documentation</h1>
+    <p>Guides and technical resources to set up, program, and run your robot.</p>
+  </header>
+
+  <section class="robot-picker" aria-label="Find documentation by robot model">
+    <div class="robot-picker-heading"><label for="robot-model">Find your robot</label><a href="#choose-your-robot">Browse all models <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+    <select id="robot-model" aria-controls="robot-documents" disabled><option value="">Choose your robot…</option>{% for name, code, guide, specs in robot_models %}<option value="{{ code }}">{{ name }}</option>{% endfor %}</select>
+    <span class="sr-only" id="robot-picker-status" role="status" aria-live="polite"></span>
+    <div id="robot-documents">
+      {% for name, code, guide, specs in robot_models %}
+      <div class="robot-documents" data-robot-panel="{{ code }}" aria-label="{{ name }} documentation" role="region" hidden>
+        {% if guide %}<div><span>Get started</span><a href="{{ ('tutorials/assembly_guides/' ~ guide ~ '/')|url }}">Assembly guide <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>{% endif %}
+        <div><span>Programming</span><a href="{{ ('reference/gcodes/' ~ code ~ '/')|url }}">G-code reference <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+        {% if specs %}<div><span>Specifications</span><div class="picker-spec-links">{% for label, path in specs %}<a href="{{ ('reference/specifications/' ~ path ~ '/')|url }}">{{ label }} <i class="fa fa-angle-right" aria-hidden="true"></i></a>{% endfor %}</div></div>{% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section class="topic-panels" id="reference" aria-label="Explore the documentation">
+    <article class="topic-panel setup-panel">
+      <div class="topic-copy">
+        <span class="topic-kicker"><i class="fa fa-cubes" aria-hidden="true"></i> GET STARTED</span>
+        <h2>Robot setup guides</h2>
+        <p>From assembly to wiring. Follow the guides for your Delta X robot and accessories.</p>
+        <div class="topic-links"><a href="{{ 'tutorials/tutorials_list/'|url }}">Explore setup guides <i class="fa fa-arrow-right" aria-hidden="true"></i></a><a href="{{ 'tutorials/assembly_guides/xs_v5_wiring_tutorial/'|url }}">Wiring & connections <i class="fa fa-angle-right" aria-hidden="true"></i></a></div>
+      </div>
+      <img class="setup-image" src="{{ 'images/index/xs_v5_D400_light.png'|url }}" alt="Delta X S robot" width="626" height="778" fetchpriority="high">
+    </article>
+    <article class="topic-panel programming-panel">
+      <div class="topic-copy">
+        <span class="topic-kicker"><i class="fa fa-code" aria-hidden="true"></i> PROGRAM YOUR ROBOT</span>
+        <h2>Programming & G-code</h2>
+        <p>Find G-code syntax, parameters, and examples for your model.</p>
+        <div class="topic-links"><a href="#choose-your-robot">Browse G-code references <i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+          {# Temporarily hidden; keep for future use.
+          <a href="{{ 'reference/macro_programming/macro_programming/'|url }}">Macro programming <i class="fa fa-angle-right" aria-hidden="true"></i></a>
+          #}
+        </div>
+      </div>
+      <div class="command-preview" aria-label="Search common commands"><span>QUICK LOOKUP</span><button data-search="G28"><code>G28</code><span>Homing</span><i class="fa fa-angle-right" aria-hidden="true"></i></button><button data-search="G1"><code>G1</code><span>Linear move</span><i class="fa fa-angle-right" aria-hidden="true"></i></button><button data-search="M203"><code>M203</code><span>Motion settings</span><i class="fa fa-angle-right" aria-hidden="true"></i></button></div>
+    </article>
+  </section>
+
+  <section id="choose-your-robot" class="home-section">
+    <span id="products-and-customer-segments"></span>
+    <div class="section-heading"><h2>Find documentation for your robot</h2><p>Select your model and jump straight to the details.</p></div>
+    <div class="model-directory" role="region" aria-label="Documentation by robot model" tabindex="0">
+      <table><thead><tr><th scope="col">Robot model</th><th scope="col">Get started</th><th scope="col">Programming</th><th scope="col">Specifications</th></tr></thead><tbody>
+        {% for name, code, guide, specs in robot_models %}
+        <tr><th scope="row">{{ name }}</th><td data-label="Get started">{% if guide %}<a href="{{ ('tutorials/assembly_guides/' ~ guide ~ '/')|url }}">Assembly guide</a>{% else %}<span class="not-available" aria-label="No dedicated assembly guide">—</span>{% endif %}</td><td data-label="Programming"><a href="{{ ('reference/gcodes/' ~ code ~ '/')|url }}">G-code <i class="fa fa-angle-right" aria-hidden="true"></i></a></td><td class="spec-links" data-label="Specifications">{% for label, path in specs %}<a href="{{ ('reference/specifications/' ~ path ~ '/')|url }}">{{ label }}</a>{% else %}<span class="not-available" aria-label="No dedicated specifications page">—</span>{% endfor %}</td></tr>
+        {% endfor %}
+      </tbody></table>
+    </div>
+  </section>
+
+  <section class="home-section" id="accessories">
+    <div class="section-heading"><h2>Accessories & integration</h2><p>Build the rest of your automation system.</p></div>
+    <div class="resource-links">
+      <a href="{{ 'reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/'|url }}"><i class="fa fa-cubes" aria-hidden="true"></i><div><strong>Conveyors</strong><span>Dimensions and specifications</span></div><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="{{ 'reference/specifications/accessories/delta_x2_accessories/slider_x/'|url }}"><i class="fa fa-arrows-h" aria-hidden="true"></i><div><strong>Slider X</strong><span>Extend your robot’s workspace</span></div><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="{{ 'reference/specifications/accessories/delta_x2_accessories/vision_kit_v1/'|url }}"><i class="fa fa-eye" aria-hidden="true"></i><div><strong>Vision Kit</strong><span>Camera and vision setup</span></div><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+      <a href="{{ 'reference/gcodes/gc_industrial_conveyor/'|url }}"><i class="fa fa-code" aria-hidden="true"></i><div><strong>XConveyor XEncoder</strong><span>Motor, encoder & I/O commands</span></div><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+    </div>
+  </section>
+
+  <section class="home-section" id="downloads"><span id="download"></span>
+    <div class="section-heading"><h2>Software & downloads</h2></div>
+    <div class="download-links">
+      <a href="https://sourceforge.net/projects/delta-x-software/"><i class="fa fa-desktop" aria-hidden="true"></i><div><strong>Delta X Software</strong><span>Connect and control your robot</span></div><i class="fa fa-external-link" aria-hidden="true"></i></a>
+      <a href="https://www.compuphase.com/software_termite.htm"><i class="fa fa-code" aria-hidden="true"></i><div><strong>Termite</strong><span>Send G-code and read serial responses</span></div><i class="fa fa-external-link" aria-hidden="true"></i></a>
+      <a href="https://github.com/deltaxrobot/Delta-X-Firmware/releases"><i class="fa fa-microchip" aria-hidden="true"></i><div><strong>Delta X 1 Firmware</strong><span>Firmware and release files</span></div><i class="fa fa-external-link" aria-hidden="true"></i></a>
+      <a href="https://sparks.gogo.co.nz/ch340.html"><i class="fa fa-usb" aria-hidden="true"></i><div><strong>USB serial driver</strong><span>CH340 connection drivers</span></div><i class="fa fa-external-link" aria-hidden="true"></i></a>
+    </div>
+  </section>
+  <div class="help-strip" id="tutorials"><span id="videos"></span><div><strong>Need a little guidance?</strong><p>Explore tutorials or get in touch with the Delta X team.</p></div><a href="{{ 'tutorials/tutorials_list/'|url }}">Browse tutorials <i class="fa fa-arrow-right" aria-hidden="true"></i></a></div>
+</main>

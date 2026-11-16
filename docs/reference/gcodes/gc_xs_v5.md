@@ -4,7 +4,9 @@
 
 #### Descriptions
 
-The G0 and G1 commands add a linear MOVE to the queue to be performed after all previous moves are completed. A command like G1 F1000 sets the feed rate for all subsequent moves.
+The G0 and G1 commands add a linear MOVE to the queue to be performed after all previous moves are completed.
+
+Set `F` (feed rate), `A` (acceleration), `J` (jerk), `S` (start velocity), and `E` (end velocity) once. Subsequent movement commands use these settings until changed; motion parameters omitted from a command keep their current settings.
 
 #### Usage
 
@@ -18,24 +20,24 @@ G1 [X<pos>] [Y<pos>] [Z<pos>] [W<angle>] [U<angle>] [V<angle>]
 * `X[pos]`:(mm) A coordinate on the X-axis.
 * `Y[pos]`:(mm) A coordinate on the Y-axis.
 * `Z[pos]`:(mm) A coordinate on the Z-axis.
-* `W[angle]`:(mm) A coordinate on the 4-axis.
-* `U[angle]`:(mm) A coordinate on the 5-axis.
-* `V[angle]`:(mm) A coordinate on the 6-axis.
+* `W[angle]`:(unit) Axis 4 position.
+* `U[angle]`:(unit) Axis 5 position.
+* `V[angle]`:(unit) Axis 6 position.
 * `F[val]`:(mm/s) The maximum movement rate of the move between the start and endpoint. The feedrate set here applies to subsequent moves that omit this parameter.
 * `A[val]`:(mm/s2) Acceleration of the motion.
 * `J[val]`:(mm/s3) Jerk of the motion.
 * `S[val]`:(mm/s) Begin velocity.
 * `E[val]`:(mm/s) Finish velocity.
 
+For W/U/V, a unit is a degree for a rotary axis or a millimeter for a linear axis, according to its steps-per-unit configuration.
+
 #### Example
 
 ```
-G01 X12                         ;move to 12mm on the X-axis
-G01 F200 A5000 J1200000         ;set the feedrate=200 mm/s, accel=5000mm/s2, jerk=1200000mm/s3
-G01 X90.6 Y13.8 S50 E100        ;move to 90.6mm on the X-axis and 13.8mm on the Y-axis with begin vel = 50, end vel = 100 mm/s   
-G01 X0 Y0 Z-750                 
-G01 W90                         ;rotate to 90° on the 4-axis
-G01 X100 Y50 Z-400 W90 U45 F200 ;X=100 mm, Y=50 mm, Z=-400 mm, W=90°, U=45°, F=200 mm/s
+G01 F1500 A15000 J550000 S100 E100 ; Set the feed rate to 1500 mm/s, acceleration to 15000 mm/s², jerk to 550000 mm/s³, start velocity to 100 mm/s, and end velocity to 100 mm/s.
+G01 X0 Y0 Z-750                 ; Move to the absolute position (X0, Y0, Z-750).
+G01 X50    ; Move to X = 50 mm.
+G01 W90                         ; Rotate to 90° on the 4-axis
 ```
 ---
 
@@ -43,21 +45,24 @@ G01 X100 Y50 Z-400 W90 U45 F200 ;X=100 mm, Y=50 mm, Z=-400 mm, W=90°, U=45°, F
 
 #### Descriptions
 
-**G2** adds a **clockwise** arc move to the planner; **G3** adds a **counter-clockwise** arc. An arc move starts at the current position and ends at the given XYZ, pivoting around a center-point offset given by I and J.
+**G2** adds a **clockwise** arc move to the planner; **G3** adds a **counter-clockwise** arc. The arc runs in the XY plane from the current position to the specified X/Y endpoint, keeping Z unchanged. I and J locate the center relative to the arc's starting point.
 
 #### Usage
 
 ```
-G02 [I<offset>] [J<offset>] [X<pos>] [Y<pos>] [W<angle>] [U<angle>] [V<angle>]
+G02 I<offset> J<offset> [X<pos>] [Y<pos>] [W<angle>] [U<angle>] [V<angle>]
     [F<val>] [A<val>] [S<val>] [E<val>]
 ```
 
+Use `G03` for a counter-clockwise arc. Always include both `I` and `J`, even when one offset is zero. In these commands, `J` is the Y center offset; the previously configured jerk remains in use.
+
 #### Parameters
 
-* `I[offset]`:(mm) An offset from the current X position to use as the arc center.
-* `J[offset]`:(mm) An offset from the current Y position to use as the arc center.
+* `I[offset]`:(mm) Required X offset from the starting point to the arc center.
+* `J[offset]`:(mm) Required Y offset from the starting point to the arc center.
 * `X[pos]`:(mm) A coordinate on the X-axis.
 * `Y[pos]`:(mm) A coordinate on the Y-axis.
+* `W[angle]`, `U[angle]`, `V[angle]`:(unit) Axis 4, 5, and 6 positions, using the configured units for each axis.
 * `F[val]`:(mm/s) The maximum movement rate of the move between the start and endpoint. The feedrate set here applies to subsequent moves that omit this parameter.
 * `A[val]`:(mm/s2) Acceleration of the motion.
 * `S[val]`:(mm/s) Begin velocity.
@@ -66,12 +71,14 @@ G02 [I<offset>] [J<offset>] [X<pos>] [Y<pos>] [W<angle>] [U<angle>] [V<angle>]
 #### Example
 
 ```
-G28
-G01 Z-350
-G01 X50
-G02 X-50 Y0 I-50 J0
-G03 X50 Y0 I50 J0
+G28                          ; Home all axes.
+G90                          ; Use absolute positioning.
+G01 X50 Y0 Z-750 F200         ; Move to the arc start at (X50, Y0, Z-750).
+G02 X0 Y-50 I-50 J0 F200      ; Clockwise 90° arc around (X0, Y0), radius 50 mm.
+G03 X50 Y0 I0 J50 F200        ; Counter-clockwise 90° arc back to (X50, Y0).
 ```
+
+Both arcs keep Z at -750 mm. The X/Y endpoints are absolute positions; I/J are offsets from each arc's starting point to the center at (X0, Y0).
 
 ---
 
@@ -89,14 +96,14 @@ G4 P<value>
 
 #### Parameters
 
-* `P[value]`: time in milisecons.
+* `P[value]`: delay in milliseconds.
 
 #### Example
 
 ```
-G01 X0 Y0 Z-350
+G01 X0 Y0 Z-750 F1500 A15000 J550000 S100 E100
 G4 P500          ;delay 500ms
-G01 X100
+G01 X50
 ```
 
 ---
@@ -105,12 +112,13 @@ G01 X100
 
 #### Descriptions
 
-Directly control movement angle without endpoint coordinates.
+Specify the target Theta 1, 2, and 3 angles instead of Cartesian endpoint coordinates. Axis 6 is selected with `R` in this command.
 
 #### Usage
 
 ```
-G6 [X<angle>] [Y<angle>] [Z<angle>] [W<angle>] [U<angle>] [V<angle>]
+G6 [X<angle>] [Y<angle>] [Z<angle>] [W<pos>] [U<pos>] [R<pos>]
+   [F<val>] [A<val>] [J<val>] [S<val>] [E<val>]
 ```
 
 #### Parameters
@@ -118,14 +126,22 @@ G6 [X<angle>] [Y<angle>] [Z<angle>] [W<angle>] [U<angle>] [V<angle>]
 * `X[angle]`:(degree) The value of the Theta 1 angle.
 * `Y[angle]`:(degree) The value of the Theta 2 angle.
 * `Z[angle]`:(degree) The value of the Theta 3 angle.
-* `W[angle]`:(degree) The value of the Axis 4 angle.
-* `U[angle]`:(degree) The value of the Axis 5 angle.
-* `V[angle]`:(degree) The value of the Axis 6 angle.
+* `W[pos]`:(unit) Axis 4 position.
+* `U[pos]`:(unit) Axis 5 position.
+* `R[pos]`:(unit) Axis 6 position.
+* `F[val]`:(mm/s) Cartesian feed rate.
+* `A[val]`:(mm/s²) Cartesian acceleration.
+* `J[val]`:(mm/s³) Cartesian jerk.
+* `S[val]`:(mm/s) Start velocity.
+* `E[val]`:(mm/s) End velocity.
+
+W/U/R use the configured units for their axes: degrees for rotary axes or millimeters for linear axes. Omitted F/A/J/S/E values keep their current motion settings, which also apply to subsequent moves until changed.
 
 #### Example
 
 ```
-G6 X0 Y0 Z0 W90 U90
+G90                  ; Use absolute positioning.
+G6 X20 Y0 Z0 F200     ; Move to Theta 1 = 20°, Theta 2 = 0°, Theta 3 = 0° at 200 mm/s.
 ```
 
 ---
@@ -173,7 +189,7 @@ G91
 
 #### Descriptions
 
-Get current position of end effector.
+Read the current Cartesian position and the positions of enabled auxiliary axes.
 
 #### Usage
 
@@ -183,87 +199,110 @@ G93
 
 #### Feedback
 
-* `<xpos>,<ypos>,<zpos>`
-    * `<xpos>` : Current X position.
-    * `<ypos>` : Current Y position.
-    * `<zpos>` : Current Z position.
+The response begins with `<xpos>,<ypos>,<zpos>` in millimeters. Positions of enabled W, U, and V axes follow in that order, using each axis's configured units. Disabled axes are omitted.
+
+Values have two decimal places. Positive values have no leading `+` sign or zero padding.
 
 #### Example
 
 ```
-G93              ; get current pos
+G93              ; Read the current position.
+```
 
-return:
-31,43,-270
+Example response with auxiliary axes disabled:
+
+```text
+0.00,0.00,-750.00
+```
+
+Example response with only axis W enabled, at 90°:
+
+```text
+0.00,0.00,-750.00,90.00
 ```
 
 ---
 
-## M03, M04 - Turn Ouput On / Set PWM
+<span class="legacy-anchor" id="m03-m04-turn-ouput-on-set-pwm"></span>
+
+## M03, M04 - Set Digital Output / PWM
 #### Descriptions
 
-This is the command used to turn on the Delta X S robot's output pin.
+Set digital output states or PWM values. `M03` uses 8-bit PWM values; `M04` uses 16-bit PWM values. Both commands can set digital outputs with `D`.
 
 #### Usage
 
 ```
-M03 D<x>
-M03 P<x> W<y>
-M04 P<x> W<y>
+M03 D<pin> W<state>
+M04 D<pin> W<state>
+M03 P<pin> W<value>
+M04 P<pin> W<value>
 ```
 
 #### Parameters
 
-* `M03 D[x]` : turn on digital pins
-    * `x` = 0, 1, 2, ... 15.
-* `M03 P[x] W[y]` : turn on PWM pins
-    * `x` = 0, 1, 2, 3, 4, 8, 9, 10, 14, 15.
-    * `y` = [0, 255]
-* `M04 P[x] W[y]` : turn on PWM pins but with larger pwm range.
-    * `x` = 0, 1, 2, 3, 4, 8, 9, 10, 14, 15.
-    * `y` = [0, 65535].
+| Parameter | Values and function |
+| --- | --- |
+| `D<pin>` | Digital output index: `0`–`7`. Use `W1` to turn it on or `W0` to turn it off. |
+| `P<pin>` | PWM output index: `0`–`7`. |
+| `W<value>` with `M03 P...` | 8-bit PWM value: `0`–`255`. |
+| `W<value>` with `M04 P...` | 16-bit PWM value: `0`–`65535`. |
+
+Always include `W`, including for digital outputs. Several outputs can be selected on one line, such as `M03 D0 D1 W1`. `D` and `P` select digital or PWM control of the output with that index.
 
 #### Example
 
 ```
-G01 X0 Y0 Z-750
-M03 D0                ;turn on relay D0
-G01 Z-700
+M03 D0 W1             ; Turn on digital output D0.
+M03 D1 D2 W1          ; Turn on digital outputs D1 and D2.
+M03 P3 W128           ; Set PWM output P3 to 128 on the 8-bit scale (0–255).
+M04 P4 W32768         ; Set PWM output P4 to 32768 on the 16-bit scale (0–65535).
+M03 D0 W0             ; Turn off digital output D0.
 ```
+
+Each command returns `Ok`.
 
 ---
 
-## M05 - Ouput Off / Turn Off PWM
+<span class="legacy-anchor" id="m05-ouput-off-turn-off-pwm"></span>
+
+## M05 - Turn Off Digital Output / PWM
 
 #### Descriptions
 
-This is the command used to turn off the Delta X S robot's output pin
+Turn off selected digital outputs or set selected PWM outputs to zero.
 
 #### Usage
 
 ```
-M05 D<x>
-M05 P<x>
+M05 D<pin>
+M05 P<pin>
 ```
 
 #### Parameters
 
-* `M05 D[x]`: turn off digital output pin
-    * `x` = 0, 1, 2, ... 15.
-* `M05 P[x]`: turn off PWM output pin
-    * `x` = 0, 1, 2, 3, 4, 8, 9, 10, 14, 15.
+| Parameter | Values and function |
+| --- | --- |
+| `D<pin>` | Digital output index: `0`–`7`. Set the selected output to OFF. |
+| `P<pin>` | PWM output index: `0`–`7`. Set the selected PWM value to zero. |
+
+Several outputs can be selected on one line. Specify at least one `D` or `P` output; a bare `M05` does not select all outputs.
+
+<!-- The robot firmware also accepts M05 U0–U3 and forwards the selector to
+the I/O board. Keep these reset selectors out of the usage examples until
+their effects have been verified against the I/O-board firmware. -->
 
 #### Example
 
 ```
-G01 X0 Y0 Z-750
-M03 D0                ;turn on relay D0
-G01 Z-780
-G04 P300
-G01 Z-750
-G01 X50 Y50
-M05 D0                ;turn off relay D0
+M03 D0 W1             ; Turn on digital output D0.
+M05 D0                ; Turn off digital output D0.
+M03 P1 W128           ; Set PWM output P1 to 128 on the 8-bit scale.
+M05 P1                ; Set PWM output P1 to zero.
+M05 D2 D3 P4          ; Turn off D2 and D3, and set PWM output P4 to zero.
 ```
+
+Each command returns `Ok`.
 
 ---
 
@@ -271,39 +310,44 @@ M05 D0                ;turn off relay D0
 
 #### Descriptions
 
-Read Digital and Analog input signals.
+Read the current state of selected digital inputs or the raw ADC values of selected analog inputs. Several digital and analog channels can be requested on one line.
 
 #### Usage
 
 ```
-M07 I<x>
-M07 A<x>
+M07 I<pin>
+M07 A<pin>
+M07 I<digital_pin> A<analog_pin>
 ```
 
 #### Parameters
 
-* `M07 I[x]`: Read Digital Input Pin
-    * `x` = 0, 1, 2, 3, 4, 5, 6, 7.
-* `M07 A[x]`: Read Analog Input Pin
-    * `x` = 0, 1, 2, 3.
+| Parameter | Values and function |
+| --- | --- |
+| `I<pin>` | Digital input index: `0`–`5`. |
+| `A<pin>` | Analog input index: `0` or `1`. |
 
 #### Feedback
 
-* `I[x] V[val]`:
-    * `x` = pin number
-    * `val` = {0,1}
-* `A[x] V[val]`:
-    * `x` = pin number
-    * `val` = [0, 4095]
+| Response | Meaning |
+| --- | --- |
+| `I<pin> V<value>` | Digital input state: `0` or `1`. |
+| `A<pin> V<value>` | Raw 12-bit ADC value: `0`–`4095`. |
+
+One response is returned per selected input when the I/O board replies. Specify at least one input from the ranges above.
 
 #### Example
 
 ```
-M07 I0 I3              ;read digital pin I0 and I3
->>> I0 V1
->>> I3 V0
-M07 A2                 ;read analog pin A2
->>> A2 V3946
+M07 I0 I3 A1          ; Read digital inputs I0 and I3, and analog input A1.
+```
+
+Example responses; values depend on the connected signals:
+
+```text
+I0 V1
+I3 V0
+A1 V2478
 ```
 
 ---
@@ -311,57 +355,56 @@ M07 A2                 ;read analog pin A2
 
 #### Descriptions
 
-Read Digital and Analog input signals automatically. For the digital signals, the robot will automatic read the value of signal when there is a change from 0 to 1 or from 1 to 0. About the analog signals, the robot will automatic read the value after a certain amount of time.
+Configure automatic input reports. Digital inputs report state changes; analog inputs report sampled values at the requested interval.
 
 #### Usage
 
 ```
-M08 I<x> B<y> P<i>
-M08 A<x> C<y> P<i>
+M08 I<pin> [B<enable>] [P<port>]
+M08 A<pin> [C<period_us>] [P<port>]
 ```
 
 #### Parameters
 
-* `M08 I[x] B[y]` : auto read digital input pins.
-    * `I[x]` : Digital Input Pin
-        * `x` = 0, 1, 2, 3, 4, 5, 6, 7).
-    * `B[y]` :
-        * `y = 1`: Start the auto-reading digital input signal process.
-        * `y = 0`: Stop the auto-reading digital input signal process.
-    * `P[i]` : set feedback port
-        * `i = 0`: USB0
-        * `i = 1`: RS232
-        * `i = 2`: RS485
-        * `i = 3`: USB1
-* `M08 A[x] C[y]`
-    * `A[x]`: Analog Input Pin
-        * `x` = 0, 1, 2, 3.
-    * `C[y]`: Cycle (microseconds) to update values. 
-        * `y >= 100`: Start the auto-reading analog input signal process.
-        * `y <= 100`: Stop the auto-reading analog input signal process.
-    * `P[i]` : set feedback port
-        * `i = 0`: USB0
-        * `i = 1`: RS232
-        * `i = 2`: RS485
-        * `i = 3`: USB1
+| Parameter | Values and function |
+| --- | --- |
+| `I<pin>` | Digital input index: `0`–`5`. Several inputs can be selected on one line. |
+| `B<enable>` | Digital reports: `1` enables reporting; `0` disables it. Default: `1` when omitted. |
+| `A<pin>` | Analog input index: `0` or `1`. Both channels can be selected on one line. |
+| `C<period_us>` | Requested analog report period in microseconds. Default: `500000` (500 ms) when omitted. The I/O-board firmware determines the supported minimum period and the value used to disable analog reports. |
+| `P<port>` | Report destination: `0` = USB0, `1` = RS232, `2` = RS485, `3` = USB1. |
+
+The startup report destination is USB0. Open the selected serial port before requesting reports on it. RS485 (`P2`) requires full-duplex mode; half-duplex mode returns `Unknown: This function cannot be used on RS485!`. Ethernet (`P4`) is not accepted by `M08`.
+
+Digital inputs assigned to an enabled emergency stop are used for E-stop monitoring instead of ordinary automatic digital reports.
 
 #### Feedback
 
-* `I[x] V[val]` : return auto read digital input value
-    * `x` = pin number
-    * `val` = {0,1}
-* `A[x] V[val]` : return auto read analog input value
-    * `x` = pin number
-    * `val` = [0, 4095]
+Each configuration command returns `Ok`. Reports then arrive as:
+
+| Response | Meaning |
+| --- | --- |
+| `I<pin> V<value>` | Digital input state: `0` or `1`. |
+| `A<pin> V<value>` | Raw 12-bit ADC value: `0`–`4095`. |
 
 #### Example
 
 ```
-M08 I3 B1 P0           ;start auto read digital pin I3, feedback via USB0 port
-M08 A2 C200 P1         ;auto update A2 analog value with cycle=200us via RS232 port
+M08 I3 B1 P0          ; Report changes on digital input I3 through USB0.
+M08 A1 C500000 P0     ; Request analog input A1 reports every 500 ms through USB0.
+```
 
->>> I3 V0
->>> A2 V2478
+Example automatic reports; values depend on the connected signals:
+
+```text
+I3 V0
+A1 V2478
+```
+
+To stop automatic reports for digital input I3:
+
+```
+M08 I3 B0             ; Disable automatic reports for digital input I3.
 ```
 
 ---
@@ -375,7 +418,7 @@ Enable/Disable RS232 port and set baudrate.
 #### Usage
 
 ```
-M40 A<x> B<y>
+M40 A<x> [B<y>]
 ```
 
 #### Parameters
@@ -384,7 +427,7 @@ M40 A<x> B<y>
     * `A[x]` : Open/Close RS232 port
         * `x = 1` : Open Port
         * `x = 0` : Close port
-    * B[y]: baudrate.
+    * `B[y]` : baud rate.
 #### Example
 ```
 M40 A1 B115200             ;Open RS232 port and set baudrate at 115200
@@ -399,7 +442,7 @@ Enable/Disable RS485 port and set baudrate.
 #### Usage
 
 ```
-M41 A<x> B<y>
+M41 A<x> [B<y>]
 ```
 
 #### Parameters
@@ -408,7 +451,7 @@ M41 A<x> B<y>
     * `A[x]` : Open/Close RS485 port
         * `x = 1` : Open Port
         * `x = 0` : Close Port
-    * `B[y]` : baudrate.
+    * `B[y]` : baud rate.
 
 !!! warning "Note:"
   When control Delta X S via RS485, after each time sending a G-code command to the robot, you must wait for a response from the robot before sending the next G-code command. Otherwise, the communication will not be successful.
@@ -430,7 +473,7 @@ Enable/Disable USB1 port and set baudrate.
 #### Usage
 
 ```
-M41 A<x> B<y>
+M42 A<x> [B<y>]
 ```
 
 #### Parameters
@@ -439,12 +482,12 @@ M41 A<x> B<y>
     * `A[x]` : Open/Close USB1 port
         * `x = 1` : Open Port
         * `x = 0` : Close Port
-    * `B[y]` : baudrate.
+    * `B[y]` : baud rate.
 
 #### Example
 
 ```
-M42 A1 B115200             ;Open TTL USB1 and set baudrate at 115200
+M42 A1 B115200             ; Enable USB1 and set the baud rate to 115200.
 ```
 
 ---
@@ -453,7 +496,7 @@ M42 A1 B115200             ;Open TTL USB1 and set baudrate at 115200
 
 #### Descriptions
 
-Feedback all ports config informations, this command will show you that these ports is enabled or not, and the baudrate of each port.
+Read the enabled state and configured baud rate of USB0, RS232, RS485, and USB1. The response labels USB0 as `USB`.
 
 #### Usage
 
@@ -465,12 +508,15 @@ M49
 
 ```
 M49
+```
 
->>>USB:1 BAUD:115200      ;USB port is enabled(default), baudrate is 115200
->>>RS232:0 BAUD:115200    ;RS232 port is disabled, last set baudrate is 115200
->>>RS485:1 BAUD:115200
->>>TTL:1 BAUD:115200
->>>RJ45:1 Port:1921682553
+Example response; enabled states and baud rates depend on the current configuration:
+
+```text
+USB:1 BAUD:115200
+RS232:0 BAUD:115200
+RS485:1 BAUD:115200
+USB1:1 BAUD:115200
 ```
 
 ## M50 - Enable RJ45
@@ -527,11 +573,11 @@ M51 B8080         ; set ethernet port
 
 #### Descriptions
 
-Set MAC address of the robot
+Set the robot's MAC address and save it to EEPROM.
 
 #### Usage
 
-Address form: A:B:C:D:E:F
+Provide all six bytes in A:B:C:D:E:F order, using decimal integers from 0 to 255.
 
 ```
 M52 A<x> B<y> C<z> D<t> E<u> F<v>
@@ -549,9 +595,13 @@ M52 A<x> B<y> C<z> D<t> E<u> F<v>
 #### Example
 
 ```
-M52 A12 B23 C34 D45 E56 F67
+M52 A2 B23 C34 D45 E56 F67   ; Set MAC address 02:17:22:2D:38:43 (hex).
+```
 
->>> MAC add: 12-23-34-45-56-67 
+Response:
+
+```text
+Ok
 ```
 
 ---
@@ -560,7 +610,7 @@ M52 A12 B23 C34 D45 E56 F67
 
 #### Descriptions
 
-Set ethernet IP of robot
+Set the robot's Ethernet IP address and save it to EEPROM. A/B/C/D are the four address octets, each a decimal integer from 0 to 255; all four are required.
 
 #### Usage
 
@@ -578,9 +628,13 @@ M53 A<x> B<y> C<z> D<t>
 #### Example
 
 ```
-M53 A192 B168 C1 D1
+M53 A192 B168 C1 D98   ; Set the robot IP address to 192.168.1.98.
+```
 
->>> IP: 192.168.1.1
+Response:
+
+```text
+Ok
 ```
 
 ---
@@ -589,7 +643,7 @@ M53 A192 B168 C1 D1
 
 #### Descriptions
 
-Set ethernet DNS address
+Set the Ethernet DNS server address and save it to EEPROM. A/B/C/D are the four address octets, each a decimal integer from 0 to 255; all four are required.
 
 #### Usage
 
@@ -607,9 +661,13 @@ M54 A<x> B<y> C<z> D<t>
 #### Example
 
 ```
-M53 A192 B168 C1 D3
+M54 A192 B168 C1 D1   ; Set the DNS server to 192.168.1.1.
+```
 
->>> DNS IP: 192.168.1.3
+Response:
+
+```text
+Ok
 ```
 
 ---
@@ -618,7 +676,7 @@ M53 A192 B168 C1 D3
 
 #### Descriptions
 
-Set ethernet gateway address
+Set the Ethernet gateway address and save it to EEPROM. A/B/C/D are the four address octets, each a decimal integer from 0 to 255; all four are required.
 
 #### Usage
 
@@ -636,8 +694,7 @@ M55 A<x> B<y> C<z> D<t>
 #### Example
 
 ```
-; set ethernet gateway address 192.168.3.1
-M55 A192 B168 C3 D1
+M55 A192 B168 C1 D1   ; Set the gateway to 192.168.1.1.
 ```
 
 ---
@@ -646,7 +703,7 @@ M55 A192 B168 C3 D1
 
 #### Descriptions
 
-Set ethernet gateway address
+Set the Ethernet subnet mask and save it to EEPROM. A/B/C/D are the four mask octets, each a decimal integer from 0 to 255; all four are required.
 
 #### Usage
 
@@ -664,8 +721,7 @@ M56 A<x> B<y> C<z> D<t>
 #### Example
 
 ```
-; set ethernet subnet address 192.168.3.1
-M56 A192 B168 C3 D1
+M56 A255 B255 C255 D0   ; Set the subnet mask to 255.255.255.0.
 ```
 
 ---
@@ -674,7 +730,7 @@ M56 A192 B168 C3 D1
 
 #### Descriptions
 
-Get the IP of Delta Robot
+Read the robot's configured Ethernet IP address.
 
 #### Usage
 
@@ -686,8 +742,12 @@ M57
 
 ```
 M57
+```
 
->>> 192.168.2.2
+Example response after setting the IP address to 192.168.1.98:
+
+```text
+IP:192.168.1.98
 ```
 
 ---
@@ -696,13 +756,13 @@ M57
 
 #### Descriptions
 
-Config axis 4 parameters.
+Configure axis 4 and save its configuration to EEPROM. Units are degrees for a rotary axis or millimeters for a linear axis, according to the steps-per-unit setting.
 
 #### Usage
 
 ```
 M60 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>] 
-    [P<val>] [Q<val>] [H<val>] A[<val>] [J<val>] [F<val>]
+    [P<val>] [Q<val>] [H<val>] [A<val>] [J<val>] [F<val>]
 ```
 
 #### Parameter
@@ -717,14 +777,14 @@ M60 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>]
     * `val = 1` : axis 4 endstop invert
     * `val = 0` : axis 4 endstop non-invert
 * `S[val]` : (unit/s) homing speed
-* `R[val]` : (unit/s) homing revert speed
+* `R[val]` : (unit) distance to back away from the endstop during homing
 * `U[val]` : (step/unit) set step/unit parameter
 * `P[val]` : (unit) set max position
 * `Q[val]` : (unit) set min position
 * `H[val]` : (unit) set home position
-* `A[val]` : (unit) set max acceleration
-* `J[val]` : (unit) set max jerk
-* `F[val]` : (unit) set max velocity
+* `A[val]` : (unit/s²) maximum acceleration
+* `J[val]` : (unit/s³) maximum jerk
+* `F[val]` : (unit/s) maximum velocity
 
 #### Example
 
@@ -732,19 +792,21 @@ M60 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>]
 M60 D1 E1 I0 S15 R5 U8.333 P178 Q0 H45 A4000 J900000 F2000
 ```
 
+In this example, `R5` sets a 5-unit homing back-off distance. Use configuration values appropriate for the connected axis.
+
 ---
 
 ## M61 - Set Axis 5 Parameters
 
 #### Descriptions
 
-Config axis 5 parameters.
+Configure axis 5 and save its configuration to EEPROM. Units are degrees for a rotary axis or millimeters for a linear axis, according to the steps-per-unit setting.
 
 #### Usage
 
 ```
 M61 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>] 
-    [P<val>] [Q<val>] [H<val>] A[<val>] [J<val>] [F<val>]
+    [P<val>] [Q<val>] [H<val>] [A<val>] [J<val>] [F<val>]
 ```
 
 #### Parameter
@@ -759,14 +821,14 @@ M61 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>]
     * `val = 1` : axis 5 endstop invert
     * `val = 0` : axis 5 endstop non-invert
 * `S[val]` : (unit/s) homing speed
-* `R[val]` : (unit/s) homing revert speed
+* `R[val]` : (unit) distance to back away from the endstop during homing
 * `U[val]` : (step/unit) set step/unit parameter
 * `P[val]` : (unit) set max position
 * `Q[val]` : (unit) set min position
 * `H[val]` : (unit) set home position
-* `A[val]` : (unit) set max acceleration
-* `J[val]` : (unit) set max jerk
-* `F[val]` : (unit) set max velocity
+* `A[val]` : (unit/s²) maximum acceleration
+* `J[val]` : (unit/s³) maximum jerk
+* `F[val]` : (unit/s) maximum velocity
 
 #### Example
 
@@ -774,19 +836,21 @@ M61 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>]
 M61 D1 E1 I0 S15 R5 U8.333 P178 Q0 H45 A4000 J900000 F2000
 ```
 
+In this example, `R5` sets a 5-unit homing back-off distance. Use configuration values appropriate for the connected axis.
+
 ---
 
 ## M62 - Set Axis 6 Parameters
 
 #### Descriptions
 
-Config axis 6 parameters.
+Configure axis 6 and save its configuration to EEPROM. Units are degrees for a rotary axis or millimeters for a linear axis, according to the steps-per-unit setting.
 
 #### Usage
 
 ```
 M62 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>] 
-    [P<val>] [Q<val>] [H<val>] A[<val>] [J<val>] [F<val>]
+    [P<val>] [Q<val>] [H<val>] [A<val>] [J<val>] [F<val>]
 ```
 
 #### Parameter
@@ -801,20 +865,22 @@ M62 [D<val>] [E<val>] [I<val>] [S<val>] [R<val>] [U<val>]
     * `val = 1` : axis 6 endstop invert
     * `val = 0` : axis 6 endstop non-invert
 * `S[val]` : (unit/s) homing speed
-* `R[val]` : (unit/s) homing revert speed
+* `R[val]` : (unit) distance to back away from the endstop during homing
 * `U[val]` : (step/unit) set step/unit parameter
 * `P[val]` : (unit) set max position
 * `Q[val]` : (unit) set min position
 * `H[val]` : (unit) set home position
-* `A[val]` : (unit) set max acceleration
-* `J[val]` : (unit) set max jerk
-* `F[val]` : (unit) set max velocity
+* `A[val]` : (unit/s²) maximum acceleration
+* `J[val]` : (unit/s³) maximum jerk
+* `F[val]` : (unit/s) maximum velocity
 
 #### Example
 
 ```
 M62 D1 E1 I0 S15 R5 U8.333 P178 Q0 H45 A4000 J900000 F2000
 ```
+
+In this example, `R5` sets a 5-unit homing back-off distance. Use configuration values appropriate for the connected axis.
 
 ---
 
@@ -836,31 +902,53 @@ M84
 
 #### Descriptions
 
-Auto feedback positon in a period of time by the specified port.
+Configure automatic position reports and their destination port.
 
 #### Usage
 
 ```
-M100 A<ena> B<time> C<port>
+M100 [A<mode>] [B<time>] [C<port>]
 ```
 
 #### Parameter
 
-* `A[ena]` Enable/Disable auto feedback position
-    * `ena = 1` : enable
-    * `ena = 0` : disable
-* `B[time]` : (miliseconds) period to send feedback
-* `C[port]` : set feedback port
-    * `port = 0` : USB
-    * `port = 1` : RS232
-    * `port = 2` : RS485
-    * `port = 3` : TTL
-    * `port = 4` : RJ45
+* `A[mode]` : reporting mode.
+    * `0` : disable reports.
+    * `1` : report during movement, plus the final position when movement completes.
+    * `2` : report periodically during movement and while idle.
+* `B[time]` : report interval in milliseconds. Use at least `10`; a value below `10` disables reporting.
+* `C[port]` : destination port.
+    * `0` : USB0.
+    * `1` : RS232.
+    * `3` : USB1.
+    * `4` : Ethernet (RJ45).
+
+RS485 (`C2`) is rejected with `Unknown: This function cannot be used on RS485!`. Open the selected port before requesting reports on it.
+
+Each report starts with `Position:`, followed by X/Y/Z and the positions of enabled W/U/V axes in that order. Values have two decimal places.
 
 #### Example
 
 ```
-M100 A0 B200 C1   ;set USB port feedback position at cycle 200 ms
+M100 A1 B200 C0   ; Report position on USB0 every 200 ms during movement, plus the final position.
+```
+
+Example report with auxiliary axes disabled:
+
+```text
+Position:0.00,0.00,-750.00
+```
+
+To report every 200 ms even while idle:
+
+```
+M100 A2 B200 C0
+```
+
+To stop automatic position reports:
+
+```
+M100 A0 C0
 ```
 
 ---
@@ -888,12 +976,12 @@ Set movement jerk of end effector.
 #### Usage
 
 ```
-M203 [J<value>]
+M203 J<value>
 ```
 
 #### Parameters
 
-* `J[value]`: (mm/s^3) jerk.
+* `J[value]`: (mm/s³) required jerk value. Omitting `J` returns `Unknown:Gcode wrong!`.
 
 #### Example
 
@@ -912,12 +1000,12 @@ Set movement acceleration.
 #### Usage
 
 ```
-M204 [A<value>]
+M204 A<value>
 ```
 
 #### Parameters
 
-* `A[value]`: (mm/s2) end effector acceleration.
+* `A[value]`: (mm/s²) required end-effector acceleration. Omitting `A` returns `Unknown:Gcode wrong!`.
 
 #### Example
 
@@ -931,22 +1019,22 @@ M204 A15000    ;set accel = 15000 mm/s^2
 
 #### Descriptions
 
-Set segment begin/end velocity.
+Set both the start and end velocity of a movement segment to the same value.
 
 #### Usage
 
 ```
-M205 [S<value>]
+M205 S<value>
 ```
 
 #### Parameters
 
-* `S[value]`: (mm/s2) end effector begin/end velocity.
+* `S[value]`: (mm/s) required start and end velocity. Omitting `S` returns `Unknown:Gcode wrong!`.
 
 #### Example
 
 ```
-M205 S40    ;Set begin speed at 40 mm/s
+M205 S40    ; Set both start and end velocity to 40 mm/s.
 ```
 
 ---
@@ -955,7 +1043,7 @@ M205 S40    ;Set begin speed at 40 mm/s
 
 #### Descriptions
 
-Set home offset for one or all axis.
+Set the origin offset used by absolute movement commands. The specified origin must be within the robot's configured workspace and axis limits.
 
 #### Usage
 
@@ -968,14 +1056,14 @@ M206 [X<value>] [Y<value>] [Z<value>] [W<value>] [U<value>] [V<value>]
 * `X[value]`: (mm) X offset value.
 * `Y[value]`: (mm) Y offset value.
 * `Z[value]`: (mm) Z offset value.
-* `W[value]`: (mm) W offset value.
-* `U[value]`: (mm) U offset value.
-* `V[value]`: (mm) V offset value.
+* `W[value]`: (unit) W offset value, in the configured axis units.
+* `U[value]`: (unit) U offset value, in the configured axis units.
+* `V[value]`: (unit) V offset value, in the configured axis units.
 
 #### Example
 
 ```
-M206 X20 Y-10 Z30  ;Set home offsets
+M206 X20 Y-10 Z-750 W0 U0 V0   ; Set the XYZ origin to (20, -10, -750), with zero auxiliary-axis offsets.
 ```
 
 ---
@@ -984,23 +1072,25 @@ M206 X20 Y-10 Z30  ;Set home offsets
 
 #### Descriptions
 
-Set the lowest Z level that the robot cannot exceed.
+Set the lowest permitted Z coordinate and save it to EEPROM. A value below the workspace limit is rejected. A value above the home Z coordinate disables the additional Z limit.
 
 #### Usage
 
 ```
-M207 [Z<value>]
+M207 Z<value>
 ```
 
 #### Parameters
 
-* `Z[value]`: (mm) Z safe value.
+* `Z[value]`: (mm) lowest permitted Z coordinate. Always specify `Z`; sending `M207` without it disables the limit.
 
 #### Example
 
 ```
-M207 Z-870  ;Set Z safe value
+M207 Z-870  ; Set the lowest permitted Z coordinate to -870 mm.
 ```
+
+The example requires -870 mm to be within the configured workspace and at or below the home Z coordinate.
 
 ---
 
@@ -1120,12 +1210,12 @@ M213 F2000 A4000 J800000 S30 E30  ;config axis 6 move para
 
 #### Descriptions
 
-This command can be used to check current movement parameter of all axis.
+Read the current movement parameters of one axis group. Omitting `I` selects the Theta group (`I0`).
 
 #### Usage
 
 ```
-M220 I<val>
+M220 [I<val>]
 ```
 
 #### Parameter
@@ -1136,12 +1226,18 @@ M220 I<val>
     * `val = 2` : get axis 5 parameter
     * `val = 3` : get axis 6 parameter
 
+The Theta group uses response labels `F`, `A`, `J`, `S`, and `E`. Axis 4 uses `WF`, `WA`, `WJ`, `WS`, and `WE`; axes 5 and 6 use the corresponding `U` and `V` prefixes. The selected auxiliary axis must be enabled.
+
 #### Example
 
 ```
-M220 I1   ;get axis 4 movement para
+M220 I1   ; Read axis 4 movement parameters.
+```
 
->>>F:2000 A:4000 J:800000 S:30 E:30
+Example response for an enabled W axis configured with these values:
+
+```text
+WF:2000.00 WA:4000.00 WJ:800000.00 WS:30.00 WE:30.00
 ```
 
 ---
@@ -1150,7 +1246,7 @@ M220 I1   ;get axis 4 movement para
 
 #### Descriptions
 
-Save all configurable settings to EEPROM.
+Save the current motion parameters and supported configuration settings to EEPROM.
 
 #### Usage
 
@@ -1166,11 +1262,13 @@ M500    ;Save settings
 
 ---
 
-## M501 - Restore Settings
+<span class="legacy-anchor" id="m501-restore-settings"></span>
+
+## M501 - Reset Settings
 
 #### Descriptions
 
-Load all saved settings from EEPROM.
+Reset settings to the firmware defaults and immediately save them to EEPROM. This overwrites the previously saved settings; an additional `M500` is unnecessary.
 
 #### Usage
 
@@ -1181,16 +1279,18 @@ M501
 #### Example
 
 ```
-M501    ;Restore all settings.
+M501    ; Reset settings to firmware defaults and save them to EEPROM.
 ```
 
 ---
 
-## M502 - Reset Settings
+<span class="legacy-anchor" id="m502-reset-settings"></span>
+
+## M502 - Load Settings
 
 #### Descriptions
 
-Reset all configurable settings to their factory defaults.
+Reload the saved motion parameters and supported configuration settings from EEPROM.
 
 #### Usage
 
@@ -1201,7 +1301,7 @@ M502
 #### Example
 
 ```
-M502    ;reset
+M502    ; Reload the settings saved in EEPROM.
 ```
 
 ---
@@ -1210,18 +1310,23 @@ M502    ;reset
 
 #### Descriptions
 
-This command is used to enable EMERGENCY STOP BUTTON.
+Enable emergency-stop monitoring on two digital inputs and save the selection to EEPROM.
 
 #### Usage
 
 ```
-M600 A4 B5
+M600 [A<pin>] [B<pin>]
 ```
+
+* `A<pin>` : first digital input index, `0`–`5` (I0–I5).
+* `B<pin>` : second digital input index, `0`–`5` (I0–I5).
+
+Use the input numbers for the connected emergency-stop circuit.
 
 #### Example
 
 ```
-M600 A4 B5    ;enable E_STOP button
+M600 A4 B5    ; Enable emergency-stop monitoring on inputs I4 and I5.
 ```
 
 ## M601 - Disable Emergency Stop Button

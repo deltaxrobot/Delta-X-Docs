@@ -1,1 +1,6 @@
-site
+site/
+.venv/
+__pycache__/
+*.pyc
+.preview-*.log
+.preview-*.png

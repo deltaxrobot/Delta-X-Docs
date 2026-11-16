@@ -10,12 +10,16 @@
 ## Assemble Guides
 
 - [Delta X 1](https://www.deltaxrobot.com/p/how-to-assemble-delta-x-kit.html)
-- [Delta X 2](https://docs.deltaxrobot.com/tutorials/assembly_guides/x2_assembly_guide/)
-- [Delta X S](https://docs.deltaxrobot.com/tutorials/assembly_guides/xs_assembly_guide/)
-- [Assemble the on-table aluminum frame](https://docs.deltaxrobot.com/tutorials/assembly_guides/xs_frame_assembly_guide/)
+- [Delta X 2](assembly_guides/x2_assembly_guide.md)
+- [Delta X S](assembly_guides/xs_assembly_guide.md)
+- [Assemble the on-table aluminum frame](assembly_guides/xs_frame_assembly_guide.md)
 
 ## Control Robot Guides
 
+- [Control Delta X 3 and Delta X S with Termite](control_guides/termite.md)
+- [DeltaXStudio overview](control_guides/deltaxstudio/overview.md)
+- [DeltaXStudio - Blockly programming](control_guides/deltaxstudio/blockly.md)
+- [DeltaXStudio - Daily operation](control_guides/deltaxstudio/daily_operation.md)
 - [Use **Delta X Software** basically](https://www.deltaxrobot.com/p/how-to-use-delta-x-software-basically.html)
 - [Control Delta X 2 with Termite](https://www.deltaxrobot.com/p/control-delta-x-2-with-termite-software.html)
 - [Control Delta X 2 with Delta X Software](https://www.deltaxrobot.com/p/control-delta-x-2-with-delta-x-software.html)

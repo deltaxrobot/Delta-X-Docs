@@ -1,0 +1,177 @@
+{
+  "reference/gcodes/gc_conveyor.md": {
+    "detect-desktop-conveyor-com-port": [
+      "example"
+    ],
+    "m310-set-motion-mode": [
+      "decription",
+      "usage",
+      "parameter",
+      "example_1"
+    ],
+    "m312-set-position": [
+      "decription_2",
+      "usage_2",
+      "parameter_2",
+      "example_3"
+    ],
+    "m313-set-speed-in-position-move": [
+      "decription_3",
+      "usage_3",
+      "parameter_3",
+      "example_4"
+    ],
+    "m311-set-speed-in-velocity-mode": [
+      "decription_1",
+      "usage_1",
+      "parameter_1",
+      "example_2"
+    ]
+  },
+  "reference/gcodes/gc_industrial_conveyor.md": {
+    "detect-conveyor-com-port": [
+      "example"
+    ],
+    "m310-set-motion-mode": [
+      "description",
+      "usage",
+      "parameter",
+      "example_1"
+    ],
+    "m311-set-speed-in-velocity-mode": [
+      "description_1",
+      "usage_1",
+      "parameter_1",
+      "example_2"
+    ],
+    "m312-set-position": [
+      "description_2",
+      "usage_2",
+      "parameter_2",
+      "example_3"
+    ],
+    "m313-set-speed-in-position-move": [
+      "description_3",
+      "usage_3",
+      "parameter_3",
+      "example_4"
+    ],
+    "m314-set-motor-pins-level": [
+      "description_4",
+      "usage_4",
+      "parameter_4",
+      "example_5"
+    ],
+    "m315-config-conveyor-parameters": [
+      "description_5",
+      "usage_5",
+      "parameter_5",
+      "example_6"
+    ],
+    "m316-set-encoder-mode": [
+      "description_6",
+      "usage_6",
+      "parameter_6",
+      "example_7"
+    ],
+    "m317-get-position-from-encoder": [
+      "description_7",
+      "usage_7",
+      "parameter_7",
+      "example_8"
+    ],
+    "m318-set-encoder-parameters": [
+      "description_8",
+      "usage_8",
+      "parameter_8",
+      "example_9"
+    ],
+    "m319-read-encoder-pin": [
+      "description_9",
+      "usage_9",
+      "parameter_9",
+      "example_10"
+    ],
+    "m330-set-output-pin": [
+      "description_10",
+      "usage_10",
+      "parameter_10",
+      "example_11"
+    ],
+    "m331-read-input-pin": [
+      "description_11",
+      "usage_11",
+      "parameter_11",
+      "example_12"
+    ],
+    "m332-configure-input-pin": [
+      "description_12",
+      "usage_12",
+      "parameter_12",
+      "function",
+      "example_13"
+    ],
+    "m333-configure-output-pin": [
+      "description_13",
+      "usage_13",
+      "parameter_13",
+      "function_1",
+      "example_14"
+    ],
+    "m389-enable-ethernet": [
+      "description_14",
+      "usage_14",
+      "parameter_14",
+      "example_15"
+    ],
+    "m390-set-ethernet-port": [
+      "description_15",
+      "usage_15",
+      "parameter_15",
+      "example_16"
+    ],
+    "m391-set-ethernet-ip-address": [
+      "description_16",
+      "usage_16",
+      "parameter_16",
+      "example_17"
+    ],
+    "m392-set-ethernet-dns-address": [
+      "description_17",
+      "usage_17",
+      "parameter_17",
+      "example_18"
+    ],
+    "m393-set-ethernet-gateway-address": [
+      "description_18",
+      "usage_18",
+      "parameter_18",
+      "example_19"
+    ],
+    "m394-set-ethernet-subnet-address": [
+      "description_19",
+      "usage_19",
+      "parameter_19",
+      "example_20"
+    ],
+    "m395-set-ethernet-mac-address": [
+      "description_20",
+      "usage_20",
+      "parameter_20",
+      "example_21"
+    ],
+    "m396-save-and-init-ethernet-port": [
+      "description_21",
+      "usage_21",
+      "example_22"
+    ],
+    "m397-get-ethernet-port-parameters": [
+      "description_22",
+      "example_23"
+    ],
+    "m398-get-ethernet-local-port-parameters": [
+      "description_23",
+      "example_24"
+    ]
+  }
+}

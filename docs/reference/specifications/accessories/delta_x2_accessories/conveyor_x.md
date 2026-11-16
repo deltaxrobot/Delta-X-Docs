@@ -1,14 +1,17 @@
-# Conveyor Belt 120 Specification
+# Short Conveyor Specifications
+
+<!-- Preserve the published title fragment. -->
+<span class="legacy-anchor" id="conveyor-belt-120-specification"></span>
 
 ## Introduction
 
-![Conveyor Belt 120 img](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/short_conveyor.png)
+![Short Conveyor](../../../../images/shared/accessories/conveyor_x/short_conveyor.png)
 
-The 120 conveyor is mainly used in small-scale projects and experimental setups involving Delta X 1 and Delta X 2 robots. Characterized by a compact design, these conveyors facilitate easy deployment. and integration into various systems.
+The Short Conveyor is mainly used in small-scale projects and experimental setups involving Delta X 1 and Delta X 2 robots. Its compact design makes it easy to deploy and integrate into various systems.
 
 ## System Components
 
-The Conveyor Belt 120 integrates a range of essential components tailored to its specific design:
+The Short Conveyor integrates a range of essential components tailored to its specific design:
 
 | Component                  | Material               |
 | -------------------------- | -----------------      |
@@ -22,7 +25,7 @@ The Conveyor Belt 120 integrates a range of essential components tailored to its
 
 ## Dimensions
 
-![Conveyor Belt 120 Schematic](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/conveyor_120_dims.png)
+![Short Conveyor dimensions](../../../../images/reference/specifications/accessories/delta_x2_accessories/conveyor_x/conveyor_120_dims.png)
 
 ## Conveyor Specifications
 
@@ -44,17 +47,17 @@ The Conveyor Belt 120 integrates a range of essential components tailored to its
 
 ## Control Options
 
-The Conveyor Belt 120 offers flexible control methods:
+The Short Conveyor offers flexible control methods:
 
 - **G-Code Control:** Use G-Code commands for precise speed adjustments.
 - **Variable Speed Control:** Adjust conveyor speed manually using a potentiometer.
 
 !!! note "Note"
-    Get more information about g-code [**HERE**](https://docs.deltaxrobot.com/reference/gcodes/gc_conveyor/).
+    See the [Short Conveyor G-code reference](../../../gcodes/gc_short_conveyor.md) for serial setup, control modes, and commands M310–M313.
 
 ## Applications
 
-The Conveyor Belt 120 is exceptionally well-suited for diverse applications, including:
+The Short Conveyor is exceptionally well-suited for diverse applications, including:
 
 - Experimental projects
 - Small-scale lab endeavors

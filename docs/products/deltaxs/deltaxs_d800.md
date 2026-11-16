@@ -4,7 +4,7 @@
 
 ## [Purchase Now](https://deltaxstore.com/products/delta-x-s-v5?variant=43448384487591)
 
-![D600](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/xs_v4_d600_4axes_light.png)
+![D600](../../images/shared/delta_xs/xs_v4_d600_4axes_light.png)
 
 ## Basic Parameters
 

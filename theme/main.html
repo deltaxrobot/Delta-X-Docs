@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="{{ page.meta.description if page and page.meta.description else config.site_description }}">
+  <title>{% if page and not page.is_homepage %}{{ page.meta.doc_title }}{% if page.meta.firmware_version %} · Firmware {{ page.meta.firmware_version }}{% endif %} · {% endif %}Delta X Documentation</title>
+  {% if page and page.meta.redirect_to %}
+  <link rel="canonical" href="{{ config.site_url ~ page.meta.redirect_to }}">
+  <meta name="robots" content="noindex">
+  <script data-docs-redirect>
+    (() => {
+      const targets = new Map(Object.entries({{ page.meta.redirect_fragments|tojson }}));
+      const target = new URL({{ page.meta.redirect_to|url|tojson }}, window.location.href);
+      let fragment = window.location.hash.slice(1);
+      try { fragment = decodeURIComponent(fragment); } catch (_) {}
+      target.hash = targets.get(fragment) || {{ page.meta.redirect_fragment|tojson }};
+      target.search = window.location.search;
+      window.location.replace(target.href);
+    })();
+  </script>
+  {% elif page and page.canonical_url %}<link rel="canonical" href="{{ page.canonical_url }}">{% endif %}
+  <link rel="icon" href="{{ 'img/favicon.ico'|url }}">
+  <script>try{document.documentElement.dataset.theme=localStorage.getItem('dx-theme')||'light'}catch(e){}</script>
+  <link rel="stylesheet" href="{{ 'assets/docs.css'|url }}">
+  <script defer data-docs-script src="{{ 'assets/docs.js'|url }}"></script>
+</head>
+{% set home = page and page.is_homepage %}
+{% set model = page.meta.doc_model if page else 'All models' %}
+{% set category = page.meta.doc_category if page else 'Documentation' %}
+<body class="{% if home %}home-page{% else %}document-page{% endif %}" data-model="{{ model }}">
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <button class="icon-button mobile-menu" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><i class="fa fa-bars" aria-hidden="true"></i></button>
+    <a class="brand" href="{{ nav.homepage.url|url }}" aria-label="Delta X documentation home"><img class="brand-logo" src="{{ 'assets/main-logo.png'|url }}" alt="Delta X" width="1000" height="477"><span class="brand-divider"></span><span class="brand-caption">Docs</span></a>
+    <button class="header-search" data-open-search aria-label="Search documentation"><i class="fa fa-search" aria-hidden="true"></i><span>Search documentation…</span><kbd>Ctrl K</kbd></button>
+    <div class="header-actions"><a class="header-website" href="https://www.deltaxrobot.com/">deltaxrobot.com <i class="fa fa-external-link" aria-hidden="true"></i></a><button class="icon-button theme-toggle" aria-label="Switch to dark theme"><i class="fa fa-moon-o" aria-hidden="true"></i></button><a class="icon-button github-link" href="{{ config.repo_url }}" aria-label="View documentation on GitHub"><i class="fa fa-github" aria-hidden="true"></i></a></div>
+  </div>
+</header>
+
+{% macro tree(items, depth=0) %}
+{% for item in items %}
+  {% if item.is_section and item.title != 'Control Guides' and item.children|length == 1 and item.children[0].is_page %}
+    <a class="sidebar-link {% if item.active %}current{% endif %}" href="{{ item.children[0].url|url }}" {% if item.active %}aria-current="page"{% endif %}>{{ item.title }}</a>
+  {% elif item.is_section %}
+    <details class="nav-group depth-{{ depth }}" {% if item.active %}open{% endif %}>
+      <summary>{{ item.title }}<i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+      <div class="nav-children">{{ tree(item.children, depth+1) }}</div>
+    </details>
+  {% elif not item.is_homepage %}
+    <a class="sidebar-link {% if item.active %}current{% endif %}" href="{{ item.url|url }}" {% if item.active %}aria-current="page"{% endif %}>{{ item.title }}</a>
+  {% endif %}
+{% endfor %}
+{% endmacro %}
+
+<div class="sidebar-backdrop" hidden></div>
+<div class="docs-layout {% if home %}overview-layout{% endif %}">
+  {% include "partials/sidebar.html" %}
+  {% if home %}
+    {% include "partials/home.html" %}
+  {% else %}
+  <main id="main-content" class="article-column">
+    {% block content %}
+    {% if page %}
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="{{ nav.homepage.url|url }}">Docs</a><i class="fa fa-angle-right" aria-hidden="true"></i><span>{{ category }}</span>{% if model != 'All models' %}<i class="fa fa-angle-right" aria-hidden="true"></i><span>{{ model }}</span>{% endif %}</nav>
+      <header class="article-header"><h1{% if page.meta.doc_heading_id %} id="{{ page.meta.doc_heading_id }}"{% endif %}>{{ page.meta.doc_title }}</h1>{% if page.meta.is_gcode %}<p>Commands, parameters, and practical examples for {{ model }}.</p>{% endif %}<div class="article-meta">{% if page.edit_url %}<a href="{{ page.edit_url }}"><i class="fa fa-pencil" aria-hidden="true"></i> Suggest an edit</a>{% endif %}</div></header>
+      {% if firmware_versions %}{% include "partials/firmware-picker.html" %}{% endif %}
+      {% if page.meta.shared_controller_note %}<div class="model-context shared-controller-note"><i class="fa fa-info-circle" aria-hidden="true"></i><span><strong>One controller board, shared commands.</strong> {{ page.meta.shared_controller_note }}</span></div>{% endif %}
+      {% if page.toc %}<details class="mobile-toc"><summary>On this page <i class="fa fa-angle-down" aria-hidden="true"></i></summary>{% include "partials/page-toc.html" %}</details>{% endif %}
+      {% if page.meta.commands %}{% include "partials/command-index.html" %}{% endif %}
+      {% if page.meta.doc_empty %}<div class="empty-page"><h2>This guide is being prepared.</h2><p>For help with this accessory, contact the Delta X team or browse the available guides.</p><a class="button primary" href="{{ 'tutorials/tutorials_list/'|url }}">Browse guides</a></div>{% endif %}
+      {% if page.meta.studio_setup_step %}{% include "partials/studio-setup-progress.html" %}{% endif %}
+      <article class="prose">{{ page.content }}</article>
+      <div class="article-end"><span>Found something that could be clearer?</span>{% if page.edit_url %}<a href="{{ page.edit_url }}">Suggest an edit <i class="fa fa-external-link" aria-hidden="true"></i></a>{% endif %}</div>
+      <nav class="page-pagination" aria-label="Related pages">
+        {% if page.meta.guide_navigation %}
+          {% set previous = page.meta.guide_navigation.previous %}{% set next = page.meta.guide_navigation.next %}
+          {% if previous %}<a href="{{ previous.url|url }}"><small>BACK</small><span><i class="fa fa-arrow-left" aria-hidden="true"></i> {{ previous.title }}</span></a>{% endif %}
+          {% if next %}<a href="{{ next.url|url }}"><small>{{ next.label|default('NEXT STEP') }}</small><span>{{ next.title }} <i class="fa fa-arrow-right" aria-hidden="true"></i></span></a>{% endif %}
+        {% else %}
+          {% if page.previous_page %}<a href="{{ page.previous_page.url|url }}"><small>PREVIOUS</small><strong><i class="fa fa-arrow-left" aria-hidden="true"></i> {{ previous_title }}</strong></a>{% endif %}{% if page.next_page %}<a href="{{ page.next_page.url|url }}"><small>NEXT</small><strong>{{ next_title }} <i class="fa fa-arrow-right" aria-hidden="true"></i></strong></a>{% endif %}
+        {% endif %}
+      </nav>
+    {% endif %}
+    {% endblock %}
+  </main>
+  <aside class="page-toc" aria-label="On this page"><span class="toc-title">On this page</span><nav>{% if page %}{% include "partials/page-toc.html" %}{% endif %}</nav><a class="back-top" href="#main-content"><i class="fa fa-arrow-up" aria-hidden="true"></i> Back to top</a></aside>
+{% endif %}
+<footer id="about-us" class="site-footer"><a class="brand footer-brand" href="{{ nav.homepage.url|url }}">DELTA <b>X</b><span>Documentation</span></a><span id="delta-x-robot-store">Delta X Robotics · Documentation</span><div><a href="https://www.deltaxrobot.com/">Website <i class="fa fa-external-link" aria-hidden="true"></i></a><a id="delta-x-community" href="https://www.facebook.com/groups/DeltaXCommunity">Community</a><a href="mailto:deltaxrobot@gmail.com">Support</a></div></footer>
+</div>
+
+<dialog class="search-dialog" aria-label="Search documentation"><form class="search-form" role="search"><div class="search-input-row"><i class="fa fa-search" aria-hidden="true"></i><input id="docs-search" type="search" autocomplete="off" placeholder="Search commands, guides, and specifications…" aria-label="Search documentation"><button type="button" class="close-search" aria-label="Close search"><kbd>Esc</kbd></button></div><div class="search-filters"><label for="search-model">Search in</label><select id="search-model"><option value="all">All models</option></select><span id="search-count" role="status" aria-live="polite"></span></div></form><div id="search-results" class="search-results" aria-live="polite"><div class="search-empty"><i class="fa fa-search" aria-hidden="true"></i><h2>What are you working on?</h2><p>Try a command like G28, a model, or a topic like wiring.</p></div></div><div class="search-footer"><span><kbd>Tab</kbd> navigate results <kbd>Enter</kbd> open</span><span>Delta X Documentation</span></div></dialog>
+<dialog class="image-dialog" aria-label="Image detail"><button class="icon-button close-image" aria-label="Close image"><i class="fa fa-times" aria-hidden="true"></i></button><img alt=""><p></p></dialog>
+<div class="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

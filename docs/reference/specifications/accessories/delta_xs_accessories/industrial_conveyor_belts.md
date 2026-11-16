@@ -1,6 +1,6 @@
 # Industrial Conveyor Belts (D120/200/300/400 L1200) Specification
 
-![industrial_conveyor](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/industrial_conveyor.png)
+![industrial_conveyor](../../../../images/reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/industrial_conveyor.png)
 
 ## Introduction
 Industrial Conveyor Belts are commonly employed in real-world projects within the industrial sector. Characterized by robust aluminum profile frames, precisely engineered rollers and belts, as well as anti-interference designed control systems, these conveyor belts stand as a favored product line for factory environments.
@@ -20,7 +20,7 @@ The Conveyor integrates the following cardinal components:
 | USB Cable                  | 3m USB-B cable.                                                                           |
 
 ## Dimensions
-![Conveyor Belt D300 L1200 Schematic](https://raw.githubusercontent.com/deltaxrobot/Delta-X-Docs/master/docs/images/Conveyor_Belt_D300_L1200.png)
+![Conveyor Belt D300 L1200 Schematic](../../../../images/reference/specifications/accessories/delta_xs_accessories/industrial_conveyor_belts/Conveyor_Belt_D300_L1200.png)
 
 ## Conveyor Specifications
 

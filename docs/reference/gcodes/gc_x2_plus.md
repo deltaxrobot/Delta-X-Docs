@@ -4,7 +4,9 @@
 
 ### Descriptions
 
-The **G0** and **G1** commands add a **LINEAR MOVE** to the queue to be performed after all previous moves are completed. A command like **G1 F1000** sets the feed rate for all subsequent moves.
+The **G0** and **G1** commands add a **LINEAR MOVE** to the queue to be performed after all previous moves are completed.
+
+Set `F` (feed rate), `A` (acceleration), `J` (jerk), `S` (start velocity), and `E` (end velocity) once. Subsequent movement commands use these settings until changed; motion parameters omitted from a command keep their current settings.
 
 ### Usage
 
@@ -104,7 +106,7 @@ G01 X100
 
 ### Descriptions
 
-**G5** creates a cubic B-spline in the XY plane with the X and Y axes only. **P** and **Q** parameters are **required**. **I** and **J** are **required** for the **first G5 command in a series**. For subsequent G5 commands, either both **I and J must be specified**, or neither. If I and J are unspecified, the starting direction of the cubic will automatically match the ending direction of the previous cubic (as if I and J are the negation of the previous P and Q).
+**G5** creates a cubic B-spline in the XY plane with the X and Y axes only. **P** and **Q** parameters are **required**. **I** and **J** are **required** for the **first G5 command in a series**. For subsequent G5 commands, either both **I and J must be specified**, or neither.
 
 ### Usage
 

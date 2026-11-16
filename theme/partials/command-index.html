@@ -1,0 +1,24 @@
+{% macro command_links(commands) %}
+<div class="command-grid">
+  {% for command in commands %}
+  <a href="#{{ command.id }}" data-command="{{ command.title|lower }} {{ command.group|lower }}"><code>{{ command.codes }}</code><span>{{ command.label }}</span><i class="fa fa-arrow-right" aria-hidden="true"></i></a>
+  {% endfor %}
+</div>
+{% endmacro %}
+<details class="command-index" open>
+  <summary><span><i class="fa fa-list" aria-hidden="true"></i> Command index <small>{{ page.meta.commands|length }} commands</small></span><i class="fa fa-angle-down" aria-hidden="true"></i></summary>
+  <div class="command-index-body">
+    <label class="command-filter"><i class="fa fa-search" aria-hidden="true"></i><input type="search" id="command-filter" placeholder="Find a command on this page…" aria-label="Filter command index"></label>
+    {% if page.meta.command_index_groups %}
+      {% for group in page.meta.command_index_groups %}
+      <section class="command-group" aria-labelledby="command-group-{{ group.id }}">
+        <h2 class="command-group-title" id="command-group-{{ group.id }}"><a href="#{{ group.id }}">{{ group.title }}</a><small>{{ group.commands|length }} commands</small></h2>
+        {{ command_links(group.commands) }}
+      </section>
+      {% endfor %}
+    {% else %}
+      {{ command_links(page.meta.commands) }}
+    {% endif %}
+    <p class="command-empty" hidden>No matching commands on this page.</p>
+  </div>
+</details>
